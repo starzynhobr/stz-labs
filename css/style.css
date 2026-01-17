@@ -475,6 +475,11 @@ select.lang-select option {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Reordenar elementos da navbar */
+    .logo { order: 1; flex-grow: 1; } /* Logo na esquerda, ocupa espaço sobrando */
+    .nav-controls { order: 2; margin-left: 10px; } /* Controles no meio/direita */
+    .menu-toggle { order: 3; display: block; margin-left: 15px; } /* Hamburguer na ponta direita */
+
     .navbar .nav-links {
         display: none;
         flex-direction: column;
@@ -482,10 +487,11 @@ select.lang-select option {
         top: 70px;
         left: 0;
         right: 0;
-        background: var(--bg-color); /* Usa a cor do tema */
+        background: var(--bg-color);
         border-bottom: 1px solid var(--border-color);
         padding: 20px;
         gap: 20px;
+        z-index: 999; /* Garante que fique sobre o conteúdo mas sob controles se necessário */
     }
 
     .navbar .nav-links.active {
