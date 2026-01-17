@@ -25,8 +25,8 @@
             "stable": "Estable",
             "beta": "Beta",
             "alpha": "Alpha",
-            "v1_2": "v1.2",
-            "v1_0": "v1.0",
+            "v1_2": "v1.0.0",
+            "v1_0": "v1.0.0",
             "soon": "Pronto"
         }
     },

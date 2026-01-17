@@ -2,7 +2,57 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initLocalization();
     initMobileMenu();
+    initVersions();
 });
+
+/* --- GITHUB VERSIONS --- */
+async function initVersions() {
+    const badges = document.querySelectorAll('[data-gh-repo]');
+    
+    badges.forEach(async (badge) => {
+        const repo = badge.getAttribute('data-gh-repo');
+        const cached = getCachedVersion(repo);
+
+        if (cached) {
+            badge.textContent = cached;
+        } else {
+            try {
+                const response = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+                if (response.ok) {
+                    const data = await response.json();
+                    const version = data.tag_name;
+                    badge.textContent = version;
+                    setCachedVersion(repo, version);
+                }
+            } catch (error) {
+                console.warn(`Failed to fetch version for ${repo}`, error);
+            }
+        }
+    });
+}
+
+function getCachedVersion(repo) {
+    const data = localStorage.getItem(`version_${repo}`);
+    if (!data) return null;
+    
+    const { version, timestamp } = JSON.parse(data);
+    const ONE_HOUR = 3600 * 1000;
+    
+    if (Date.now() - timestamp > ONE_HOUR) {
+        localStorage.removeItem(`version_${repo}`);
+        return null;
+    }
+    
+    return version;
+}
+
+function setCachedVersion(repo, version) {
+    const data = {
+        version: version,
+        timestamp: Date.now()
+    };
+    localStorage.setItem(`version_${repo}`, JSON.stringify(data));
+}
 
 /* --- MOBILE MENU --- */
 function initMobileMenu() {

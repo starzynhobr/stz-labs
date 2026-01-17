@@ -24,8 +24,6 @@
             "stable": "Estável",
             "beta": "Beta",
             "alpha": "Alfa",
-            "v1_2": "v1.2",
-            "v1_0": "v1.0",
             "soon": "Em Breve"
         }
     },
@@ -189,6 +187,7 @@
         "specs": {
             "version": "Versão Atual",
             "platform": "Plataforma",
+            "dependency": "Dependência",
             "license": "Licença"
         }
     }
