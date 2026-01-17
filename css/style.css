@@ -475,7 +475,29 @@ select.lang-select option {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .navbar .nav-links { display: none; } /* Simplificado para demo */
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--bg-color); /* Usa a cor do tema */
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
     .menu-toggle { display: block; }
     
     .timeline::before { left: 20px; }
