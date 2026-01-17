@@ -1,24 +1,24 @@
 {
     "nav": {
         "products": "Projects",
-        "roadmap": "Roadmap",
-        "docs": "Docs",
+        "philosophy": "Philosophy",
+        "status": "Status",
         "community": "Community",
         "back": "Back"
     },
     "sections": {
         "projects_title": "/// Projects",
         "projects_subtitle": "Tools focused on productivity and utility.",
-        "roadmap_title": "/// Roadmap",
-        "roadmap_subtitle": "Our vision for the future.",
-        "roadmap_q1": "STZ Suite 1.0 Launch",
-        "roadmap_q1_desc": "Stable release with third-party plugin support and documented API.",
-        "roadmap_q2": "STZ Gym Cloud Sync",
-        "roadmap_q2_desc": "Optional end-to-end encrypted synchronization for data backup.",
-        "roadmap_q3": "Utils + Suite Integration",
-        "roadmap_q3_desc": "Native Utils modules within the Suite launcher for quick access.",
-        "roadmap_q4": "STZ OS Concept",
-        "roadmap_q4_desc": "Prototype of a complete desktop environment based on web technologies.",
+        "roadmap_title": "/// Status",
+        "roadmap_subtitle": "STZ ecosystem evolution.",
+        "roadmap_q1": "Core Tools",
+        "roadmap_q1_desc": "Development and launch of the foundation: XML Translator, CSV Converter, and Lyrics.",
+        "roadmap_q2": "Portal & Internationalization",
+        "roadmap_q2_desc": "STZ LABS launch, multi-language support, and themes.",
+        "roadmap_q3": "STZ Suite (Launcher)",
+        "roadmap_q3_desc": "Unification of tools into a single centralized dashboard.",
+        "roadmap_q4": "Utilities Expansion",
+        "roadmap_q4_desc": "New modules focused on workflow automation.",
         "features_title": "Key Features",
         "specs_title": "Technical Specs"
     },
@@ -32,6 +32,12 @@
         "btn_download": "Download"
     },
     "benefits": {
+        "efficiency_title": "Focus & Efficiency",
+        "efficiency_desc": "Tools that get straight to the point. No bloated interfaces, just what's needed to solve the problem.",
+        "local_title": "Local Processing",
+        "local_desc": "Real privacy. Your files (XMLs, CSVs) are processed on your machine, with no hidden uploads.",
+        "opensource_title": "Open Source",
+        "opensource_desc": "Total transparency. Auditable code available on GitHub for community contribution.",
         "ultralight_title": "Ultralight",
         "ultralight_desc": "Low-level optimized code. No bloatware, no invasive tracking, just pure functionality.",
         "privacy_title": "Privacy First",
@@ -40,10 +46,23 @@
         "design_desc": "Consistent and predictable interface across all products, reducing cognitive load."
     },
     "cta": {
-        "title": "Enter the Lab.",
-        "subtitle": "Join developers and productivity enthusiasts building the future.",
+        "title": "Join the conversation.",
+        "subtitle": "Questions, suggestions, or just want to chat about dev and productivity? Our Discord is open.",
         "placeholder": "your@email.com",
-        "btn": "Join Community"
+        "btn": "Join Discord"
+    },
+    "footer": {
+        "privacy": "Privacy"
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "Full transparency on how our software works.",
+        "local_title": "Local Processing",
+        "local_desc": "All software developed by STZ LABS (CSV Converter, XML Translator, Lyrics, Suite) is designed to process data locally on your machine. We do not send your files, contacts, or XMLs to proprietary servers.",
+        "api_title": "Third-Party APIs",
+        "api_desc": "Some tools use external services to function:",
+        "contact_title": "Contact",
+        "contact_desc": "If you have questions about security or source code, you can audit our repositories on GitHub or contact us via Discord."
     },
     "game_xml": {
         "title": "Game XML Translator",

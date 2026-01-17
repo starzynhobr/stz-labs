@@ -1,24 +1,24 @@
 {
     "nav": {
         "products": "Projetos",
-        "roadmap": "Roadmap",
-        "docs": "Docs",
+        "philosophy": "Filosofia",
+        "status": "Status",
         "community": "Comunidade",
         "back": "Voltar"
     },
     "sections": {
         "projects_title": "/// Projetos",
         "projects_subtitle": "Ferramentas focadas em produtividade e utilidade.",
-        "roadmap_title": "/// Roadmap",
-        "roadmap_subtitle": "Nossa visão de futuro.",
-        "roadmap_q1": "Lançamento STZ Suite 1.0",
-        "roadmap_q1_desc": "Release estável com suporte a plugins de terceiros e API documentada.",
-        "roadmap_q2": "STZ Gym Cloud Sync",
-        "roadmap_q2_desc": "Sincronização opcional criptografada ponta-a-ponta para backup de dados.",
-        "roadmap_q3": "Integração Utils + Suite",
-        "roadmap_q3_desc": "Módulos do Utils nativos dentro do launcher Suite para acesso rápido.",
-        "roadmap_q4": "STZ OS Concept",
-        "roadmap_q4_desc": "Protótipo de ambiente desktop completo baseado em web technologies.",
+        "roadmap_title": "/// Status",
+        "roadmap_subtitle": "Evolução do ecossistema STZ.",
+        "roadmap_q1": "Ferramentas Core",
+        "roadmap_q1_desc": "Desenvolvimento e lançamento das bases: XML Translator, CSV Converter e Lyrics.",
+        "roadmap_q2": "Portal & Internacionalização",
+        "roadmap_q2_desc": "Lançamento do STZ LABS, suporte multi-idioma e temas.",
+        "roadmap_q3": "STZ Suite (Launcher)",
+        "roadmap_q3_desc": "Unificação das ferramentas em um único dashboard centralizado.",
+        "roadmap_q4": "Expansão de Utilitários",
+        "roadmap_q4_desc": "Novos módulos focados em automação de workflow.",
         "features_title": "Funcionalidades Principais",
         "specs_title": "Especificações Técnicas"
     },
@@ -32,6 +32,12 @@
         "btn_download": "Download"
     },
     "benefits": {
+        "efficiency_title": "Foco e Eficiência",
+        "efficiency_desc": "Ferramentas que vão direto ao ponto. Sem interfaces inchadas, apenas o necessário para resolver o problema.",
+        "local_title": "Processamento Local",
+        "local_desc": "Privacidade real. Seus arquivos (XMLs, CSVs) são processados na sua máquina, sem uploads ocultos.",
+        "opensource_title": "Open Source",
+        "opensource_desc": "Transparência total. Código auditável e disponível no GitHub para a comunidade contribuir.",
         "ultralight_title": "Ultraleve",
         "ultralight_desc": "Código otimizado em baixo nível. Sem bloatware, sem rastreamento invasivo, apenas funcionalidade pura.",
         "privacy_title": "Privacidade First",
@@ -40,10 +46,23 @@
         "design_desc": "Interface consistente e previsível em todos os produtos, reduzindo a carga cognitiva."
     },
     "cta": {
-        "title": "Entre no laboratório.",
-        "subtitle": "Junte-se a desenvolvedores e entusiastas de produtividade construindo o futuro.",
+        "title": "Faça parte da conversa.",
+        "subtitle": "Dúvidas, sugestões ou apenas quer conversar sobre dev e produtividade? Nosso Discord está aberto.",
         "placeholder": "seu@email.com",
-        "btn": "Entrar na comunidade"
+        "btn": "Entrar no Discord"
+    },
+    "footer": {
+        "privacy": "Privacidade"
+    },
+    "privacy": {
+        "title": "Política de Privacidade",
+        "subtitle": "Transparência total sobre como nossos softwares funcionam.",
+        "local_title": "Processamento Local",
+        "local_desc": "Todos os softwares desenvolvidos pelo STZ LABS (CSV Converter, XML Translator, Lyrics, Suite) são projetados para processar dados localmente na sua máquina. Não enviamos seus arquivos, contatos ou xmls para servidores proprietários.",
+        "api_title": "APIs de Terceiros",
+        "api_desc": "Algumas ferramentas utilizam serviços externos para funcionar:",
+        "contact_title": "Contato",
+        "contact_desc": "Se tiver dúvidas sobre segurança ou o código fonte, você pode auditar nossos repositórios no GitHub ou entrar em contato pelo Discord."
     },
     "game_xml": {
         "title": "Game XML Translator",
