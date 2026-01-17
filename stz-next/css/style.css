@@ -71,16 +71,13 @@
 html { scroll-behavior: smooth; }
 
 body {
-    background-color: transparent;
+    background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-stack);
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    transition-property: background-color, color;
-    transition-duration: var(--theme-dur-base), var(--theme-dur-detail);
-    transition-timing-function: var(--theme-ease-base), var(--theme-ease-detail);
-    transition-delay: 0s, 0s;
+    transition: background-color var(--theme-dur-base) var(--theme-ease-base);
 }
 
 .app-shell {
@@ -90,34 +87,29 @@ body {
     isolation: isolate;
 }
 
-.app-shell::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.04;
-    background-image: var(--bg-layer-prev, var(--bg-layer-current));
-    background-repeat: repeat, no-repeat, no-repeat;
-    background-size: 180px 180px, cover, cover;
-    mix-blend-mode: normal;
-    transition: opacity var(--theme-dur-base) var(--theme-ease-base) 0s !important;
-    transition-delay: 0s !important;
-}
-
+.app-shell::before,
 .app-shell::after {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    opacity: 0;
-    background-image: var(--bg-layer-current);
-    background-repeat: repeat, no-repeat, no-repeat;
-    background-size: 180px 180px, cover, cover;
+    opacity: var(--noise-opacity);
+    background-image: var(--bg-noise);
+    background-repeat: repeat;
+    background-size: 180px 180px;
     mix-blend-mode: normal;
-    transition: opacity var(--theme-dur-base) var(--theme-ease-base) 0s !important;
-    transition-delay: 0s !important;
+    transition: opacity var(--theme-dur-base) var(--theme-ease-base);
+}
+
+.app-shell::before {
+    background-image: var(--bg-noise);
+    opacity: var(--noise-opacity);
+}
+
+.app-shell::after {
+    background-image: var(--bg-noise);
+    opacity: 0;
 }
 
 html.theme-switching .app-shell::before {
@@ -125,7 +117,7 @@ html.theme-switching .app-shell::before {
 }
 
 html.theme-switching .app-shell::after {
-    opacity: 1 !important;
+    opacity: var(--noise-opacity) !important;
 }
 
 .app-shell > * {
