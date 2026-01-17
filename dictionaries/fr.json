@@ -4,7 +4,10 @@
         "philosophy": "Philosophie",
         "status": "Statut",
         "community": "Communauté",
-        "back": "Retour"
+        "back": "Retour",
+        "menu": "Menu",
+        "language": "Langue",
+        "theme": "Changer de theme"
     },
     "common": {
         "tags": {
@@ -53,7 +56,10 @@
         "btn_details": "Détails",
         "btn_changelog": "Changelog",
         "btn_download": "Télécharger",
-        "btn_soon": "Bientôt"
+        "btn_soon": "Bientôt",
+        "suite_title": "STZ Suite",
+        "version_latest": "Dernière version via GitHub",
+        "version_dev": "En développement"
     },
     "benefits": {
         "efficiency_title": "Focus & Efficacité",
@@ -76,7 +82,8 @@
         "btn": "Rejoindre Discord"
     },
     "footer": {
-        "privacy": "Confidentialité"
+        "privacy": "Confidentialité",
+        "build": "Build v1.0.0"
     },
     "privacy": {
         "title": "Politique de Confidentialité",

@@ -52,6 +52,9 @@
 
 [data-theme="ember"] {
     color-scheme: dark;
+    --accent: #FF5A1F;
+    --accent-2: #2DE3FF;
+    --accent-glow: rgba(255, 90, 31, 0.35);
     --bg: #0B0D10;
     --bg2: #10141A;
     --surface: rgba(16, 20, 26, 0.9);
