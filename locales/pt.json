@@ -18,7 +18,6 @@
             "music": "Música",
             "python": "Python",
             "qt_qml": "Qt/QML",
-            "hwinfo": "HWiNFO",
             "monitor": "Monitor"
         },
         "badges": {
@@ -51,7 +50,7 @@
         "xml_desc": "Programa que facilita a tradução de arquivos XML de jogos. Edite strings de tradução com facilidade, segurança e agilidade.",
         "lyrics_desc": "Skin minimalista para Rainmeter. Mostra a letra da música tocando em uma linha sobre a barra de tarefas. Always on Top.",
         "csv_desc": "Ferramenta avançada para limpar, normalizar e converter listas de contatos CSV. Ideal para migração para Google Contacts.",
-        "taskpulse_desc": "Monitor de sistema minimalista para Rainmeter. CPU, GPU, RAM e Rede em tempo real com integração HWiNFO.",
+        "taskpulse_desc": "Monitor de sistema minimalista para Rainmeter. CPU, GPU, RAM e Rede em tempo real.",
         "btn_details": "Detalhes",
         "btn_changelog": "Changelog",
         "btn_download": "Download",
@@ -177,13 +176,11 @@
         "btn_github": "Acessar GitHub",
         "features": {
             "monitor_title": "Monitoramento Vital",
-            "monitor_desc": "Acompanhe o uso de CPU, GPU (via HWiNFO), memória RAM e tráfego de rede (Download/Upload) instantaneamente.",
+            "monitor_desc": "Acompanhe o uso de CPU, GPU, memória RAM e tráfego de rede (Download/Upload) instantaneamente.",
             "design_title": "Estética Clean",
             "design_desc": "Visual limpo e tipografia moderna que se integra perfeitamente a qualquer setup, sem poluição visual.",
             "clock_title": "Relógio Digital",
             "clock_desc": "Data e hora em destaque com fonte de fácil leitura, eliminando a necessidade de widgets extras.",
-            "hwinfo_title": "Integração HWiNFO",
-            "hwinfo_desc": "Leitura precisa de sensores de hardware avançados através do plugin HWiNFO para Rainmeter.",
             "lightweight_title": "Ultra Leve",
             "lightweight_desc": "Consumo de recursos insignificante. Seu PC foca no jogo ou trabalho, não no monitoramento.",
             "custom_title": "Fácil Edição",
@@ -192,7 +189,6 @@
         "specs": {
             "version": "Versão Atual",
             "platform": "Plataforma",
-            "dependency": "Dependência",
             "license": "Licença"
         }
     }
