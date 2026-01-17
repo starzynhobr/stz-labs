@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STZ Lyrics | STZ LABS</title>
+    <meta name="description" content="Skin minimalista para Rainmeter que exibe letras de músicas sincronizadas na barra de tarefas.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">STZ LABS</a>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <a href="index.html" class="btn btn-secondary" style="padding: 8px 16px;" data-i18n="nav.back">Voltar</a>
+                
+                <div class="nav-controls">
+                    <select id="langSelect" class="lang-select" aria-label="Language">
+                        <option value="pt">PT</option>
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                        <option value="de">DE</option>
+                        <option value="it">IT</option>
+                        <option value="es">ES</option>
+                    </select>
+                    <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">
+                        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-tags">
+                <span class="hero-tag">Rainmeter</span>
+                <span class="hero-tag">LRCLIB API</span>
+                <span class="hero-tag">WebNowPlaying</span>
+            </div>
+            <h1 data-i18n="lyrics.title">STZ Lyrics</h1>
+            <p data-i18n="lyrics.description">Transforme sua barra de tarefas com letras de músicas minimalistas e perfeitamente sincronizadas. Simples, leve e totalmente personalizável.</p>
+            
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="https://github.com/starzynhobr/stzlyrics" target="_blank" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span data-i18n="lyrics.btn_github">Acessar GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 style="margin-bottom: 40px; text-align: center;" data-i18n="sections.features_title">Funcionalidades Principais</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 data-i18n="lyrics.features.sync_title">Sync Perfeito</h3>
+                    <p data-i18n="lyrics.features.sync_desc">Utiliza a enorme base de dados do LRCLIB.net para buscar letras sincronizadas linha a linha para suas músicas favoritas.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="lyrics.features.design_title">Design Minimalista</h3>
+                    <p data-i18n="lyrics.features.design_desc">Uma única linha elegante que flutua sobre sua barra de tarefas, mostrando apenas o que importa no momento exato.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="lyrics.features.custom_title">Customização Total</h3>
+                    <p data-i18n="lyrics.features.custom_desc">Painel de configurações intuitivo para ajustar fontes, tamanhos, cores, sombras e dimensões da janela.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="lyrics.features.delay_title">Ajuste de Delay</h3>
+                    <p data-i18n="lyrics.features.delay_desc">O áudio está adiantado? Use o controle de offset integrado para ajustar a sincronia da letra em tempo real.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="lyrics.features.wnp_title">WebNowPlaying</h3>
+                    <p data-i18n="lyrics.features.wnp_desc">Suporte robusto para players modernos (Spotify, YouTube, SoundCloud) via extensão de navegador.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-i18n="lyrics.features.top_title">Always on Top</h3>
+                    <p data-i18n="lyrics.features.top_desc">Pode ser configurado para permanecer sempre visível, garantindo que você nunca perca um verso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specs-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 30px;" data-i18n="sections.specs_title">Especificações Técnicas</h2>
+            <div class="specs-list">
+                <div class="spec-item">
+                    <span class="spec-label" data-i18n="lyrics.specs.version">Versão Atual</span>
+                    <span>v1.0.0</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label" data-i18n="lyrics.specs.req">Requisito</span>
+                    <span>Rainmeter 4.5+</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label" data-i18n="lyrics.specs.plugin">Plugin</span>
+                    <span>WebNowPlaying</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label" data-i18n="lyrics.specs.api">API</span>
+                    <span>LRCLIB</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label" data-i18n="lyrics.specs.license">Licença</span>
+                    <span>MIT</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label" data-i18n="lyrics.specs.dep">Dependência</span>
+                    <span>curl.exe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>STZ LABS © 2026</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

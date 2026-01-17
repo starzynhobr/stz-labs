@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STZ LABS | Micro Estúdio de Software Futurista</title>
+    <meta name="description" content="STZ LABS desenvolve o STZ Suite, STZ Gym e utilitários de alta performance. Ferramentas modulares, focadas em produtividade e design minimalista.">
+    <meta property="og:title" content="STZ LABS - Inovação Minimalista">
+    <meta property="og:description" content="Ecossistema de ferramentas modulares para desktop e mobile.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="noise"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">STZ LABS</a>
+            <div class="menu-toggle" aria-label="Menu">☰</div>
+            <ul class="nav-links">
+                <li><a href="#produtos" class="nav-link" data-i18n="nav.products">Produtos</a></li>
+                <li><a href="#roadmap" class="nav-link" data-i18n="nav.roadmap">Roadmap</a></li>
+                <li><a href="#" class="nav-link" data-i18n="nav.docs">Docs</a></li>
+                <li><a href="#" class="nav-link" data-i18n="nav.community">Comunidade</a></li>
+                <li><a href="https://github.com/starzynhobr" target="_blank" class="btn btn-primary nav-btn">GitHub</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <select id="langSelect" class="lang-select" aria-label="Language">
+                    <option value="pt">PT</option>
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="de">DE</option>
+                    <option value="it">IT</option>
+                    <option value="es">ES</option>
+                </select>
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">
+                    <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Produtos (Main) -->
+    <section id="produtos" class="products" style="padding-top: 140px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="text-accent" data-i18n="sections.projects_title">/// Projetos</h2>
+                <p class="text-muted" data-i18n="sections.projects_subtitle">Ferramentas focadas em produtividade e utilidade.</p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">STZ Suite</h3>
+                        <span class="badge stable">Stable</span>
+                    </div>
+                    <p class="card-desc" data-i18n="cards.suite_desc">Ecossistema modular de ferramentas desktop. Um launcher poderoso que unifica plugins, scripts e automação em uma interface unificada.</p>
+                    <div class="tags">
+                        <span class="tag">Windows</span>
+                        <span class="tag">Plugins</span>
+                        <span class="tag">Offline</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
+                        <a href="#" class="btn btn-secondary btn-sm" data-i18n="cards.btn_changelog">Changelog</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Game XML Translator</h3>
+                        <span class="badge stable">v1.2</span>
+                    </div>
+                    <p class="card-desc" data-i18n="cards.xml_desc">Programa que facilita a tradução de arquivos XML de jogos. Edite strings de tradução com facilidade, segurança e agilidade.</p>
+                    <div class="tags">
+                        <span class="tag">Windows</span>
+                        <span class="tag">Translation</span>
+                        <span class="tag">Tools</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="game-xml-translator.html" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
+                        <a href="https://github.com/starzynhobr/Game-XML-Translator" class="btn btn-secondary btn-sm" data-i18n="cards.btn_download">Download</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">STZ Lyrics</h3>
+                        <span class="badge stable">v1.0</span>
+                    </div>
+                    <p class="card-desc" data-i18n="cards.lyrics_desc">Skin minimalista para Rainmeter. Mostra a letra da música tocando em uma linha sobre a barra de tarefas. Always on Top.</p>
+                    <div class="tags">
+                        <span class="tag">Rainmeter</span>
+                        <span class="tag">Skin</span>
+                        <span class="tag">Music</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="stz-lyrics.html" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
+                        <a href="https://github.com/starzynhobr/stzlyrics" class="btn btn-secondary btn-sm" data-i18n="cards.btn_download">Download</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">STZ CSV Converter</h3>
+                        <span class="badge stable">v1.0</span>
+                    </div>
+                    <p class="card-desc" data-i18n="cards.csv_desc">Ferramenta avançada para limpar, normalizar e converter listas de contatos CSV. Ideal para migração para Google Contacts.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Qt/QML</span>
+                        <span class="tag">Tools</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="stz-csv-converter.html" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
+                        <a href="https://github.com/starzynhobr/stz-csv-converter" class="btn btn-secondary btn-sm" data-i18n="cards.btn_download">Download</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que STZ -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <h3 data-i18n="benefits.ultralight_title">Ultraleve</h3>
+                    <p class="text-muted" data-i18n="benefits.ultralight_desc">Código otimizado em baixo nível. Sem bloatware, sem rastreamento invasivo, apenas funcionalidade pura.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3 data-i18n="benefits.privacy_title">Privacidade First</h3>
+                    <p class="text-muted" data-i18n="benefits.privacy_desc">Seus dados ficam no seu dispositivo. Nossos apps funcionam 100% offline por design padrão.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </div>
+                    <h3 data-i18n="benefits.design_title">Design System</h3>
+                    <p class="text-muted" data-i18n="benefits.design_desc">Interface consistente e previsível em todos os produtos, reduzindo a carga cognitiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2 class="text-accent" data-i18n="sections.roadmap_title">/// Roadmap</h2>
+                <p class="text-muted" data-i18n="sections.roadmap_subtitle">Nossa visão de futuro.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-label">Q1 2026 <span class="update-badge">Completado</span></span>
+                    <div class="t-content">
+                        <h4 data-i18n="sections.roadmap_q1">Lançamento STZ Suite 1.0</h4>
+                        <p data-i18n="sections.roadmap_q1_desc">Release estável com suporte a plugins de terceiros e API documentada.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-label">Q2 2026 <span class="update-badge">Atualizado hoje</span></span>
+                    <div class="t-content">
+                        <h4 data-i18n="sections.roadmap_q2">STZ Gym Cloud Sync</h4>
+                        <p data-i18n="sections.roadmap_q2_desc">Sincronização opcional criptografada ponta-a-ponta para backup de dados.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-label">Q3 2026</span>
+                    <div class="t-content">
+                        <h4 data-i18n="sections.roadmap_q3">Integração Utils + Suite</h4>
+                        <p data-i18n="sections.roadmap_q3_desc">Módulos do Utils nativos dentro do launcher Suite para acesso rápido.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-label">Q4 2026</span>
+                    <div class="t-content">
+                        <h4 data-i18n="sections.roadmap_q4">STZ OS Concept</h4>
+                        <p data-i18n="sections.roadmap_q4_desc">Protótipo de ambiente desktop completo baseado em web technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container cta-box">
+            <h2 data-i18n="cta.title">Entre no laboratório.</h2>
+            <p data-i18n="cta.subtitle">Junte-se a desenvolvedores e entusiastas de produtividade construindo o futuro.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Obrigado pelo interesse! (Demo)');">
+                <input type="email" placeholder="seu@email.com" class="input-dark" aria-label="Email" required data-i18n="cta.placeholder">
+                <button type="submit" class="btn btn-primary" data-i18n="cta.btn">Entrar na comunidade</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span style="font-weight: 700; color: #fff;">STZ LABS</span>
+                <span style="margin: 0 10px;">|</span>
+                <span class="build-info">Build v0.1.4-alpha</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">Twitter</a>
+                <a href="#">GitHub</a>
+                <a href="#">Discord</a>
+                <a href="#">Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Lift effect on cards via JS for more complex interactions if needed later
+        // Currently handled by CSS for performance.
+
+        console.log('STZ LABS System Online.');
+    </script>
+</body>
+</html>

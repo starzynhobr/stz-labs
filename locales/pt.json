@@ -1,0 +1,129 @@
+{
+    "nav": {
+        "products": "Projetos",
+        "roadmap": "Roadmap",
+        "docs": "Docs",
+        "community": "Comunidade",
+        "back": "Voltar"
+    },
+    "sections": {
+        "projects_title": "/// Projetos",
+        "projects_subtitle": "Ferramentas focadas em produtividade e utilidade.",
+        "roadmap_title": "/// Roadmap",
+        "roadmap_subtitle": "Nossa visão de futuro.",
+        "roadmap_q1": "Lançamento STZ Suite 1.0",
+        "roadmap_q1_desc": "Release estável com suporte a plugins de terceiros e API documentada.",
+        "roadmap_q2": "STZ Gym Cloud Sync",
+        "roadmap_q2_desc": "Sincronização opcional criptografada ponta-a-ponta para backup de dados.",
+        "roadmap_q3": "Integração Utils + Suite",
+        "roadmap_q3_desc": "Módulos do Utils nativos dentro do launcher Suite para acesso rápido.",
+        "roadmap_q4": "STZ OS Concept",
+        "roadmap_q4_desc": "Protótipo de ambiente desktop completo baseado em web technologies.",
+        "features_title": "Funcionalidades Principais",
+        "specs_title": "Especificações Técnicas"
+    },
+    "cards": {
+        "suite_desc": "Ecossistema modular de ferramentas desktop. Um launcher poderoso que unifica plugins, scripts e automação em uma interface unificada.",
+        "xml_desc": "Programa que facilita a tradução de arquivos XML de jogos. Edite strings de tradução com facilidade, segurança e agilidade.",
+        "lyrics_desc": "Skin minimalista para Rainmeter. Mostra a letra da música tocando em uma linha sobre a barra de tarefas. Always on Top.",
+        "csv_desc": "Ferramenta avançada para limpar, normalizar e converter listas de contatos CSV. Ideal para migração para Google Contacts.",
+        "btn_details": "Detalhes",
+        "btn_changelog": "Changelog",
+        "btn_download": "Download"
+    },
+    "benefits": {
+        "ultralight_title": "Ultraleve",
+        "ultralight_desc": "Código otimizado em baixo nível. Sem bloatware, sem rastreamento invasivo, apenas funcionalidade pura.",
+        "privacy_title": "Privacidade First",
+        "privacy_desc": "Seus dados ficam no seu dispositivo. Nossos apps funcionam 100% offline por design padrão.",
+        "design_title": "Design System",
+        "design_desc": "Interface consistente e previsível em todos os produtos, reduzindo a carga cognitiva."
+    },
+    "cta": {
+        "title": "Entre no laboratório.",
+        "subtitle": "Junte-se a desenvolvedores e entusiastas de produtividade construindo o futuro.",
+        "placeholder": "seu@email.com",
+        "btn": "Entrar na comunidade"
+    },
+    "game_xml": {
+        "title": "Game XML Translator",
+        "description": "A ferramenta definitiva para modders e times de localização. Automatize a tradução de arquivos de diálogo complexos mantendo a integridade estrutural do jogo.",
+        "btn_github": "Acessar GitHub",
+        "features": {
+            "ai_title": "Tradução via IA",
+            "ai_desc": "Integração nativa com a API Google Gemini para traduções contextuais de alta qualidade, superando tradutores automáticos convencionais.",
+            "integrity_title": "Integridade XML",
+            "integrity_desc": "O algoritmo de extração e injeção preserva meticulosamente a ordem dos nós, atributos e comentários. Seu jogo não vai quebrar.",
+            "glossary_title": "Glossário Inteligente",
+            "glossary_desc": "Mantenha a consistência de termos (nomes próprios, locais, itens) através de múltiplos arquivos com o gerenciador de glossário integrado.",
+            "ui_title": "Interface Moderna",
+            "ui_desc": "Desenvolvido com CustomTkinter para uma experiência visual agradável (Dark Mode) e fluxo de trabalho intuitivo.",
+            "progress_title": "Progresso em Tempo Real",
+            "progress_desc": "Acompanhe visualmente o status da tradução de cada arquivo e do projeto como um todo.",
+            "export_title": "Exportação Validada",
+            "export_desc": "Exportação em um clique com validação estrutural básica para garantir que o arquivo final esteja pronto para o jogo."
+        },
+        "specs": {
+            "version": "Versão Atual",
+            "platform": "Plataforma",
+            "language": "Linguagem",
+            "compilation": "Compilação",
+            "license": "Licença",
+            "requirements": "Requisitos"
+        }
+    },
+    "lyrics": {
+        "title": "STZ Lyrics",
+        "description": "Transforme sua barra de tarefas com letras de músicas minimalistas e perfeitamente sincronizadas. Simples, leve e totalmente personalizável.",
+        "btn_github": "Acessar GitHub",
+        "features": {
+            "sync_title": "Sync Perfeito",
+            "sync_desc": "Utiliza a enorme base de dados do LRCLIB.net para buscar letras sincronizadas linha a linha para suas músicas favoritas.",
+            "design_title": "Design Minimalista",
+            "design_desc": "Uma única linha elegante que flutua sobre sua barra de tarefas, mostrando apenas o que importa no momento exato.",
+            "custom_title": "Customização Total",
+            "custom_desc": "Painel de configurações intuitivo para ajustar fontes, tamanhos, cores, sombras e dimensões da janela.",
+            "delay_title": "Ajuste de Delay",
+            "delay_desc": "O áudio está adiantado? Use o controle de offset integrado para ajustar a sincronia da letra em tempo real.",
+            "wnp_title": "WebNowPlaying",
+            "wnp_desc": "Suporte robusto para players modernos (Spotify, YouTube, SoundCloud) via extensão de navegador.",
+            "top_title": "Always on Top",
+            "top_desc": "Pode ser configurado para permanecer sempre visível, garantindo que você nunca perca um verso."
+        },
+        "specs": {
+            "version": "Versão Atual",
+            "req": "Requisito",
+            "plugin": "Plugin",
+            "api": "API",
+            "license": "Licença",
+            "dep": "Dependência"
+        }
+    },
+    "csv_converter": {
+        "title": "STZ CSV Converter",
+        "description": "Limpeza, normalização e conversão inteligente de listas de contatos. Prepare seus dados para o Google Contacts com precisão cirúrgica.",
+        "btn_github": "Acessar GitHub",
+        "features": {
+            "clean_title": "Limpeza Profunda",
+            "clean_desc": "Remove caracteres inválidos, formata números de telefone (DDI) e padroniza nomes automaticamente.",
+            "dedup_title": "Deduplicação Inteligente",
+            "dedup_desc": "Detecta e funde contatos duplicados baseando-se em números de telefone, evitando bagunça na sua agenda.",
+            "mapping_title": "Mapeamento Flexível",
+            "mapping_desc": "Interface visual para mapear colunas do seu CSV original para os campos esperados (Nome, Telefone, Tags).",
+            "report_title": "Relatórios Detalhados",
+            "report_desc": "Gera um relatório JSON completo com estatísticas, avisos e lista de contatos suspeitos após cada processamento.",
+            "ui_title": "Interface PySide6 + QML",
+            "ui_desc": "Experiência de usuário fluida e responsiva, com processamento em background para não travar a interface.",
+            "google_title": "Google Ready",
+            "google_desc": "Focado em gerar arquivos perfeitamente formatados para importação direta no Google Contacts."
+        },
+        "specs": {
+            "version": "Versão Atual",
+            "framework": "Framework",
+            "language": "Linguagem",
+            "ui": "Interface",
+            "license": "Licença",
+            "input": "Input"
+        }
+    }
+}

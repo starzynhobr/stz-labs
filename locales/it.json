@@ -1,0 +1,101 @@
+{
+    "nav": {
+        "products": "Progetti",
+        "roadmap": "Roadmap",
+        "docs": "Docs",
+        "community": "Comunità",
+        "back": "Indietro"
+    },
+    "sections": {
+        "projects_title": "/// Progetti",
+        "projects_subtitle": "Strumenti focalizzati su produttività e utilità.",
+        "roadmap_title": "/// Roadmap",
+        "roadmap_subtitle": "La nostra visione del futuro.",
+        "roadmap_q1": "Lancio STZ Suite 1.0",
+        "roadmap_q1_desc": "Versione stabile con supporto plugin di terze parti e API documentata.",
+        "roadmap_q2": "STZ Gym Cloud Sync",
+        "roadmap_q2_desc": "Sincronizzazione opzionale crittografata end-to-end per il backup dei dati.",
+        "roadmap_q3": "Integrazione Utils + Suite",
+        "roadmap_q3_desc": "Moduli Utils nativi nel launcher Suite per un accesso rapido.",
+        "roadmap_q4": "STZ OS Concept",
+        "roadmap_q4_desc": "Prototipo di ambiente desktop completo basato su tecnologie web.",
+        "features_title": "Caratteristiche Principali",
+        "specs_title": "Specifiche Tecniche"
+    },
+    "cards": {
+        "suite_desc": "Ecosistema modulare di strumenti desktop. Un launcher potente che unifica plugin, script e automazione in un'unica interfaccia.",
+        "xml_desc": "Programma che facilita la traduzione di file XML di gioco. Modifica le stringhe di traduzione con facilità, sicurezza e velocità.",
+        "lyrics_desc": "Skin minimalista per Rainmeter. Mostra il testo della canzone in riproduzione in una riga sopra la barra delle applicazioni. Sempre in primo piano.",
+        "btn_details": "Dettagli",
+        "btn_changelog": "Changelog",
+        "btn_download": "Scarica"
+    },
+    "benefits": {
+        "ultralight_title": "Ultraleggero",
+        "ultralight_desc": "Codice ottimizzato a basso livello. Niente bloatware, niente tracciamento invasivo, solo pura funzionalità.",
+        "privacy_title": "Privacy First",
+        "privacy_desc": "I tuoi dati rimangono sul tuo dispositivo. Le nostre app funzionano al 100% offline per design predefinito.",
+        "design_title": "Design System",
+        "design_desc": "Interfaccia coerente e prevedibile in tutti i prodotti, riducendo il carico cognitivo."
+    },
+    "cta": {
+        "title": "Entra nel laboratorio.",
+        "subtitle": "Unisciti a sviluppatori e appassionati di produttività che costruiscono il futuro.",
+        "placeholder": "tua@email.com",
+        "btn": "Unisciti alla Comunità"
+    },
+    "game_xml": {
+        "title": "Game XML Translator",
+        "description": "Lo strumento definitivo per modder e team di localizzazione. Automatizza la traduzione di file di dialogo complessi mantenendo l'integrità strutturale del gioco.",
+        "btn_github": "Vedi su GitHub",
+        "features": {
+            "ai_title": "Traduzione IA",
+            "ai_desc": "Integrazione nativa con l'API Google Gemini per traduzioni contestuali di alta qualità, superando i traduttori automatici convenzionali.",
+            "integrity_title": "Integrità XML",
+            "integrity_desc": "L'algoritmo di estrazione e iniezione preserva meticolosamente l'ordine dei nodi, attributi e commenti. Il tuo gioco non andrà in crash.",
+            "glossary_title": "Glossario Intelligente",
+            "glossary_desc": "Mantieni la coerenza dei termini (nomi propri, luoghi, oggetti) attraverso più file con il gestore di glossario integrato.",
+            "ui_title": "Interfaccia Moderna",
+            "ui_desc": "Costruito con CustomTkinter per un'esperienza visiva piacevole (Dark Mode) e un flusso di lavoro intuitivo.",
+            "progress_title": "Progresso in Tempo Reale",
+            "progress_desc": "Traccia visivamente lo stato della traduzione di ogni file e del progetto nel suo insieme.",
+            "export_title": "Esportazione Validata",
+            "export_desc": "Esportazione in un clic con validazione strutturale di base per garantire che il file finale sia pronto per il gioco."
+        },
+        "specs": {
+            "version": "Versione Attuale",
+            "platform": "Piattaforma",
+            "language": "Linguaggio",
+            "compilation": "Compilazione",
+            "license": "Licenza",
+            "requirements": "Requisiti"
+        }
+    },
+    "lyrics": {
+        "title": "STZ Lyrics",
+        "description": "Trasforma la tua barra delle applicazioni con testi delle canzoni minimalisti e perfettamente sincronizzati. Semplice, leggero e completamente personalizzabile.",
+        "btn_github": "Vedi su GitHub",
+        "features": {
+            "sync_title": "Sync Perfetto",
+            "sync_desc": "Utilizza l'enorme database LRCLIB.net per recuperare testi sincronizzati riga per riga per le tue canzoni preferite.",
+            "design_title": "Design Minimalista",
+            "design_desc": "Una linea elegante che fluttua sopra la tua barra delle applicazioni, mostrando solo ciò che conta nel momento esatto.",
+            "custom_title": "Personalizzazione Totale",
+            "custom_desc": "Pannello delle impostazioni intuitivo per regolare caratteri, dimensioni, colori, ombre e dimensioni della finestra.",
+            "delay_title": "Regolazione Ritardo",
+            "delay_desc": "L'audio è in anticipo? Usa il controllo di offset integrato per regolare la sincronizzazione del testo in tempo reale.",
+            "wnp_title": "WebNowPlaying",
+            "wnp_desc": "Supporto robusto per player moderni (Spotify, YouTube, SoundCloud) tramite estensione browser.",
+            "top_title": "Sempre in Primo Piano",
+            "top_desc": "Può essere configurato per rimanere sempre visibile, assicurando di non perdere mai un verso."
+        },
+        "specs": {
+            "version": "Versione Attuale",
+            "req": "Requisito",
+            "plugin": "Plugin",
+            "api": "API",
+            "license": "Licenza",
+            "dep": "Dipendenza"
+        }
+    }
+}
