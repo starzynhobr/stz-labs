@@ -54,32 +54,14 @@
                 <!-- Card 1 -->
                 <article class="card">
                     <div class="card-header">
-                        <h3 class="card-title">STZ Suite</h3>
-                        <span class="badge stable">Stable</span>
-                    </div>
-                    <p class="card-desc" data-i18n="cards.suite_desc">Ecossistema modular de ferramentas desktop. Um launcher poderoso que unifica plugins, scripts e automação em uma interface unificada.</p>
-                    <div class="tags">
-                        <span class="tag">Windows</span>
-                        <span class="tag">Plugins</span>
-                        <span class="tag">Offline</span>
-                    </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
-                        <a href="#" class="btn btn-secondary btn-sm" data-i18n="cards.btn_changelog">Changelog</a>
-                    </div>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="card">
-                    <div class="card-header">
                         <h3 class="card-title">Game XML Translator</h3>
-                        <span class="badge stable">v1.2</span>
+                        <span class="badge stable" data-i18n="common.badges.v1_2">v1.2</span>
                     </div>
                     <p class="card-desc" data-i18n="cards.xml_desc">Programa que facilita a tradução de arquivos XML de jogos. Edite strings de tradução com facilidade, segurança e agilidade.</p>
                     <div class="tags">
-                        <span class="tag">Windows</span>
-                        <span class="tag">Translation</span>
-                        <span class="tag">Tools</span>
+                        <span class="tag" data-i18n="common.tags.windows">Windows</span>
+                        <span class="tag" data-i18n="common.tags.translation">Tradução</span>
+                        <span class="tag" data-i18n="common.tags.tools">Ferramentas</span>
                     </div>
                     <div class="card-actions">
                         <a href="game-xml-translator.html" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
@@ -87,17 +69,17 @@
                     </div>
                 </article>
 
-                <!-- Card 3 -->
+                <!-- Card 2 -->
                 <article class="card">
                     <div class="card-header">
                         <h3 class="card-title">STZ Lyrics</h3>
-                        <span class="badge stable">v1.0</span>
+                        <span class="badge stable" data-i18n="common.badges.v1_0">v1.0</span>
                     </div>
                     <p class="card-desc" data-i18n="cards.lyrics_desc">Skin minimalista para Rainmeter. Mostra a letra da música tocando em uma linha sobre a barra de tarefas. Always on Top.</p>
                     <div class="tags">
-                        <span class="tag">Rainmeter</span>
-                        <span class="tag">Skin</span>
-                        <span class="tag">Music</span>
+                        <span class="tag" data-i18n="common.tags.rainmeter">Rainmeter</span>
+                        <span class="tag" data-i18n="common.tags.skin">Skin</span>
+                        <span class="tag" data-i18n="common.tags.music">Música</span>
                     </div>
                     <div class="card-actions">
                         <a href="stz-lyrics.html" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
@@ -105,21 +87,39 @@
                     </div>
                 </article>
 
-                <!-- Card 4 -->
+                <!-- Card 3 -->
                 <article class="card">
                     <div class="card-header">
                         <h3 class="card-title">STZ CSV Converter</h3>
-                        <span class="badge stable">v1.0</span>
+                        <span class="badge stable" data-i18n="common.badges.v1_0">v1.0</span>
                     </div>
                     <p class="card-desc" data-i18n="cards.csv_desc">Ferramenta avançada para limpar, normalizar e converter listas de contatos CSV. Ideal para migração para Google Contacts.</p>
                     <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Qt/QML</span>
-                        <span class="tag">Tools</span>
+                        <span class="tag" data-i18n="common.tags.python">Python</span>
+                        <span class="tag" data-i18n="common.tags.qt_qml">Qt/QML</span>
+                        <span class="tag" data-i18n="common.tags.tools">Ferramentas</span>
                     </div>
                     <div class="card-actions">
                         <a href="stz-csv-converter.html" class="btn btn-primary btn-sm" data-i18n="cards.btn_details">Detalhes</a>
                         <a href="https://github.com/starzynhobr/stz-csv-converter" class="btn btn-secondary btn-sm" data-i18n="cards.btn_download">Download</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 (Suite - Coming Soon) -->
+                <article class="card" style="opacity: 0.8;">
+                    <div class="card-header">
+                        <h3 class="card-title">STZ Suite</h3>
+                        <span class="badge beta" data-i18n="common.badges.soon">Em Breve</span>
+                    </div>
+                    <p class="card-desc" data-i18n="cards.suite_desc">Ecossistema modular de ferramentas desktop. Um launcher poderoso que unifica plugins, scripts e automação em uma interface unificada.</p>
+                    <div class="tags">
+                        <span class="tag" data-i18n="common.tags.windows">Windows</span>
+                        <span class="tag" data-i18n="common.tags.plugins">Plugins</span>
+                        <span class="tag" data-i18n="common.tags.offline">Offline</span>
+                    </div>
+                    <div class="card-actions">
+                        <span class="btn btn-primary btn-sm" style="pointer-events: none; opacity: 0.5; filter: grayscale(1);" data-i18n="cards.btn_soon">Em Breve</span>
+                        <span class="btn btn-secondary btn-sm" style="pointer-events: none; opacity: 0.3;" data-i18n="cards.btn_changelog">Changelog</span>
                     </div>
                 </article>
             </div>
@@ -165,14 +165,14 @@
 
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="time-label">Q4 2025 <span class="update-badge">Completado</span></span>
+                    <span class="time-label">Q4 2025 <span class="update-badge" data-i18n="common.badges.stable">Completado</span></span>
                     <div class="t-content">
                         <h4 data-i18n="sections.roadmap_q1">Ferramentas Core</h4>
                         <p data-i18n="sections.roadmap_q1_desc">Desenvolvimento e lançamento das bases: XML Translator, CSV Converter e Lyrics.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <span class="time-label">Q1 2026 <span class="update-badge">Atual</span></span>
+                    <span class="time-label">Q1 2026 <span class="update-badge" data-i18n="common.badges.beta">Atual</span></span>
                     <div class="t-content">
                         <h4 data-i18n="sections.roadmap_q2">Portal & Internacionalização</h4>
                         <p data-i18n="sections.roadmap_q2_desc">Lançamento do STZ LABS, suporte multi-idioma e temas.</p>

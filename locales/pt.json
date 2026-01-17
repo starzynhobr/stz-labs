@@ -6,6 +6,28 @@
         "community": "Comunidade",
         "back": "Voltar"
     },
+    "common": {
+        "tags": {
+            "windows": "Windows",
+            "plugins": "Plugins",
+            "offline": "Offline",
+            "translation": "Tradução",
+            "tools": "Ferramentas",
+            "rainmeter": "Rainmeter",
+            "skin": "Skin",
+            "music": "Música",
+            "python": "Python",
+            "qt_qml": "Qt/QML"
+        },
+        "badges": {
+            "stable": "Estável",
+            "beta": "Beta",
+            "alpha": "Alfa",
+            "v1_2": "v1.2",
+            "v1_0": "v1.0",
+            "soon": "Em Breve"
+        }
+    },
     "sections": {
         "projects_title": "/// Projetos",
         "projects_subtitle": "Ferramentas focadas em produtividade e utilidade.",
@@ -29,7 +51,8 @@
         "csv_desc": "Ferramenta avançada para limpar, normalizar e converter listas de contatos CSV. Ideal para migração para Google Contacts.",
         "btn_details": "Detalhes",
         "btn_changelog": "Changelog",
-        "btn_download": "Download"
+        "btn_download": "Download",
+        "btn_soon": "Em Breve"
     },
     "benefits": {
         "efficiency_title": "Foco e Eficiência",

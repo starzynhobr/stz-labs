@@ -1,24 +1,46 @@
 {
     "nav": {
         "products": "Projekte",
-        "roadmap": "Roadmap",
-        "docs": "Doku",
+        "philosophy": "Philosophie",
+        "status": "Status",
         "community": "Community",
         "back": "Zurück"
+    },
+    "common": {
+        "tags": {
+            "windows": "Windows",
+            "plugins": "Plugins",
+            "offline": "Offline",
+            "translation": "Übersetzung",
+            "tools": "Tools",
+            "rainmeter": "Rainmeter",
+            "skin": "Skin",
+            "music": "Musik",
+            "python": "Python",
+            "qt_qml": "Qt/QML"
+        },
+        "badges": {
+            "stable": "Stabil",
+            "beta": "Beta",
+            "alpha": "Alpha",
+            "v1_2": "v1.2",
+            "v1_0": "v1.0",
+            "soon": "Bald"
+        }
     },
     "sections": {
         "projects_title": "/// Projekte",
         "projects_subtitle": "Tools mit Fokus auf Produktivität und Nutzen.",
-        "roadmap_title": "/// Roadmap",
-        "roadmap_subtitle": "Unsere Vision für die Zukunft.",
-        "roadmap_q1": "Start STZ Suite 1.0",
-        "roadmap_q1_desc": "Stabile Version mit Unterstützung für Drittanbieter-Plugins und dokumentierter API.",
-        "roadmap_q2": "STZ Gym Cloud Sync",
-        "roadmap_q2_desc": "Optionale Ende-zu-Ende-verschlüsselte Synchronisation für Datensicherung.",
-        "roadmap_q3": "Integration Utils + Suite",
-        "roadmap_q3_desc": "Native Utils-Module im Suite-Launcher für schnellen Zugriff.",
-        "roadmap_q4": "STZ OS Concept",
-        "roadmap_q4_desc": "Prototyp einer vollständigen Desktop-Umgebung basierend auf Webtechnologien.",
+        "roadmap_title": "/// Status",
+        "roadmap_subtitle": "Entwicklung des STZ-Ökosystems.",
+        "roadmap_q1": "Kern-Tools",
+        "roadmap_q1_desc": "Entwicklung und Start der Grundlagen: XML Translator, CSV Converter und Lyrics.",
+        "roadmap_q2": "Portal & Internationalisierung",
+        "roadmap_q2_desc": "Start von STZ LABS, Mehrsprachenunterstützung und Themes.",
+        "roadmap_q3": "STZ Suite (Launcher)",
+        "roadmap_q3_desc": "Vereinheitlichung der Tools in einem einzigen zentralen Dashboard.",
+        "roadmap_q4": "Erweiterung der Utilities",
+        "roadmap_q4_desc": "Neue Module mit Fokus auf Workflow-Automatisierung.",
         "features_title": "Hauptfunktionen",
         "specs_title": "Technische Daten"
     },
@@ -26,11 +48,19 @@
         "suite_desc": "Modulares Desktop-Tool-Ökosystem. Ein leistungsstarker Launcher, der Plugins, Skripte und Automatisierung in einer Oberfläche vereint.",
         "xml_desc": "Programm zur einfachen Übersetzung von Spiel-XML-Dateien. Bearbeiten Sie Übersetzungsstrings einfach, sicher und schnell.",
         "lyrics_desc": "Minimalistischer Rainmeter-Skin. Zeigt den aktuellen Songtext in einer Zeile über der Taskleiste an. Immer im Vordergrund.",
+        "csv_desc": "Fortschrittliches Tool zum Bereinigen, Normalisieren und Konvertieren von CSV-Kontaktlisten. Ideal für die Migration zu Google Contacts.",
         "btn_details": "Details",
         "btn_changelog": "Changelog",
-        "btn_download": "Herunterladen"
+        "btn_download": "Herunterladen",
+        "btn_soon": "Bald"
     },
     "benefits": {
+        "efficiency_title": "Fokus & Effizienz",
+        "efficiency_desc": "Tools, die auf den Punkt kommen. Keine aufgeblähten Oberflächen, nur das Nötigste zur Problemlösung.",
+        "local_title": "Lokale Verarbeitung",
+        "local_desc": "Echte Privatsphäre. Ihre Dateien (XMLs, CSVs) werden auf Ihrem Gerät verarbeitet, ohne versteckte Uploads.",
+        "opensource_title": "Open Source",
+        "opensource_desc": "Totale Transparenz. Überprüfbarer Code auf GitHub verfügbar für Community-Beiträge.",
         "ultralight_title": "Ultraleicht",
         "ultralight_desc": "Low-Level-optimierter Code. Keine Bloatware, kein invasives Tracking, nur reine Funktionalität.",
         "privacy_title": "Privatsphäre First",
@@ -39,10 +69,23 @@
         "design_desc": "Konsistente und vorhersehbare Oberfläche in allen Produkten, reduziert die kognitive Belastung."
     },
     "cta": {
-        "title": "Betreten Sie das Labor.",
-        "subtitle": "Schließen Sie sich Entwicklern und Produktivitäts-Enthusiasten an, die die Zukunft bauen.",
+        "title": "Treten Sie dem Gespräch bei.",
+        "subtitle": "Fragen, Vorschläge oder einfach nur über Dev und Produktivität plaudern? Unser Discord ist offen.",
         "placeholder": "deine@email.com",
-        "btn": "Community beitreten"
+        "btn": "Discord beitreten"
+    },
+    "footer": {
+        "privacy": "Datenschutz"
+    },
+    "privacy": {
+        "title": "Datenschutzrichtlinie",
+        "subtitle": "Volle Transparenz über die Funktionsweise unserer Software.",
+        "local_title": "Lokale Verarbeitung",
+        "local_desc": "Alle von STZ LABS entwickelten Softwareprodukte werden entwickelt, um Daten lokal auf Ihrem Rechner zu verarbeiten.",
+        "api_title": "Drittanbieter-APIs",
+        "api_desc": "Einige Tools verwenden externe Dienste (z.B. Google Gemini, LRCLIB).",
+        "contact_title": "Kontakt",
+        "contact_desc": "Bei Fragen zur Sicherheit oder zum Quellcode können Sie unsere Repositories auf GitHub prüfen oder uns über Discord kontaktieren."
     },
     "game_xml": {
         "title": "Game XML Translator",
@@ -96,6 +139,33 @@
             "api": "API",
             "license": "Lizenz",
             "dep": "Abhängigkeit"
+        }
+    },
+    "csv_converter": {
+        "title": "STZ CSV Converter",
+        "description": "Intelligente Bereinigung, Normalisierung und Konvertierung von Kontaktlisten. Bereiten Sie Ihre Daten chirurgisch präzise für Google Contacts vor.",
+        "btn_github": "Auf GitHub ansehen",
+        "features": {
+            "clean_title": "Tiefenreinigung",
+            "clean_desc": "Entfernt ungültige Zeichen, formatiert Telefonnummern (DDI) und standardisiert Namen automatisch.",
+            "dedup_title": "Smarte Deduplizierung",
+            "dedup_desc": "Erkennt und führt doppelte Kontakte basierend auf Telefonnummern zusammen.",
+            "mapping_title": "Flexibles Mapping",
+            "mapping_desc": "Visuelle Oberfläche zum Zuordnen von Spalten aus Ihrer ursprünglichen CSV.",
+            "report_title": "Detaillierte Berichte",
+            "report_desc": "Generiert einen vollständigen JSON-Bericht mit Statistiken und Warnungen nach jeder Verarbeitung.",
+            "ui_title": "PySide6 + QML UI",
+            "ui_desc": "Flüssige und reaktionsschnelle Benutzererfahrung mit Hintergrundverarbeitung.",
+            "google_title": "Google Ready",
+            "google_desc": "Fokussiert auf die Generierung perfekt formatierter Dateien für den direkten Import in Google Contacts."
+        },
+        "specs": {
+            "version": "Aktuelle Version",
+            "framework": "Framework",
+            "language": "Sprache",
+            "ui": "Interface",
+            "license": "Lizenz",
+            "input": "Input"
         }
     }
 }
