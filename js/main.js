@@ -2,16 +2,66 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initLocalization();
     initMobileMenu();
-    initVersions();
+    initGitHubData();
+    initSTZCode();
 });
 
-/* --- GITHUB VERSIONS --- */
-async function initVersions() {
-    const badges = document.querySelectorAll('[data-gh-repo]');
+/* --- STZ HACKER MODE (Konami Code) --- */
+function initSTZCode() {
+    const konamiCode = [
+        'ArrowUp', 'ArrowUp', 
+        'ArrowDown', 'ArrowDown', 
+        'ArrowLeft', 'ArrowRight', 
+        'ArrowLeft', 'ArrowRight', 
+        'KeyB', 'KeyA'
+    ];
+    let cursor = 0;
+
+    document.addEventListener('keydown', (e) => {
+        // Reset se a tecla não for a esperada
+        if (e.code !== konamiCode[cursor]) {
+            cursor = 0;
+            // Permite reiniciar imediatamente se a tecla for a primeira da sequência (Up)
+            if (e.code === konamiCode[0]) cursor = 1;
+            return;
+        }
+
+        cursor++;
+
+        // Sequência completa
+        if (cursor === konamiCode.length) {
+            toggleHackerMode();
+            cursor = 0;
+        }
+    });
+}
+
+function toggleHackerMode() {
+    const html = document.documentElement;
+    const isEmber = html.getAttribute('data-theme') === 'ember';
     
-    badges.forEach(async (badge) => {
+    if (isEmber) {
+        // Volta para o tema salvo ou dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        alert('STZ LABS: SYSTEM NORMALIZED.');
+    } else {
+        // Ativa o modo Hacker
+        html.setAttribute('data-theme', 'ember');
+        alert('STZ LABS: ACCESS GRANTED \n\n/// EMBER PROTOCOL INITIATED');
+        
+        // Efeito sonoro opcional (comentado por padrão)
+        // new Audio('assets/access_granted.mp3').play().catch(() => {});
+    }
+}
+
+/* --- GITHUB DATA (Versions & Stars) --- */
+async function initGitHubData() {
+    // 1. Versions (Releases)
+    const versionBadges = document.querySelectorAll('[data-gh-repo]');
+    versionBadges.forEach(async (badge) => {
         const repo = badge.getAttribute('data-gh-repo');
-        const cached = getCachedVersion(repo);
+        const cached = getCachedData(`version_${repo}`);
 
         if (cached) {
             badge.textContent = cached;
@@ -22,36 +72,67 @@ async function initVersions() {
                     const data = await response.json();
                     const version = data.tag_name;
                     badge.textContent = version;
-                    setCachedVersion(repo, version);
+                    setCachedData(`version_${repo}`, version);
                 }
             } catch (error) {
                 console.warn(`Failed to fetch version for ${repo}`, error);
             }
         }
     });
+
+    // 2. Stars (Repository Info)
+    const starBadges = document.querySelectorAll('[data-gh-stars]');
+    starBadges.forEach(async (badge) => {
+        const repo = badge.getAttribute('data-gh-stars');
+        const countSpan = badge.querySelector('.count');
+        
+        // Se não tiver o span .count, ignora (segurança)
+        if (!countSpan) return;
+
+        const cached = getCachedData(`stars_${repo}`);
+
+        if (cached !== null) { // !== null pois 0 é um valor válido
+            countSpan.textContent = cached;
+            badge.style.display = 'inline-flex';
+        } else {
+            try {
+                const response = await fetch(`https://api.github.com/repos/${repo}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    const stars = data.stargazers_count;
+                    countSpan.textContent = stars;
+                    badge.style.display = 'inline-flex';
+                    setCachedData(`stars_${repo}`, stars);
+                }
+            } catch (error) {
+                console.warn(`Failed to fetch stars for ${repo}`, error);
+            }
+        }
+    });
 }
 
-function getCachedVersion(repo) {
-    const data = localStorage.getItem(`version_${repo}`);
+// Generic Cache Helper
+function getCachedData(key) {
+    const data = localStorage.getItem(key);
     if (!data) return null;
     
-    const { version, timestamp } = JSON.parse(data);
+    const { value, timestamp } = JSON.parse(data);
     const ONE_HOUR = 3600 * 1000;
     
     if (Date.now() - timestamp > ONE_HOUR) {
-        localStorage.removeItem(`version_${repo}`);
+        localStorage.removeItem(key);
         return null;
     }
     
-    return version;
+    return value;
 }
 
-function setCachedVersion(repo, version) {
+function setCachedData(key, value) {
     const data = {
-        version: version,
+        value: value,
         timestamp: Date.now()
     };
-    localStorage.setItem(`version_${repo}`, JSON.stringify(data));
+    localStorage.setItem(key, JSON.stringify(data));
 }
 
 /* --- MOBILE MENU --- */

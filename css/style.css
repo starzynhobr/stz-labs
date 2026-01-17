@@ -51,6 +51,50 @@
     --noise-opacity: 0.015;
 }
 
+/* --- HACKER THEME (STZ Ember Premium) --- */
+[data-theme="ember"] {
+    color-scheme: dark;
+    --bg-color: #0B0D10; /* Quase preto azulado */
+    --surface-color: #10141A;
+    --surface-glass: rgba(16, 20, 26, 0.9); /* Dark suave fosco */
+    
+    --text-main: rgba(255, 255, 255, 0.92);
+    --text-muted: rgba(255, 255, 255, 0.68);
+    
+    /* Laranja Assinatura (Premium Quente) */
+    --accent-color: #FF5A1F;
+    --accent-glow: rgba(255, 90, 31, 0.25);
+    
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 90, 31, 0.5);
+    
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-text: #fff;
+    
+    --noise-opacity: 0.04;
+}
+
+/* Overrides for Ember Theme */
+[data-theme="ember"] .btn-primary {
+    background: var(--accent-color);
+    color: #050505; /* Texto preto para contraste no laranja */
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+[data-theme="ember"] .btn-primary:hover {
+    background: #ff7b47; /* Laranja um pouco mais claro no hover */
+    box-shadow: 0 0 25px rgba(255, 90, 31, 0.5);
+}
+[data-theme="ember"] .badge {
+    background: rgba(255, 90, 31, 0.15) !important;
+    color: var(--accent-color) !important;
+    border: 1px solid rgba(255, 90, 31, 0.2);
+}
+[data-theme="ember"] .navbar {
+    background: rgba(11, 13, 16, 0.9);
+    border-bottom-color: rgba(255, 90, 31, 0.15);
+}
+
 /* Reset & Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
