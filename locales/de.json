@@ -25,8 +25,6 @@
             "stable": "Stabil",
             "beta": "Beta",
             "alpha": "Alpha",
-            "v1_2": "v1.0.0",
-            "v1_0": "v1.0.0",
             "soon": "Bald"
         }
     },
@@ -87,6 +85,8 @@
         "local_desc": "Alle von STZ LABS entwickelten Softwareprodukte werden entwickelt, um Daten lokal auf Ihrem Rechner zu verarbeiten.",
         "api_title": "Drittanbieter-APIs",
         "api_desc": "Einige Tools verwenden externe Dienste (z.B. Google Gemini, LRCLIB).",
+        "api_list_gemini": "<strong>Google Gemini API:</strong> Im Game XML Translator wird der Text direkt von Ihrem Computer an die Google-Server gesendet, wenn Sie die automatische Übersetzung nutzen. Ihre API-Taste wird nur lokal gespeichert.",
+        "api_list_lrclib": "<strong>LRCLIB:</strong> STZ Lyrics fragt die öffentliche LRCLIB-Datenbank ab, um Songtexte anzuzeigen.",
         "contact_title": "Kontakt",
         "contact_desc": "Bei Fragen zur Sicherheit oder zum Quellcode können Sie unsere Repositories auf GitHub prüfen oder uns über Discord kontaktieren."
     },
@@ -102,7 +102,7 @@
             "glossary_title": "Smart Glossar",
             "glossary_desc": "Wahren Sie Term-Konsistenz (Eigennamen, Orte, Gegenstände) über mehrere Dateien hinweg mit dem integrierten Glossar-Manager.",
             "ui_title": "Moderne Oberfläche",
-            "ui_desc": "Gebaut mit CustomTkinter für ein angenehmes visuelles Erlebnis (Dark Mode) und intuitiven Workflow.",
+            "ui_desc": "Gebaut mit CustomTkinter für ein angenehmen visuelles Erlebnis (Dark Mode) und intuitiven Workflow.",
             "progress_title": "Echtzeit-Fortschritt",
             "progress_desc": "Verfolgen Sie visuell den Übersetzungsstatus jeder Datei und des gesamten Projekts.",
             "export_title": "Validierter Export",
@@ -174,7 +174,7 @@
     "taskpulse": {
         "title": "STZ TaskPulse",
         "description": "The pulse of your hardware on your desktop. Real-time monitoring of vital resources with minimalist cyberpunk aesthetics.",
-        "btn_github": "View on GitHub",
+        "btn_github": "Auf GitHub ansehen",
         "features": {
             "monitor_title": "Vital Monitoring",
             "monitor_desc": "Track CPU usage, GPU (via HWiNFO), RAM memory, and network traffic (Download/Upload) instantly.",
@@ -190,10 +190,10 @@
             "custom_desc": "Structured code and clear variables allow you to easily adjust colors, sizes, and sensors."
         },
         "specs": {
-            "version": "Current Version",
-            "platform": "Platform",
-            "dependency": "Dependency",
-            "license": "License"
+            "version": "Aktuelle Version",
+            "platform": "Plattform",
+            "dependency": "Abhängigkeit",
+            "license": "Lizenz"
         }
     }
 }

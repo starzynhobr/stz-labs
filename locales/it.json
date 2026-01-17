@@ -25,8 +25,8 @@
             "stable": "Stabile",
             "beta": "Beta",
             "alpha": "Alpha",
-            "v1_2": "v1.0.0",
-            "v1_0": "v1.0.0",
+            "v1_2": "v1.2",
+            "v1_0": "v1.0",
             "soon": "Presto"
         }
     },
@@ -87,6 +87,8 @@
         "local_desc": "Tutti i software sviluppati da STZ LABS sono progettati per elaborare i dati localmente sulla tua macchina.",
         "api_title": "API di Terze Parti",
         "api_desc": "Alcuni strumenti utilizzano servizi esterni per funzionare (es. Google Gemini, LRCLIB).",
+        "api_list_gemini": "<strong>Google Gemini API:</strong> In Game XML Translator, se scegli di utilizzare la traduzione automatica, il testo viene inviato direttamente dal tuo computer ai server di Google. La tua chiave API è memorizzata solo localmente.",
+        "api_list_lrclib": "<strong>LRCLIB:</strong> STZ Lyrics interroga il database pubblico LRCLIB per visualizzare i testi.",
         "contact_title": "Contatto",
         "contact_desc": "Se hai domande sulla sicurezza o sul codice sorgente, puoi controllare i nostri repository su GitHub o contattarci tramite Discord."
     },

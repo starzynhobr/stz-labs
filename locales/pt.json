@@ -84,6 +84,8 @@
         "local_desc": "Todos os softwares desenvolvidos pelo STZ LABS (CSV Converter, XML Translator, Lyrics, Suite) são projetados para processar dados localmente na sua máquina. Não enviamos seus arquivos, contatos ou xmls para servidores proprietários.",
         "api_title": "APIs de Terceiros",
         "api_desc": "Algumas ferramentas utilizam serviços externos para funcionar:",
+        "api_list_gemini": "<strong>Google Gemini API:</strong> No Game XML Translator, se você optar por usar a tradução automática, o texto é enviado diretamente do seu computador para os servidores do Google. Sua API Key é armazenada apenas localmente.",
+        "api_list_lrclib": "<strong>LRCLIB:</strong> O STZ Lyrics consulta a base de dados pública do LRCLIB para exibir as letras.",
         "contact_title": "Contato",
         "contact_desc": "Se tiver dúvidas sobre segurança ou o código fonte, você pode auditar nossos repositórios no GitHub ou entrar em contato pelo Discord."
     },

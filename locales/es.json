@@ -87,6 +87,8 @@
         "local_desc": "Todo el software desarrollado por STZ LABS está diseñado para procesar datos localmente en su máquina.",
         "api_title": "APIs de Terceros",
         "api_desc": "Algunas herramientas utilizan servicios externos para funcionar (ej. Google Gemini, LRCLIB).",
+        "api_list_gemini": "<strong>Google Gemini API:</strong> En Game XML Translator, si eliges usar la traducción automática, el texto se envía directamente desde tu computadora a los servidores de Google. Tu clave API se almacena solo localmente.",
+        "api_list_lrclib": "<strong>LRCLIB:</strong> STZ Lyrics consulta la base de datos pública LRCLIB para mostrar las letras.",
         "contact_title": "Contacto",
         "contact_desc": "Si tiene preguntas sobre seguridad o código fuente, puede auditar nuestros repositorios en GitHub o contactarnos a través de Discord."
     },

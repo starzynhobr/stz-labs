@@ -25,8 +25,6 @@
             "stable": "Stable",
             "beta": "Beta",
             "alpha": "Alpha",
-            "v1_2": "v1.0.0",
-            "v1_0": "v1.0.0",
             "soon": "Coming Soon"
         }
     },
@@ -87,6 +85,8 @@
         "local_desc": "All software developed by STZ LABS (CSV Converter, XML Translator, Lyrics, Suite) is designed to process data locally on your machine. We do not send your files, contacts, or XMLs to proprietary servers.",
         "api_title": "Third-Party APIs",
         "api_desc": "Some tools use external services to function:",
+        "api_list_gemini": "<strong>Google Gemini API:</strong> In Game XML Translator, if you choose to use automatic translation, the text is sent directly from your computer to Google's servers. Your API Key is stored locally only.",
+        "api_list_lrclib": "<strong>LRCLIB:</strong> STZ Lyrics queries the public LRCLIB database to display lyrics.",
         "contact_title": "Contact",
         "contact_desc": "If you have questions about security or source code, you can audit our repositories on GitHub or contact us via Discord."
     },

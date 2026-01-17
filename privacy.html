@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacidade | STZ LABS</title>
+    <meta name="description" content="Política de privacidade e transparência sobre o uso de dados nos softwares STZ LABS.">
+    <meta property="og:title" content="Privacidade | STZ LABS">
+    <meta property="og:description" content="Política de privacidade e transparência sobre o uso de dados.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="public/og-image.png">
+    <meta property="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0a0a0a">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,7 +20,16 @@
             <a href="index.html" class="logo">STZ LABS</a>
             <div style="display: flex; align-items: center; gap: 15px;">
                 <a href="index.html" class="btn btn-secondary" style="padding: 8px 16px;" data-i18n="nav.back">Voltar</a>
+                
                 <div class="nav-controls">
+                    <select id="langSelect" class="lang-select" aria-label="Language">
+                        <option value="pt">PT</option>
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                        <option value="de">DE</option>
+                        <option value="it">IT</option>
+                        <option value="es">ES</option>
+                    </select>
                     <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">
                         <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                         <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -42,8 +57,8 @@
                 <h3 style="margin-bottom: 15px;" data-i18n="privacy.api_title">APIs de Terceiros</h3>
                 <p class="text-muted" data-i18n="privacy.api_desc">Algumas ferramentas utilizam serviços externos para funcionar:</p>
                 <ul style="list-style: disc; margin-left: 20px; color: var(--text-muted); margin-top: 10px;">
-                    <li style="margin-bottom: 8px;"><strong>Google Gemini API:</strong> No Game XML Translator, se você optar por usar a tradução automática, o texto é enviado diretamente do seu computador para os servidores do Google. Sua API Key é armazenada apenas localmente.</li>
-                    <li><strong>LRCLIB:</strong> O STZ Lyrics consulta a base de dados pública do LRCLIB para exibir as letras.</li>
+                    <li style="margin-bottom: 8px;" data-i18n="privacy.api_list_gemini"><strong>Google Gemini API:</strong> No Game XML Translator, se você optar por usar a tradução automática, o texto é enviado diretamente do seu computador para os servidores do Google. Sua API Key é armazenada apenas localmente.</li>
+                    <li data-i18n="privacy.api_list_lrclib"><strong>LRCLIB:</strong> O STZ Lyrics consulta a base de dados pública do LRCLIB para exibir as letras.</li>
                 </ul>
             </article>
 
