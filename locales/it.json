@@ -17,7 +17,9 @@
             "skin": "Skin",
             "music": "Musica",
             "python": "Python",
-            "qt_qml": "Qt/QML"
+            "qt_qml": "Qt/QML",
+            "hwinfo": "HWiNFO",
+            "monitor": "Monitor"
         },
         "badges": {
             "stable": "Stabile",
@@ -49,6 +51,7 @@
         "xml_desc": "Programma che facilita la traduzione di file XML di gioco. Modifica le stringhe di traduzione con facilità, sicurezza e velocità.",
         "lyrics_desc": "Skin minimalista per Rainmeter. Mostra il testo della canzone in riproduzione in una riga sopra la barra delle applicazioni. Sempre in primo piano.",
         "csv_desc": "Strumento avanzato per pulire, normalizzare e convertire elenchi di contatti CSV. Ideale per la migrazione a Google Contacts.",
+        "taskpulse_desc": "Monitor di sistema minimalista per Rainmeter. Tracciamento in tempo reale di CPU, GPU, RAM e rete con integrazione HWiNFO.",
         "btn_details": "Dettagli",
         "btn_changelog": "Changelog",
         "btn_download": "Scarica",
@@ -166,6 +169,31 @@
             "ui": "Interfaccia",
             "license": "Licenza",
             "input": "Input"
+        }
+    },
+    "taskpulse": {
+        "title": "STZ TaskPulse",
+        "description": "The pulse of your hardware on your desktop. Real-time monitoring of vital resources with minimalist cyberpunk aesthetics.",
+        "btn_github": "Vedi su GitHub",
+        "features": {
+            "monitor_title": "Vital Monitoring",
+            "monitor_desc": "Track CPU usage, GPU (via HWiNFO), RAM memory, and network traffic (Download/Upload) instantly.",
+            "design_title": "Clean Aesthetics",
+            "design_desc": "Clean look and modern typography that integrates perfectly into any setup, without visual pollution.",
+            "clock_title": "Digital Clock",
+            "clock_desc": "Date and time highlighted with easy-to-read font, eliminating the need for extra widgets.",
+            "hwinfo_title": "HWiNFO Integration",
+            "hwinfo_desc": "Precise reading of advanced hardware sensors via the HWiNFO plugin for Rainmeter.",
+            "lightweight_title": "Ultra Lightweight",
+            "lightweight_desc": "Negligible resource consumption. Your PC focuses on the game or work, not the monitoring.",
+            "custom_title": "Easy Editing",
+            "custom_desc": "Structured code and clear variables allow you to easily adjust colors, sizes, and sensors."
+        },
+        "specs": {
+            "version": "Versione Attuale",
+            "platform": "Piattaforma",
+            "dependency": "Dipendenza",
+            "license": "Licenza"
         }
     }
 }
