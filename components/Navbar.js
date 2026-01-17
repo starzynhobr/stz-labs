@@ -6,9 +6,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 
 const navLinks = [
-    { href: '#produtos', dataI18n: 'nav.products' },
-    { href: '#benefits', dataI18n: 'nav.philosophy' },
-    { href: '#roadmap', dataI18n: 'nav.status' },
+    { href: '/#produtos', dataI18n: 'nav.products', back: true },
 ];
 
 export default function Navbar() {
@@ -44,10 +42,15 @@ export default function Navbar() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="nav-link"
+                                    className={`nav-link${link.back ? ' nav-back-link' : ''}`}
                                     data-i18n={link.dataI18n}
                                     onClick={handleNavClick}
                                 >
+                                    {link.back && (
+                                        <span className="back-link-arrow" aria-hidden="true">
+                                            ←
+                                        </span>
+                                    )}
                                     {label}
                                 </Link>
                             </li>

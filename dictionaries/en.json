@@ -1,5 +1,6 @@
 {
     "nav": {
+        "home": "Home",
         "products": "Projects",
         "philosophy": "Philosophy",
         "status": "Status",
