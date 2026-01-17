@@ -416,6 +416,10 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.5px; }
     transition-timing-function: var(--theme-ease-detail);
     transition-delay: 0s;
 }
+.tag.stars {
+    color: var(--star-color);
+    border-color: var(--star-border);
+}
 
 .card-actions { display: flex; gap: 10px; margin-top: auto; }
 

@@ -22,6 +22,22 @@ export default function Navbar() {
         setMenuOpen(false);
     };
 
+    const handleProjectsClick = (event) => {
+        handleNavClick();
+        if (typeof window === 'undefined') return;
+        if (event?.defaultPrevented) return;
+        if (event?.currentTarget?.getAttribute('href') !== '/#produtos') return;
+
+        const { pathname, hash } = window.location;
+        if (pathname === '/' && hash === '#produtos') {
+            event.preventDefault();
+            const target = document.getElementById('produtos');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    };
+
     return (
         <nav className="navbar">
             <div className="container">
@@ -44,7 +60,7 @@ export default function Navbar() {
                                     href={link.href}
                                     className={`nav-link${link.back ? ' nav-back-link' : ''}`}
                                     data-i18n={link.dataI18n}
-                                    onClick={handleNavClick}
+                                    onClick={link.href === '/#produtos' ? handleProjectsClick : handleNavClick}
                                 >
                                     {link.back && (
                                         <span className="back-link-arrow" aria-hidden="true">

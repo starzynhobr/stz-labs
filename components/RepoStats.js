@@ -121,9 +121,7 @@ const RepoStats = ({
         ? stats.stars.toLocaleString('pt-BR')
         : '—';
     const releaseLabel = stats.releaseTag || '—';
-    const starStyle = Number.isFinite(stats.stars)
-        ? undefined
-        : { opacity: 0.6, borderColor: 'rgba(255, 215, 0, 0.2)' };
+    const starStyle = Number.isFinite(stats.stars) ? undefined : { opacity: 0.6 };
 
     if (variant === 'version') {
         return <p className="card-version">{releaseLabel}</p>;
@@ -147,8 +145,6 @@ const RepoStats = ({
                     alignItems: 'center',
                     gap: '4px',
                     lineHeight: 1,
-                    borderColor: 'rgba(255, 215, 0, 0.3)',
-                    color: '#ffd700',
                     ...starStyle,
                 }}
             >

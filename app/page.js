@@ -34,7 +34,7 @@ export default function HomePage() {
             }}
         >
             <div className="container">
-                <section className="products">
+                <section className="products" id="produtos">
                     <Hero />
                     <div className="product-grid">
                         {projects.map((project) => (
