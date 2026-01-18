@@ -56,6 +56,7 @@
         "lyrics_desc": "Skin minimalista para Rainmeter. Muestra la letra de la canción sonando en una línea sobre la barra de tareas. Siempre visible.",
         "csv_desc": "Herramienta avanzada para limpiar, normalizar y convertir listas de contactos CSV. Ideal para migración a Google Contacts.",
         "taskpulse_desc": "Monitor de sistema minimalista para Rainmeter. Rastreo en tiempo real de CPU, GPU, RAM y red con integración HWiNFO.",
+        "mouse_click_desc": "Auto-clicker ligero y moderno para Windows con modo hold-to-click y control de CPS.",
         "btn_details": "Detalles",
         "btn_changelog": "Changelog",
         "btn_download": "Descargar",
@@ -99,6 +100,32 @@
         "api_list_lrclib": "<strong>LRCLIB:</strong> STZ Lyrics consulta la base de datos pública LRCLIB para mostrar las letras.",
         "contact_title": "Contacto",
         "contact_desc": "Si tiene preguntas sobre seguridad o código fuente, puede auditar nuestros repositorios en GitHub o contactarnos a través de Discord."
+    },
+    "mouse_click": {
+        "title": "AutoClicker Pro",
+        "description": "Auto-clicker ligero y moderno para Windows con modo hold-to-click y control de CPS.",
+        "btn_github": "Abrir GitHub",
+        "features": {
+            "ui_title": "Interfaz Moderna",
+            "ui_desc": "UI limpia en CustomTkinter con controles rápidos y responsivos.",
+            "cps_title": "Ajuste de CPS",
+            "cps_desc": "Ajusta los clics por segundo en tiempo real.",
+            "hold_title": "Modo Hold-to-Click",
+            "hold_desc": "Solo hace clic mientras mantienes presionado el botón.",
+            "hook_title": "Hook Preciso",
+            "hook_desc": "Hook de bajo nivel separa clics físicos e inyectados.",
+            "hotkey_title": "Activación Rápida",
+            "hotkey_desc": "Activa con el clic del medio o un atajo configurable.",
+            "tray_title": "Bandeja del Sistema",
+            "tray_desc": "Minimiza a la bandeja para mantener el escritorio limpio."
+        },
+        "specs": {
+            "version": "Versión Actual",
+            "platform": "Plataforma",
+            "language": "Lenguaje",
+            "activation": "Activación",
+            "license": "Licencia"
+        }
     },
     "game_xml": {
         "title": "Game XML Translator",

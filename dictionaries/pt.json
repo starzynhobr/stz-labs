@@ -53,6 +53,7 @@
         "lyrics_desc": "Skin minimalista para Rainmeter. Mostra a letra da música tocando em uma linha sobre a barra de tarefas. Always on Top.",
         "csv_desc": "Ferramenta avançada para limpar, normalizar e converter listas de contatos CSV. Ideal para migração para Google Contacts.",
         "taskpulse_desc": "Monitor de sistema minimalista para Rainmeter. CPU, GPU, RAM e Rede em tempo real.",
+        "mouse_click_desc": "Auto-clicker leve e moderno para Windows com modo hold-to-click e controle de CPS.",
         "btn_details": "Detalhes",
         "btn_changelog": "Changelog",
         "btn_download": "Download",
@@ -96,6 +97,32 @@
         "api_list_lrclib": "<strong>LRCLIB:</strong> O STZ Lyrics consulta a base de dados pública do LRCLIB para exibir as letras.",
         "contact_title": "Contato",
         "contact_desc": "Se tiver dúvidas sobre segurança ou o código fonte, você pode auditar nossos repositórios no GitHub ou entrar em contato pelo Discord."
+    },
+    "mouse_click": {
+        "title": "AutoClicker Pro",
+        "description": "Auto-clicker leve e moderno para Windows com modo hold-to-click e controle de CPS.",
+        "btn_github": "Acessar GitHub",
+        "features": {
+            "ui_title": "Interface Moderna",
+            "ui_desc": "Visual limpo em CustomTkinter, com controle rápido e responsivo.",
+            "cps_title": "Ajuste de CPS",
+            "cps_desc": "Controle a taxa de cliques por segundo em tempo real.",
+            "hold_title": "Hold-to-Click",
+            "hold_desc": "Só dispara cliques enquanto você mantém o botão pressionado.",
+            "hook_title": "Hook Preciso",
+            "hook_desc": "Hook de baixo nível diferencia cliques físicos e injetados.",
+            "hotkey_title": "Ativação Rápida",
+            "hotkey_desc": "Ative/desative pelo clique do scroll ou atalho configurável.",
+            "tray_title": "Bandeja do Sistema",
+            "tray_desc": "Minimize para a bandeja para manter o desktop limpo."
+        },
+        "specs": {
+            "version": "Versão Atual",
+            "platform": "Plataforma",
+            "language": "Linguagem",
+            "activation": "Ativação",
+            "license": "Licença"
+        }
     },
     "game_xml": {
         "title": "Game XML Translator",

@@ -54,6 +54,7 @@
         "lyrics_desc": "Minimalist Rainmeter skin. Displays playing song lyrics in a single line over the taskbar. Always on Top.",
         "csv_desc": "Advanced tool to clean, normalize, and convert CSV contact lists. Ideal for Google Contacts migration.",
         "taskpulse_desc": "Minimalist system monitor for Rainmeter. Real-time CPU, GPU, RAM, and Network tracking with HWiNFO integration.",
+        "mouse_click_desc": "Lightweight modern auto-clicker for Windows with hold-to-click mode and live CPS control.",
         "btn_details": "Details",
         "btn_changelog": "Changelog",
         "btn_download": "Download",
@@ -97,6 +98,32 @@
         "api_list_lrclib": "<strong>LRCLIB:</strong> STZ Lyrics queries the public LRCLIB database to display lyrics.",
         "contact_title": "Contact",
         "contact_desc": "If you have questions about security or source code, you can audit our repositories on GitHub or contact us via Discord."
+    },
+    "mouse_click": {
+        "title": "AutoClicker Pro",
+        "description": "Lightweight modern auto-clicker for Windows with hold-to-click mode and live CPS control.",
+        "btn_github": "Open GitHub",
+        "features": {
+            "ui_title": "Modern Interface",
+            "ui_desc": "Clean CustomTkinter UI with fast, responsive controls.",
+            "cps_title": "CPS Tuning",
+            "cps_desc": "Adjust clicks per second in real time.",
+            "hold_title": "Hold-to-Click",
+            "hold_desc": "Only clicks while you keep the button pressed.",
+            "hook_title": "Precise Hook",
+            "hook_desc": "Low-level hook separates physical and injected clicks.",
+            "hotkey_title": "Quick Toggle",
+            "hotkey_desc": "Toggle via middle click or configurable hotkey.",
+            "tray_title": "System Tray",
+            "tray_desc": "Minimize to tray to keep your desktop clean."
+        },
+        "specs": {
+            "version": "Current Version",
+            "platform": "Platform",
+            "language": "Language",
+            "activation": "Activation",
+            "license": "License"
+        }
     },
     "game_xml": {
         "title": "Game XML Translator",

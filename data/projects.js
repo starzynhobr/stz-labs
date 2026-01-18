@@ -62,7 +62,7 @@ export const projects = [
                 { labelKey: 'game_xml.specs.platform', value: 'Windows 10/11' },
                 { labelKey: 'game_xml.specs.language', value: 'Python 3.11' },
                 { labelKey: 'game_xml.specs.compilation', value: 'Nuitka Standalone' },
-                { labelKey: 'game_xml.specs.license', value: 'MIT' },
+                { labelKey: 'game_xml.specs.license', value: 'GPL-3.0 License' },
                 { labelKey: 'game_xml.specs.requirements', value: 'API Key (Google AI)' },
             ],
         },
@@ -130,7 +130,7 @@ export const projects = [
                 { labelKey: 'lyrics.specs.req', value: 'Rainmeter 4.5+' },
                 { labelKey: 'lyrics.specs.plugin', value: 'WebNowPlaying' },
                 { labelKey: 'lyrics.specs.api', value: 'LRCLIB' },
-                { labelKey: 'lyrics.specs.license', value: 'MIT' },
+                { labelKey: 'lyrics.specs.license', value: 'GPL-3.0 License' },
                 { labelKey: 'lyrics.specs.dep', value: 'curl.exe' },
             ],
         },
@@ -191,7 +191,7 @@ export const projects = [
             specs: [
                 { labelKey: 'taskpulse.specs.version', value: 'v1.0.0' },
                 { labelKey: 'taskpulse.specs.platform', value: 'Rainmeter (Windows)' },
-                { labelKey: 'taskpulse.specs.license', value: 'MIT' },
+                { labelKey: 'taskpulse.specs.license', value: 'GPL-3.0 License' },
             ],
         },
     },
@@ -258,8 +258,76 @@ export const projects = [
                 { labelKey: 'csv_converter.specs.framework', value: 'Qt for Python (PySide6)' },
                 { labelKey: 'csv_converter.specs.language', value: 'Python 3.11' },
                 { labelKey: 'csv_converter.specs.ui', value: 'QML' },
-                { labelKey: 'csv_converter.specs.license', value: 'MIT' },
+                { labelKey: 'csv_converter.specs.license', value: 'GPL-3.0 License' },
                 { labelKey: 'csv_converter.specs.input', value: 'CSV (Generic/Google)' },
+            ],
+        },
+    },
+    {
+        slug: 'mouse-click',
+        repoName: 'mouse-click',
+        titleKey: 'mouse_click.title',
+        descriptionKey: 'cards.mouse_click_desc',
+        downloadHref: 'https://github.com/starzynhobr/mouse-click/releases/latest',
+        badgeLabel: '...',
+        badgeVariant: 'stable',
+        badgeAttrs: {
+            'data-gh-repo': 'starzynhobr/mouse-click',
+        },
+        tags: [
+            { labelKey: 'common.tags.windows' },
+            { labelKey: 'common.tags.tools' },
+            { labelKey: 'common.tags.python' },
+        ],
+        detailLabelKey: 'cards.btn_details',
+        downloadLabelKey: 'cards.btn_download',
+        detail: {
+            meta: {
+                title: 'AutoClicker Pro | STZ LABS',
+                description:
+                    'Auto-clicker leve e moderno para Windows com modo hold-to-click e controle de CPS.',
+                ogDescription:
+                    'Auto-clicker leve para Windows com modo hold-to-click, CPS ajustável e hook preciso.',
+            },
+            hero: {
+                tags: ['Python 3.12', 'CustomTkinter', 'Low-level Hook'],
+                titleKey: 'mouse_click.title',
+                descriptionKey: 'mouse_click.description',
+                githubUrl: 'https://github.com/starzynhobr/mouse-click',
+                githubLabelKey: 'mouse_click.btn_github',
+            },
+            features: [
+                {
+                    titleKey: 'mouse_click.features.ui_title',
+                    descriptionKey: 'mouse_click.features.ui_desc',
+                },
+                {
+                    titleKey: 'mouse_click.features.cps_title',
+                    descriptionKey: 'mouse_click.features.cps_desc',
+                },
+                {
+                    titleKey: 'mouse_click.features.hold_title',
+                    descriptionKey: 'mouse_click.features.hold_desc',
+                },
+                {
+                    titleKey: 'mouse_click.features.hook_title',
+                    descriptionKey: 'mouse_click.features.hook_desc',
+                },
+                {
+                    titleKey: 'mouse_click.features.hotkey_title',
+                    descriptionKey: 'mouse_click.features.hotkey_desc',
+                },
+                {
+                    titleKey: 'mouse_click.features.tray_title',
+                    descriptionKey: 'mouse_click.features.tray_desc',
+                },
+            ],
+            specs: [
+                { labelKey: 'mouse_click.specs.version', value: 'Latest' },
+                { labelKey: 'mouse_click.specs.platform', value: 'Windows 10/11' },
+                { labelKey: 'mouse_click.specs.language', value: 'Python 3.12' },
+                { labelKey: 'mouse_click.specs.activation', value: 'Middle Click / Hotkey' },
+                { labelKey: 'mouse_click.specs.license', value: 'GPL-3.0 License' },
             ],
         },
     },

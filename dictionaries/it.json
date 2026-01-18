@@ -56,6 +56,7 @@
         "lyrics_desc": "Skin minimalista per Rainmeter. Mostra il testo della canzone in riproduzione in una riga sopra la barra delle applicazioni. Sempre in primo piano.",
         "csv_desc": "Strumento avanzato per pulire, normalizzare e convertire elenchi di contatti CSV. Ideale per la migrazione a Google Contacts.",
         "taskpulse_desc": "Monitor di sistema minimalista per Rainmeter. Tracciamento in tempo reale di CPU, GPU, RAM e rete con integrazione HWiNFO.",
+        "mouse_click_desc": "Auto-clicker leggero e moderno per Windows con modalità hold-to-click e controllo CPS.",
         "btn_details": "Dettagli",
         "btn_changelog": "Changelog",
         "btn_download": "Scarica",
@@ -99,6 +100,32 @@
         "api_list_lrclib": "<strong>LRCLIB:</strong> STZ Lyrics interroga il database pubblico LRCLIB per visualizzare i testi.",
         "contact_title": "Contatto",
         "contact_desc": "Se hai domande sulla sicurezza o sul codice sorgente, puoi controllare i nostri repository su GitHub o contattarci tramite Discord."
+    },
+    "mouse_click": {
+        "title": "AutoClicker Pro",
+        "description": "Auto-clicker leggero e moderno per Windows con modalità hold-to-click e controllo CPS.",
+        "btn_github": "Apri GitHub",
+        "features": {
+            "ui_title": "Interfaccia Moderna",
+            "ui_desc": "Interfaccia CustomTkinter pulita con controlli rapidi e reattivi.",
+            "cps_title": "Regolazione CPS",
+            "cps_desc": "Regola i clic al secondo in tempo reale.",
+            "hold_title": "Modalità Hold-to-Click",
+            "hold_desc": "Clicca solo mentre tieni premuto il pulsante.",
+            "hook_title": "Hook Preciso",
+            "hook_desc": "Hook a basso livello separa clic fisici e iniettati.",
+            "hotkey_title": "Attivazione Rapida",
+            "hotkey_desc": "Attiva con clic centrale o scorciatoia configurabile.",
+            "tray_title": "Tray di Sistema",
+            "tray_desc": "Riduci nella tray per mantenere il desktop pulito."
+        },
+        "specs": {
+            "version": "Versione Attuale",
+            "platform": "Piattaforma",
+            "language": "Linguaggio",
+            "activation": "Attivazione",
+            "license": "Licenza"
+        }
     },
     "game_xml": {
         "title": "Game XML Translator",
