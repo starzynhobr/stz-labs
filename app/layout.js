@@ -1,6 +1,7 @@
 import '../css/style.css';
 import './globals.css';
 import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import KonamiListener from '../components/KonamiListener';
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
                 <Providers>
                     <Navbar />
                     {children}
+                    <Analytics />
                     <Footer />
                     <KonamiListener />
                 </Providers>
