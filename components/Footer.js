@@ -14,9 +14,7 @@ export default function Footer() {
                     <a href="https://github.com/starzynhobr" target="_blank" rel="noreferrer">
                         GitHub
                     </a>
-                    <a href="https://discord.gg/muhxKQyx" target="_blank" rel="noreferrer">
-                        Discord
-                    </a>
+
                     <Link href="/privacy">
                         <TranslatedText as="span" i18nKey="footer.privacy" />
                     </Link>
