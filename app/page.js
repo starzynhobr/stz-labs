@@ -12,11 +12,11 @@ export const metadata = {
         title: 'STZ LABS - Inovação Minimalista',
         description: 'Ecossistema de ferramentas modulares para desktop.',
         type: 'website',
-        images: ['https://stz-labs.vercel.app/public/og-image.png'],
+        images: ['https://stz-labs.vercel.app/og-image.png'],
     },
     twitter: {
         card: 'summary_large_image',
-        images: ['https://stz-labs.vercel.app/public/og-image.png'],
+        images: ['https://stz-labs.vercel.app/og-image.png'],
     },
 };
 
