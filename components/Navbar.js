@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -10,9 +11,11 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+    const pathname = usePathname();
     const { toggleTheme } = useTheme();
     const { lang, setLang, t } = useLanguage();
     const [menuOpen, setMenuOpen] = useState(false);
+    const showBackArrow = pathname !== '/';
 
     const handleMenuToggle = () => {
         setMenuOpen((prev) => !prev);
@@ -58,11 +61,11 @@ export default function Navbar() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className={`nav-link${link.back ? ' nav-back-link' : ''}`}
+                                    className={`nav-link${link.back && showBackArrow ? ' nav-back-link' : ''}`}
                                     data-i18n={link.dataI18n}
                                     onClick={link.href === '/#produtos' ? handleProjectsClick : handleNavClick}
                                 >
-                                    {link.back && (
+                                    {link.back && showBackArrow && (
                                         <span className="back-link-arrow" aria-hidden="true">
                                             ←
                                         </span>
