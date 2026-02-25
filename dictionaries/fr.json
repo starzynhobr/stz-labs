@@ -85,6 +85,7 @@
     },
     "footer": {
         "privacy": "Confidentialité",
+        "contact": "Contact",
         "build": "Build v1.0.0"
     },
     "privacy": {
