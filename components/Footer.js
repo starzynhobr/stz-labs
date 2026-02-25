@@ -11,6 +11,8 @@ export default function Footer() {
                     <TranslatedText as="span" className="build-info" i18nKey="footer.build" />
                 </div>
                 <div className="footer-links">
+                    <TranslatedText as="a" href="mailto:contato@stzlabs.com" i18nKey="footer.contact" />
+
                     <a href="https://github.com/starzynhobr" target="_blank" rel="noreferrer">
                         GitHub
                     </a>
