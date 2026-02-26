@@ -52,6 +52,7 @@
         "suite_desc": "Modular desktop tool ecosystem. A powerful launcher unifying plugins, scripts, and automation in a unified interface.",
         "xml_desc": "Program that facilitates translating game XML files. Edit translation strings with ease, safety, and speed.",
         "lyrics_desc": "Minimalist Rainmeter skin. Displays playing song lyrics in a single line over the taskbar. Always on Top.",
+        "lyrics_overlay_desc": "Installable Windows overlay (no Rainmeter) with synced lyrics via GSMTC + LRCLIB, tray controls, presets, and local cache.",
         "csv_desc": "Advanced tool to clean, normalize, and convert CSV contact lists. Ideal for Google Contacts migration.",
         "taskpulse_desc": "Minimalist system monitor for Rainmeter. Real-time CPU, GPU, RAM, and Network tracking with HWiNFO integration.",
         "mouse_click_desc": "Lightweight modern auto-clicker for Windows with hold-to-click mode and live CPS control.",
@@ -188,7 +189,7 @@
         }
     },
     "lyrics": {
-        "title": "STZ Lyrics",
+        "title": "STZ Lyrics [Rainmeter Skin]",
         "description": "Transform your taskbar with minimalist, perfectly synced song lyrics. Simple, lightweight, and fully customizable.",
         "btn_github": "View on GitHub",
         "features": {
@@ -212,6 +213,33 @@
             "api": "API",
             "license": "License",
             "dep": "Dependency"
+        }
+    },
+    "lyrics_overlay": {
+        "title": "STZ Lyrics Overlay",
+        "description": "A synced-lyrics overlay for Windows, rebuilt in Python and independent from Rainmeter. It uses GSMTC to detect the current media session and LRCLIB to fetch lyrics when available.",
+        "btn_github": "View on GitHub",
+        "features": {
+            "overlay_title": "Transparent Overlay",
+            "overlay_desc": "Frameless transparent window with click-through support, optional snap to screen edge/taskbar, and always-on-top mode.",
+            "sync_title": "GSMTC + LRCLIB Sync",
+            "sync_desc": "Reads the Windows media session (GSMTC) and fetches lyrics from LRCLIB, with incremental synchronization when synced LRC lyrics are available.",
+            "controls_title": "Tray Controls",
+            "controls_desc": "System tray icon with quick actions to show/hide the overlay, toggle click-through, reload lyrics/config, and open the cache folder.",
+            "presets_title": "Presets and Context",
+            "presets_desc": "Supports layout presets such as Context (2+2), with per-preset preferences for position, lyric color, always-on-top, and animation.",
+            "smoothing_title": "Timeline Smoothing",
+            "smoothing_desc": "A local smoothing clock reduces jitter/freezes reported by some players and improves lyric/UI timing fluidity.",
+            "cache_title": "Local Cache + Startup",
+            "cache_desc": "Persistent LRU lyrics cache with index.json, local logs/cache folders, and an optional Start with Windows setting."
+        },
+        "specs": {
+            "version": "Current Version",
+            "platform": "Platform",
+            "language": "Language",
+            "media": "Media Session",
+            "api": "API",
+            "license": "License"
         }
     },
     "csv_converter": {

@@ -52,6 +52,7 @@
         "suite_desc": "Modulares Desktop-Tool-Ökosystem. Ein leistungsstarker Launcher, der Plugins, Skripte und Automatisierung in einer Oberfläche vereint.",
         "xml_desc": "Programm zur einfachen Übersetzung von Spiel-XML-Dateien. Bearbeiten Sie Übersetzungsstrings einfach, sicher und schnell.",
         "lyrics_desc": "Minimalistischer Rainmeter-Skin. Zeigt den aktuellen Songtext in einer Zeile über der Taskleiste an. Immer im Vordergrund.",
+        "lyrics_overlay_desc": "Installierbares Windows-Overlay (ohne Rainmeter) mit synchronisierten Songtexten via GSMTC + LRCLIB, Tray-Steuerung, Presets und lokalem Cache.",
         "csv_desc": "Fortschrittliches Tool zum Bereinigen, Normalisieren und Konvertieren von CSV-Kontaktlisten. Ideal für die Migration zu Google Contacts.",
         "taskpulse_desc": "Minimalistischer Systemmonitor für Rainmeter. Echtzeit-Tracking von CPU, GPU, RAM und Netzwerk mit HWiNFO-Integration.",
         "mouse_click_desc": "Leichter moderner Auto-Clicker für Windows mit Hold-to-Click-Modus und CPS-Steuerung.",
@@ -188,7 +189,7 @@
         }
     },
     "lyrics": {
-        "title": "STZ Lyrics",
+        "title": "STZ Lyrics [Rainmeter Skin]",
         "description": "Verwandeln Sie Ihre Taskleiste mit minimalistischen, perfekt synchronisierten Songtexten. Einfach, leicht und vollständig anpassbar.",
         "btn_github": "Auf GitHub ansehen",
         "features": {
@@ -212,6 +213,33 @@
             "api": "API",
             "license": "Lizenz",
             "dep": "Abhängigkeit"
+        }
+    },
+    "lyrics_overlay": {
+        "title": "STZ Lyrics Overlay",
+        "description": "Ein synchronisiertes Songtext-Overlay für Windows, in Python neu umgesetzt und unabhängig von Rainmeter. Es nutzt GSMTC zur Erkennung der aktuellen Mediensitzung und LRCLIB zum Abruf von Texten, wenn verfügbar.",
+        "btn_github": "Auf GitHub ansehen",
+        "features": {
+            "overlay_title": "Transparentes Overlay",
+            "overlay_desc": "Rahmenloses transparentes Fenster mit Click-through-Unterstützung, optionalem Andocken an Bildschirmrand/Taskleiste und Always-on-Top-Modus.",
+            "sync_title": "GSMTC + LRCLIB Sync",
+            "sync_desc": "Liest die Windows-Mediensitzung (GSMTC) und lädt Songtexte von LRCLIB, mit inkrementeller Synchronisierung bei verfügbaren synchronisierten LRC-Texten.",
+            "controls_title": "Tray-Steuerung",
+            "controls_desc": "System-Tray-Symbol mit Schnellaktionen zum Ein-/Ausblenden des Overlays, Umschalten von Click-through, Neuladen von Texten/Config und Öffnen des Cache-Ordners.",
+            "presets_title": "Presets und Kontext",
+            "presets_desc": "Unterstützt Layout-Presets wie Context (2+2) mit Preset-spezifischen Einstellungen für Position, Textfarbe, Always-on-Top und Animation.",
+            "smoothing_title": "Timeline-Glättung",
+            "smoothing_desc": "Eine lokale Glättungsuhr reduziert Jitter/Freeze-Effekte einiger Player und verbessert die visuelle Synchronität.",
+            "cache_title": "Lokaler Cache + Autostart",
+            "cache_desc": "Persistenter LRU-Cache für Songtexte mit index.json, lokale Log-/Cache-Ordner und optionale Start-mit-Windows-Funktion."
+        },
+        "specs": {
+            "version": "Aktuelle Version",
+            "platform": "Plattform",
+            "language": "Sprache",
+            "media": "Mediensitzung",
+            "api": "API",
+            "license": "Lizenz"
         }
     },
     "csv_converter": {

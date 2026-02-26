@@ -136,6 +136,75 @@ export const projects = [
         },
     },
     {
+        slug: 'stz-lyrics-overlay',
+        repoName: 'stzlyrics-python',
+        titleKey: 'lyrics_overlay.title',
+        descriptionKey: 'cards.lyrics_overlay_desc',
+        downloadHref: 'https://github.com/starzynhobr/stzlyrics-python/releases/latest',
+        badgeLabel: '...',
+        badgeVariant: 'stable',
+        badgeAttrs: {
+            'data-gh-repo': 'starzynhobr/stzlyrics-python',
+        },
+        tags: [
+            { labelKey: 'common.tags.windows' },
+            { labelKey: 'common.tags.python' },
+            { labelKey: 'common.tags.music' },
+        ],
+        detailLabelKey: 'cards.btn_details',
+        downloadLabelKey: 'cards.btn_download',
+        detail: {
+            meta: {
+                title: 'STZ Lyrics Overlay | STZ LABS',
+                description:
+                    'Overlay de letras sincronizadas para Windows em Python, independente do Rainmeter, com GSMTC + LRCLIB.',
+                ogDescription:
+                    'Overlay de letras sincronizadas para Windows com suporte a GSMTC, LRCLIB, tray e presets.',
+            },
+            hero: {
+                tags: ['Python 3.10+', 'GSMTC', 'LRCLIB'],
+                titleKey: 'lyrics_overlay.title',
+                descriptionKey: 'lyrics_overlay.description',
+                githubUrl: 'https://github.com/starzynhobr/stzlyrics-python',
+                githubLabelKey: 'lyrics_overlay.btn_github',
+            },
+            features: [
+                {
+                    titleKey: 'lyrics_overlay.features.overlay_title',
+                    descriptionKey: 'lyrics_overlay.features.overlay_desc',
+                },
+                {
+                    titleKey: 'lyrics_overlay.features.sync_title',
+                    descriptionKey: 'lyrics_overlay.features.sync_desc',
+                },
+                {
+                    titleKey: 'lyrics_overlay.features.controls_title',
+                    descriptionKey: 'lyrics_overlay.features.controls_desc',
+                },
+                {
+                    titleKey: 'lyrics_overlay.features.presets_title',
+                    descriptionKey: 'lyrics_overlay.features.presets_desc',
+                },
+                {
+                    titleKey: 'lyrics_overlay.features.smoothing_title',
+                    descriptionKey: 'lyrics_overlay.features.smoothing_desc',
+                },
+                {
+                    titleKey: 'lyrics_overlay.features.cache_title',
+                    descriptionKey: 'lyrics_overlay.features.cache_desc',
+                },
+            ],
+            specs: [
+                { labelKey: 'lyrics_overlay.specs.version', value: 'Latest Release' },
+                { labelKey: 'lyrics_overlay.specs.platform', value: 'Windows 10/11' },
+                { labelKey: 'lyrics_overlay.specs.language', value: 'Python 3.10+' },
+                { labelKey: 'lyrics_overlay.specs.media', value: 'GSMTC (Windows Media Session)' },
+                { labelKey: 'lyrics_overlay.specs.api', value: 'LRCLIB' },
+                { labelKey: 'lyrics_overlay.specs.license', value: 'Dual License (GPLv3 / Commercial)' },
+            ],
+        },
+    },
+    {
         slug: 'stz-taskpulse',
         repoName: 'stz-taskpulse',
         titleKey: 'taskpulse.title',
