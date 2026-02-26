@@ -11,7 +11,22 @@ export default function Footer() {
                     <TranslatedText as="span" className="build-info" i18nKey="footer.build" />
                 </div>
                 <div className="footer-links">
-                    <TranslatedText as="a" href="mailto:contato@stzlabs.com" i18nKey="footer.contact" />
+                    <a
+                        href="mailto:contato@stzlabs.com"
+                        className="footer-contact-link"
+                        title="contato@stzlabs.com"
+                    >
+                        <span className="footer-contact-inner">
+                            <TranslatedText
+                                as="span"
+                                className="footer-contact-label"
+                                i18nKey="footer.contact"
+                            />
+                            <span className="footer-contact-email" aria-hidden="true">
+                                : contato@stzlabs.com
+                            </span>
+                        </span>
+                    </a>
 
                     <a href="https://github.com/starzynhobr" target="_blank" rel="noreferrer">
                         GitHub
