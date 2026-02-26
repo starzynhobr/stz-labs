@@ -20,6 +20,10 @@ export default function Footer() {
                     <Link href="/privacy">
                         <TranslatedText as="span" i18nKey="footer.privacy" />
                     </Link>
+
+                    <Link href="/terms">
+                        <TranslatedText as="span" i18nKey="footer.terms" />
+                    </Link>
                 </div>
             </div>
         </footer>
