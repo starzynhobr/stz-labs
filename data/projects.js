@@ -31,6 +31,17 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/Game-XML-Translator',
                 githubLabelKey: 'game_xml.btn_github',
             },
+            gallery: [
+                {
+                    src: '/images/projects/game-xml-translator/cover/cover.png',
+                    alt: 'Game XML Translator cover preview',
+                    variant: 'hero',
+                },
+                {
+                    src: '/images/projects/game-xml-translator/crops/screenshot_1.png',
+                    alt: 'Game XML Translator screenshot 1',
+                },
+            ],
             features: [
                 {
                     titleKey: 'game_xml.features.ai_title',
@@ -99,6 +110,25 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/stzlyrics',
                 githubLabelKey: 'lyrics.btn_github',
             },
+            gallery: [
+                {
+                    src: '/images/projects/stz-lyrics-rainmeter/hero/cover.png',
+                    alt: 'STZ Lyrics Rainmeter skin cover preview',
+                    variant: 'hero',
+                },
+                {
+                    src: '/images/projects/stz-lyrics-rainmeter/crops/screenshot_1.webp',
+                    alt: 'STZ Lyrics Rainmeter screenshot 1',
+                },
+                {
+                    src: '/images/projects/stz-lyrics-rainmeter/crops/screenshot_2.webp',
+                    alt: 'STZ Lyrics Rainmeter screenshot 2',
+                },
+                {
+                    src: '/images/projects/stz-lyrics-rainmeter/crops/screenshot_3.webp',
+                    alt: 'STZ Lyrics Rainmeter screenshot 3',
+                },
+            ],
             features: [
                 {
                     titleKey: 'lyrics.features.sync_title',
@@ -254,6 +284,21 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/stz-taskpulse',
                 githubLabelKey: 'taskpulse.btn_github',
             },
+            gallery: [
+                {
+                    src: '/images/projects/stz-taskpulse/cover/cover.webp',
+                    alt: 'STZ TaskPulse cover preview',
+                    variant: 'hero',
+                },
+                {
+                    src: '/images/projects/stz-taskpulse/hero/screenshot_1.png',
+                    alt: 'STZ TaskPulse screenshot 1',
+                },
+                {
+                    src: '/images/projects/stz-taskpulse/hero/screenshot_2.png',
+                    alt: 'STZ TaskPulse screenshot 2',
+                },
+            ],
             features: [
                 {
                     titleKey: 'taskpulse.features.monitor_title',
@@ -315,6 +360,21 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/stz-csv-converter',
                 githubLabelKey: 'csv_converter.btn_github',
             },
+            gallery: [
+                {
+                    src: '/images/projects/stz-csv-converter/cover/cover.webp',
+                    alt: 'STZ CSV Converter cover preview',
+                    variant: 'hero',
+                },
+                {
+                    src: '/images/projects/stz-csv-converter/hero/screenshot_1.webp',
+                    alt: 'STZ CSV Converter screenshot 1',
+                },
+                {
+                    src: '/images/projects/stz-csv-converter/hero/screenshot_2.webp',
+                    alt: 'STZ CSV Converter screenshot 2',
+                },
+            ],
             features: [
                 {
                     titleKey: 'csv_converter.features.clean_title',
@@ -384,6 +444,13 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/mouse-click',
                 githubLabelKey: 'mouse_click.btn_github',
             },
+            gallery: [
+                {
+                    src: '/images/projects/mouse-click/cover/cover.png',
+                    alt: 'AutoClicker Pro cover preview',
+                    variant: 'hero',
+                },
+            ],
             features: [
                 {
                     titleKey: 'mouse_click.features.ui_title',
