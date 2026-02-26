@@ -15,7 +15,7 @@ export default function StatusTimeline() {
                 <div className="timeline">
                     <div className="timeline-item">
                         <span className="time-label">
-                            Q4 2025{' '}
+                            <TranslatedText as="span" i18nKey="sections.roadmap_status_1" />{' '}
                             <TranslatedText as="span" className="update-badge" i18nKey="common.badges.stable" />
                         </span>
                         <div className="t-content">
@@ -25,7 +25,7 @@ export default function StatusTimeline() {
                     </div>
                     <div className="timeline-item">
                         <span className="time-label">
-                            Q1 2026{' '}
+                            <TranslatedText as="span" i18nKey="sections.roadmap_status_2" />{' '}
                             <TranslatedText as="span" className="update-badge" i18nKey="common.badges.beta" />
                         </span>
                         <div className="t-content">
@@ -34,14 +34,20 @@ export default function StatusTimeline() {
                         </div>
                     </div>
                     <div className="timeline-item">
-                        <span className="time-label">Q2 2026</span>
+                        <span className="time-label">
+                            <TranslatedText as="span" i18nKey="sections.roadmap_status_3" />{' '}
+                            <TranslatedText as="span" className="update-badge" i18nKey="common.badges.alpha" />
+                        </span>
                         <div className="t-content">
                             <TranslatedText as="h4" i18nKey="sections.roadmap_q3" />
                             <TranslatedText as="p" i18nKey="sections.roadmap_q3_desc" />
                         </div>
                     </div>
                     <div className="timeline-item">
-                        <span className="time-label">Q3 2026</span>
+                        <span className="time-label">
+                            <TranslatedText as="span" i18nKey="sections.roadmap_status_4" />{' '}
+                            <TranslatedText as="span" className="update-badge" i18nKey="common.badges.soon" />
+                        </span>
                         <div className="t-content">
                             <TranslatedText as="h4" i18nKey="sections.roadmap_q4" />
                             <TranslatedText as="p" i18nKey="sections.roadmap_q4_desc" />
