@@ -49,6 +49,7 @@
         "roadmap_q3_desc": "Project in architecture, validation, and refinement. No public launch date at the moment.",
         "roadmap_q4": "New Utilities (Backlog)",
         "roadmap_q4_desc": "Ideas and experiments for new automation and productivity modules, prioritized as they mature.",
+        "gallery_details_toggle": "Interface Details",
         "features_title": "Key Features",
         "specs_title": "Technical Specs"
     },
