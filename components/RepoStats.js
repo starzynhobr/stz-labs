@@ -127,6 +127,10 @@ const RepoStats = ({
         return <p className="card-version">{releaseLabel}</p>;
     }
 
+    if (variant === 'release-inline') {
+        return <span>{releaseLabel}</span>;
+    }
+
     if (variant === 'badge') {
         return (
             <span className={`badge ${badgeVariant}`} {...badgeAttrs}>

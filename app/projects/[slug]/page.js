@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import RepoStats from '../../../components/RepoStats';
 import TranslatedText from '../../../components/TranslatedText';
 import { projects } from '../../../data/projects';
 
@@ -80,7 +81,7 @@ export default async function ProjectDetailPage({ params }) {
 
             <section className="features-section">
                 <div className="container">
-                    <TranslatedText
+                        <TranslatedText
                         as="h2"
                         style={{ marginBottom: '40px', textAlign: 'center' }}
                         i18nKey="sections.features_title"
@@ -105,9 +106,16 @@ export default async function ProjectDetailPage({ params }) {
                     />
                     <div className="specs-list">
                         {specs.map((spec) => (
-                            <div className="spec-item" key={`${spec.labelKey}-${spec.value}`}>
+                            <div
+                                className="spec-item"
+                                key={`${spec.labelKey}-${spec.value || spec.repoName || 'dynamic'}`}
+                            >
                                 <TranslatedText as="span" className="spec-label" i18nKey={spec.labelKey} />
-                                <span>{spec.value}</span>
+                                {spec.repoName ? (
+                                    <RepoStats repoName={spec.repoName} variant="release-inline" />
+                                ) : (
+                                    <span>{spec.value}</span>
+                                )}
                             </div>
                         ))}
                     </div>
