@@ -54,6 +54,7 @@
         "suite_desc": "Ecosistema modulare di strumenti desktop. Un launcher potente che unifica plugin, script e automazione in un'unica interfaccia.",
         "xml_desc": "Programma che facilita la traduzione di file XML di gioco. Modifica le stringhe di traduzione con facilità, sicurezza e velocità.",
         "lyrics_desc": "Skin minimalista per Rainmeter. Mostra il testo della canzone in riproduzione in una riga sopra la barra delle applicazioni. Sempre in primo piano.",
+        "lyrics_overlay_desc": "Overlay Windows installabile (senza Rainmeter) con testi sincronizzati via GSMTC + LRCLIB, controlli tray, preset e cache locale.",
         "csv_desc": "Strumento avanzato per pulire, normalizzare e convertire elenchi di contatti CSV. Ideale per la migrazione a Google Contacts.",
         "taskpulse_desc": "Monitor di sistema minimalista per Rainmeter. Tracciamento in tempo reale di CPU, GPU, RAM e rete con integrazione HWiNFO.",
         "mouse_click_desc": "Auto-clicker leggero e moderno per Windows con modalità hold-to-click e controllo CPS.",
@@ -190,7 +191,7 @@
         }
     },
     "lyrics": {
-        "title": "STZ Lyrics",
+        "title": "STZ Lyrics [Rainmeter Skin]",
         "description": "Trasforma la tua barra delle applicazioni con testi delle canzoni minimalisti e perfettamente sincronizzati. Semplice, leggero e completamente personalizzabile.",
         "btn_github": "Vedi su GitHub",
         "features": {
@@ -214,6 +215,33 @@
             "api": "API",
             "license": "Licenza",
             "dep": "Dipendenza"
+        }
+    },
+    "lyrics_overlay": {
+        "title": "STZ Lyrics Overlay",
+        "description": "Overlay di testi sincronizzati per Windows, riscritto in Python e indipendente da Rainmeter. Usa GSMTC per rilevare la sessione multimediale corrente e LRCLIB per recuperare i testi quando disponibili.",
+        "btn_github": "Vedi su GitHub",
+        "features": {
+            "overlay_title": "Overlay Trasparente",
+            "overlay_desc": "Finestra trasparente senza bordi con supporto click-through, aggancio opzionale al bordo/barra delle applicazioni e modalità sempre in primo piano.",
+            "sync_title": "Sync GSMTC + LRCLIB",
+            "sync_desc": "Legge la sessione multimediale di Windows (GSMTC) e recupera testi da LRCLIB, con sincronizzazione incrementale quando sono disponibili testi LRC sincronizzati.",
+            "controls_title": "Controlli Tray",
+            "controls_desc": "Icona nella tray con azioni rapide per mostrare/nascondere l'overlay, attivare click-through, ricaricare testi/config e aprire la cartella cache.",
+            "presets_title": "Preset e Contesto",
+            "presets_desc": "Supporta preset di layout come Context (2+2), con preferenze per preset su posizione, colore del testo, always-on-top e animazione.",
+            "smoothing_title": "Smussamento Timeline",
+            "smoothing_desc": "Un orologio locale di smoothing riduce jitter/blocchi della timeline riportati da alcuni player e migliora la fluidità visiva.",
+            "cache_title": "Cache Locale + Avvio",
+            "cache_desc": "Cache LRU persistente dei testi con index.json, cartelle locali di log/cache e opzione di avvio con Windows."
+        },
+        "specs": {
+            "version": "Versione Attuale",
+            "platform": "Piattaforma",
+            "language": "Linguaggio",
+            "media": "Sessione Multimediale",
+            "api": "API",
+            "license": "Licenza"
         }
     },
     "csv_converter": {
