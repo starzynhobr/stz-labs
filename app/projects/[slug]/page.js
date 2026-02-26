@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ProjectGalleryDetails from '../../../components/ProjectGalleryDetails';
 import RepoStats from '../../../components/RepoStats';
 import TranslatedText from '../../../components/TranslatedText';
 import { projects } from '../../../data/projects';
@@ -44,7 +45,9 @@ export default async function ProjectDetailPage({ params }) {
         notFound();
     }
 
-    const { hero, features, specs } = project.detail;
+    const { hero, gallery, features, specs } = project.detail;
+    const heroGalleryItem = gallery?.find((item) => item.variant === 'hero') || gallery?.[0] || null;
+    const extraGalleryItems = heroGalleryItem ? gallery.filter((item) => item.src !== heroGalleryItem.src) : [];
 
     return (
         <main>
@@ -78,6 +81,20 @@ export default async function ProjectDetailPage({ params }) {
                     </div>
                 </div>
             </section>
+
+            {heroGalleryItem ? (
+                <section className="product-gallery-section">
+                    <div className="container">
+                        <figure className="product-gallery-item is-hero">
+                            <div className="product-gallery-frame">
+                                <img src={heroGalleryItem.src} alt={heroGalleryItem.alt} loading="lazy" />
+                            </div>
+                        </figure>
+
+                        <ProjectGalleryDetails items={extraGalleryItems} />
+                    </div>
+                </section>
+            ) : null}
 
             <section className="features-section">
                 <div className="container">

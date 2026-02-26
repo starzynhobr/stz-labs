@@ -168,6 +168,25 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/stzlyrics-python',
                 githubLabelKey: 'lyrics_overlay.btn_github',
             },
+            gallery: [
+                {
+                    src: '/images/projects/stz-lyrics-overlay/hero/cover.png',
+                    alt: 'STZ Lyrics Overlay cover preview',
+                    variant: 'hero',
+                },
+                {
+                    src: '/images/projects/stz-lyrics-overlay/crops/screenshot-1.png',
+                    alt: 'STZ Lyrics Overlay screenshot 1',
+                },
+                {
+                    src: '/images/projects/stz-lyrics-overlay/crops/screenshot-2.png',
+                    alt: 'STZ Lyrics Overlay screenshot 2',
+                },
+                {
+                    src: '/images/projects/stz-lyrics-overlay/crops/screenshot-3.png',
+                    alt: 'STZ Lyrics Overlay screenshot 3',
+                },
+            ],
             features: [
                 {
                     titleKey: 'lyrics_overlay.features.overlay_title',
