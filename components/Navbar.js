@@ -8,7 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const navLinks = [
     { href: '/#produtos', dataI18n: 'nav.products', back: true },
-    { href: '/support', label: 'Support' },
+    { href: '/support', dataI18n: 'nav.support' },
 ];
 
 export default function Navbar() {
@@ -57,7 +57,7 @@ export default function Navbar() {
                 </div>
                 <ul className={`nav-links${menuOpen ? ' active' : ''}`}>
                     {navLinks.map((link) => {
-                        const label = link.dataI18n ? t(link.dataI18n) : link.label;
+                        const label = t(link.dataI18n);
                         return (
                             <li key={link.href}>
                                 <Link

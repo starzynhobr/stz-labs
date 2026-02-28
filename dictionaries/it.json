@@ -2,6 +2,7 @@
     "nav": {
         "home": "Home",
         "products": "Progetti",
+        "support": "Supporto",
         "philosophy": "Filosofia",
         "status": "Stato",
         "community": "Comunità",
@@ -97,6 +98,7 @@
     "footer": {
         "privacy": "Privacy",
         "terms": "Termini",
+        "support": "Supporto",
         "contact": "Contatto",
         "build": "Build v1.0.0"
     },

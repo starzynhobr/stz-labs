@@ -46,7 +46,9 @@ export default function Footer() {
                         <TranslatedText as="span" i18nKey="footer.terms" />
                     </Link>
 
-                    <Link href="/support">Support</Link>
+                    <Link href="/support">
+                        <TranslatedText as="span" i18nKey="footer.support" />
+                    </Link>
                 </div>
             </div>
         </footer>
