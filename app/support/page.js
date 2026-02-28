@@ -39,20 +39,15 @@ export default function SupportPage() {
         >
             <section className="product-hero" style={{ padding: '120px 0 60px' }}>
                 <div className="container">
-                    <h1>Support / Tips</h1>
-                    <p className="text-muted" style={{ maxWidth: '860px' }}>
-                        Tips are voluntary contributions to support maintenance of existing software.
-                        This is not a crowdfunding campaign. No goals, no rewards, and no future
-                        promises. Software is available now and delivered digitally via official
-                        download links (GitHub Releases).
-                    </p>
+                    <TranslatedText as="h1" i18nKey="support.title" />
+                    <TranslatedText as="p" className="text-muted" style={{ maxWidth: '860px' }} i18nKey="support.subtitle" />
                 </div>
             </section>
 
             <section className="products" style={{ paddingTop: 0 }}>
                 <div className="container" style={{ maxWidth: '980px' }}>
                     <article className="card" style={{ marginBottom: '20px' }}>
-                        <h3 style={{ marginBottom: '12px' }}>Support scope</h3>
+                        <TranslatedText as="h3" style={{ marginBottom: '12px' }} i18nKey="support.scope_title" />
                         <ul
                             style={{
                                 listStyle: 'disc',
@@ -61,38 +56,40 @@ export default function SupportPage() {
                                 marginBottom: '12px',
                             }}
                         >
-                            <li>No crowdfunding</li>
-                            <li>No goals</li>
-                            <li>No rewards</li>
-                            <li>No future promises</li>
+                            <li>
+                                <TranslatedText as="span" i18nKey="support.no_crowdfunding" />
+                            </li>
+                            <li>
+                                <TranslatedText as="span" i18nKey="support.no_goals" />
+                            </li>
+                            <li>
+                                <TranslatedText as="span" i18nKey="support.no_rewards" />
+                            </li>
+                            <li>
+                                <TranslatedText as="span" i18nKey="support.no_future_promises" />
+                            </li>
                         </ul>
+                        <TranslatedText as="p" className="text-muted" style={{ marginBottom: '8px' }} i18nKey="support.delivery" />
                         <p className="text-muted" style={{ marginBottom: '8px' }}>
-                            Delivery: immediate digital download via official links (GitHub
-                            Releases).
-                        </p>
-                        <p className="text-muted" style={{ marginBottom: '8px' }}>
-                            Contact:{' '}
+                            <TranslatedText as="span" i18nKey="support.contact" />:{' '}
                             <a href="mailto:contato@stzlabs.com" style={{ textDecoration: 'underline' }}>
                                 contato@stzlabs.com
                             </a>
                         </p>
                         <p className="text-muted">
                             <Link href="/terms" style={{ textDecoration: 'underline' }}>
-                                Terms
+                                <TranslatedText as="span" i18nKey="footer.terms" />
                             </Link>{' '}
                             {' | '}
                             <Link href="/privacy" style={{ textDecoration: 'underline' }}>
-                                Privacy
+                                <TranslatedText as="span" i18nKey="footer.privacy" />
                             </Link>
                         </p>
                     </article>
 
                     <article className="card" style={{ marginBottom: '24px' }}>
-                        <h3 style={{ marginBottom: '12px' }}>How to support</h3>
-                        <p className="text-muted" style={{ marginBottom: '14px' }}>
-                            Payment flow: open Stripe checkout, complete payment, and access software
-                            immediately via official release/download links.
-                        </p>
+                        <TranslatedText as="h3" style={{ marginBottom: '12px' }} i18nKey="support.how_to_support" />
+                        <TranslatedText as="p" className="text-muted" style={{ marginBottom: '14px' }} i18nKey="support.payment_flow" />
                         {hasStripePaymentLink ? (
                             <a
                                 href={stripePaymentLink}
@@ -101,7 +98,7 @@ export default function SupportPage() {
                                 className="btn btn-primary"
                                 style={{ width: 'fit-content' }}
                             >
-                                Support with Stripe
+                                <TranslatedText as="span" i18nKey="support.support_with_stripe" />
                             </a>
                         ) : (
                             <span
@@ -109,14 +106,14 @@ export default function SupportPage() {
                                 aria-disabled="true"
                                 style={{ width: 'fit-content', opacity: 0.8 }}
                             >
-                                Stripe checkout: coming soon
+                                <TranslatedText as="span" i18nKey="support.stripe_coming_soon" />
                             </span>
                         )}
                     </article>
 
                     <div className="section-header" style={{ marginBottom: '24px' }}>
-                        <h2 className="text-accent">Software available now</h2>
-                        <p className="text-muted">Current products and official downloads.</p>
+                        <TranslatedText as="h2" className="text-accent" i18nKey="support.software_available_now" />
+                        <TranslatedText as="p" className="text-muted" i18nKey="support.current_products" />
                     </div>
 
                     <div className="product-grid">
@@ -140,9 +137,7 @@ export default function SupportPage() {
                                     />
 
                                     {!hasDirectRelease && href && (
-                                        <p className="text-muted" style={{ marginBottom: '12px' }}>
-                                            Releases / downloads
-                                        </p>
+                                        <TranslatedText as="p" className="text-muted" style={{ marginBottom: '12px' }} i18nKey="support.releases_downloads" />
                                     )}
 
                                     <div className="card-actions">
