@@ -11,6 +11,12 @@ export default function StatusTimeline() {
                         className="text-muted"
                         i18nKey="sections.roadmap_subtitle"
                     />
+                    <p
+                        className="text-muted"
+                        style={{ marginTop: '10px', fontSize: '0.95rem' }}
+                    >
+                        Tips do not fund a campaign; they support maintenance.
+                    </p>
                 </div>
                 <div className="timeline">
                     <div className="timeline-item">
@@ -35,7 +41,7 @@ export default function StatusTimeline() {
                     </div>
                     <div className="timeline-item">
                         <span className="time-label">
-                            <TranslatedText as="span" i18nKey="sections.roadmap_status_3" />{' '}
+                            <span>Planned / No public ETA</span>{' '}
                             <TranslatedText as="span" className="update-badge" i18nKey="common.badges.alpha" />
                         </span>
                         <div className="t-content">
@@ -45,8 +51,8 @@ export default function StatusTimeline() {
                     </div>
                     <div className="timeline-item">
                         <span className="time-label">
-                            <TranslatedText as="span" i18nKey="sections.roadmap_status_4" />{' '}
-                            <TranslatedText as="span" className="update-badge" i18nKey="common.badges.soon" />
+                            <span>Experimental / No public ETA</span>{' '}
+                            <TranslatedText as="span" className="update-badge" i18nKey="common.badges.alpha" />
                         </span>
                         <div className="t-content">
                             <TranslatedText as="h4" i18nKey="sections.roadmap_q4" />

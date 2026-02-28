@@ -9,6 +9,12 @@ export default function Footer() {
                     <span style={{ fontWeight: 700, color: '#fff' }}>STZ LABS</span>
                     <span style={{ margin: '0 10px' }}>|</span>
                     <TranslatedText as="span" className="build-info" i18nKey="footer.build" />
+                    <span
+                        className="build-info"
+                        style={{ display: 'block', marginTop: '4px', opacity: 0.7 }}
+                    >
+                        Operated by: StarzynhoBR (individual, Brazil)
+                    </span>
                 </div>
                 <div className="footer-links">
                     <a
@@ -39,6 +45,8 @@ export default function Footer() {
                     <Link href="/terms">
                         <TranslatedText as="span" i18nKey="footer.terms" />
                     </Link>
+
+                    <Link href="/support">Support</Link>
                 </div>
             </div>
         </footer>
