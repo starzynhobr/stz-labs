@@ -51,7 +51,10 @@
         "roadmap_q4_desc": "Ideen und Experimente für neue Automatisierungs- und Produktivitätsmodule, priorisiert nach Reifegrad.",
         "gallery_details_toggle": "Interface-Details",
         "features_title": "Hauptfunktionen",
-        "specs_title": "Technische Daten"
+        "specs_title": "Technische Daten",
+        "projects_support_cta": "Unterstützen",
+        "projects_support_note": "Freiwilliger Beitrag. Keine Belohnungen.",
+        "projects_support_aria": "Zur Support-Seite"
     },
     "cards": {
         "suite_desc": "Modulares Desktop-Tool-Ökosystem. Ein leistungsstarker Launcher, der Plugins, Skripte und Automatisierung in einer Oberfläche vereint.",
