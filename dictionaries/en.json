@@ -51,7 +51,10 @@
         "roadmap_q4_desc": "Ideas and experiments for new automation and productivity modules, prioritized as they mature.",
         "gallery_details_toggle": "Interface Details",
         "features_title": "Key Features",
-        "specs_title": "Technical Specs"
+        "specs_title": "Technical Specs",
+        "projects_support_cta": "Support",
+        "projects_support_note": "Voluntary tip. No rewards.",
+        "projects_support_aria": "Go to support page"
     },
     "cards": {
         "suite_desc": "Modular desktop tool ecosystem. A powerful launcher unifying plugins, scripts, and automation in a unified interface.",

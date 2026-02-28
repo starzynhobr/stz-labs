@@ -51,7 +51,10 @@
         "roadmap_q4_desc": "Idées et expérimentations pour de nouveaux modules de productivité et d'automatisation, priorisés selon leur maturité.",
         "gallery_details_toggle": "Détails de l'Interface",
         "features_title": "Fonctionnalités Principales",
-        "specs_title": "Spécifications Techniques"
+        "specs_title": "Spécifications Techniques",
+        "projects_support_cta": "Soutenir",
+        "projects_support_note": "Contribution volontaire. Aucune récompense.",
+        "projects_support_aria": "Aller à la page de support"
     },
     "cards": {
         "suite_desc": "Écosystème modulaire d'outils de bureau. Un launcher puissant unifiant plugins, scripts et automatisation dans une interface unique.",
