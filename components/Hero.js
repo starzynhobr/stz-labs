@@ -14,7 +14,7 @@ export default function Hero() {
                 <div className="projects-support-cta">
                     <Link
                         href="/support"
-                        className="btn btn-secondary nav-btn support-cta-btn"
+                        className="btn btn-primary btn-sm support-cta-btn"
                         aria-label={t('sections.projects_support_aria')}
                     >
                         <TranslatedText as="span" i18nKey="sections.projects_support_cta" />
