@@ -26,7 +26,7 @@ const getSupportDownload = (project) => {
 };
 
 export default function SupportPage() {
-    const stripePaymentLink = process.env.STRIPE_PAYMENT_LINK?.trim();
+    const stripePaymentLink = process.env.NEXT_PUBLIC_STRIPE_TIPS_URL?.trim();
     const hasStripePaymentLink = Boolean(stripePaymentLink);
 
     return (
@@ -94,7 +94,7 @@ export default function SupportPage() {
                             <a
                                 href={stripePaymentLink}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="btn btn-primary"
                                 style={{ width: 'fit-content' }}
                             >
