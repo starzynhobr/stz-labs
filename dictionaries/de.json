@@ -140,6 +140,24 @@
         "law_title": "Anwendbares Recht",
         "law_desc": "Diese Bedingungen werden nach dem für den Website-Betreiber und die durchgeführten Transaktionen geltenden Recht ausgelegt, unbeschadet zwingender Verbraucherrechte."
     },
+    "support": {
+        "title": "Support / Tips",
+        "subtitle": "Tips sind freiwillige Beiträge zur Unterstützung der Wartung bestehender Software. Das ist kein Crowdfunding. Keine Ziele, keine Belohnungen und keine zukünftigen Versprechen. Die Software ist bereits verfügbar und wird digital über offizielle Download-Links (GitHub Releases) bereitgestellt.",
+        "scope_title": "Support-Umfang",
+        "no_crowdfunding": "Kein Crowdfunding",
+        "no_goals": "Keine Ziele",
+        "no_rewards": "Keine Belohnungen",
+        "no_future_promises": "Keine zukünftigen Versprechen",
+        "delivery": "Lieferung: sofortiger digitaler Download über offizielle Links (GitHub Releases).",
+        "contact": "Kontakt",
+        "how_to_support": "Wie man unterstützt",
+        "payment_flow": "Zahlungsablauf: Stripe-Checkout öffnen, Zahlung abschließen und sofort über offizielle Release-/Download-Links auf die Software zugreifen.",
+        "support_with_stripe": "Mit Stripe unterstützen",
+        "stripe_coming_soon": "Stripe-Checkout: demnächst",
+        "software_available_now": "Software jetzt verfügbar",
+        "current_products": "Aktuelle Produkte und offizielle Downloads.",
+        "releases_downloads": "Releases / Downloads"
+    },
     "mouse_click": {
         "title": "AutoClicker Pro",
         "description": "Leichter moderner Auto-Clicker für Windows mit Hold-to-Click-Modus und CPS-Steuerung.",
