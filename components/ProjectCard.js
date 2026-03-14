@@ -40,6 +40,7 @@ const ProjectCard = ({
     detailLabelKey,
     downloadLabel,
     downloadLabelKey,
+    downloadDisabledLabelKey,
     style,
     actionButtons,
 }) => (
@@ -143,6 +144,15 @@ const ProjectCard = ({
                                 {downloadLabel}
                             </a>
                         )
+                    )}
+                    {!downloadHref && downloadDisabledLabelKey && (
+                        <span
+                            className="btn btn-secondary btn-sm"
+                            aria-disabled="true"
+                            style={{ opacity: 0.65, pointerEvents: 'none' }}
+                        >
+                            <TranslatedText as="span" i18nKey={downloadDisabledLabelKey} />
+                        </span>
                     )}
                 </>
             )}

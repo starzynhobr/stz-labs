@@ -412,6 +412,74 @@ export const projects = [
         },
     },
     {
+        slug: 'stz-ai-chat-optimizer',
+        titleKey: 'ai_chat_optimizer.title',
+        descriptionKey: 'cards.ai_chat_optimizer_desc',
+        downloadHref: null,
+        downloadDisabledLabelKey: 'cards.btn_soon',
+        badgeLabelKey: 'common.badges.soon',
+        badgeVariant: 'beta',
+        tags: [
+            { labelKey: 'common.tags.javascript' },
+            { labelKey: 'common.tags.browser_extension' },
+            { labelKey: 'common.tags.webextension' },
+        ],
+        detailLabelKey: 'cards.btn_details',
+        detail: {
+            meta: {
+                title: 'STZ Ai Chat Optimizer | STZ LABS',
+                description:
+                    'Browser extension for keeping long AI chats lighter by hiding or collapsing older messages while preserving the current conversation flow.',
+                ogDescription:
+                    'Keep long AI chats lighter by hiding or collapsing older messages while preserving the current conversation flow.',
+            },
+            hero: {
+                tags: ['JavaScript', 'WebExtension (MV3)', 'ChatGPT / Gemini / Claude'],
+                titleKey: 'ai_chat_optimizer.title',
+                descriptionKey: 'ai_chat_optimizer.description',
+                githubLabelKey: 'cards.btn_soon',
+            },
+            gallery: [
+                {
+                    src: '/images/projects/stz-ai-chat-optimizer/cover/cover.png',
+                    alt: 'STZ Ai Chat Optimizer cover preview',
+                    variant: 'hero',
+                },
+                {
+                    src: '/images/projects/stz-ai-chat-optimizer/crops/screenshot_1.png',
+                    alt: 'STZ Ai Chat Optimizer screenshot 1',
+                },
+            ],
+            features: [
+                {
+                    titleKey: 'ai_chat_optimizer.features.hide_title',
+                    descriptionKey: 'ai_chat_optimizer.features.hide_desc',
+                },
+                {
+                    titleKey: 'ai_chat_optimizer.features.flow_title',
+                    descriptionKey: 'ai_chat_optimizer.features.flow_desc',
+                },
+                {
+                    titleKey: 'ai_chat_optimizer.features.sites_title',
+                    descriptionKey: 'ai_chat_optimizer.features.sites_desc',
+                },
+                {
+                    titleKey: 'ai_chat_optimizer.features.local_title',
+                    descriptionKey: 'ai_chat_optimizer.features.local_desc',
+                },
+            ],
+            specs: [
+                { labelKey: 'ai_chat_optimizer.specs.version', value: 'v1.0.0' },
+                { labelKey: 'ai_chat_optimizer.specs.framework', value: 'WebExtension (MV3)' },
+                { labelKey: 'ai_chat_optimizer.specs.language', value: 'JavaScript' },
+                { labelKey: 'ai_chat_optimizer.specs.interface', value: 'HTML / CSS' },
+                { labelKey: 'ai_chat_optimizer.specs.license', value: 'Proprietary' },
+                { labelKey: 'ai_chat_optimizer.specs.platform', value: 'Chrome / Edge / Firefox-compatible' },
+                { labelKey: 'ai_chat_optimizer.specs.target', value: 'ChatGPT / Gemini / Claude' },
+            ],
+        },
+    },
+    {
         slug: 'mouse-click',
         repoName: 'mouse-click',
         titleKey: 'mouse_click.title',

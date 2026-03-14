@@ -53,6 +53,7 @@ export default function HomePage() {
                                 tags={project.tags}
                                 detailLabelKey={project.detailLabelKey}
                                 downloadLabelKey={project.downloadLabelKey}
+                                downloadDisabledLabelKey={project.downloadDisabledLabelKey}
                                 style={project.style}
                                 actionButtons={project.actionButtons}
                             />

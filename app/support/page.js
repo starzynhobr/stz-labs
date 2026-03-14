@@ -26,8 +26,7 @@ const getSupportDownload = (project) => {
 };
 
 export default function SupportPage() {
-    const stripePaymentLink = process.env.NEXT_PUBLIC_STRIPE_TIPS_URL?.trim();
-    const hasStripePaymentLink = Boolean(stripePaymentLink);
+    const supportUrl = 'https://ko-fi.com/starzynhobr';
 
     return (
         <div
@@ -90,25 +89,15 @@ export default function SupportPage() {
                     <article className="card" style={{ marginBottom: '24px' }}>
                         <TranslatedText as="h3" style={{ marginBottom: '12px' }} i18nKey="support.how_to_support" />
                         <TranslatedText as="p" className="text-muted" style={{ marginBottom: '14px' }} i18nKey="support.payment_flow" />
-                        {hasStripePaymentLink ? (
-                            <a
-                                href={stripePaymentLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                                style={{ width: 'fit-content' }}
-                            >
-                                <TranslatedText as="span" i18nKey="support.support_with_stripe" />
-                            </a>
-                        ) : (
-                            <span
-                                className="btn btn-secondary"
-                                aria-disabled="true"
-                                style={{ width: 'fit-content', opacity: 0.8 }}
-                            >
-                                <TranslatedText as="span" i18nKey="support.stripe_coming_soon" />
-                            </span>
-                        )}
+                        <a
+                            href={supportUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary"
+                            style={{ width: 'fit-content' }}
+                        >
+                            <TranslatedText as="span" i18nKey="support.support_with_kofi" />
+                        </a>
                     </article>
 
                     <div className="section-header" style={{ marginBottom: '24px' }}>
@@ -159,7 +148,10 @@ export default function SupportPage() {
                                                 aria-disabled="true"
                                                 style={{ opacity: 0.65 }}
                                             >
-                                                <TranslatedText as="span" i18nKey="cards.btn_download" />
+                                                <TranslatedText
+                                                    as="span"
+                                                    i18nKey={project.downloadDisabledLabelKey || 'cards.btn_download'}
+                                                />
                                             </span>
                                         )}
                                     </div>
