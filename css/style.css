@@ -406,6 +406,10 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.5px; }
     align-items: flex-start;
     margin-bottom: 20px;
 }
+.card-header .badge {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
 
 .card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; color: var(--text); }
 
@@ -638,10 +642,26 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.5px; }
 
 /* Specs (Detail Pages) */
 .specs-section { padding: 60px 0; border-top: 1px solid var(--border-color); margin-top: 40px; }
-.specs-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 600px; margin: 0 auto; }
-.spec-item { display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding: 10px 0; }
-.spec-label { color: var(--text-muted); }
-.spec-item span:last-child { color: var(--text-main); }
+.specs-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 600px; margin: 0 auto; }
+.spec-item {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+}
+.spec-label {
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+.spec-item > :last-child {
+    min-width: 0;
+    color: var(--text-main);
+    text-align: right;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
 
 
 /* Why STZ (Index) */
@@ -991,6 +1011,9 @@ select.lang-select option {
     .product-gallery-details.is-open .product-gallery-details-body {
         padding-top: 12px;
         padding-bottom: 12px;
+    }
+    .specs-list {
+        grid-template-columns: 1fr;
     }
 }
 
