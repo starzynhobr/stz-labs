@@ -45,6 +45,39 @@ export default function PrivacyPage() {
 
                     <article className="card" style={{ marginBottom: '30px' }}>
                         <h3 style={{ marginBottom: '15px' }}>
+                            <TranslatedText as="span" i18nKey="privacy.extension_title" />
+                        </h3>
+                        <p className="text-muted">
+                            <TranslatedText as="span" i18nKey="privacy.extension_desc" />
+                        </p>
+                        <ul
+                            style={{
+                                listStyle: 'disc',
+                                marginLeft: '20px',
+                                color: 'var(--text-muted)',
+                                marginTop: '10px',
+                            }}
+                        >
+                            <li style={{ marginBottom: '8px' }}>
+                                <TranslatedText as="span" i18nKey="privacy.extension_item_1" />
+                            </li>
+                            <li style={{ marginBottom: '8px' }}>
+                                <TranslatedText as="span" i18nKey="privacy.extension_item_2" />
+                            </li>
+                            <li style={{ marginBottom: '8px' }}>
+                                <TranslatedText as="span" i18nKey="privacy.extension_item_3" />
+                            </li>
+                            <li style={{ marginBottom: '8px' }}>
+                                <TranslatedText as="span" i18nKey="privacy.extension_item_4" />
+                            </li>
+                            <li>
+                                <TranslatedText as="span" i18nKey="privacy.extension_item_5" />
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article className="card" style={{ marginBottom: '30px' }}>
+                        <h3 style={{ marginBottom: '15px' }}>
                             <TranslatedText as="span" i18nKey="privacy.api_title" />
                         </h3>
                         <p className="text-muted">
