@@ -361,6 +361,177 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.5px; }
     line-height: 1.2;
     text-align: right;
 }
+.support-modal-trigger {
+    display: inline-flex;
+    min-height: 48px;
+    padding: 14px 22px;
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 12px;
+    appearance: none;
+    border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--border));
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--surface) 80%, transparent), color-mix(in srgb, var(--surface2) 62%, transparent)),
+        color-mix(in srgb, var(--surface) 72%, transparent);
+    color: var(--text-main);
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
+    backdrop-filter: blur(10px);
+}
+.support-modal-trigger:hover {
+    border-color: color-mix(in srgb, var(--accent) 54%, var(--border));
+    box-shadow:
+        0 16px 30px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 0 18px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.support-modal-trigger:focus-visible,
+.support-modal-close:focus-visible,
+.support-amount-button:focus-visible,
+.support-method-button:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 2px;
+}
+.support-modal-trigger-sheen {
+    position: absolute;
+    inset: -180% auto auto -45%;
+    width: 42%;
+    height: 420%;
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.24) 48%, transparent 100%);
+    transform: rotate(22deg);
+    pointer-events: none;
+    opacity: 0.75;
+    animation: supportButtonSweep 5.4s ease-in-out infinite;
+}
+.support-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(5, 8, 12, 0.68);
+    backdrop-filter: blur(6px);
+    animation: supportOverlayFade 0.22s ease;
+}
+.support-modal {
+    position: relative;
+    width: min(100%, 560px);
+    padding: 28px;
+    border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--border));
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 10%, transparent), transparent 34%),
+        linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent), color-mix(in srgb, var(--surface2) 92%, transparent));
+    box-shadow:
+        0 28px 64px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    animation: supportModalIn 0.24s ease;
+}
+.support-modal-header {
+    margin-bottom: 22px;
+    padding-right: 28px;
+}
+.support-modal-header h3 {
+    font-size: 1.7rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+.support-modal-header p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+.support-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--surface2) 75%, transparent);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.support-modal-close:hover {
+    color: var(--text-main);
+    border-color: color-mix(in srgb, var(--accent) 38%, var(--border-color));
+}
+.support-method-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+.support-method-copy h4 {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+.support-method-copy p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+.support-method-button {
+    min-width: 170px;
+    white-space: nowrap;
+}
+.support-method-separator {
+    height: 1px;
+    margin: 18px 0;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+.support-amount-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+.support-amount-button {
+    min-height: 46px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--surface2) 62%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 12%, var(--border));
+}
+.support-amount-button:hover {
+    border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+    background: color-mix(in srgb, var(--surface2) 78%, transparent);
+}
+@keyframes supportOverlayFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes supportModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes supportButtonSweep {
+    0%, 100% {
+        transform: translateX(-180%) rotate(22deg);
+        opacity: 0;
+    }
+    12% {
+        opacity: 0.75;
+    }
+    28% {
+        transform: translateX(360%) rotate(22deg);
+        opacity: 0;
+    }
+}
 
 .product-grid {
     display: grid;
@@ -971,6 +1142,20 @@ select.lang-select option {
     .support-cta-note {
         text-align: left;
     }
+    .support-modal {
+        padding: 22px 18px 18px;
+    }
+    .support-method-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .support-method-button {
+        width: 100%;
+        min-width: 0;
+    }
+    .support-amount-grid {
+        grid-template-columns: 1fr;
+    }
     
     .timeline::before { left: 20px; }
     .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; text-align: left !important; }
@@ -1021,6 +1206,10 @@ select.lang-select option {
     * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     html.theme-switching .app-shell::before { opacity: var(--noise-opacity); }
     html.theme-switching .app-shell::after { opacity: 0; }
+    .support-modal-trigger-sheen {
+        animation: none;
+        opacity: 0;
+    }
 }
     .product-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
