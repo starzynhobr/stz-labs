@@ -63,7 +63,29 @@ export default async function ProjectDetailPage({ params }) {
                     <TranslatedText as="p" i18nKey={hero.descriptionKey} />
 
                     <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
-                        {hero.githubUrl ? (
+                        {hero.actionLinks?.length ? (
+                            hero.actionLinks.map((link, idx) => (
+                                <a
+                                    key={idx}
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={`btn btn-${link.variant || 'primary'}`}
+                                >
+                                    {link.icon && (
+                                        <span
+                                            style={{ marginRight: '8px', display: 'flex', alignItems: 'center' }}
+                                            dangerouslySetInnerHTML={{ __html: link.icon }}
+                                        />
+                                    )}
+                                    {link.labelKey ? (
+                                        <TranslatedText as="span" i18nKey={link.labelKey} />
+                                    ) : (
+                                        <span>{link.label}</span>
+                                    )}
+                                </a>
+                            ))
+                        ) : hero.githubUrl ? (
                             <a href={hero.githubUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
                                 <svg
                                     width="20"
@@ -94,13 +116,10 @@ export default async function ProjectDetailPage({ params }) {
             {heroGalleryItem ? (
                 <section className="product-gallery-section">
                     <div className="container">
-                        <figure className="product-gallery-item is-hero">
-                            <div className="product-gallery-frame">
-                                <img src={heroGalleryItem.src} alt={heroGalleryItem.alt} loading="lazy" />
-                            </div>
-                        </figure>
-
-                        <ProjectGalleryDetails items={extraGalleryItems} />
+                        <ProjectGalleryDetails
+                            heroItem={heroGalleryItem}
+                            items={extraGalleryItems}
+                        />
                     </div>
                 </section>
             ) : null}

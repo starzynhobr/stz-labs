@@ -102,15 +102,37 @@ const ProjectCard = ({
         </div>
         <div className="card-actions">
             {actionButtons?.length ? (
-                actionButtons.map((action) => (
-                    <TranslatedText
-                        key={action.labelKey || action.label}
-                        as="span"
-                        className={`btn btn-${action.variant || 'primary'} btn-sm`}
-                        i18nKey={action.labelKey}
-                        style={action.style}
-                    />
-                ))
+                actionButtons.map((action) => {
+                    const isInternal = action.href?.startsWith('/');
+                    const ButtonContent = () => (
+                        action.labelKey ? (
+                            <TranslatedText as="span" i18nKey={action.labelKey} />
+                        ) : (
+                            <span>{action.label}</span>
+                        )
+                    );
+                    const className = `btn btn-${action.variant || 'primary'} btn-sm`;
+                    
+                    if (isInternal) {
+                        return (
+                            <Link key={action.labelKey || action.label} href={action.href} className={className} style={action.style}>
+                                <ButtonContent />
+                            </Link>
+                        );
+                    } else if (action.href) {
+                        return (
+                            <a key={action.labelKey || action.label} href={action.href} target="_blank" rel="noreferrer" className={className} style={action.style}>
+                                <ButtonContent />
+                            </a>
+                        );
+                    } else {
+                        return (
+                            <span key={action.labelKey || action.label} className={className} style={action.style}>
+                                <ButtonContent />
+                            </span>
+                        );
+                    }
+                })
             ) : (
                 <>
                     {detailHref && (
