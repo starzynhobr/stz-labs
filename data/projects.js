@@ -416,15 +416,19 @@ export const projects = [
         titleKey: 'ai_chat_optimizer.title',
         descriptionKey: 'cards.ai_chat_optimizer_desc',
         downloadHref: null,
-        downloadDisabledLabelKey: 'cards.btn_soon',
-        badgeLabelKey: 'common.badges.soon',
-        badgeVariant: 'beta',
+        badgeLabelKey: 'common.badges.stable',
+        badgeVariant: 'stable',
         tags: [
             { labelKey: 'common.tags.javascript' },
             { labelKey: 'common.tags.browser_extension' },
             { labelKey: 'common.tags.webextension' },
         ],
         detailLabelKey: 'cards.btn_details',
+        actionButtons: [
+            { labelKey: 'cards.btn_details', href: '/projects/stz-ai-chat-optimizer', variant: 'primary' },
+            { label: 'Chrome', href: 'https://chromewebstore.google.com/detail/stz-ai-chat-optimizer/fhfjgfncohmbapjpdbkhgaiooffmiabj?authuser=3&hl=pt-BR', variant: 'secondary' },
+            { label: 'Firefox', href: 'https://addons.mozilla.org/pt-BR/firefox/addon/stz-ai-chat-optimizer/', variant: 'secondary' }
+        ],
         detail: {
             meta: {
                 title: 'STZ Ai Chat Optimizer | STZ LABS',
@@ -437,7 +441,18 @@ export const projects = [
                 tags: ['JavaScript', 'WebExtension (MV3)', 'ChatGPT / Gemini / Claude'],
                 titleKey: 'ai_chat_optimizer.title',
                 descriptionKey: 'ai_chat_optimizer.description',
-                githubLabelKey: 'cards.btn_soon',
+                actionLinks: [
+                    {
+                        label: 'Chrome Web Store',
+                        url: 'https://chromewebstore.google.com/detail/stz-ai-chat-optimizer/fhfjgfncohmbapjpdbkhgaiooffmiabj?authuser=3&hl=pt-BR',
+                        variant: 'primary',
+                    },
+                    {
+                        label: 'Firefox Add-ons',
+                        url: 'https://addons.mozilla.org/pt-BR/firefox/addon/stz-ai-chat-optimizer/',
+                        variant: 'primary',
+                    },
+                ],
             },
             gallery: [
                 {

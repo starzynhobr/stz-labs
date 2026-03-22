@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SupportOptionsModal from '../../components/SupportOptionsModal';
 import TranslatedText from '../../components/TranslatedText';
 import { projects } from '../../data/projects';
 
@@ -27,6 +28,11 @@ const getSupportDownload = (project) => {
 
 export default function SupportPage() {
     const supportUrl = 'https://ko-fi.com/starzynhobr';
+    const mercadoPagoLinks = [
+        { href: 'https://mpago.la/2u4kqx3', labelKey: 'support.amount_5' },
+        { href: 'https://mpago.la/1ZSbnxM', labelKey: 'support.amount_10' },
+        { href: 'https://link.mercadopago.com.br/urendis', labelKey: 'support.amount_free' },
+    ];
 
     return (
         <div
@@ -89,15 +95,10 @@ export default function SupportPage() {
                     <article className="card" style={{ marginBottom: '24px' }}>
                         <TranslatedText as="h3" style={{ marginBottom: '12px' }} i18nKey="support.how_to_support" />
                         <TranslatedText as="p" className="text-muted" style={{ marginBottom: '14px' }} i18nKey="support.payment_flow" />
-                        <a
-                            href={supportUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-primary"
-                            style={{ width: 'fit-content' }}
-                        >
-                            <TranslatedText as="span" i18nKey="support.support_with_kofi" />
-                        </a>
+                        <SupportOptionsModal
+                            kofiUrl={supportUrl}
+                            mercadoPagoLinks={mercadoPagoLinks}
+                        />
                     </article>
 
                     <div className="section-header" style={{ marginBottom: '24px' }}>
