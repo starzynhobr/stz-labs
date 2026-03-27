@@ -10,7 +10,7 @@ const tagVariants = cva(
                 default:
                     "border-[var(--border-subtle)] bg-[var(--surface-2)] text-[var(--text-secondary)] hover:bg-[var(--surface-3)]",
                 stars:
-                    "border-amber-500/30 bg-amber-500/10 text-amber-500 hover:bg-amber-500/20",
+                    "border-[var(--star-color)]/30 bg-[var(--star-color)]/10 text-[var(--star-color)] hover:bg-[var(--star-color)]/20",
                 accent:
                     "border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20",
             },

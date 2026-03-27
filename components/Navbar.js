@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import ThemeSelector from './ThemeSelector';
+import { cn } from '../lib/utils';
 
 const navLinks = [
     { href: '/', dataI18n: 'nav.products', back: true },
@@ -19,7 +20,6 @@ export default function Navbar() {
     const { t, lang, setLang } = useLanguage();
     const [menuOpen, setMenuOpen] = useState(false);
     const [langMenuOpen, setLangMenuOpen] = useState(false);
-    const [hoveredLink, setHoveredLink] = useState(null);
     const langRef = useRef(null);
     const showBackArrow = pathname !== '/';
  
@@ -43,26 +43,20 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-4 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl z-[1000] bg-[var(--bg)]/40 backdrop-blur-xl border border-[var(--border)] shadow-[var(--shadow)] rounded-[var(--radius-card)] transition-all duration-300">
+        <nav className="fixed top-4 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl z-[1000] bg-[var(--bg)]/40 backdrop-blur-xl border border-[var(--border-strong)] shadow-[var(--shadow)] rounded-[var(--radius-card)] transition-all duration-300">
             <div className="flex items-center justify-between px-8 md:px-12 h-[60px]">
                 {/* Logo */}
                 <Link 
                     href="/" 
-                    onMouseEnter={() => setHoveredLink('logo')}
-                    onMouseLeave={() => setHoveredLink(null)}
-                    style={{ color: hoveredLink === 'logo' ? '#fff' : '#71717a' }}
-                    className="font-bold tracking-tight flex items-center gap-1.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-md group"
+                    className="font-bold tracking-tight flex items-center gap-1.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-md group text-[var(--nav-link)] hover:text-[var(--nav-link-hover)]"
                 >
                     <span className="text-base tracking-tighter">STZ LABS</span>
-                    <span 
-                        className="w-1 h-1 rounded-full transition-colors" 
-                        style={{ backgroundColor: hoveredLink === 'logo' ? '#a855f7' : 'rgba(168, 85, 247, 0.3)' }} 
-                    />
+                    <span className="w-1 h-1 rounded-full transition-colors bg-[var(--accent)]/30 group-hover:bg-[var(--accent)]" />
                 </Link>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden text-zinc-300 hover:text-white p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+                    className="md:hidden text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                     aria-label={t('nav.menu')}
                     onClick={handleMenuToggle}
                 >
@@ -72,25 +66,24 @@ export default function Navbar() {
                 </button>
 
                 {/* Main Links (Desktop center, Mobile dropdown) */}
-                <ul className={`absolute md:static top-full left-0 right-0 mt-2 md:mt-0 p-4 md:p-6 bg-black/60 md:bg-transparent backdrop-blur-3xl md:backdrop-blur-none border border-white/5 md:border-none rounded-2xl md:rounded-none shadow-xl md:shadow-none flex-col md:flex-row items-center gap-6 md:flex transition-all duration-200 ${menuOpen ? 'flex' : 'hidden md:flex'}`}>
+                <ul className={cn(
+                    "absolute md:static top-full left-0 right-0 mt-2 md:mt-0 p-4 md:p-6 bg-[var(--surface-3)] md:bg-transparent backdrop-blur-[var(--backdrop-blur)] md:backdrop-blur-none border border-[var(--border-subtle)] md:border-none rounded-2xl md:rounded-none shadow-[var(--shadow)] md:shadow-none flex-col md:flex-row items-center gap-6 md:flex transition-all duration-200",
+                    menuOpen ? 'flex' : 'hidden md:flex'
+                )}>
                     {navLinks
                         .filter(link => !(link.href === '/' && pathname === '/'))
                         .map((link) => {
                         const label = t(link.dataI18n);
-                        const isHovered = hoveredLink === link.href;
                         return (
                             <li key={link.href} className="w-full md:w-auto">
                                 <Link
                                     href={link.href}
-                                    onMouseEnter={() => setHoveredLink(link.href)}
-                                    onMouseLeave={() => setHoveredLink(null)}
-                                    style={{ color: isHovered ? '#fff' : '#71717a' }}
-                                    className="block text-center md:inline-flex items-center gap-1.5 text-[13px] font-medium transition-colors py-2 md:py-0 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+                                    className="block text-center md:inline-flex items-center gap-1.5 text-[13px] font-medium transition-colors py-2 md:py-0 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] text-[var(--nav-link)] hover:text-[var(--nav-link-hover)]"
                                     data-i18n={link.dataI18n}
                                     onClick={handleNavClick}
                                 >
                                     {link.back && showBackArrow && (
-                                        <span aria-hidden="true" className="text-purple-500">
+                                        <span aria-hidden="true" className="text-[var(--accent)]">
                                             ←
                                         </span>
                                     )}
@@ -101,19 +94,20 @@ export default function Navbar() {
                     })}
  
                     {/* Mobile Controls */}
-                    <li className="w-full pt-4 mt-2 border-t border-white/5 flex flex-col gap-4 md:hidden">
+                    <li className="w-full pt-4 mt-2 border-t border-[var(--border-subtle)] flex flex-col gap-4 md:hidden">
                         <div className="flex items-center justify-between">
-                            <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">{t('nav.language')}</span>
+                            <span className="text-[11px] font-bold text-[var(--text-secondary)] uppercase tracking-wider">{t('nav.language')}</span>
                             <div className="flex flex-wrap gap-2 justify-end max-w-[160px]">
                                 {['pt', 'en', 'fr', 'de', 'it', 'es'].map((l) => (
                                     <button
                                         key={l}
                                         onClick={() => setLang(l)}
-                                        className={`px-2 py-1 text-[10px] font-bold rounded-md transition-all uppercase ${
+                                        className={cn(
+                                            "px-2 py-1 text-[10px] font-bold rounded-md transition-all uppercase",
                                             lang === l 
-                                                ? 'bg-purple-500/20 text-white border border-purple-500/30' 
-                                                : 'text-zinc-500 border border-white/5 hover:text-white'
-                                        }`}
+                                                ? "bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20" 
+                                                : "text-[var(--text-secondary)] border border-[var(--border-subtle)] hover:text-[var(--text-primary)]"
+                                        )}
                                     >
                                         {l}
                                     </button>
@@ -121,7 +115,7 @@ export default function Navbar() {
                             </div>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">{t('nav.theme')}</span>
+                            <span className="text-[11px] font-bold text-[var(--text-secondary)] uppercase tracking-wider">{t('nav.theme')}</span>
                             <div className="flex justify-end">
                                 <ThemeSelector />
                             </div>
@@ -135,10 +129,7 @@ export default function Navbar() {
                     <div className="relative" ref={langRef}>
                         <button
                             onClick={() => setLangMenuOpen(!langMenuOpen)}
-                            onMouseEnter={() => setHoveredLink('lang')}
-                            onMouseLeave={() => setHoveredLink(null)}
-                            className="bg-zinc-900/50 hover:bg-zinc-800 text-zinc-300 border border-white/10 rounded-md text-[11px] font-bold w-[45px] h-8 flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 uppercase"
-                            style={{ color: hoveredLink === 'lang' || langMenuOpen ? '#fff' : '#71717a' }}
+                            className="bg-[var(--surface-2)] hover:bg-[var(--surface-3)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-subtle)] rounded-md text-[11px] font-bold w-[45px] h-8 flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent)] uppercase"
                             aria-label={t('nav.language')}
                         >
                             {lang}
@@ -152,7 +143,7 @@ export default function Navbar() {
  
                         {/* Dropdown Menu */}
                         {langMenuOpen && (
-                            <div className="absolute top-full right-0 mt-2 w-16 bg-[#080A0E]/90 backdrop-blur-xl border border-purple-500/20 rounded-xl shadow-2xl overflow-hidden z-50 animate-in fade-in zoom-in duration-200 origin-top-right">
+                            <div className="absolute top-full right-0 mt-2 w-16 bg-[var(--surface-3)] backdrop-blur-[var(--backdrop-blur)] border border-[var(--border-subtle)] rounded-xl shadow-[var(--shadow)] overflow-hidden z-50 animate-in fade-in zoom-in duration-200 origin-top-right">
                                 {['pt', 'en', 'fr', 'de', 'it', 'es'].map((l) => (
                                     <button
                                         key={l}
@@ -160,11 +151,12 @@ export default function Navbar() {
                                             setLang(l);
                                             setLangMenuOpen(false);
                                         }}
-                                        className={`w-full px-3 py-2 text-[11px] font-bold text-center transition-colors uppercase ${
+                                        className={cn(
+                                            "w-full px-3 py-2 text-[11px] font-bold text-center transition-colors uppercase",
                                             lang === l 
-                                                ? 'bg-purple-500/20 text-white' 
-                                                : 'text-zinc-500 hover:bg-white/5 hover:text-white'
-                                        }`}
+                                                ? "bg-[var(--accent)]/10 text-[var(--accent)]" 
+                                                : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/5 hover:text-[var(--text-primary)]"
+                                        )}
                                     >
                                         {l}
                                     </button>

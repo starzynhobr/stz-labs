@@ -66,7 +66,7 @@ export default function Hero() {
     const dotColor = isPaused ? 'bg-purple-500' : isDeleting ? 'bg-red-500' : 'bg-green-500';
 
     return (
-        <section className="relative w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] transition-all duration-500">
+        <section className="relative w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-strong)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] transition-all duration-500">
             {/* Ambient Atmosphere Glows */}
             <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[var(--accent-glow)] rounded-full blur-[120px] -z-10 pointer-events-none animate-pulse duration-[4000ms] opacity-[var(--glow-opacity)]" />
             <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] bg-[var(--accent-glow)] rounded-full blur-[100px] -z-10 pointer-events-none opacity-[var(--glow-opacity)]" />

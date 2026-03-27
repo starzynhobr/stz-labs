@@ -9,7 +9,7 @@ export default function StatusTimeline() {
                         <span className="w-1 h-1 rounded-full bg-[var(--accent)] animate-pulse" />
                         <TranslatedText i18nKey="sections.roadmap_badge" />
                     </div>
-                    <TranslatedText as="h2" className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4 tracking-tight" i18nKey="sections.roadmap_title" />
+                    <TranslatedText as="h2" className="text-2xl md:text-3xl font-bold text-[var(--text-heading)] mb-4 tracking-tight" i18nKey="sections.roadmap_title" />
                     <TranslatedText
                         as="p"
                         className="text-[var(--text-secondary)] text-sm font-medium max-w-lg mx-auto leading-relaxed"
@@ -29,7 +29,7 @@ export default function StatusTimeline() {
                     {/* Item 1: Stable */}
                     <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 pb-12 group">
                         <div className="md:w-1/2 md:text-right order-2 md:order-1">
-                            <TranslatedText as="h4" className="text-[var(--text-primary)] text-sm font-bold mb-1" i18nKey="sections.roadmap_q1" />
+                            <TranslatedText as="h4" className="text-[var(--text-heading)] text-sm font-bold mb-1" i18nKey="sections.roadmap_q1" />
                             <TranslatedText as="p" className="text-[var(--text-secondary)] text-[12px] leading-relaxed" i18nKey="sections.roadmap_q1_desc" />
                         </div>
                         <div className="relative z-10 flex items-center justify-center w-16 h-8 rounded-lg bg-[var(--status-stable)]/10 border border-[var(--status-stable)]/20 order-1 md:order-2 shrink-0 shadow-[0_0_15px_var(--status-stable)]/5">
