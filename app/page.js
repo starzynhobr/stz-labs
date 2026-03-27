@@ -29,9 +29,7 @@ export default function Home() {
     const sortedProjects = [...projects].sort((a, b) => (a.priority || 99) - (b.priority || 99));
 
     return (
-        <main className="min-h-screen bg-[#0A0C10] pt-24 pb-24 relative selection:bg-purple-500/30 text-white overflow-hidden">
-            {/* Global Noise Overlay */}
-            <div className="fixed inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-40 mix-blend-overlay pointer-events-none" />
+        <main className="min-h-screen bg-transparent pt-24 pb-24 relative selection:bg-purple-500/30 text-white overflow-hidden">
             
             <div className="container relative z-10 max-w-[1200px] mx-auto px-6">
                 <section className="mt-12 relative z-10 flex flex-col gap-16">
