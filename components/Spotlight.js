@@ -52,7 +52,7 @@ export default function Spotlight() {
     return (
         <div 
             ref={spotlightRef}
-            className={`fixed top-0 left-0 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.20)_0%,rgba(168,85,247,0)_70%)] blur-[120px] pointer-events-none z-[0] will-change-transform transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`fixed top-0 left-0 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,var(--accent-glow)_0%,rgba(0,0,0,0)_70%)] blur-[120px] pointer-events-none z-[0] will-change-transform transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             aria-hidden="true"
         />
     );

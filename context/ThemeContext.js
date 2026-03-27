@@ -2,21 +2,27 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
+/**
+ * Multi-Theme Architecture for STZ LABS
+ * Supports Neon Core, Forge Grid, Aurora Glass, and Light Mode.
+ * Handles smooth transitions and persistence.
+ */
 const ThemeContext = createContext({
-    theme: 'dark',
+    theme: 'neon-core',
     setTheme: () => {},
-    toggleTheme: () => {},
+    themeList: [],
 });
 
+export const themes = ['neon-core', 'forge-grid', 'aurora-glass', 'light-mode'];
+
 export function ThemeProvider({ children }) {
-    const [theme, setThemeState] = useState('dark');
+    const [theme, setThemeState] = useState('neon-core');
     const [isSwitching, setIsSwitching] = useState(false);
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
         const savedTheme = window.localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+        const initialTheme = themes.includes(savedTheme) ? savedTheme : 'neon-core';
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setThemeState(initialTheme);
     }, []);
@@ -26,18 +32,12 @@ export function ThemeProvider({ children }) {
         window.localStorage.setItem('theme', theme);
     }, [theme]);
 
-    const setTheme = (value) => {
-        if (!value) return;
-        setThemeState(value);
-    };
+    const setTheme = (nextTheme) => {
+        if (!themes.includes(nextTheme) || nextTheme === theme || isSwitching) return;
 
-    const toggleTheme = () => {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const root = document.documentElement;
-        const nextTheme = theme === 'dark' ? 'light' : 'dark';
         const prevTheme = theme;
-
-        if (isSwitching) return;
 
         if (prefersReducedMotion) {
             root.dataset.theme = nextTheme;
@@ -48,16 +48,16 @@ export function ThemeProvider({ children }) {
         }
 
         setIsSwitching(true);
-        root.removeAttribute('data-next-theme');
         root.dataset.prevTheme = prevTheme;
         root.dataset.theme = nextTheme;
         root.classList.add('theme-switching');
         setThemeState(nextTheme);
 
-        const base = getComputedStyle(root).getPropertyValue('--theme-dur-base');
+        // Transition duration fallback from CSS --theme-dur-base
+        const base = getComputedStyle(root).getPropertyValue('--theme-dur-base') || '600ms';
         const toMs = (value) => {
-            const parsed = Number.parseFloat(value);
-            if (Number.isNaN(parsed)) return 0;
+            const parsed = parseFloat(value);
+            if (isNaN(parsed)) return 600;
             return value.includes('ms') ? parsed : parsed * 1000;
         };
         const timeout = Math.max(toMs(base), 0);
@@ -69,7 +69,11 @@ export function ThemeProvider({ children }) {
         }, timeout);
     };
 
-    return <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>{children}</ThemeContext.Provider>;
+    return (
+        <ThemeContext.Provider value={{ theme, setTheme, themeList: themes }}>
+            {children}
+        </ThemeContext.Provider>
+    );
 }
 
 export function useTheme() {

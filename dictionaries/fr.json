@@ -10,7 +10,13 @@
         "menu": "Menu",
         "language": "Langue",
         "theme": "Changer de theme",
-        "mouse_tester": "Mouse Tester"
+        "mouse_tester": "Mouse Tester",
+        "themes": {
+            "neon_core": "Neon Core",
+            "forge_grid": "Forge Grid",
+            "aurora_glass": "Aurora Glass",
+            "light_mode": "Light Mode"
+        }
     },
     "common": {
         "tags": {

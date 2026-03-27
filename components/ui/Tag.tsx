@@ -8,11 +8,11 @@ const tagVariants = cva(
         variants: {
             variant: {
                 default:
-                    "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:bg-zinc-800",
+                    "border-[var(--border-subtle)] bg-[var(--surface-2)] text-[var(--text-secondary)] hover:bg-[var(--surface-3)]",
                 stars:
                     "border-amber-500/30 bg-amber-500/10 text-amber-500 hover:bg-amber-500/20",
                 accent:
-                    "border-purple-500/30 bg-purple-500/10 text-purple-400 hover:bg-purple-500/20",
+                    "border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20",
             },
         },
         defaultVariants: {
