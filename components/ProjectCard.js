@@ -167,7 +167,7 @@ const ProjectCard = ({
                         {repoName && <RepoStats repoName={repoName} variant="stars" />}
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3">
                         {actionButtons?.length ? (
                             actionButtons.map((action) => {
                                 const isInternal = action.href?.startsWith('/');
@@ -179,7 +179,7 @@ const ProjectCard = ({
                                 const elementProps = isInternal ? { href: action.href } : (action.href ? { href: action.href, target: "_blank", rel: "noreferrer" } : {});
  
                                 return (
-                                    <Button key={action.labelKey || action.label} asChild={!!action.href} variant={action.variant || 'primary'} size={isFeatured ? "default" : "sm"} style={action.style} className={cn("px-5 py-2", !action.href ? "opacity-50 pointer-events-none" : "")}>
+                                    <Button key={action.labelKey || action.label} asChild={!!action.href} variant={action.variant || 'primary'} size={isFeatured ? "default" : "sm"} style={action.style} className={cn("px-4 py-2", !action.href ? "opacity-50 pointer-events-none" : "")}>
                                         <Element {...elementProps}>
                                             <ButtonContent />
                                         </Element>
@@ -189,14 +189,14 @@ const ProjectCard = ({
                         ) : (
                             <>
                                 {detailHref && (
-                                    <Button asChild variant="primary" size={isFeatured ? "default" : "sm"} className="px-5 py-2">
+                                    <Button asChild variant="primary" size={isFeatured ? "default" : "sm"} className="px-4 py-2">
                                         <Link href={detailHref}>
                                             {detailLabelKey ? <TranslatedText as="span" i18nKey={detailLabelKey} /> : detailLabel || 'Detalhes'}
                                         </Link>
                                     </Button>
                                 )}
                                 {downloadHref && (
-                                    <Button asChild variant="secondary" size={isFeatured ? "default" : "sm"} className="px-5 py-2">
+                                    <Button asChild variant="secondary" size={isFeatured ? "default" : "sm"} className="px-4 py-2">
                                         <a href={downloadHref} target="_blank" rel="noreferrer">
                                             {downloadLabelKey ? <TranslatedText as="span" i18nKey={downloadLabelKey} /> : downloadLabel || 'Download'}
                                         </a>

@@ -67,9 +67,10 @@ export default function Hero() {
 
     return (
         <section className="relative w-full overflow-hidden rounded-[32px] border border-white/5 bg-zinc-950/40 backdrop-blur-md">
-            {/* Ambient Purple Glow (Controlado) */}
-            <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/10 to-transparent" />
+            {/* Ambient Purple Glows (Nexux_Core Aesthetics) */}
+            <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] -z-10 pointer-events-none animate-pulse duration-[4000ms]" />
+            <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
 
             <div className="relative z-10 flex flex-col items-center px-8 py-10 md:px-12 md:py-16 max-w-4xl mx-auto text-center">
                 {/* Linha de Status Viva (Typing Effect) */}

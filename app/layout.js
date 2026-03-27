@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Spotlight from '../components/Spotlight';
 import KonamiListener from '../components/KonamiListener';
 import Providers from './providers';
 
@@ -21,12 +22,17 @@ export default function RootLayout({ children }) {
         <html lang="pt-BR" data-theme="dark">
             <body className={inter.className}>
                 <div className="noise" aria-hidden="true"></div>
-                <Providers>
-                    <Navbar />
-                    {children}
-                    <Footer />
-                    <KonamiListener />
-                </Providers>
+                <Spotlight />
+                <div className="relative z-10 min-h-screen flex flex-col">
+                    <Providers>
+                        <Navbar />
+                        <main className="flex-grow">
+                            {children}
+                        </main>
+                        <Footer />
+                        <KonamiListener />
+                    </Providers>
+                </div>
             </body>
         </html>
     );
