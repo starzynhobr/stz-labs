@@ -12,9 +12,9 @@ const cardVariants = cva(
     {
         variants: {
             layout: {
-                featured: "col-span-full md:grid md:grid-cols-12 rounded-[24px] bg-zinc-900/50 backdrop-blur-md border border-purple-500/20 shadow-2xl hover:border-purple-500/40 transition-all duration-500",
-                bento: "col-span-full md:col-span-6 lg:col-span-4 min-h-[380px] rounded-[24px] bg-zinc-900/40 backdrop-blur-md border border-white/10 hover:border-purple-500/40 transition-all duration-500 flex flex-col",
-                list: "col-span-full flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5 hover:border-white/15 hover:bg-white/[0.05]",
+                featured: "col-span-full md:grid md:grid-cols-12 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border border-[var(--border)] shadow-[var(--shadow)] hover:border-[var(--border-hover)] transition-all duration-500",
+                bento: "col-span-full md:col-span-6 lg:col-span-4 min-h-[380px] rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border border-[var(--border)] hover:border-[var(--border-hover)] transition-all duration-500 flex flex-col",
+                list: "col-span-full flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-[calc(var(--radius-card)*0.6)] bg-[var(--surface-primary)] backdrop-blur-sm border border-[var(--border)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-primary)]/80",
             }
         },
         defaultVariants: {
@@ -79,9 +79,9 @@ const ProjectCard = ({
                 <div className="flex-1 mb-4 sm:mb-0 space-y-1.5">
                     <div className="flex items-center gap-3">
                          {titleKey ? (
-                            <TranslatedText as="h3" className="text-lg font-bold text-zinc-100" i18nKey={titleKey} />
+                            <TranslatedText as="h3" className="text-lg font-bold text-[var(--text-primary)]" i18nKey={titleKey} />
                          ) : (
-                            <h3 className="text-lg font-bold text-zinc-100">{title}</h3>
+                            <h3 className="text-lg font-bold text-[var(--text-primary)]">{title}</h3>
                          )}
                          {repoName ? (
                             <RepoStats repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
@@ -94,9 +94,9 @@ const ProjectCard = ({
                          )}
                     </div>
                     {descriptionKey ? (
-                        <TranslatedText as="p" className="text-sm text-zinc-400" i18nKey={descriptionKey} />
+                        <TranslatedText as="p" className="text-sm text-[var(--text-secondary)]" i18nKey={descriptionKey} />
                     ) : (
-                        <p className="text-sm text-zinc-400">{description}</p>
+                        <p className="text-sm text-[var(--text-secondary)]">{description}</p>
                     )}
                 </div>
                 <div className="flex gap-3 shrink-0">
@@ -115,7 +115,7 @@ const ProjectCard = ({
     return (
         <article className={cn(cardVariants({ layout: layoutType }))} style={style}>
             {/* Edge Glow Hover Effect */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-[24px]" />
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-[var(--accent)]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-[var(--radius-card)]" />
 
             <div className={cn(
                 "relative z-10 flex flex-col h-full flex-1",
@@ -124,13 +124,13 @@ const ProjectCard = ({
                 <div className="flex w-full justify-between items-start gap-4 mb-4">
                     <div className="flex flex-col gap-1.5 items-start">
                         {titleKey ? (
-                            <TranslatedText as="h3" className={cn("font-bold text-zinc-100 tracking-tight leading-tight", isFeatured ? "text-3xl lg:text-4xl" : "text-xl md:text-2xl")} i18nKey={titleKey} />
+                            <TranslatedText as="h3" className={cn("font-bold text-[var(--text-primary)] tracking-tight leading-tight", isFeatured ? "text-3xl lg:text-4xl" : "text-xl md:text-2xl")} i18nKey={titleKey} />
                         ) : (
-                            <h3 className={cn("font-bold text-zinc-100 tracking-tight leading-tight", isFeatured ? "text-3xl lg:text-4xl" : "text-xl md:text-2xl")}>{title}</h3>
+                            <h3 className={cn("font-bold text-[var(--text-primary)] tracking-tight leading-tight", isFeatured ? "text-3xl lg:text-4xl" : "text-xl md:text-2xl")}>{title}</h3>
                         )}
                         {repoName ? null : versionKey ? (
-                            <TranslatedText as="p" className="text-[10px] tracking-widest text-purple-400 font-mono uppercase bg-purple-500/10 px-1.5 py-0.5 rounded" i18nKey={versionKey} />
-                        ) : version && <p className="text-[10px] tracking-widest text-purple-400 font-mono uppercase bg-purple-500/10 px-1.5 py-0.5 rounded">{version}</p>}
+                            <TranslatedText as="p" className="text-[10px] tracking-widest text-[var(--accent)] font-mono uppercase bg-[var(--accent)]/10 px-1.5 py-0.5 rounded" i18nKey={versionKey} />
+                        ) : version && <p className="text-[10px] tracking-widest text-[var(--accent)] font-mono uppercase bg-[var(--accent)]/10 px-1.5 py-0.5 rounded">{version}</p>}
                     </div>
 
                     {repoName ? (
@@ -145,9 +145,9 @@ const ProjectCard = ({
                 </div>
 
                 {descriptionKey ? (
-                    <TranslatedText as="p" className={cn("text-zinc-400 leading-relaxed", isFeatured ? "text-lg/relaxed max-w-lg mb-8" : "text-sm md:text-[15px] mb-6")} i18nKey={descriptionKey} />
+                    <TranslatedText as="p" className={cn("text-[var(--text-secondary)] leading-relaxed", isFeatured ? "text-lg/relaxed max-w-lg mb-8" : "text-sm md:text-[15px] mb-6")} i18nKey={descriptionKey} />
                 ) : (
-                    <p className={cn("text-zinc-400 leading-relaxed", isFeatured ? "text-lg/relaxed max-w-lg mb-8" : "text-sm md:text-[15px] mb-6")}>{description}</p>
+                    <p className={cn("text-[var(--text-secondary)] leading-relaxed", isFeatured ? "text-lg/relaxed max-w-lg mb-8" : "text-sm md:text-[15px] mb-6")}>{description}</p>
                 )}
                 
                 <div className="mt-auto pt-4 space-y-6 w-full">
@@ -210,14 +210,14 @@ const ProjectCard = ({
 
             {/* PURE/MINIMALIST PANEL PARA O SPOTLIGHT (FEATURED APP) */}
             {isFeatured && (
-                <div className="relative md:col-span-5 min-h-[300px] md:min-h-full border-t md:border-t-0 md:border-l border-white/5 bg-[#080A0E]/50 flex items-center justify-center p-6 sm:p-12 overflow-hidden rounded-b-[24px] md:rounded-r-[24px] md:rounded-bl-none z-0">
+                <div className="relative md:col-span-5 min-h-[300px] md:min-h-full border-t md:border-t-0 md:border-l border-[var(--border)] bg-[var(--surface-primary)] flex items-center justify-center p-6 sm:p-12 overflow-hidden rounded-b-[var(--radius-card)] md:rounded-r-[var(--radius-card)] md:rounded-bl-none z-0">
                     {/* Background Minimalist Grid Pattern - Extremely Subtle */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.03)_1px,transparent_1px)] [background-size:32px_32px] opacity-100 pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--accent-glow)_1px,transparent_1px)] [background-size:32px_32px] opacity-100 pointer-events-none" />
                     
                     {/* Clean Interface Block - Laboratorial Look */}
-                    <div className="w-full max-w-[340px] aspect-video flex flex-col items-center justify-center z-10 relative rounded-2xl border border-white/10 bg-zinc-900/10 backdrop-blur-md shadow-2xl">
-                        <div className="flex items-center gap-2.5 text-zinc-500 font-mono text-[9px] tracking-[0.2em] uppercase">
-                            <span className="w-1 h-1 rounded-full bg-purple-500/40 animate-pulse" />
+                    <div className="w-full max-w-[340px] aspect-video flex flex-col items-center justify-center z-10 relative rounded-[calc(var(--radius-card)*0.5)] border border-[var(--border)] bg-[var(--bg)]/10 backdrop-blur-[var(--backdrop-blur)] shadow-[var(--shadow)]">
+                        <div className="flex items-center gap-2.5 text-[var(--accent)]/50 font-mono text-[9px] tracking-[0.2em] uppercase">
+                            <span className="w-1 h-1 rounded-full bg-[var(--accent)]/40 animate-pulse" />
                             Interface_System_Core
                         </div>
                     </div>

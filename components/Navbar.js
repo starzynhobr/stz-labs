@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
+import ThemeSelector from './ThemeSelector';
 
 const navLinks = [
     { href: '/', dataI18n: 'nav.products', back: true },
@@ -14,7 +15,7 @@ const navLinks = [
 
 export default function Navbar() {
     const pathname = usePathname();
-    const { theme, toggleTheme } = useTheme();
+    const {} = useTheme();
     const { t, lang, setLang } = useLanguage();
     const [menuOpen, setMenuOpen] = useState(false);
     const [langMenuOpen, setLangMenuOpen] = useState(false);
@@ -42,7 +43,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-4 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl z-[1000] bg-[#080A0E]/40 backdrop-blur-xl border border-purple-500/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-[24px] transition-all duration-300">
+        <nav className="fixed top-4 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl z-[1000] bg-[var(--bg)]/40 backdrop-blur-xl border border-[var(--border)] shadow-[var(--shadow)] rounded-[var(--radius-card)] transition-all duration-300">
             <div className="flex items-center justify-between px-8 md:px-12 h-[60px]">
                 {/* Logo */}
                 <Link 
@@ -119,17 +120,11 @@ export default function Navbar() {
                                 ))}
                             </div>
                         </div>
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col gap-2">
                             <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">{t('nav.theme')}</span>
-                            <button
-                                onClick={toggleTheme}
-                                className="text-zinc-500 hover:text-white bg-white/[0.03] border border-white/5 rounded-md px-3 py-1 text-[10px] font-bold transition-all flex items-center gap-2"
-                            >
-                                <svg className="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                                </svg>
-                                {theme === 'dark' ? 'DARK' : 'LIGHT'}
-                            </button>
+                            <div className="flex justify-end">
+                                <ThemeSelector />
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -178,28 +173,7 @@ export default function Navbar() {
                         )}
                     </div>
  
-                    <button
-                        id="themeToggle"
-                        className="text-zinc-500 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/5 rounded-md w-8 h-8 flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-purple-500"
-                        aria-label={t('nav.theme')}
-                        onMouseEnter={() => setHoveredLink('theme')}
-                        onMouseLeave={() => setHoveredLink(null)}
-                        style={{ color: hoveredLink === 'theme' ? '#fff' : '#71717a' }}
-                        onClick={toggleTheme}
-                    >
-                        <svg
-                            className="w-4 h-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
-                    </button>
+                    <ThemeSelector />
                 </div>
             </div>
         </nav>

@@ -8,15 +8,15 @@ const badgeVariants = cva(
         variants: {
             variant: {
                 default:
-                    "border-transparent bg-purple-600/20 text-purple-400 hover:bg-purple-600/30",
+                    "border-transparent bg-[var(--accent)]/15 text-[var(--accent)] hover:bg-[var(--accent)]/25",
                 secondary:
-                    "border-transparent bg-zinc-800 text-zinc-100 hover:bg-zinc-700",
+                    "border-transparent bg-[var(--surface-3)] text-[var(--text-secondary)] hover:bg-[var(--surface-3)]/80",
                 destructive:
-                    "border-transparent bg-red-900/40 text-red-400 hover:bg-red-900/60",
-                outline: "text-zinc-300 border-zinc-700",
-                stable: "border-transparent bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20",
-                beta: "border-transparent bg-amber-500/10 text-amber-500 hover:bg-amber-500/20",
-                alpha: "border-transparent bg-purple-500/10 text-purple-400 hover:bg-purple-500/20",
+                    "border-transparent bg-red-500/15 text-red-500 hover:bg-red-500/25",
+                outline: "text-[var(--text-secondary)] border-[var(--border-strong)]",
+                stable: "border-transparent bg-[var(--status-stable)]/10 text-[var(--status-stable)] hover:bg-[var(--status-stable)]/20",
+                beta: "border-transparent bg-[var(--status-beta)]/10 text-[var(--status-beta)] hover:bg-[var(--status-beta)]/20",
+                alpha: "border-transparent bg-[var(--status-alpha)]/10 text-[var(--status-alpha)] hover:bg-[var(--status-alpha)]/20",
             },
         },
         defaultVariants: {

@@ -8,13 +8,13 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 default:
-                    "bg-purple-600/15 text-purple-400 border border-purple-500/30 hover:bg-purple-500 hover:text-white hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]",
+                    "bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30 hover:bg-[var(--accent)] hover:text-[var(--text-on-accent)] hover:border-[var(--accent)] hover:shadow-[0_0_20px_var(--accent-glow)]",
                 primary:
-                    "bg-gradient-to-b from-purple-500 to-purple-700 text-white shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:from-purple-400 hover:to-purple-600 border border-purple-400/50",
+                    "bg-gradient-to-b from-[var(--accent)] to-[var(--accent)]/80 text-[var(--text-on-accent)] shadow-[0_0_15px_var(--accent-glow)] hover:shadow-[0_0_25px_var(--accent-glow)] hover:opacity-90 border border-[var(--accent)]/30",
                 secondary:
-                    "bg-white/5 border border-white/10 text-zinc-300 hover:bg-white/10 hover:text-white hover:border-white/20",
-                ghost: "hover:bg-white/10 text-zinc-400 hover:text-white",
-                link: "text-purple-400 underline-offset-4 hover:underline",
+                    "bg-[var(--surface-2)] border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:bg-[var(--surface-3)] hover:text-[var(--text-primary)] hover:border-[var(--border-strong)]",
+                ghost: "hover:bg-[var(--surface-2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]",
+                link: "text-[var(--accent)] underline-offset-4 hover:underline",
             },
             size: {
                 default: "h-11 px-6 py-2",
