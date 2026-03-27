@@ -12,7 +12,7 @@ const readCache = (key) => {
         const raw = window.localStorage.getItem(key);
         if (!raw) return null;
         return JSON.parse(raw);
-    } catch (error) {
+    } catch {
         return null;
     }
 };
@@ -26,7 +26,7 @@ const writeCache = (key, value) => {
                 timestamp: Date.now(),
             })
         );
-    } catch (error) {
+    } catch {
         // Ignorar falhas de quota/privacidade silenciosamente.
     }
 };
@@ -96,7 +96,7 @@ const RepoStats = ({
                     memoryCache.set(repo, nextCache);
                     writeCache(cacheKey, nextStats);
                     return nextStats;
-                } catch (error) {
+                } catch {
                     return null;
                 } finally {
                     inflightRequests.delete(repo);

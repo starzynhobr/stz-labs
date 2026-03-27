@@ -2,6 +2,7 @@
 
 import { createPortal } from 'react-dom';
 import { useEffect, useId, useState } from 'react';
+import Image from 'next/image';
 import TranslatedText from './TranslatedText';
 
 const GalleryImageButton = ({ item, className = '', onClick }) => (
@@ -11,8 +12,14 @@ const GalleryImageButton = ({ item, className = '', onClick }) => (
         onClick={() => onClick(item)}
         aria-label={item.alt}
     >
-        <div className="product-gallery-frame">
-            <img src={item.src} alt={item.alt} loading="lazy" />
+        <div className="product-gallery-frame relative aspect-video overflow-hidden rounded-xl">
+            <Image 
+                src={item.src} 
+                alt={item.alt} 
+                fill 
+                className="object-cover" 
+                sizes="(max-width: 768px) 100vw, 50vw" 
+            />
         </div>
     </button>
 );
@@ -116,14 +123,16 @@ export default function ProjectGalleryDetails({ heroItem = null, items = [] }) {
                                 <span aria-hidden="true">×</span>
                             </button>
                             <div className="gallery-lightbox-frame">
-                                <button
-                                    type="button"
-                                    className="gallery-lightbox-image-button"
-                                    onClick={() => setIsZoomed((prev) => !prev)}
-                                    aria-label={selectedImage.alt}
-                                >
-                                    <img src={selectedImage.src} alt={selectedImage.alt} loading="eager" />
-                                </button>
+                                    <div className="gallery-lightbox-image-button relative w-full h-full min-h-[60vh]">
+                                        <Image 
+                                            src={selectedImage.src} 
+                                            alt={selectedImage.alt} 
+                                            fill 
+                                            className="object-contain"
+                                            sizes="90vw"
+                                            priority
+                                        />
+                                    </div>
                             </div>
                         </div>
                     </div>,

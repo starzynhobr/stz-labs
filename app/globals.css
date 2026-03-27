@@ -1,3 +1,7 @@
+@import "tailwindcss";
+@source "../components";
+@source "../lib";
+
 :root {
     --theme-dur-base: 600ms;
     --theme-dur-detail: 900ms;
@@ -104,4 +108,45 @@
         --theme-dur-detail: 0ms;
         --theme-delay-detail: 0ms;
     }
+}
+
+/* Base Resets - Substituindo o style.css */
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-[var(--bg)] text-[var(--bg)] font-sans antialiased;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+/* Noise Overlay Global */
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: var(--noise-opacity);
+    background-image: var(--bg-noise);
+    mix-blend-mode: overlay;
 }

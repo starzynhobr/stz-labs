@@ -126,7 +126,7 @@ export default async function ProjectDetailPage({ params }) {
 
             <section className="features-section">
                 <div className="container">
-                        <TranslatedText
+                    <TranslatedText
                         as="h2"
                         style={{ marginBottom: '40px', textAlign: 'center' }}
                         i18nKey="sections.features_title"

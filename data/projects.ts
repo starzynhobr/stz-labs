@@ -1,6 +1,9 @@
 export const projects = [
     {
         slug: 'game-xml-translator',
+        layoutType: 'featured',
+        priority: 1,
+        maturity: 'maintenance',
         repoName: 'Game-XML-Translator',
         titleKey: 'game_xml.title',
         descriptionKey: 'cards.xml_desc',
@@ -80,6 +83,9 @@ export const projects = [
     },
     {
         slug: 'stz-lyrics',
+        layoutType: 'bento',
+        priority: 3,
+        maturity: 'stable',
         repoName: 'stzlyrics',
         titleKey: 'lyrics.title',
         descriptionKey: 'cards.lyrics_desc',
@@ -167,6 +173,9 @@ export const projects = [
     },
     {
         slug: 'stz-lyrics-overlay',
+        layoutType: 'bento',
+        priority: 4,
+        maturity: 'stable',
         repoName: 'stzlyrics-python',
         titleKey: 'lyrics_overlay.title',
         descriptionKey: 'cards.lyrics_overlay_desc',
@@ -255,6 +264,9 @@ export const projects = [
     },
     {
         slug: 'stz-taskpulse',
+        layoutType: 'bento',
+        priority: 5,
+        maturity: 'stable',
         repoName: 'stz-taskpulse',
         titleKey: 'taskpulse.title',
         descriptionKey: 'cards.taskpulse_desc',
@@ -330,6 +342,9 @@ export const projects = [
     },
     {
         slug: 'stz-csv-converter',
+        layoutType: 'bento',
+        priority: 6,
+        maturity: 'stable',
         repoName: 'stz-csv-converter',
         titleKey: 'csv_converter.title',
         descriptionKey: 'cards.csv_desc',
@@ -413,6 +428,9 @@ export const projects = [
     },
     {
         slug: 'stz-ai-chat-optimizer',
+        layoutType: 'bento',
+        priority: 6,
+        maturity: 'stable',
         titleKey: 'ai_chat_optimizer.title',
         descriptionKey: 'cards.ai_chat_optimizer_desc',
         downloadHref: null,
@@ -496,6 +514,9 @@ export const projects = [
     },
     {
         slug: 'mouse-click',
+        layoutType: 'list',
+        priority: 7,
+        maturity: 'stable',
         repoName: 'mouse-click',
         titleKey: 'mouse_click.title',
         descriptionKey: 'cards.mouse_click_desc',
@@ -570,6 +591,9 @@ export const projects = [
         },
     },
     {
+        layoutType: 'list',
+        priority: 8,
+        maturity: 'beta',
         titleKey: 'cards.suite_title',
         descriptionKey: 'cards.suite_desc',
         versionKey: 'cards.version_dev',

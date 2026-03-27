@@ -9,18 +9,19 @@
         "back": "Zurück",
         "menu": "Menue",
         "language": "Sprache",
-        "theme": "Theme wechseln"
+        "theme": "Theme wechseln",
+        "mouse_tester": "Mouse Tester"
     },
     "common": {
         "tags": {
             "windows": "Windows",
             "plugins": "Plugins",
             "offline": "Offline",
-        "translation": "Übersetzung",
-        "javascript": "JavaScript",
-        "browser_extension": "Browser-Erweiterung",
-        "webextension": "WebExtension",
-        "tools": "Tools",
+            "translation": "Übersetzung",
+            "javascript": "JavaScript",
+            "browser_extension": "Browser-Erweiterung",
+            "webextension": "WebExtension",
+            "tools": "Tools",
             "rainmeter": "Rainmeter",
             "skin": "Skin",
             "music": "Musik",
@@ -34,6 +35,12 @@
             "beta": "Beta",
             "alpha": "Alpha",
             "soon": "Bald"
+        },
+        "status": {
+            "stable": "[STABLE]",
+            "beta": "[BETA]",
+            "alpha": "[ALPHA]",
+            "experimental": "[EXP.]"
         }
     },
     "sections": {
@@ -41,10 +48,12 @@
         "projects_subtitle": "Tools mit Fokus auf Produktivität und Nutzen.",
         "roadmap_title": "/// Status",
         "roadmap_subtitle": "Entwicklung des STZ-Ökosystems.",
+        "roadmap_badge": "Systementwicklung",
+        "roadmap_tips": "Tips unterstützen die Wartung; sie finanzieren keine Kampagnen.",
         "roadmap_status_1": "Abgeschlossen",
         "roadmap_status_2": "In Entwicklung",
-        "roadmap_status_3": "Recherche / Kein ETA",
-        "roadmap_status_4": "Exploration",
+        "roadmap_status_3": "GEPLANT / ALPHA",
+        "roadmap_status_4": "BACKLOG / NÄCHSTE",
         "roadmap_q1": "Kern-Tools",
         "roadmap_q1_desc": "Entwicklung und Start der Grundlagen: XML Translator, CSV Converter und Lyrics.",
         "roadmap_q2": "Portal & Internationalisierung",
@@ -102,7 +111,12 @@
         "terms": "AGB",
         "support": "Support",
         "contact": "Kontakt",
-        "build": "Build v1.0.0"
+        "build": "Build v1.0.0",
+        "operated_by": "Betrieben von:",
+        "operated_location": "(Einzelperson, Brasilien)",
+        "all_rights_reserved": "ALLE RECHTE VORBEHALTEN",
+        "connect": "Verbinden",
+        "legal": "Rechtliches"
     },
     "privacy": {
         "title": "Datenschutzrichtlinie",
@@ -365,5 +379,46 @@
             "dependency": "Abhängigkeit",
             "license": "Lizenz"
         }
+    },
+    "mouse_tester_tool": {
+        "page_title": "STZ Mouse Tester",
+        "page_desc": "Zentraler Bereich zum Testen von Rechts-, Links- und Mittelklick, Erkennung von sehr schnellen Doppelklicks und Protokollierung von Events.",
+        "badge": "Minimalistisch • Echtzeit",
+        "area_title": "Testbereich",
+        "area_subtitle": "Klicken Sie irgendwo unten",
+        "total_clicks": "Gesamte Klicks",
+        "fast_double": "Schnelle Doppelklicks",
+        "btn_left": "Links",
+        "btn_middle": "Mitte",
+        "btn_right": "Rechts",
+        "last_interval": "Letztes Intervall",
+        "reset": "Zurücksetzen",
+        "clear_log": "Verlauf löschen",
+        "log_title": "Ereignisprotokoll",
+        "log_subtitle": "Neueste zuerst",
+        "no_clicks": "Noch keine Klicks",
+        "start_clicking": "Nutzen Sie den Bereich, um zu starten.",
+        "table_id": "#",
+        "table_btn": "Taste",
+        "table_interval": "Intervall",
+        "table_time": "Zeitstempel",
+        "table_status": "Status",
+        "no_records": "Noch keine Einträge.",
+        "status_normal": "Normal",
+        "status_fast": "Schneller Doppelklick",
+        "alert_fast_title": "Sehr schneller Doppelklick erkannt",
+        "alert_fast_desc": "Fehlfunktion möglich. Letzte Taste: {btn}. Intervall: {diff}.",
+        "alert_fast_summary": "Der jüngste Klick war ein sehr schneller Doppelklick, Intervall: {diff}.",
+        "alert_click_title": "{btn} Klick registriert",
+        "alert_click_first": "Erster Klick registriert.",
+        "alert_click_diff": "Intervall: {diff}.",
+        "summary_click_title": "Letzter Klick: {btn}",
+        "summary_click_first": "Der erste Klick wurde registriert.",
+        "summary_click_diff": "Letztes Ereignis war {btn} im Intervall von {diff}.",
+        "status_ready": "Bereit zum Testen",
+        "status_ready_desc": "Das Panel registriert geklickte Tasten, misst Intervalle und markiert schnelle Doppelklicks rot.",
+        "summary_critical": "Kritischer Eintrag gefunden",
+        "sec": "s",
+        "ms": "ms"
     }
 }
