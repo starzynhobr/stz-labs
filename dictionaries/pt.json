@@ -9,18 +9,19 @@
         "back": "Voltar",
         "menu": "Menu",
         "language": "Idioma",
-        "theme": "Alternar tema"
+        "theme": "Alternar tema",
+        "mouse_tester": "Mouse Tester"
     },
     "common": {
         "tags": {
             "windows": "Windows",
             "plugins": "Plugins",
             "offline": "Offline",
-        "translation": "Tradução",
-        "javascript": "JavaScript",
-        "browser_extension": "Extensão de Navegador",
-        "webextension": "WebExtension",
-        "tools": "Ferramentas",
+            "translation": "Tradução",
+            "javascript": "JavaScript",
+            "browser_extension": "Extensão de Navegador",
+            "webextension": "WebExtension",
+            "tools": "Ferramentas",
             "rainmeter": "Rainmeter",
             "skin": "Skin",
             "music": "Música",
@@ -33,6 +34,12 @@
             "beta": "Beta",
             "alpha": "Alfa",
             "soon": "Em Breve"
+        },
+        "status": {
+            "stable": "[STÁVEL]",
+            "beta": "[BETA]",
+            "alpha": "[ALFA]",
+            "experimental": "[EXP.]"
         }
     },
     "sections": {
@@ -40,10 +47,12 @@
         "projects_subtitle": "Ferramentas focadas em produtividade e utilidade.",
         "roadmap_title": "/// Status",
         "roadmap_subtitle": "Evolução do ecossistema STZ.",
+        "roadmap_badge": "Evolução do Sistema",
+        "roadmap_tips": "Tips apoiam a manutenção; não financiam campanhas.",
         "roadmap_status_1": "Concluído",
         "roadmap_status_2": "Em evolução",
-        "roadmap_status_3": "Pesquisa / Sem ETA",
-        "roadmap_status_4": "Exploração",
+        "roadmap_status_3": "PLANEJADO / ALFA",
+        "roadmap_status_4": "BACKLOG / PRÓXIMOS",
         "roadmap_q1": "Ferramentas Core",
         "roadmap_q1_desc": "Desenvolvimento e lançamento das bases: XML Translator, CSV Converter e Lyrics.",
         "roadmap_q2": "Portal & Internacionalização",
@@ -101,7 +110,12 @@
         "terms": "Termos",
         "support": "Apoio",
         "contact": "Contato",
-        "build": "Build v1.0.0"
+        "build": "Build v1.0.0",
+        "operated_by": "Operado por:",
+        "operated_location": "(individual, Brasil)",
+        "all_rights_reserved": "TODOS OS DIREITOS RESERVADOS",
+        "connect": "Conectar",
+        "legal": "Jurídico"
     },
     "privacy": {
         "title": "Política de Privacidade",
@@ -362,5 +376,46 @@
             "dependency": "Dependência",
             "license": "Licença"
         }
+    },
+    "mouse_tester_tool": {
+        "page_title": "STZ Mouse Tester",
+        "page_desc": "Área única para testar clique esquerdo, meio e direito, detectar double click muito rápido e manter um histórico limpo dos eventos com intervalo entre cliques.",
+        "badge": "Minimal • Real-time",
+        "area_title": "Área de teste",
+        "area_subtitle": "Clique em qualquer ponto abaixo",
+        "total_clicks": "Total de cliques",
+        "fast_double": "Fast double clicks",
+        "btn_left": "Esquerdo",
+        "btn_middle": "Meio",
+        "btn_right": "Direito",
+        "last_interval": "Último intervalo",
+        "reset": "Resetar",
+        "clear_log": "Limpar histórico",
+        "log_title": "Histórico de registros",
+        "log_subtitle": "Mais recentes no topo",
+        "no_clicks": "Nenhum clique ainda",
+        "start_clicking": "Use a área de teste para começar.",
+        "table_id": "#",
+        "table_btn": "Botão",
+        "table_interval": "Intervalo",
+        "table_time": "Timestamp",
+        "table_status": "Status",
+        "no_records": "Ainda não há registros.",
+        "status_normal": "Normal",
+        "status_fast": "Fast double",
+        "alert_fast_title": "Double click muito rápido detectado",
+        "alert_fast_desc": "Último botão: {btn}. Intervalo de {diff}. Isso pode indicar problema.",
+        "alert_fast_summary": "O clique mais recente foi um double click muito rápido, com intervalo de {diff}.",
+        "alert_click_title": "Clique {btn} registrado",
+        "alert_click_first": "Primeiro clique registrado.",
+        "alert_click_diff": "Intervalo: {diff}.",
+        "summary_click_title": "Último clique: {btn}",
+        "summary_click_first": "O primeiro clique foi registrado.",
+        "summary_click_diff": "O último evento foi {btn} com intervalo de {diff}.",
+        "status_ready": "Pronto para testar",
+        "status_ready_desc": "O painel registra o botão clicado, mede o intervalo entre cliques e marca em vermelho quando detectar um clique duplo.",
+        "summary_critical": "Registro crítico encontrado",
+        "sec": "s",
+        "ms": "ms"
     }
 }

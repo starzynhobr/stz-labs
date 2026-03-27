@@ -21,25 +21,27 @@ export const metadata = {
 };
 
 export const viewport = {
-    themeColor: '#0a0a0a',
+    themeColor: '#0A0C10',
 };
 
-export default function HomePage() {
+export default function Home() {
+    // Ordenar os projetos de acordo com a prioridade selecionada manualmente
+    const sortedProjects = [...projects].sort((a, b) => (a.priority || 99) - (b.priority || 99));
+
     return (
-        <div
-            className="app-shell"
-            style={{
-                minHeight: '100vh',
-                padding: '70px 0 80px',
-            }}
-        >
-            <div className="container">
-                <section className="products" id="produtos">
+        <main className="min-h-screen bg-[#0A0C10] pt-24 pb-24 relative selection:bg-purple-500/30 text-white overflow-hidden">
+            {/* Global Noise Overlay */}
+            <div className="fixed inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-40 mix-blend-overlay pointer-events-none" />
+            
+            <div className="container relative z-10 max-w-[1200px] mx-auto px-6">
+                <section className="mt-12 relative z-10 flex flex-col gap-16">
                     <Hero />
-                    <div className="product-grid">
-                        {projects.map((project) => (
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
+                        {sortedProjects.map((project) => (
                             <ProjectCard
                                 key={project.slug || project.titleKey}
+                                layoutType={project.layoutType}
                                 titleKey={project.titleKey}
                                 descriptionKey={project.descriptionKey}
                                 versionKey={project.versionKey}
@@ -60,9 +62,13 @@ export default function HomePage() {
                         ))}
                     </div>
                 </section>
+
+                {/* Legacy Components that will be refactored eventually - wrapped nicely */}
+                <div className="mt-24 max-w-4xl mx-auto space-y-16">
+                    <Philosophy />
+                    <StatusTimeline />
+                </div>
             </div>
-            <Philosophy />
-            <StatusTimeline />
-        </div>
+        </main>
     );
 }

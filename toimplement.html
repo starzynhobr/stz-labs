@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STZ Mouse Tester</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --bg-soft: #121620;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-2: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #eef2ff;
+      --muted: #98a2b3;
+      --accent: #ff9f1c;
+      --accent-2: #ffd166;
+      --danger: #ff4d4f;
+      --success: #22c55e;
+      --left: #60a5fa;
+      --middle: #a78bfa;
+      --right: #f97316;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --transition: 180ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(circle at top, rgba(255, 159, 28, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.08), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100%;
+    }
+
+    body {
+      padding: 28px;
+    }
+
+    .app {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 760px;
+    }
+
+    .badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 159, 28, 0.1);
+      border: 1px solid rgba(255, 159, 28, 0.25);
+      color: var(--accent-2);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .panel-head h2 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .panel-head span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .test-area {
+      position: relative;
+      min-height: 460px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      user-select: none;
+      cursor: pointer;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+        rgba(255, 159, 28, 0.04);
+      transition: background var(--transition), transform var(--transition);
+      outline: none;
+    }
+
+    .test-area:hover {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)),
+        rgba(255, 159, 28, 0.06);
+    }
+
+    .test-area.fast {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+        rgba(255, 77, 79, 0.12);
+    }
+
+    .mouse-wrap {
+      display: grid;
+      gap: 16px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .mouse-svg {
+      width: min(280px, 70vw);
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,0.35));
+    }
+
+    .mouse-base {
+      fill: rgba(255,255,255,0.08);
+      stroke: rgba(255,255,255,0.14);
+      stroke-width: 6;
+    }
+
+    .mouse-btn {
+      fill: rgba(255,255,255,0.04);
+      transition: fill var(--transition), transform var(--transition);
+    }
+
+    .mouse-btn.active-left {
+      fill: var(--left);
+    }
+
+    .mouse-btn.active-middle {
+      fill: var(--middle);
+    }
+
+    .mouse-btn.active-right {
+      fill: var(--right);
+    }
+
+    .mouse-text h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .mouse-text p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--card-2);
+    }
+
+    .stat .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .stat .value {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .stat.left .value { color: var(--left); }
+    .stat.middle .value { color: var(--middle); }
+    .stat.right .value { color: var(--right); }
+    .stat.danger .value { color: var(--danger); }
+    .stat.success .value { color: var(--success); }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      padding: 0 18px 18px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font: inherit;
+      cursor: pointer;
+      color: var(--text);
+      transition: transform var(--transition), opacity var(--transition), background var(--transition);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #ffae35, #ff9210);
+      color: #161616;
+      font-weight: 700;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 18px 18px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot.left { background: var(--left); }
+    .dot.middle { background: var(--middle); }
+    .dot.right { background: var(--right); }
+    .dot.fast { background: var(--danger); }
+
+    .log-box {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .log-summary {
+      display: grid;
+      gap: 8px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.025);
+    }
+
+    .log-summary strong {
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .log-summary span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+      max-height: 520px;
+      overflow-y: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #10141d;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.95rem;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    tbody tr:hover {
+      background: rgba(255,255,255,0.03);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      border: 1px solid transparent;
+    }
+
+    .pill.left {
+      color: #cfe3ff;
+      background: rgba(96,165,250,0.12);
+      border-color: rgba(96,165,250,0.24);
+    }
+
+    .pill.middle {
+      color: #ddd4ff;
+      background: rgba(167,139,250,0.12);
+      border-color: rgba(167,139,250,0.24);
+    }
+
+    .pill.right {
+      color: #ffd8c1;
+      background: rgba(249,115,22,0.12);
+      border-color: rgba(249,115,22,0.24);
+    }
+
+    .pill.fast {
+      color: #ffd0d2;
+      background: rgba(255,77,79,0.12);
+      border-color: rgba(255,77,79,0.24);
+    }
+
+    .empty {
+      padding: 22px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      th:nth-child(4),
+      td:nth-child(4) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <section class="hero">
+      <div>
+        <h1>STZ Mouse Tester</h1>
+        <p>
+          Área única para testar clique esquerdo, meio e direito, detectar double click muito rápido
+          e manter um histórico limpo dos eventos com intervalo entre cliques.
+        </p>
+      </div>
+      <div class="badge">Minimal • Single File • Real-time</div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Área de teste</h2>
+          <span>Clique em qualquer ponto dentro da área abaixo</span>
+        </div>
+
+        <div id="testArea" class="test-area" tabindex="0">
+          <div class="mouse-wrap">
+            <svg class="mouse-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" aria-hidden="true">
+              <path class="mouse-base" d="M407.352 0C270.94 0 132.854 68.485 132.854 199.394v333.458c0 147.309 119.834 267.146 267.146 267.146 147.31 0 267.144-119.837 267.144-267.146V199.394C667.144 62.392 532.484 0 407.352 0zm209.51 532.852c0 119.59-97.286 216.858-216.862 216.858-119.58 0-216.858-97.269-216.858-216.858V376.893c44.903 13.585 129.421 34.136 229.341 34.136 63.976 0 134.236-8.545 204.38-32.682v154.505zm0-207.994c-183.262 70.074-377.714 17.311-433.72-.817V199.394c0-96.85 115.52-149.109 224.21-149.109 104.284 0 209.51 46.1 209.51 149.11v125.463z"/>
+              <path id="middleClick" class="mouse-btn" d="M428.285 108.565v182.287c0 13.88-11.27 25.146-25.142 25.146-13.876 0-25.144-11.265-25.144-25.146V108.565c0-13.879 11.266-25.144 25.144-25.144 13.87 0 25.142 11.265 25.142 25.144z"/>
+              <path id="rightClick" class="mouse-btn" d="M592.917 292.514s-104.746 29.328-140.372 23.044V82.986s167.61 2.097 140.372 209.528z"/>
+              <path id="leftClick" class="mouse-btn" d="M353.91 80.986v232.572c-35.626 6.284-140.372-23.044-140.372-23.044C186.301 83.084 353.91 80.986 353.91 80.986z"/>
+            </svg>
+
+            <div class="mouse-text">
+              <h3 id="statusTitle">Pronto para testar</h3>
+              <p id="statusText">
+                O painel registra o botão clicado, mede o intervalo entre cliques e marca em vermelho
+                quando detectar um clique duplo extremamente rápido.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="label">Total de cliques</div>
+            <div class="value" id="totalClicks">0</div>
+          </div>
+
+          <div class="stat danger">
+            <div class="label">Fast double clicks</div>
+            <div class="value" id="fastDoubleClicks">0</div>
+          </div>
+
+          <div class="stat left">
+            <div class="label">Esquerdo</div>
+            <div class="value" id="leftCount">0</div>
+          </div>
+
+          <div class="stat middle">
+            <div class="label">Meio</div>
+            <div class="value" id="middleCount">0</div>
+          </div>
+
+          <div class="stat right">
+            <div class="label">Direito</div>
+            <div class="value" id="rightCount">0</div>
+          </div>
+
+          <div class="stat success">
+            <div class="label">Último intervalo</div>
+            <div class="value" id="lastDiff">—</div>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item"><span class="dot left"></span> Clique esquerdo</div>
+          <div class="legend-item"><span class="dot middle"></span> Clique do meio</div>
+          <div class="legend-item"><span class="dot right"></span> Clique direito</div>
+          <div class="legend-item"><span class="dot fast"></span> Double click muito rápido</div>
+        </div>
+
+        <div class="controls">
+          <button id="resetBtn" class="btn-primary">Resetar</button>
+          <button id="clearLogBtn" class="btn-secondary">Limpar histórico</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Histórico de registros</h2>
+          <span>Eventos mais recentes no topo</span>
+        </div>
+
+        <div class="log-box">
+          <div class="log-summary">
+            <strong id="summaryTitle">Nenhum clique ainda</strong>
+            <span id="summaryText">Use a área de teste para começar a registrar eventos do mouse.</span>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Botão</th>
+                  <th>Intervalo</th>
+                  <th>Timestamp</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="logBody">
+                <tr id="emptyRow">
+                  <td colspan="5" class="empty">Ainda não há registros.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const testArea = document.getElementById("testArea");
+    const resetBtn = document.getElementById("resetBtn");
+    const clearLogBtn = document.getElementById("clearLogBtn");
+
+    const totalClicksEl = document.getElementById("totalClicks");
+    const fastDoubleClicksEl = document.getElementById("fastDoubleClicks");
+    const leftCountEl = document.getElementById("leftCount");
+    const middleCountEl = document.getElementById("middleCount");
+    const rightCountEl = document.getElementById("rightCount");
+    const lastDiffEl = document.getElementById("lastDiff");
+
+    const statusTitle = document.getElementById("statusTitle");
+    const statusText = document.getElementById("statusText");
+    const summaryTitle = document.getElementById("summaryTitle");
+    const summaryText = document.getElementById("summaryText");
+
+    const logBody = document.getElementById("logBody");
+    const emptyRow = document.getElementById("emptyRow");
+
+    const leftClick = document.getElementById("leftClick");
+    const middleClick = document.getElementById("middleClick");
+    const rightClick = document.getElementById("rightClick");
+
+    const FAST_DOUBLE_THRESHOLD = 0.08;
+    const HIGHLIGHT_TIME = 180;
+
+    let totalClicks = 0;
+    let fastDoubleClicks = 0;
+    let leftCount = 0;
+    let middleCount = 0;
+    let rightCount = 0;
+    let prevClickTime = performance.now() / 1000;
+    let logIndex = 0;
+
+    const buttonMap = {
+      0: {
+        name: "Esquerdo",
+        className: "left",
+        element: leftClick,
+        activeClass: "active-left"
+      },
+      1: {
+        name: "Meio",
+        className: "middle",
+        element: middleClick,
+        activeClass: "active-middle"
+      },
+      2: {
+        name: "Direito",
+        className: "right",
+        element: rightClick,
+        activeClass: "active-right"
+      }
+    };
+
+    function formatSeconds(seconds) {
+      if (typeof seconds !== "number" || Number.isNaN(seconds)) return "—";
+      return `${seconds.toFixed(4)}s`;
+    }
+
+    function formatClock(date) {
+      return date.toLocaleTimeString("pt-BR", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+    }
+
+    function highlightButton(buttonInfo) {
+      if (!buttonInfo?.element) return;
+      buttonInfo.element.classList.add(buttonInfo.activeClass);
+      setTimeout(() => {
+        buttonInfo.element.classList.remove(buttonInfo.activeClass);
+      }, HIGHLIGHT_TIME);
+    }
+
+    function updateStats(diff) {
+      totalClicksEl.textContent = totalClicks;
+      fastDoubleClicksEl.textContent = fastDoubleClicks;
+      leftCountEl.textContent = leftCount;
+      middleCountEl.textContent = middleCount;
+      rightCountEl.textContent = rightCount;
+      lastDiffEl.textContent = totalClicks > 1 ? formatSeconds(diff) : "—";
+    }
+
+    function updateStatus(buttonName, diff, isFastDouble) {
+      if (isFastDouble) {
+        statusTitle.textContent = "Double click muito rápido detectado";
+        statusText.textContent = `Último botão: ${buttonName}. Intervalo de ${formatSeconds(diff)}. Isso pode indicar problema de double click dependendo do comportamento esperado do mouse.`;
+        summaryTitle.textContent = "Registro crítico encontrado";
+        summaryText.textContent = `O clique mais recente foi classificado como double click muito rápido, com intervalo de ${formatSeconds(diff)}.`;
+        testArea.classList.add("fast");
+        setTimeout(() => testArea.classList.remove("fast"), 220);
+      } else {
+        statusTitle.textContent = `Clique ${buttonName.toLowerCase()} registrado`;
+        statusText.textContent = totalClicks > 1
+          ? `Intervalo desde o clique anterior: ${formatSeconds(diff)}. O histórico foi atualizado em tempo real.`
+          : "Primeiro clique registrado. Continue clicando para medir os intervalos.";
+        summaryTitle.textContent = `Último clique: ${buttonName}`;
+        summaryText.textContent = totalClicks > 1
+          ? `O último evento foi um clique ${buttonName.toLowerCase()} com intervalo de ${formatSeconds(diff)}.`
+          : "O primeiro clique foi registrado com sucesso.";
+      }
+    }
+
+    function createStatusPill(text, className) {
+      return `<span class="pill ${className}">${text}</span>`;
+    }
+
+    function addLog(buttonName, buttonClass, diff, isFastDouble) {
+      logIndex += 1;
+      if (emptyRow) emptyRow.remove();
+
+      const now = new Date();
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${logIndex}</td>
+        <td>${createStatusPill(buttonName, buttonClass)}</td>
+        <td>${totalClicks > 1 ? formatSeconds(diff) : "—"}</td>
+        <td>${formatClock(now)}</td>
+        <td>${isFastDouble ? createStatusPill("Fast double", "fast") : "Normal"}</td>
+      `;
+
+      logBody.prepend(row);
+    }
+
+    function resetAll() {
+      totalClicks = 0;
+      fastDoubleClicks = 0;
+      leftCount = 0;
+      middleCount = 0;
+      rightCount = 0;
+      logIndex = 0;
+      prevClickTime = performance.now() / 1000;
+
+      updateStats();
+
+      statusTitle.textContent = "Pronto para testar";
+      statusText.textContent = "O painel registra o botão clicado, mede o intervalo entre cliques e marca em vermelho quando detectar um clique duplo extremamente rápido.";
+      summaryTitle.textContent = "Nenhum clique ainda";
+      summaryText.textContent = "Use a área de teste para começar a registrar eventos do mouse.";
+
+      logBody.innerHTML = `
+        <tr id="emptyRow">
+          <td colspan="5" class="empty">Ainda não há registros.</td>
+        </tr>
+      `;
+    }
+
+    function clearLogOnly() {
+      logBody.innerHTML = `
+        <tr id="emptyRow">
+          <td colspan="5" class="empty">Histórico limpo.</td>
+        </tr>
+      `;
+      logIndex = 0;
+    }
+
+    function handleMouseEvent(event) {
+      event.preventDefault();
+
+      const buttonInfo = buttonMap[event.button];
+      if (!buttonInfo) return;
+
+      const currentTime = performance.now() / 1000;
+      const diff = currentTime - prevClickTime;
+      const isFastDouble = totalClicks > 0 && diff <= FAST_DOUBLE_THRESHOLD;
+
+      totalClicks += 1;
+
+      if (event.button === 0) leftCount += 1;
+      if (event.button === 1) middleCount += 1;
+      if (event.button === 2) rightCount += 1;
+      if (isFastDouble) fastDoubleClicks += 1;
+
+      highlightButton(buttonInfo);
+      updateStats(diff);
+      updateStatus(buttonInfo.name, diff, isFastDouble);
+      addLog(buttonInfo.name, buttonInfo.className, diff, isFastDouble);
+
+      prevClickTime = currentTime;
+    }
+
+    testArea.addEventListener("mousedown", handleMouseEvent);
+    testArea.addEventListener("contextmenu", (e) => e.preventDefault());
+    document.addEventListener("contextmenu", (e) => {
+      if (testArea.contains(e.target)) e.preventDefault();
+    });
+
+    resetBtn.addEventListener("click", resetAll);
+    clearLogBtn.addEventListener("click", clearLogOnly);
+
+    updateStats();
+  </script>
+</body>
+</html>
