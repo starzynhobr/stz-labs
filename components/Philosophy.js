@@ -8,37 +8,37 @@ export default function Philosophy() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
                 {/* Item 1: Efficiency */}
-                <div className="group relative bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border border-[var(--border)] rounded-[var(--radius-card)] p-8 transition-all hover:bg-[var(--surface-primary)]/80 hover:border-[var(--border-hover)] shadow-[var(--shadow)] flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="group relative bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] rounded-[var(--radius-card)] p-8 transition-all hover:bg-[var(--surface-primary)]/80 hover:[border-color:var(--border-hover)] shadow-[var(--shadow)] flex flex-col items-center text-center md:items-start md:text-left">
                     <div className="w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center text-[var(--accent)] mb-6 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_var(--accent-glow)]">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                         </svg>
                     </div>
-                    <TranslatedText as="h3" className="text-base font-bold text-white mb-3 uppercase tracking-widest" i18nKey="benefits.efficiency_title" />
+                    <TranslatedText as="h3" className="text-base font-bold text-[var(--text-heading)] mb-3 uppercase tracking-widest" i18nKey="benefits.efficiency_title" />
                     <TranslatedText
                         as="p"
-                        className="text-zinc-500 text-[13px] leading-relaxed font-medium"
+                        className="text-[var(--text-secondary)] text-[13px] leading-relaxed font-medium"
                         i18nKey="benefits.efficiency_desc"
                     />
                 </div>
  
                 {/* Item 2: Local Processing */}
-                <div className="group relative bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border border-[var(--border)] rounded-[var(--radius-card)] p-8 transition-all hover:bg-[var(--surface-primary)]/80 hover:border-[var(--border-hover)] shadow-[var(--shadow)] flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="group relative bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] rounded-[var(--radius-card)] p-8 transition-all hover:bg-[var(--surface-primary)]/80 hover:[border-color:var(--border-hover)] shadow-[var(--shadow)] flex flex-col items-center text-center md:items-start md:text-left">
                     <div className="w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center text-[var(--accent)] mb-6 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_var(--accent-glow)]">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
-                    <TranslatedText as="h3" className="text-base font-bold text-white mb-3 uppercase tracking-widest" i18nKey="benefits.local_title" />
+                    <TranslatedText as="h3" className="text-base font-bold text-[var(--text-heading)] mb-3 uppercase tracking-widest" i18nKey="benefits.local_title" />
                     <TranslatedText
                         as="p"
-                        className="text-zinc-500 text-[13px] leading-relaxed font-medium"
+                        className="text-[var(--text-secondary)] text-[13px] leading-relaxed font-medium"
                         i18nKey="benefits.local_desc"
                     />
                 </div>
  
                 {/* Item 3: Open Source */}
-                <div className="group relative bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border border-[var(--border)] rounded-[var(--radius-card)] p-8 transition-all hover:bg-[var(--surface-primary)]/80 hover:border-[var(--border-hover)] shadow-[var(--shadow)] flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="group relative bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] rounded-[var(--radius-card)] p-8 transition-all hover:bg-[var(--surface-primary)]/80 hover:[border-color:var(--border-hover)] shadow-[var(--shadow)] flex flex-col items-center text-center md:items-start md:text-left">
                     <div className="w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center text-[var(--accent)] mb-6 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_var(--accent-glow)]">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <circle cx="12" cy="12" r="10" />
@@ -46,10 +46,10 @@ export default function Philosophy() {
                             <line x1="12" y1="8" x2="12.01" y2="8" />
                         </svg>
                     </div>
-                    <TranslatedText as="h3" className="text-base font-bold text-white mb-3 uppercase tracking-widest" i18nKey="benefits.opensource_title" />
+                    <TranslatedText as="h3" className="text-base font-bold text-[var(--text-heading)] mb-3 uppercase tracking-widest" i18nKey="benefits.opensource_title" />
                     <TranslatedText
                         as="p"
-                        className="text-zinc-500 text-[13px] leading-relaxed font-medium"
+                        className="text-[var(--text-secondary)] text-[13px] leading-relaxed font-medium"
                         i18nKey="benefits.opensource_desc"
                     />
                 </div>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from 'react';
+import { Tag } from './ui/Tag';
+import { Badge } from './ui/Badge';
 
 const ONE_HOUR = 60 * 60 * 1000;
 const OWNER = 'starzynhobr';
@@ -133,24 +135,18 @@ const RepoStats = ({
 
     if (variant === 'badge') {
         return (
-            <span className={`badge ${badgeVariant}`} {...badgeAttrs}>
+            <Badge variant={badgeVariant || 'stable'} {...badgeAttrs}>
                 {releaseLabel}
-            </span>
+            </Badge>
         );
     }
 
     if (variant === 'stars') {
         return (
-            <span
-                className="tag stars"
+            <Tag
+                variant="stars"
                 data-gh-stars={repo || undefined}
-                style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    lineHeight: 1,
-                    ...starStyle,
-                }}
+                className={starStyle ? "opacity-60" : ""}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -162,12 +158,12 @@ const RepoStats = ({
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    style={{ display: 'block' }}
+                    className="mr-1"
                 >
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                 </svg>
                 <span className="count">{starLabel}</span>
-            </span>
+            </Tag>
         );
     }
 
