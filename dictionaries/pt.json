@@ -415,12 +415,13 @@
         "alert_click_title": "Clique {btn} registrado",
         "alert_click_first": "Primeiro clique registrado.",
         "alert_click_diff": "Intervalo: {diff}.",
-        "summary_click_title": "Último clique: {btn}",
+        "summary_click_title": "Última atividade: {btn}",
         "summary_click_first": "O primeiro clique foi registrado.",
         "summary_click_diff": "O último evento foi {btn} com intervalo de {diff}.",
         "status_ready": "Pronto para testar",
         "status_ready_desc": "O painel registra o botão clicado, mede o intervalo entre cliques e marca em vermelho quando detectar um clique duplo.",
         "summary_critical": "Registro crítico encontrado",
+        "summary_label": "ÚLTIMA OCORRÊNCIA:",
         "sec": "s",
         "ms": "ms"
     }

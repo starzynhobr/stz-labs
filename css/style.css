@@ -1315,6 +1315,35 @@ select.lang-select option {
         opacity: 0;
     }
 }
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+
+.product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* --- LIGHTBOX ANIMATIONS --- */
+@keyframes stz-zoom-jump {
+    0% { opacity: 0; transform: scale(0.65); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes stz-fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes stz-slide-up {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.stz-animate-zoom-jump {
+    animation: stz-zoom-jump 550ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.stz-animate-fade-in {
+    animation: stz-fade-in 400ms ease-out forwards !important;
+}
+
+.stz-animate-slide-up {
+    animation: stz-slide-up 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+}
