@@ -418,12 +418,13 @@
         "alert_click_title": "{btn} click recorded",
         "alert_click_first": "First click recorded.",
         "alert_click_diff": "Interval: {diff}.",
-        "summary_click_title": "Last click: {btn}",
+        "summary_click_title": "Last activity: {btn}",
         "summary_click_first": "The first click was recorded.",
         "summary_click_diff": "The last event was {btn} with interval of {diff}.",
         "status_ready": "Ready to test",
         "status_ready_desc": "The panel registers the clicked button, measures intervals and marks in red when a fast double click is detected.",
         "summary_critical": "Critical record found",
+        "summary_label": "LAST ACTIVITY:",
         "sec": "s",
         "ms": "ms"
     }
