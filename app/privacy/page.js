@@ -18,98 +18,61 @@ export const metadata = {
 
 export default function PrivacyPage() {
     return (
-        <div
-            className="app-shell"
-            style={{
-                minHeight: '100vh',
-                padding: '70px 0 80px',
-            }}
-        >
-            <section className="product-hero" style={{ padding: '120px 0 60px' }}>
-                <div className="container">
-                    <TranslatedText as="h1" i18nKey="privacy.title" />
-                    <TranslatedText as="p" i18nKey="privacy.subtitle" />
-                </div>
+        <main className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
+            <section className="relative w-full max-w-4xl mx-auto px-6 mb-16 text-center">
+                <TranslatedText as="h1" className="text-4xl md:text-5xl font-bold tracking-tighter text-[var(--text-heading)] mb-6" i18nKey="privacy.title" />
+                <TranslatedText as="p" className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto" i18nKey="privacy.subtitle" />
             </section>
 
-            <section className="products">
-                <div className="container" style={{ maxWidth: '800px' }}>
-                    <article className="card" style={{ marginBottom: '30px' }}>
-                        <h3 style={{ marginBottom: '15px' }}>
-                            <TranslatedText as="span" i18nKey="privacy.local_title" />
-                        </h3>
-                        <p className="text-muted">
-                            <TranslatedText as="span" i18nKey="privacy.local_desc" />
-                        </p>
-                    </article>
+            <section className="container max-w-3xl mx-auto px-6 space-y-6">
+                {/* Local Card */}
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                    <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
+                        <TranslatedText as="span" i18nKey="privacy.local_title" />
+                    </h3>
+                    <TranslatedText as="p" className="text-[var(--text-secondary)] leading-relaxed text-[15px]" i18nKey="privacy.local_desc" />
+                </article>
 
-                    <article className="card" style={{ marginBottom: '30px' }}>
-                        <h3 style={{ marginBottom: '15px' }}>
-                            <TranslatedText as="span" i18nKey="privacy.extension_title" />
-                        </h3>
-                        <p className="text-muted">
-                            <TranslatedText as="span" i18nKey="privacy.extension_desc" />
-                        </p>
-                        <ul
-                            style={{
-                                listStyle: 'disc',
-                                marginLeft: '20px',
-                                color: 'var(--text-muted)',
-                                marginTop: '10px',
-                            }}
-                        >
-                            <li style={{ marginBottom: '8px' }}>
-                                <TranslatedText as="span" i18nKey="privacy.extension_item_1" />
+                {/* Extension Card */}
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                    <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
+                        <TranslatedText as="span" i18nKey="privacy.extension_title" />
+                    </h3>
+                    <TranslatedText as="p" className="text-[var(--text-secondary)] leading-relaxed text-[15px] mb-6" i18nKey="privacy.extension_desc" />
+                    <ul className="space-y-3 ml-4">
+                        {[1, 2, 3, 4, 5].map((num) => (
+                            <li key={num} className="flex items-start gap-4 text-sm text-[var(--text-muted)] group">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]/30 mt-2 shrink-0 group-hover:bg-[var(--accent)] transition-colors" />
+                                <TranslatedText as="span" i18nKey={`privacy.extension_item_${num}`} />
                             </li>
-                            <li style={{ marginBottom: '8px' }}>
-                                <TranslatedText as="span" i18nKey="privacy.extension_item_2" />
-                            </li>
-                            <li style={{ marginBottom: '8px' }}>
-                                <TranslatedText as="span" i18nKey="privacy.extension_item_3" />
-                            </li>
-                            <li style={{ marginBottom: '8px' }}>
-                                <TranslatedText as="span" i18nKey="privacy.extension_item_4" />
-                            </li>
-                            <li>
-                                <TranslatedText as="span" i18nKey="privacy.extension_item_5" />
-                            </li>
-                        </ul>
-                    </article>
+                        ))}
+                    </ul>
+                </article>
 
-                    <article className="card" style={{ marginBottom: '30px' }}>
-                        <h3 style={{ marginBottom: '15px' }}>
-                            <TranslatedText as="span" i18nKey="privacy.api_title" />
-                        </h3>
-                        <p className="text-muted">
-                            <TranslatedText as="span" i18nKey="privacy.api_desc" />
-                        </p>
-                        <ul
-                            style={{
-                                listStyle: 'disc',
-                                marginLeft: '20px',
-                                color: 'var(--text-muted)',
-                                marginTop: '10px',
-                            }}
-                        >
-                            <li style={{ marginBottom: '8px' }}>
-                                <TranslatedHtml as="span" i18nKey="privacy.api_list_gemini" />
+                {/* API Card */}
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                    <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
+                        <TranslatedText as="span" i18nKey="privacy.api_title" />
+                    </h3>
+                    <TranslatedText as="p" className="text-[var(--text-secondary)] leading-relaxed text-[15px] mb-6" i18nKey="privacy.api_desc" />
+                    <ul className="space-y-4 ml-4">
+                        {['gemini', 'lrclib'].map((api) => (
+                            <li key={api} className="flex items-start gap-4 text-sm text-[var(--text-muted)] group">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]/30 mt-2 shrink-0 group-hover:bg-[var(--accent)] transition-colors" />
+                                <TranslatedHtml as="span" className="[&_a]:text-[var(--accent)] [&_a]:underline-offset-4 [&_a:hover]:underline [&_a]:transition-colors" i18nKey={`privacy.api_list_${api}`} />
                             </li>
-                            <li>
-                                <TranslatedHtml as="span" i18nKey="privacy.api_list_lrclib" />
-                            </li>
-                        </ul>
-                    </article>
+                        ))}
+                    </ul>
+                </article>
 
-                    <article className="card">
-                        <h3 style={{ marginBottom: '15px' }}>
-                            <TranslatedText as="span" i18nKey="privacy.contact_title" />
-                        </h3>
-                        <p className="text-muted">
-                            <TranslatedText as="span" i18nKey="privacy.contact_desc" />
-                        </p>
-                    </article>
-                </div>
+                {/* Contact Card */}
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] border-l-4 [border-left-color:var(--accent)]">
+                    <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
+                        <TranslatedText as="span" i18nKey="privacy.contact_title" />
+                    </h3>
+                    <TranslatedText as="p" className="text-[var(--text-secondary)] leading-relaxed text-[15px]" i18nKey="privacy.contact_desc" />
+                </article>
             </section>
-        </div>
+        </main>
     );
 }
