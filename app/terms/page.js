@@ -32,65 +32,43 @@ const sections = [
 
 export default function TermsPage() {
     return (
-        <div
-            className="app-shell"
-            style={{
-                minHeight: '100vh',
-                padding: '70px 0 80px',
-            }}
-        >
-            <section className="product-hero" style={{ padding: '120px 0 60px' }}>
-                <div className="container">
-                    <TranslatedText as="h1" i18nKey="terms.title" />
-                    <TranslatedText as="p" i18nKey="terms.subtitle" />
-                    <p className="text-muted" style={{ marginTop: '12px', fontSize: '0.95rem' }}>
-                        <TranslatedText as="span" i18nKey="terms.last_update" />
-                    </p>
-                </div>
+        <main className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
+            <section className="relative w-full max-w-4xl mx-auto px-6 mb-16 text-center">
+                <TranslatedText as="h1" className="text-4xl md:text-5xl font-bold tracking-tighter text-[var(--text-heading)] mb-6" i18nKey="terms.title" />
+                <TranslatedText as="p" className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto mb-4" i18nKey="terms.subtitle" />
+                <p className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--text-muted)] opacity-80">
+                    <TranslatedText as="span" i18nKey="terms.last_update" />
+                </p>
             </section>
 
-            <section className="products">
-                <div className="container" style={{ maxWidth: '900px' }}>
-                    {sections.map((sectionKey) => (
-                        <article
-                            key={sectionKey}
-                            className="card"
-                            style={{ marginBottom: '20px' }}
-                        >
-                            <h3 style={{ marginBottom: '12px' }}>
-                                <TranslatedText as="span" i18nKey={`terms.${sectionKey}_title`} />
-                            </h3>
-                            <p className="text-muted" style={{ marginBottom: sectionKey === 'payments' ? '10px' : 0 }}>
-                                <TranslatedText as="span" i18nKey={`terms.${sectionKey}_desc`} />
-                            </p>
-
-                            {sectionKey === 'payments' ? (
-                                <ul
-                                    style={{
-                                        listStyle: 'disc',
-                                        marginLeft: '20px',
-                                        color: 'var(--text-muted)',
-                                        marginTop: '8px',
-                                    }}
-                                >
-                                    <li style={{ marginBottom: '8px' }}>
-                                        <TranslatedText as="span" i18nKey="terms.payments_item_1" />
-                                    </li>
-                                    <li style={{ marginBottom: '8px' }}>
-                                        <TranslatedText as="span" i18nKey="terms.payments_item_2" />
-                                    </li>
-                                    <li style={{ marginBottom: '8px' }}>
-                                        <TranslatedText as="span" i18nKey="terms.payments_item_3" />
-                                    </li>
-                                    <li>
-                                        <TranslatedText as="span" i18nKey="terms.payments_item_4" />
-                                    </li>
+            <section className="container max-w-3xl mx-auto px-6 space-y-6">
+                {sections.map((sectionKey) => (
+                    <article
+                        key={sectionKey}
+                        className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-300"
+                    >
+                        <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight flex items-center gap-3">
+                            <span className="w-1 h-1 rounded-full bg-[var(--accent)]/50 shrink-0" />
+                            <TranslatedText as="span" i18nKey={`terms.${sectionKey}_title`} />
+                        </h3>
+                        
+                        <div className="text-[var(--text-secondary)] leading-relaxed text-[15px]">
+                            <TranslatedText as="p" className="mb-4" i18nKey={`terms.${sectionKey}_desc`} />
+                            
+                            {sectionKey === 'payments' && (
+                                <ul className="mt-6 ml-4 space-y-3">
+                                    {[1, 2, 3, 4].map((num) => (
+                                        <li key={num} className="flex items-start gap-4 text-sm text-[var(--text-muted)] group">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]/30 mt-2 shrink-0 group-hover:bg-[var(--accent)] transition-colors" />
+                                            <TranslatedText as="span" i18nKey={`terms.payments_item_${num}`} />
+                                        </li>
+                                    ))}
                                 </ul>
-                            ) : null}
-                        </article>
-                    ))}
-                </div>
+                            )}
+                        </div>
+                    </article>
+                ))}
             </section>
-        </div>
+        </main>
     );
 }
