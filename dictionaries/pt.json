@@ -42,7 +42,7 @@
             "soon": "Em Breve"
         },
         "status": {
-            "stable": "[STÁVEL]",
+            "stable": "[ESTÁVEL]",
             "beta": "[BETA]",
             "alpha": "[ALFA]",
             "experimental": "[EXP.]"

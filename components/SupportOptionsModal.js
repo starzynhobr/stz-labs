@@ -37,7 +37,7 @@ export default function SupportOptionsModal({ kofiUrl, mercadoPagoLinks }) {
                 onClick={() => setIsOpen(true)}
                 aria-haspopup="dialog"
                 aria-expanded={isOpen}
-                className="w-full relative group overflow-hidden py-6"
+                className="w-full relative group overflow-hidden py-6 cursor-pointer"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
                 <TranslatedText as="span" className="relative font-bold text-base tracking-widest uppercase" i18nKey="support.open_modal_cta" />
