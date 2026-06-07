@@ -56,6 +56,9 @@
     --glow-opacity: 0.15;
     --noise-opacity: 0.12;
     --shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+    
+    /* Mobile Menu Overlay */
+    --mobile-menu-bg: rgba(7, 10, 15, 0.97);
 }
 
 /* 1. NEON CORE - Dark Premium / Sci-Fi */
@@ -70,6 +73,7 @@
     --status-alpha: #A855F7;
     --star-color: #F59E0B;
     --text-heading: rgba(255, 255, 255, 0.9);
+    --mobile-menu-bg: rgba(7, 10, 15, 0.97);
 }
 
 /* 2. FORGE GRID - Brutalist / Technical Lab */
@@ -100,6 +104,7 @@
     --shadow: none;
     --status-alpha: #F59E0B;
     --star-color: #F59E0B;
+    --mobile-menu-bg: rgba(11, 11, 11, 0.98);
 }
 
 /* 3. AURORA GLASS - Artistic / Fluid Translucent */
@@ -126,6 +131,7 @@
     --radius-card: 48px;
     --glow-opacity: 0.25;
     --star-color: #F59E0B;
+    --mobile-menu-bg: rgba(2, 6, 23, 0.96);
 }
 
 /* 4. LIGHT MODE - Sophisticated Minimal (Recalibrated for Contrast & Separation) */
@@ -155,6 +161,7 @@
     --noise-opacity: 0.02;
     --shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
     --star-color: #B45309;
+    --mobile-menu-bg: rgba(241, 245, 249, 0.97);
 }
 
 @layer base {
@@ -169,6 +176,16 @@
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         transition: background-color var(--theme-dur-base) var(--theme-ease-base), color var(--theme-dur-base) var(--theme-ease-base);
+    }
+}
+
+/* Navbar Mobile Background Fix */
+.bg-mobile-menu {
+    background-color: var(--mobile-menu-bg);
+}
+@media (min-width: 768px) {
+    .bg-mobile-menu {
+        background-color: transparent !important;
     }
 }
 

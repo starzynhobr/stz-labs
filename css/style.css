@@ -43,6 +43,7 @@
     --input-text: #fff;
 
     --noise-opacity: 0.06;
+    --mobile-menu-bg: rgba(11, 13, 16, 0.98);
 }
 
 /* Overrides for Ember Theme */
