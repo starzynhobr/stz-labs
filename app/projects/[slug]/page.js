@@ -76,12 +76,6 @@ export default async function ProjectDetailPage({ params }) {
                                 className="px-8"
                             >
                                 <a href={link.url} target="_blank" rel="noreferrer" style={link.style}>
-                                    {link.icon && (
-                                        <span
-                                            className="mr-2.5 flex items-center"
-                                            dangerouslySetInnerHTML={{ __html: link.icon }}
-                                        />
-                                    )}
                                     {link.labelKey ? (
                                         <TranslatedText as="span" i18nKey={link.labelKey} />
                                     ) : (

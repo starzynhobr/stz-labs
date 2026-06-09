@@ -8,7 +8,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
  * Handles smooth transitions and persistence.
  */
 const ThemeContext = createContext({
-    theme: 'neon-core',
+    theme: 'light-mode',
     setTheme: () => {},
     themeList: [],
 });
@@ -16,13 +16,13 @@ const ThemeContext = createContext({
 export const themes = ['neon-core', 'forge-grid', 'aurora-glass', 'light-mode'];
 
 export function ThemeProvider({ children }) {
-    const [theme, setThemeState] = useState('neon-core');
+    const [theme, setThemeState] = useState('light-mode');
     const [isSwitching, setIsSwitching] = useState(false);
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
         const savedTheme = window.localStorage.getItem('theme');
-        const initialTheme = themes.includes(savedTheme) ? savedTheme : 'neon-core';
+        const initialTheme = themes.includes(savedTheme) ? savedTheme : 'light-mode';
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setThemeState(initialTheme);
     }, []);

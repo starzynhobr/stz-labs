@@ -12,7 +12,7 @@ const dictionaries = { pt, en, fr, de, it, es };
 const supportedLanguages = Object.keys(dictionaries);
 
 const LanguageContext = createContext({
-    lang: 'pt',
+    lang: 'en',
     setLang: () => {},
     t: (key) => key,
 });
@@ -23,13 +23,13 @@ const getNestedValue = (obj, key) => {
 };
 
 export function LanguageProvider({ children }) {
-    const [lang, setLangState] = useState('pt');
+    const [lang, setLangState] = useState('en');
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
         const savedLang = window.localStorage.getItem('lang');
         const browserLang = navigator.language.split('-')[0];
-        const initialLang = savedLang || (supportedLanguages.includes(browserLang) ? browserLang : 'pt');
+        const initialLang = savedLang || (supportedLanguages.includes(browserLang) ? browserLang : 'en');
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setLangState(initialLang);
     }, []);
@@ -44,7 +44,7 @@ export function LanguageProvider({ children }) {
         setLangState(value);
     };
 
-    const dictionary = dictionaries[lang] || dictionaries.pt;
+    const dictionary = dictionaries[lang] || dictionaries.en;
     const t = (key) => getNestedValue(dictionary, key) || key;
 
     return <LanguageContext.Provider value={{ lang, setLang, t }}>{children}</LanguageContext.Provider>;

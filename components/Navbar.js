@@ -26,13 +26,14 @@ export default function Navbar() {
     // Close language menu on click outside (desktop)
     useEffect(() => {
         const handleClickOutside = (event) => {
+            if (menuOpen) return; // Ignora no mobile para não conflitar com o botão do acordeão
             if (langRef.current && !langRef.current.contains(event.target)) {
                 setLangMenuOpen(false);
             }
         };
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
+    }, [menuOpen]);
 
     // Close mobile menu with Escape
     useEffect(() => {
@@ -57,7 +58,7 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-4 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl z-[1000] bg-[var(--bg)]/40 backdrop-blur-xl border border-[var(--border-strong)] shadow-[var(--shadow)] rounded-[var(--radius-card)] transition-all duration-300">
-            <div className="flex items-center justify-between px-6 md:px-12 h-[60px]">
+            <div className="relative grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center px-6 md:px-12 h-[60px]">
                 {/* Logo */}
                 <Link 
                     href="/" 
@@ -86,7 +87,7 @@ export default function Navbar() {
                 <div 
                     id="mobile-menu"
                     className={cn(
-                        "absolute md:static top-[calc(100%+12px)] left-0 right-0 p-5 md:p-0 bg-mobile-menu backdrop-blur-xl md:backdrop-blur-none border border-[var(--border-strong)] md:border-none rounded-[var(--radius-card)] md:rounded-none shadow-2xl md:shadow-none flex-col md:flex-row items-stretch md:items-center gap-6 md:gap-6 transition-all duration-300 z-50 origin-top",
+                        "absolute md:contents top-[calc(100%+12px)] left-0 right-0 p-5 md:p-0 bg-[var(--bg)] md:bg-transparent border border-[var(--border-strong)] md:border-none rounded-[var(--radius-card)] md:rounded-none shadow-2xl md:shadow-none flex-col md:flex-row items-stretch md:items-center gap-6 md:gap-6 transition-all duration-300 z-50 origin-top",
                         menuOpen ? "flex opacity-100 translate-y-0 visible" : "flex opacity-0 -translate-y-4 invisible md:visible md:opacity-100 md:translate-y-0 pointer-events-none md:pointer-events-auto"
                     )}
                 >
@@ -144,7 +145,7 @@ export default function Navbar() {
                         {/* Accordion Idioma */}
                         <div className="flex flex-col rounded-xl border border-[var(--border-subtle)] bg-[var(--surface-2)] overflow-hidden">
                             <button 
-                                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                                onClick={() => setLangMenuOpen((prev) => !prev)}
                                 aria-expanded={langMenuOpen}
                                 className="flex items-center justify-between p-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] hover:bg-[var(--surface)] transition-colors"
                             >
@@ -188,7 +189,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Navigation Links */}
-                    <ul className="hidden md:flex items-center gap-6">
+                    <ul className="hidden md:flex md:col-start-2 md:row-start-1 items-center justify-center gap-8">
                         {navLinks.filter(l => !(l.href === '/' && pathname === '/')).map(link => (
                             <li key={link.href}>
                                 <Link
@@ -204,11 +205,11 @@ export default function Navbar() {
                     </ul>
 
                     {/* Controls Desktop */}
-                    <div className="hidden md:flex items-center gap-3">
+                    <div className="hidden md:flex md:col-start-3 md:row-start-1 md:justify-self-end items-center gap-3">
                         {/* Custom Language Selector Desktop */}
                         <div className="relative" ref={langRef}>
                             <button
-                                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                                onClick={() => setLangMenuOpen((prev) => !prev)}
                                 className="bg-[var(--surface-2)] hover:bg-[var(--surface-3)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-subtle)] rounded-md text-[11px] font-bold w-[45px] h-8 flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent)] uppercase"
                                 aria-label={t('nav.language')}
                                 aria-expanded={langMenuOpen}
