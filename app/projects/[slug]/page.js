@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import ProjectGalleryDetails from '../../../components/ProjectGalleryDetails';
+import ProjectFeatureShowcase from '../../../components/ProjectFeatureShowcase';
 import RepoStats from '../../../components/RepoStats';
 import TranslatedText from '../../../components/TranslatedText';
 import { projects } from '../../../data/projects';
@@ -46,7 +47,7 @@ export default async function ProjectDetailPage({ params }) {
         notFound();
     }
 
-    const { hero, gallery, features, specs } = project.detail;
+    const { hero, gallery, showcase, features, specs } = project.detail;
     const heroGalleryItem = gallery?.find((item) => item.variant === 'hero') || gallery?.[0] || null;
     const extraGalleryItems = heroGalleryItem ? gallery.filter((item) => item.src !== heroGalleryItem.src) : [];
 
@@ -117,6 +118,8 @@ export default async function ProjectDetailPage({ params }) {
                     />
                 </section>
             )}
+
+            <ProjectFeatureShowcase items={showcase || []} />
 
             {/* Features Section */}
             <section className="container max-w-5xl mx-auto px-6 mb-24">

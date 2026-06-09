@@ -33,7 +33,8 @@
             "music": "Música",
             "python": "Python",
             "qt_qml": "Qt/QML",
-            "monitor": "Monitor"
+            "monitor": "Monitor",
+            "pdf": "PDF"
         },
         "badges": {
             "stable": "Estável",
@@ -89,7 +90,8 @@
         "btn_soon": "Em Breve",
         "suite_title": "STZ Suite",
         "version_latest": "Versão mais recente via GitHub",
-        "version_dev": "Em desenvolvimento"
+        "version_dev": "Em desenvolvimento",
+        "pdf_suite_desc": "Suite desktop para mesclar, reorganizar, converter e processar PDFs e imagens em lote, com interface moderna em QML."
     },
     "benefits": {
         "efficiency_title": "Foco e Eficiência",
@@ -424,5 +426,55 @@
         "summary_label": "ÚLTIMA OCORRÊNCIA:",
         "sec": "s",
         "ms": "ms"
+    },
+    "pdf_suite": {
+        "title": "STZ PDF Suite",
+        "description": "Aplicativo desktop para Windows que reúne fluxos de PDF e imagem em uma interface Qt Quick/QML moderna: mesclar, reorganizar, converter, inserir páginas e processar arquivos em lote.",
+        "btn_github": "Acessar GitHub",
+        "features": {
+            "merge_title": "Mesclagem Visual de PDFs",
+            "merge_desc": "Combine múltiplos PDFs com ordenação visual por drag-and-drop antes de gerar o arquivo final.",
+            "reorder_title": "Reorganização de Páginas",
+            "reorder_desc": "Reordene páginas de PDFs a partir de arquivos individuais ou pastas, mantendo o fluxo de trabalho rápido.",
+            "convert_title": "Conversão PDF e Imagem",
+            "convert_desc": "Converta páginas de PDF em imagens, imagens em PDF e imagens entre formatos suportados.",
+            "insert_title": "Inserção de Páginas",
+            "insert_desc": "Insira páginas em PDFs existentes sem precisar trocar de ferramenta para operações comuns.",
+            "batch_title": "Processamento em Lote",
+            "batch_desc": "Execute pós-processamento em imagens e páginas PDF com progresso, cancelamento e organização clara.",
+            "ui_title": "Interface Fluent QML",
+            "ui_desc": "Interface Qt Quick/QML com estilo FluentWinUI3 e empacotamento standalone para Windows."
+        },
+        "specs": {
+            "version": "Versão Atual",
+            "platform": "Plataforma",
+            "language": "Linguagem",
+            "interface": "Interface",
+            "packaging": "Empacotamento",
+            "license": "Licença"
+        },
+        "showcase": {
+            "merge_kicker": "Módulo 01",
+            "merge_title": "Mesclagem com entrada por pasta ou arquivos",
+            "merge_desc": "O módulo Merge PDF aceita uma pasta inteira ou arquivos selecionados, permite definir o PDF de saída, ativar overwrite e montar a lista por drag-and-drop antes de executar a mesclagem.",
+            "image_pdf_kicker": "Módulo 02",
+            "image_pdf_title": "Imagens organizadas em PDF",
+            "image_pdf_desc": "Image to PDF transforma pastas ou seleções de imagens em documento PDF, com controle de DPI, qualidade JPG, pasta de saída e opção de sobrescrever quando necessário.",
+            "pdf_image_kicker": "Módulo 03",
+            "pdf_image_title": "PDF para imagens com painel de ajustes",
+            "pdf_image_desc": "PDF to Image exporta páginas em formatos como PNG, com subpasta por PDF, prefixo de nome, padding numérico, workers em paralelo, DPI e modo claro para o processamento.",
+            "image_convert_kicker": "Módulo 04",
+            "image_convert_title": "Conversão de imagens com tamanho e qualidade",
+            "image_convert_desc": "Image Convert converte imagens entre formatos, preserva nomes, permite forçar dimensões, ajustar largura, altura, DPI, qualidade, workers e controlar sobrescrita ou interrupção em erro.",
+            "pdf_insert_kicker": "Módulo 05",
+            "pdf_insert_title": "Inserção de páginas em PDFs existentes",
+            "pdf_insert_desc": "PDF Insert começa por um PDF base e depois adiciona outro PDF ou imagens, com pasta de saída opcional, controle de overwrite e opção para parar no primeiro erro.",
+            "post_process_kicker": "Módulo 06",
+            "post_process_title": "Pós-processamento com preview antes e depois",
+            "post_process_desc": "Post Process aplica ajustes como brilho, contraste, cor, gamma e sharpen, mantendo preview lado a lado antes/depois e controles de qualidade, workers, nome e processamento paralelo.",
+            "reorder_kicker": "Módulo 07",
+            "reorder_title": "Reordenação e renomeação por regras",
+            "reorder_desc": "Reorder lê pastas de entrada e saída, ordena por nome com natural sort ou leitura reversa, aplica prefixo, zeros de padding e regras para manter ou substituir arquivos originais."
+        }
     }
 }
