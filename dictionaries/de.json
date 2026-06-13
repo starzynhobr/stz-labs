@@ -78,7 +78,7 @@
     },
     "cards": {
         "suite_desc": "Modulares Desktop-Tool-Ökosystem. Ein leistungsstarker Launcher, der Plugins, Skripte und Automatisierung in einer Oberfläche vereint.",
-        "xml_desc": "Programm zur einfachen Übersetzung von Spiel-XML-Dateien. Bearbeiten Sie Übersetzungsstrings einfach, sicher und schnell.",
+        "xml_desc": "Übersetzen Sie Spiel-XML-Dateien mit mehreren KI-Anbietern (Gemini, DeepL, Azure, Llama), intelligentem Glossar und Tag Presets für schnelle Lokalisierung.",
         "lyrics_desc": "Minimalistischer Rainmeter-Skin. Zeigt den aktuellen Songtext in einer Zeile über der Taskleiste an. Immer im Vordergrund.",
         "lyrics_overlay_desc": "Installierbares Windows-Overlay (ohne Rainmeter) mit synchronisierten Songtexten via GSMTC + LRCLIB, Tray-Steuerung, Presets und lokalem Cache.",
         "csv_desc": "Fortschrittliches Tool zum Bereinigen, Normalisieren und Konvertieren von CSV-Kontaktlisten. Ideal für die Migration zu Google Contacts.",
@@ -227,6 +227,14 @@
             "license": "Lizenz",
             "platform": "Plattform",
             "target": "Ziel"
+        },
+        "showcase": {
+            "cover_kicker": "Allgemein",
+            "cover_title": "Intelligente Gesprächsoptimierung",
+            "cover_desc": "Leichte Browser-Erweiterung, die dafür sorgt, dass lange KI-Chats (ChatGPT, Gemini und Claude) schnell laufen, indem ältere Nachrichten eingeklappt oder ausgeblendet werden, um die Seitenleistung und den Fokus zu verbessern.",
+            "screenshot_1_kicker": "Modul 01",
+            "screenshot_1_title": "Einstellungen & Native Integration",
+            "screenshot_1_desc": "Verwalten Sie die Einklappregeln ganz einfach über ein einfaches, intuitives Browser-Popup-Menü und speichern Sie Ihre Einstellungen lokal."
         }
     },
     "mouse_click": {
@@ -256,22 +264,22 @@
         }
     },
     "game_xml": {
-        "title": "Game XML Translator",
-        "description": "Das definitive Tool für Modder und Lokalisierungsteams. Automatisieren Sie die Übersetzung komplexer Dialogdateien unter Wahrung der strukturellen Spielintegrität.",
+        "title": "STZ XML Translator",
+        "description": "Das definitive Tool für Modder und Lokalisierungsteams. Übersetzen Sie Spiel-XML-Dateien mit mehreren KI-Anbietern, intelligentem Glossar und Tag Presets.",
         "btn_github": "Auf GitHub ansehen",
         "features": {
-            "ai_title": "KI-Übersetzung",
-            "ai_desc": "Native Integration mit Google Gemini API für hochwertige kontextbezogene Übersetzungen, die herkömmliche Auto-Übersetzer übertreffen.",
+            "ai_title": "Mehrere KI-Anbieter",
+            "ai_desc": "Unterstützt Gemini, Google Translate, DeepL, Microsoft Azure, lokales Llama 3 und Ollama — wählen Sie den idealen Anbieter für jedes Projekt.",
             "integrity_title": "XML-Integrität",
             "integrity_desc": "Der Extraktions- und Injektionsalgorithmus bewahrt Knotenreihenfolge, Attribute und Kommentare akribisch. Ihr Spiel wird nicht abstürzen.",
             "glossary_title": "Smart Glossar",
             "glossary_desc": "Wahren Sie Term-Konsistenz (Eigennamen, Orte, Gegenstände) über mehrere Dateien hinweg mit dem integrierten Glossar-Manager.",
-            "ui_title": "Moderne Oberfläche",
-            "ui_desc": "Gebaut mit CustomTkinter für ein angenehmen visuelles Erlebnis (Dark Mode) und intuitiven Workflow.",
+            "ui_title": "Multi-Theme-Oberfläche",
+            "ui_desc": "Wählen Sie zwischen dunklem, hellem und warmem Theme. Die Oberfläche ist in Englisch, Spanisch, Französisch und Portugiesisch lokalisiert.",
             "progress_title": "Echtzeit-Fortschritt",
-            "progress_desc": "Verfolgen Sie visuell den Übersetzungsstatus jeder Datei und des gesamten Projekts.",
-            "export_title": "Validierter Export",
-            "export_desc": "Ein-Klick-Export mit grundlegender Strukturvalidierung, um sicherzustellen, dass die endgültige Datei spielbereit ist."
+            "progress_desc": "Verfolgen Sie visuell den Übersetzungsstatus jeder Datei und des gesamten Projekts, mit automatischem Checkpoint.",
+            "export_title": "Tag Presets & Export",
+            "export_desc": "Speichern Sie Parent/Target Tag-Kombinationen als wiederverwendbare Presets. Exportieren Sie mit Strukturvalidierung und JSON/CSV-Backup."
         },
         "specs": {
             "version": "Aktuelle Version",
@@ -280,6 +288,23 @@
             "compilation": "Kompilierung",
             "license": "Lizenz",
             "requirements": "Anforderungen"
+        },
+        "showcase": {
+            "themes_kicker": "Visuell",
+            "themes_title": "Adaptive Multi-Theme-Oberfläche",
+            "themes_desc": "Wechseln Sie zwischen dunklem, warmem und hellem Theme ohne Neustart. Die Oberfläche ist vollständig in Englisch, Spanisch, Französisch, Portugiesisch und Japanisch lokalisiert.",
+            "providers_kicker": "Integration",
+            "providers_title": "Mehrere Übersetzungsanbieter",
+            "providers_desc": "Wählen Sie aus Gemini, Google Translate (kostenlos), DeepL, Microsoft Azure, lokalem Llama 3 oder Ollama — wechseln Sie Anbieter ohne Sitzungsfortschritt zu verlieren.",
+            "tagpresets_kicker": "Workflow",
+            "tagpresets_title": "Tag Presets für schnelle Sitzungen",
+            "tagpresets_desc": "Speichern Sie Parent Tag + Target Tag-Kombinationen mit Name und verknüpfter Datei. Mit einem Klick anwenden, um jeden XML-Typ ohne Neukonfiguration fortzusetzen.",
+            "settings_kicker": "Einstellungen",
+            "settings_title": "Einstellungs-Drawer & Presets",
+            "settings_desc": "Das Seitenpanel zentralisiert Übersetzungs-Backup (JSON/CSV), Tag Preset-Import und Auswahl des Interface-Themes an einem Ort.",
+            "glossary_kicker": "Terminologie",
+            "glossary_title": "Glossar für konsistente Namen",
+            "glossary_desc": "Registrieren Sie feste Begriffe — Charakternamen, Orte, Gegenstände — die nicht automatisch übersetzt werden sollen, um Konsistenz in allen Projektdateien zu gewährleisten."
         }
     },
     "lyrics": {
@@ -307,6 +332,20 @@
             "api": "API",
             "license": "Lizenz",
             "dep": "Abhängigkeit"
+        },
+        "showcase": {
+            "cover_kicker": "Ästhetik",
+            "cover_title": "Unauffälliger & Integrierter Look",
+            "cover_desc": "STZ Lyrics fügt sich nahtlos in Ihre Taskleiste ein und zeigt Songtexte dezent an, ohne Ihre tägliche Arbeit zu stören.",
+            "screenshot_1_kicker": "Modul 01",
+            "screenshot_1_title": "Automatische Synchronisierung mit LRCLIB",
+            "screenshot_1_desc": "Ruft synchronisierte Songtexte in Echtzeit direkt von LRCLIB ab und deckt Tausende von Songs mit ständigen Updates ab.",
+            "screenshot_2_kicker": "Modul 02",
+            "screenshot_2_title": "Flexible Stilpersonalisierung",
+            "screenshot_2_desc": "Ändern Sie Farben, Schriftarten, Größen und Ausrichtungen, um sie perfekt an das visuelle Thema Ihres Betriebssystems anzupassen.",
+            "screenshot_3_kicker": "Modul 03",
+            "screenshot_3_title": "Dynamische Verzögerungsanpassung",
+            "screenshot_3_desc": "Steuern und kompensieren Sie potenzielle Verzögerungen bei synchronisierten Songtexten direkt auf der Leiste mit schnellen Mausklicks."
         }
     },
     "lyrics_overlay": {
@@ -334,6 +373,20 @@
             "media": "Mediensitzung",
             "api": "API",
             "license": "Lizenz"
+        },
+        "showcase": {
+            "cover_kicker": "Allgemein",
+            "cover_title": "Modernes transparentes Overlay",
+            "cover_desc": "Elegantes, rahmenloses Fenster, das über Ihrem Desktop oder Ihren Spielen schwebt, mit Unterstützung für Deckkraftsteuerung und intelligente Positionierung.",
+            "screenshot_1_kicker": "Modul 01",
+            "screenshot_1_title": "Automatische GSMTC-Erkennung",
+            "screenshot_1_desc": "Synchronisiert sich nativ mit den globalen Windows-System-Mediensteuerungen (GSMTC) und verfolgt Titel von Spotify, YouTube und Browsern.",
+            "screenshot_2_kicker": "Modul 02",
+            "screenshot_2_title": "Presets & Erweiterte Anpassung",
+            "screenshot_2_desc": "Wechseln Sie schnell zwischen verschiedenen vorkonfigurierten ästhetischen Stilen und ändern Sie Textfarben, Deckkraft und Layouts dynamisch.",
+            "screenshot_3_kicker": "Modul 03",
+            "screenshot_3_title": "Schnellsteuerung & Offline-Cache",
+            "screenshot_3_desc": "Verwalten Sie alle Konfigurationen und Tastenkombinationen über das System-Tray-Symbol, mit automatischem Zwischenspeichern von Songtexten für die Offline-Nutzung."
         }
     },
     "csv_converter": {
@@ -361,6 +414,17 @@
             "ui": "Interface",
             "license": "Lizenz",
             "input": "Input"
+        },
+        "showcase": {
+            "cover_kicker": "Allgemein",
+            "cover_title": "Moderne Fluent-QML-Benutzeroberfläche",
+            "cover_desc": "Eine reibungslose Benutzererfahrung, entwickelt mit PySide6 und QML, mit flüssigen Übergängen und klarem Design, optimiert für schnelle Daten-Workflows.",
+            "screenshot_1_kicker": "Modul 01",
+            "screenshot_1_title": "Intelligente Feldzuordnung",
+            "screenshot_1_desc": "Wählen Sie visuell aus und ordnen Sie zu, welche Spalten aus Ihrer ursprünglichen CSV Name, Telefon, E-Mail und Tags für Google Contacts entsprechen.",
+            "screenshot_2_kicker": "Modul 02",
+            "screenshot_2_title": "Bereinigung, Deduplizierung & Ausführungsbericht",
+            "screenshot_2_desc": "Verarbeiten Sie ganze Kontaktlisten durch das Entfernen von Duplikaten und ungültigen Nummern, abgerundet durch einen umfassenden Bereinigungsbericht nach der Ausführung."
         }
     },
     "taskpulse": {
@@ -386,6 +450,17 @@
             "platform": "Plattform",
             "dependency": "Abhängigkeit",
             "license": "Lizenz"
+        },
+        "showcase": {
+            "cover_kicker": "Allgemein",
+            "cover_title": "Minimalistische Desktop-Integration",
+            "cover_desc": "STZ TaskPulse fügt sich nahtlos in Ihren Desktop ein und bietet eine Cyberpunk-Statusleiste, ohne Ihr Setup zu überladen.",
+            "screenshot_1_kicker": "Modul 01",
+            "screenshot_1_title": "Echtzeit-Ressourcenüberwachung",
+            "screenshot_1_desc": "Verfolgen Sie die CPU-, GPU-, RAM-Auslastung und den Netzwerkverkehr (Download und Upload) im Handumdrehen in Echtzeit.",
+            "screenshot_2_kicker": "Modul 02",
+            "screenshot_2_title": "Saubere Ästhetik & Digitale Uhr",
+            "screenshot_2_desc": "Elegantes Design, das Datum und Uhrzeit mit moderner Typografie hervorhebt, zusammen mit der Überwachung der Systemlaufzeit (Uptime)."
         }
     },
     "mouse_tester_tool": {

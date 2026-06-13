@@ -78,7 +78,7 @@
     },
     "cards": {
         "suite_desc": "Modular desktop tool ecosystem. A powerful launcher unifying plugins, scripts, and automation in a unified interface.",
-        "xml_desc": "Program that facilitates translating game XML files. Edit translation strings with ease, safety, and speed.",
+        "xml_desc": "Translate game XML files with multiple AI providers (Gemini, DeepL, Azure, Llama), smart glossary, and tag presets to accelerate localization workflows.",
         "lyrics_desc": "Minimalist Rainmeter skin. Displays playing song lyrics in a single line over the taskbar. Always on Top.",
         "lyrics_overlay_desc": "Installable Windows overlay (no Rainmeter) with synced lyrics via GSMTC + LRCLIB, tray controls, presets, and local cache.",
         "csv_desc": "Advanced tool to clean, normalize, and convert CSV contact lists. Ideal for Google Contacts migration.",
@@ -227,6 +227,14 @@
             "license": "License",
             "platform": "Platform",
             "target": "Target"
+        },
+        "showcase": {
+            "cover_kicker": "General",
+            "cover_title": "Smart Conversation Optimization",
+            "cover_desc": "Lightweight browser extension designed to keep long AI chats (ChatGPT, Gemini, and Claude) running fast by collapsing or hiding older messages to improve page performance and focus.",
+            "screenshot_1_kicker": "Module 01",
+            "screenshot_1_title": "Settings & Native Integration",
+            "screenshot_1_desc": "Easily manage collapsing rules through a simple, intuitive browser popup menu, persisting preferences locally on your storage."
         }
     },
     "mouse_click": {
@@ -256,22 +264,22 @@
         }
     },
     "game_xml": {
-        "title": "Game XML Translator",
-        "description": "The definitive tool for modders and localization teams. Automate the translation of complex dialogue files while maintaining structural game integrity.",
+        "title": "STZ XML Translator",
+        "description": "The definitive tool for modders and localization teams. Translate game XML files with multiple AI providers, smart glossary, and Tag Presets to accelerate your workflow.",
         "btn_github": "View on GitHub",
         "features": {
-            "ai_title": "AI Translation",
-            "ai_desc": "Native integration with Google Gemini API for high-quality contextual translations, outperforming conventional auto-translators.",
+            "ai_title": "Multiple AI Providers",
+            "ai_desc": "Supports Gemini, Google Translate, DeepL, Microsoft Azure, local Llama 3, and Ollama — pick the ideal provider for each project.",
             "integrity_title": "XML Integrity",
             "integrity_desc": "The extraction and injection algorithm meticulously preserves node order, attributes, and comments. Your game won't break.",
             "glossary_title": "Smart Glossary",
             "glossary_desc": "Maintain term consistency (proper names, locations, items) across multiple files with the built-in glossary manager.",
-            "ui_title": "Modern Interface",
-            "ui_desc": "Built with CustomTkinter for a pleasant visual experience (Dark Mode) and intuitive workflow.",
+            "ui_title": "Multi-Theme Interface",
+            "ui_desc": "Choose between dark, light, and warm themes. The interface is localized in English, Spanish, French, and Portuguese.",
             "progress_title": "Real-time Progress",
-            "progress_desc": "Visually track the translation status of each file and the project as a whole.",
-            "export_title": "Validated Export",
-            "export_desc": "One-click export with basic structural validation to ensure the final file is game-ready."
+            "progress_desc": "Visually track the translation status of each file and the project as a whole, with automatic checkpointing.",
+            "export_title": "Tag Presets & Export",
+            "export_desc": "Save Parent/Target Tag combinations as reusable presets. Export with structural validation and JSON/CSV backup."
         },
         "specs": {
             "version": "Current Version",
@@ -280,6 +288,23 @@
             "compilation": "Compilation",
             "license": "License",
             "requirements": "Requirements"
+        },
+        "showcase": {
+            "themes_kicker": "Visual",
+            "themes_title": "Multi-Theme Adaptive Interface",
+            "themes_desc": "Switch between dark, warm, and light themes without restarting. The interface is fully localized in English, Spanish, French, Portuguese, and Japanese.",
+            "providers_kicker": "Integration",
+            "providers_title": "Multiple Translation Providers",
+            "providers_desc": "Choose from Gemini, Google Translate (free), DeepL, Microsoft Azure, local Llama 3, or local Ollama — switch providers without losing session progress.",
+            "tagpresets_kicker": "Workflow",
+            "tagpresets_title": "Tag Presets for Fast Sessions",
+            "tagpresets_desc": "Save Parent Tag + Target Tag combinations with a name and linked file. Apply in one click to resume any game XML type without reconfiguring.",
+            "settings_kicker": "Settings",
+            "settings_title": "Settings Drawer & Presets",
+            "settings_desc": "The side panel centralizes translation backup (JSON/CSV), Tag Preset import, and interface theme selection — all in one place.",
+            "glossary_kicker": "Terminology",
+            "glossary_title": "Glossary for Consistent Names",
+            "glossary_desc": "Register fixed terms — character names, locations, items — that should not be auto-translated, ensuring consistency across all project files."
         }
     },
     "lyrics": {
@@ -307,6 +332,20 @@
             "api": "API",
             "license": "License",
             "dep": "Dependency"
+        },
+        "showcase": {
+            "cover_kicker": "Aesthetics",
+            "cover_title": "Discreet & Integrated Look",
+            "cover_desc": "STZ Lyrics is designed to blend into your taskbar, displaying song lyrics subtly without interfering with your daily tasks.",
+            "screenshot_1_kicker": "Module 01",
+            "screenshot_1_title": "Automatic Sync with LRCLIB",
+            "screenshot_1_desc": "Fetches real-time synced lyrics directly from LRCLIB, covering thousands of songs with constant updates.",
+            "screenshot_2_kicker": "Module 02",
+            "screenshot_2_title": "Flexible Style Personalization",
+            "screenshot_2_desc": "Modify colors, fonts, sizes, and alignments to perfectly match your operating system's visual theme.",
+            "screenshot_3_kicker": "Module 03",
+            "screenshot_3_title": "Dynamic Delay Adjustment",
+            "screenshot_3_desc": "Control and compensate for potential synced lyric delays directly on the bar with quick mouse clicks."
         }
     },
     "lyrics_overlay": {
@@ -334,6 +373,20 @@
             "media": "Media Session",
             "api": "API",
             "license": "License"
+        },
+        "showcase": {
+            "cover_kicker": "General",
+            "cover_title": "Modern Transparent Overlay",
+            "cover_desc": "Sleek, frameless window floating above your desktop or games, supporting opacity control and smart positioning.",
+            "screenshot_1_kicker": "Module 01",
+            "screenshot_1_title": "Automatic GSMTC Detection",
+            "screenshot_1_desc": "Natively syncs with the Windows Global System Media Transport Controls (GSMTC), tracking tracks from Spotify, YouTube, and browsers.",
+            "screenshot_2_kicker": "Module 02",
+            "screenshot_2_title": "Presets & Advanced Customization",
+            "screenshot_2_desc": "Quickly switch between various pre-configured aesthetic styles, dynamically changing font colors, opacities, and layouts.",
+            "screenshot_3_kicker": "Module 03",
+            "screenshot_3_title": "Quick Control & Offline Cache",
+            "screenshot_3_desc": "Manage all configurations and shortcuts via the system tray icon, with automatic lyric caching for offline use."
         }
     },
     "csv_converter": {
@@ -361,6 +414,17 @@
             "ui": "Interface",
             "license": "License",
             "input": "Input"
+        },
+        "showcase": {
+            "cover_kicker": "General",
+            "cover_title": "Modern Fluent QML Interface",
+            "cover_desc": "A smooth experience developed with PySide6 and QML, featuring fluid transitions and clean design optimized for fast data workflows.",
+            "screenshot_1_kicker": "Module 01",
+            "screenshot_1_title": "Smart Field Mapping",
+            "screenshot_1_desc": "Visually select and map which columns from your original CSV match Name, Phone, Email, and Tags for Google Contacts.",
+            "screenshot_2_kicker": "Module 02",
+            "screenshot_2_title": "Cleaning, Deduplication & Execution Report",
+            "screenshot_2_desc": "Process entire contact lists by removing duplicate entries and invalid numbers, generating a comprehensive post-execution cleanup report."
         }
     },
     "taskpulse": {
@@ -386,6 +450,17 @@
             "platform": "Platform",
             "dependency": "Dependency",
             "license": "License"
+        },
+        "showcase": {
+            "cover_kicker": "General",
+            "cover_title": "Minimalist Desktop Integration",
+            "cover_desc": "STZ TaskPulse integrates seamlessly into your desktop, offering a cyberpunk status bar without cluttering your setup.",
+            "screenshot_1_kicker": "Module 01",
+            "screenshot_1_title": "Real-Time Resource Monitoring",
+            "screenshot_1_desc": "Easily track CPU, GPU, RAM usage, and network traffic (Download and Upload) instantly.",
+            "screenshot_2_kicker": "Module 02",
+            "screenshot_2_title": "Clean Aesthetics & Digital Clock",
+            "screenshot_2_desc": "Elegant design highlighting date and time with modern typography, along with system uptime tracking."
         }
     },
     "mouse_tester_tool": {

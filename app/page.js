@@ -5,7 +5,7 @@ import StatusTimeline from '../components/StatusTimeline';
 import { projects } from '../data/projects';
 
 export const metadata = {
-    title: 'STZ LABS | Micro Estúdio de Software Futurista',
+    title: 'STZ LABS',
     description:
         'STZ LABS desenvolve ferramentas de alta performance como STZ CSV Converter, Game XML Translator e STZ Lyrics. Foco em privacidade e eficiência.',
     openGraph: {

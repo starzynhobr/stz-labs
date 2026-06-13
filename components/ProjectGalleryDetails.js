@@ -32,7 +32,7 @@ const GalleryImage = ({ item, isHero = false, onClick }) => (
             alt={item.alt} 
             fill 
             className="object-cover transition-transform duration-700 group-hover:scale-110" 
-            sizes={isHero ? "100vw" : "(max-width: 768px) 100vw, 33vw"} 
+            sizes={isHero ? "(max-width: 1024px) 100vw, 1024px" : "(max-width: 768px) 100vw, 33vw"} 
         />
     </button>
 );

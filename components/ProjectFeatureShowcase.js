@@ -2,6 +2,38 @@ import Image from 'next/image';
 import TranslatedText from './TranslatedText';
 import { cn } from '../lib/utils';
 
+function StackedImages({ images }) {
+    return (
+        <div className="relative" style={{ paddingBottom: '67%' }}>
+            {images.map((img, idx) => (
+                <div
+                    key={img.src}
+                    className={cn(
+                        "absolute inset-0 rounded-[var(--radius-card)] overflow-hidden border [border-color:var(--border-subtle)] bg-[var(--surface-primary)]",
+                        idx === 0 ? "shadow-xl" : "shadow-md"
+                    )}
+                    style={{
+                        zIndex: images.length - idx,
+                        transform: idx === 0
+                            ? 'none'
+                            : `rotate(${idx * 2}deg) translate(${idx * 3.5}%, ${idx * 1}%)`,
+                        transformOrigin: 'left center',
+                        opacity: idx === 0 ? 1 : 1 - idx * 0.08,
+                    }}
+                >
+                    <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 58vw"
+                    />
+                </div>
+            ))}
+        </div>
+    );
+}
+
 export default function ProjectFeatureShowcase({ items = [] }) {
     if (!items.length) return null;
 
@@ -13,13 +45,18 @@ export default function ProjectFeatureShowcase({ items = [] }) {
 
                     return (
                         <article
-                            key={item.image}
+                            key={item.stackImages ? item.stackImages[0].src : item.image}
                             className={cn(
                                 "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center",
                                 imageRight && "lg:[&>*:first-child]:order-2"
                             )}
                         >
                             <div className="lg:col-span-7">
+                                {item.stackImages ? (
+                                    <div style={{ width: '86%' }}>
+                                        <StackedImages images={item.stackImages} />
+                                    </div>
+                                ) : (
                                 <div className="group relative aspect-[1.49/1] overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] shadow-[var(--shadow)]">
                                     <div className="absolute inset-0 z-10 bg-gradient-to-tr from-[var(--accent)]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                                     <Image
@@ -30,9 +67,10 @@ export default function ProjectFeatureShowcase({ items = [] }) {
                                         sizes="(max-width: 1024px) 100vw, 58vw"
                                     />
                                 </div>
+                                )}
                             </div>
 
-                            <div className="lg:col-span-5">
+                            <div className="lg:col-span-5 relative z-10">
                                 <div className="mb-4 flex items-center gap-3">
                                     <span className="h-px w-10 bg-[var(--accent)]/50" />
                                     <TranslatedText

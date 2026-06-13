@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/projects/game-xml-translator',
+        destination: '/projects/stz-xml-translator',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

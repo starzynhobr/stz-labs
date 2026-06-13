@@ -77,7 +77,7 @@
     },
     "cards": {
         "suite_desc": "Ecossistema modular de ferramentas desktop. Um launcher poderoso que unifica plugins, scripts e automação em uma interface unificada.",
-        "xml_desc": "Programa que facilita a tradução de arquivos XML de jogos. Edite strings de tradução com facilidade, segurança e agilidade.",
+        "xml_desc": "Tradução de XML de jogos com múltiplos provedores de IA (Gemini, DeepL, Azure, Llama), glossário inteligente e tag presets para acelerar fluxos de localização.",
         "lyrics_desc": "Skin minimalista para Rainmeter. Mostra a letra da música tocando em uma linha sobre a barra de tarefas. Always on Top.",
         "lyrics_overlay_desc": "Overlay instalável para Windows (sem Rainmeter) com letras sincronizadas via GSMTC + LRCLIB, tray, presets e cache local.",
         "csv_desc": "Ferramenta avançada para limpar, normalizar e converter listas de contatos CSV. Ideal para migração para Google Contacts.",
@@ -226,6 +226,14 @@
             "license": "Licença",
             "platform": "Plataforma",
             "target": "Alvo"
+        },
+        "showcase": {
+            "cover_kicker": "Geral",
+            "cover_title": "Otimização Inteligente de Conversas",
+            "cover_desc": "Extensão de navegador leve desenvolvida para tornar chats longos de IA (ChatGPT, Gemini e Claude) mais leves, colapsando ou ocultando mensagens antigas para melhorar a performance e foco.",
+            "screenshot_1_kicker": "Módulo 01",
+            "screenshot_1_title": "Configurações e Integração Direta",
+            "screenshot_1_desc": "Controle as regras de ocultação por meio de um menu de popup simples e intuitivo integrado diretamente ao navegador, salvando suas preferências localmente."
         }
     },
     "mouse_click": {
@@ -255,22 +263,22 @@
         }
     },
     "game_xml": {
-        "title": "Game XML Translator",
-        "description": "A ferramenta definitiva para modders e times de localização. Automatize a tradução de arquivos de diálogo complexos mantendo a integridade estrutural do jogo.",
+        "title": "STZ XML Translator",
+        "description": "A ferramenta definitiva para modders e times de localização. Traduza arquivos XML de jogos com múltiplos provedores de IA, glossário inteligente e Tag Presets para acelerar seu fluxo de trabalho.",
         "btn_github": "Acessar GitHub",
         "features": {
-            "ai_title": "Tradução via IA",
-            "ai_desc": "Integração nativa com a API Google Gemini para traduções contextuais de alta qualidade, superando tradutores automáticos convencionais.",
+            "ai_title": "Múltiplos Provedores de IA",
+            "ai_desc": "Suporte a Gemini, Google Translate, DeepL, Microsoft Azure, Llama 3 local e Ollama — escolha o provedor ideal para cada projeto.",
             "integrity_title": "Integridade XML",
             "integrity_desc": "O algoritmo de extração e injeção preserva meticulosamente a ordem dos nós, atributos e comentários. Seu jogo não vai quebrar.",
             "glossary_title": "Glossário Inteligente",
             "glossary_desc": "Mantenha a consistência de termos (nomes próprios, locais, itens) através de múltiplos arquivos com o gerenciador de glossário integrado.",
-            "ui_title": "Interface Moderna",
-            "ui_desc": "Desenvolvido com CustomTkinter para uma experiência visual agradável (Dark Mode) e fluxo de trabalho intuitivo.",
+            "ui_title": "Interface com Múltiplos Temas",
+            "ui_desc": "Escolha entre tema escuro, claro e quente. A interface é localizada em inglês, espanhol, francês e português.",
             "progress_title": "Progresso em Tempo Real",
-            "progress_desc": "Acompanhe visualmente o status da tradução de cada arquivo e do projeto como um todo.",
-            "export_title": "Exportação Validada",
-            "export_desc": "Exportação em um clique com validação estrutural básica para garantir que o arquivo final esteja pronto para o jogo."
+            "progress_desc": "Acompanhe visualmente o status da tradução de cada arquivo e do projeto como um todo, com checkpoint automático.",
+            "export_title": "Tag Presets e Exportação",
+            "export_desc": "Salve combinações de Parent/Target Tag como presets reutilizáveis. Exporte com validação estrutural e backup JSON/CSV."
         },
         "specs": {
             "version": "Versão Atual",
@@ -279,6 +287,23 @@
             "compilation": "Compilação",
             "license": "Licença",
             "requirements": "Requisitos"
+        },
+        "showcase": {
+            "themes_kicker": "Visual",
+            "themes_title": "Interface com Múltiplos Temas",
+            "themes_desc": "Personalize a aparência entre tema escuro, quente e claro sem reiniciar. A interface é totalmente localizada em inglês, espanhol, francês, português e japonês.",
+            "providers_kicker": "Integração",
+            "providers_title": "Múltiplos Provedores de Tradução",
+            "providers_desc": "Escolha entre Gemini, Google Translate (gratuito), DeepL, Microsoft Azure, Llama 3 local ou Ollama local — troque de provedor sem perder o progresso da sessão.",
+            "tagpresets_kicker": "Fluxo de Trabalho",
+            "tagpresets_title": "Tag Presets para Sessões Rápidas",
+            "tagpresets_desc": "Salve combinações de Parent Tag + Target Tag com nome e arquivo vinculado. Aplique com um clique para retomar qualquer tipo de XML do jogo sem reconfigurar.",
+            "settings_kicker": "Configurações",
+            "settings_title": "Drawer de Configurações e Presets",
+            "settings_desc": "O painel lateral centraliza backup de tradução (JSON/CSV), importação de Tag Presets e seleção do tema de interface em um único lugar.",
+            "glossary_kicker": "Terminologia",
+            "glossary_title": "Glossário para Nomes Consistentes",
+            "glossary_desc": "Cadastre termos fixos — nomes de personagens, locais, itens — que não devem ser traduzidos automaticamente, garantindo consistência em todos os arquivos do projeto."
         }
     },
     "lyrics": {
@@ -306,6 +331,20 @@
             "api": "API",
             "license": "Licença",
             "dep": "Dependência"
+        },
+        "showcase": {
+            "cover_kicker": "Estética",
+            "cover_title": "Visual Discreto e Integrado",
+            "cover_desc": "O STZ Lyrics é projetado para se mesclar à sua barra de tarefas, exibindo as letras das músicas de forma sutil sem atrapalhar suas tarefas diárias.",
+            "screenshot_1_kicker": "Módulo 01",
+            "screenshot_1_title": "Sincronização Automática com LRCLIB",
+            "screenshot_1_desc": "Busca em tempo real as letras sincronizadas diretamente do LRCLIB, cobrindo milhares de músicas com atualização constante.",
+            "screenshot_2_kicker": "Módulo 02",
+            "screenshot_2_title": "Personalização Flexível de Estilos",
+            "screenshot_2_desc": "Modifique cores, fontes, tamanhos e alinhamentos para combinar perfeitamente com o tema visual do seu sistema operacional.",
+            "screenshot_3_kicker": "Módulo 03",
+            "screenshot_3_title": "Ajuste Dinâmico de Atraso (Delay)",
+            "screenshot_3_desc": "Controle e compense possíveis atrasos na letra sincronizada diretamente na barra com cliques rápidos do mouse."
         }
     },
     "lyrics_overlay": {
@@ -333,6 +372,20 @@
             "media": "Sessão de Mídia",
             "api": "API",
             "license": "Licença"
+        },
+        "showcase": {
+            "cover_kicker": "Geral",
+            "cover_title": "Overlay Transparente Moderno",
+            "cover_desc": "Janela elegante e sem bordas que flutua sobre a área de trabalho ou jogos, com suporte a transparência e fixação inteligente.",
+            "screenshot_1_kicker": "Módulo 01",
+            "screenshot_1_title": "Detecção Automática GSMTC",
+            "screenshot_1_desc": "Sincroniza-se de forma nativa com a sessão de mídia global do Windows (GSMTC), identificando faixas do Spotify, YouTube e outros navegadores.",
+            "screenshot_2_kicker": "Módulo 02",
+            "screenshot_2_title": "Presets e Personalização Avançada",
+            "screenshot_2_desc": "Alterne rapidamente entre diversos presets estéticos predefinidos, alterando cores, opacidade e tipografia de forma instantânea.",
+            "screenshot_3_kicker": "Módulo 03",
+            "screenshot_3_title": "Controle Rápido e Cache Offline",
+            "screenshot_3_desc": "Gerencie todas as configurações e atalhos através do menu integrado na bandeja do sistema, contando com salvamento automático de letras em cache offline."
         }
     },
     "csv_converter": {
@@ -360,6 +413,17 @@
             "ui": "Interface",
             "license": "Licença",
             "input": "Input"
+        },
+        "showcase": {
+            "cover_kicker": "Geral",
+            "cover_title": "Interface Fluent e Moderna em QML",
+            "cover_desc": "Uma experiência fluida desenvolvida com PySide6 e QML, com animações suaves e design limpo adaptado para fluxos de dados rápidos.",
+            "screenshot_1_kicker": "Módulo 01",
+            "screenshot_1_title": "Mapeamento Inteligente de Campos",
+            "screenshot_1_desc": "Selecione e mapeie visualmente quais colunas do seu CSV original correspondem a Nome, Telefone, E-mail e Tags para o Google Contacts.",
+            "screenshot_2_kicker": "Módulo 02",
+            "screenshot_2_title": "Limpeza, Deduplicação e Relatório de Execução",
+            "screenshot_2_desc": "Processe listas inteiras removendo contatos duplicados e números inválidos, finalizando com um relatório estatístico completo sobre a higienização."
         }
     },
     "taskpulse": {
@@ -383,6 +447,17 @@
             "platform": "Plataforma",
             "dependency": "Dependência",
             "license": "Licença"
+        },
+        "showcase": {
+            "cover_kicker": "Geral",
+            "cover_title": "Integração Minimalista no Desktop",
+            "cover_desc": "O STZ TaskPulse se integra de forma fluida à sua área de trabalho, oferecendo uma barra de status cyberpunk sem poluir seu setup.",
+            "screenshot_1_kicker": "Módulo 01",
+            "screenshot_1_title": "Monitoramento de Recursos em Tempo Real",
+            "screenshot_1_desc": "Acompanhe de forma clara o consumo de CPU, GPU, RAM e tráfego de rede (Download e Upload) instantaneamente.",
+            "screenshot_2_kicker": "Módulo 02",
+            "screenshot_2_title": "Estética Limpa e Relógio Digital",
+            "screenshot_2_desc": "Design elegante que destaca data e hora com tipografia moderna, além de monitorar o tempo de atividade da máquina (uptime)."
         }
     },
     "mouse_tester_tool": {

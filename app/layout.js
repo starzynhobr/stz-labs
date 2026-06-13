@@ -12,15 +12,20 @@ const inter = Inter({
 });
 
 export const metadata = {
-    title: 'STZ LABS | Micro Estúdio de Software Futurista',
+    title: 'STZ LABS',
     description:
         'STZ LABS desenvolve ferramentas de alta performance como STZ CSV Converter, Game XML Translator e STZ Lyrics.',
+    icons: {
+        icon: '/icon.png',
+        shortcut: '/favicon.png',
+        apple: '/apple-touch-icon.png',
+    },
 };
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="pt-BR" data-theme="dark">
-            <body className={inter.className}>
+        <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
+            <body className={inter.className} suppressHydrationWarning>
                 <div className="noise" aria-hidden="true"></div>
                 <Spotlight />
                 <div className="relative z-10 min-h-screen flex flex-col">
