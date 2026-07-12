@@ -6,6 +6,7 @@ import TranslatedText from '../../../components/TranslatedText';
 import { projects } from '../../../data/projects';
 import { Button } from '../../../components/ui/Button';
 import { Badge } from '../../../components/ui/Badge';
+import SuiteProjectPage from '../../../components/SuiteProjectPage';
 
 const getProjectBySlug = (slug) => projects.find((project) => project.slug === slug);
 
@@ -45,6 +46,10 @@ export default async function ProjectDetailPage({ params }) {
 
     if (!project?.detail) {
         notFound();
+    }
+
+    if (project.detail.customPage === 'suite') {
+        return <SuiteProjectPage />;
     }
 
     const { hero, gallery, showcase, features, specs } = project.detail;

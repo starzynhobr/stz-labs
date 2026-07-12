@@ -1,8 +1,8 @@
 export const projects = [
     {
         slug: 'stz-xml-translator',
-        layoutType: 'featured',
-        priority: 1,
+        layoutType: 'bento',
+        priority: 2,
         maturity: 'maintenance',
         repoName: 'Game-XML-Translator',
         titleKey: 'game_xml.title',
@@ -814,39 +814,31 @@ export const projects = [
         },
     },
     {
-        layoutType: 'list',
-        priority: 8,
-        maturity: 'beta',
+        slug: 'stz-suite',
+        layoutType: 'featured',
+        priority: 1,
+        maturity: 'stable',
+        repoName: 'stz-suite-releases',
         titleKey: 'cards.suite_title',
         descriptionKey: 'cards.suite_desc',
-        versionKey: 'cards.version_dev',
-        downloadHref: null,
-        badgeLabelKey: 'common.badges.soon',
-        badgeVariant: 'beta',
+        downloadHref: 'https://github.com/starzynhobr/stz-suite-releases/releases/download/stz-suite-base-v0.1.0/STZ-Suite-Base-0.1.0-Setup.exe',
+        badgeLabel: 'v0.1.0',
+        badgeVariant: 'stable',
+        coverImage: '/images/projects/stz-suite/plugins/fetchora/home.png',
         tags: [
             { labelKey: 'common.tags.windows' },
             { labelKey: 'common.tags.plugins' },
             { labelKey: 'common.tags.offline' },
         ],
-        actionButtons: [
-            {
-                labelKey: 'cards.btn_soon',
-                variant: 'primary',
-                style: {
-                    pointerEvents: 'none',
-                    opacity: 0.5,
-                    filter: 'grayscale(1)',
-                },
+        detailLabelKey: 'cards.btn_details',
+        downloadLabelKey: 'cards.btn_download',
+        detail: {
+            customPage: 'suite',
+            meta: {
+                title: 'STZ Suite | STZ LABS',
+                description: 'Ecossistema modular de ferramentas para Windows com plugins instalados sob demanda.',
+                ogDescription: 'Uma base leve e oito ferramentas modulares para produtividade, mídia e automação.',
             },
-            {
-                labelKey: 'cards.btn_changelog',
-                variant: 'secondary',
-                style: {
-                    pointerEvents: 'none',
-                    opacity: 0.3,
-                },
-            },
-        ],
-        style: { opacity: 0.8 },
+        },
     },
 ];
