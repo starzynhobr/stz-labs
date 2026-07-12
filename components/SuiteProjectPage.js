@@ -105,7 +105,7 @@ const copy = {
         catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Oito ferramentas. Uma experiência.', catalogDescription: 'Veja tudo de uma vez e escolha um plugin para explorar os detalhes.',
         explore: 'Explorar plugins', included: 'Destaques', version: 'Versão 0.1.0', installNote: 'Instalado pela própria STZ Suite',
         architectureTitle: 'Modular por escolha. Local por princípio.', architectureDescription: 'A base permanece leve e cada ferramenta vive em seu próprio pacote. Arquivos e preferências ficam na sua máquina; dependências e modelos são baixados somente quando necessários.',
-        architecture: ['Base sem plugins pré-instalados', 'Pacotes verificados por SHA-256', 'Processamento e dados locais', 'Atualizações pelo catálogo oficial'], finalTitle: 'Monte a Suite do seu jeito.', finalDescription: 'Baixe a base para Windows e instale os plugins diretamente pela tela de configurações.', previousImage: 'Imagem anterior', nextImage: 'Próxima imagem', expandImage: 'Ampliar imagem', closeImage: 'Fechar imagem',
+        architecture: ['Base sem plugins pré-instalados', 'Pacotes verificados por SHA-256', 'Processamento e dados locais', 'Atualizações pelo catálogo oficial'], planned: 'Em breve', cloudSyncTitle: 'Cloud sync planejado', cloudSyncDescription: 'Uma futura integração de sincronização em nuvem está nos planos para salvar dados e preferências dos plugins e facilitar o uso da Suite em diferentes dispositivos.', finalTitle: 'Monte a Suite do seu jeito.', finalDescription: 'Baixe a base para Windows e instale os plugins diretamente pela tela de configurações.', previousImage: 'Imagem anterior', nextImage: 'Próxima imagem', expandImage: 'Ampliar imagem', closeImage: 'Fechar imagem',
     },
     en: {
         eyebrow: 'Modular ecosystem for Windows', title: 'One base. Your tools.',
@@ -115,7 +115,7 @@ const copy = {
         catalogEyebrow: 'Official catalog', catalogTitle: 'Eight tools. One experience.', catalogDescription: 'See everything at a glance and choose a plugin to explore the details.',
         explore: 'Explore plugins', included: 'Highlights', version: 'Version 0.1.0', installNote: 'Installed from inside STZ Suite',
         architectureTitle: 'Modular by choice. Local by principle.', architectureDescription: 'The base stays lightweight and each tool lives in its own package. Files and preferences remain on your computer; dependencies and models are downloaded only when needed.',
-        architecture: ['No plugins preinstalled', 'SHA-256 verified packages', 'Local processing and data', 'Official catalog updates'], finalTitle: 'Build the Suite your way.', finalDescription: 'Download the Windows base and install plugins directly from Settings.', previousImage: 'Previous image', nextImage: 'Next image', expandImage: 'Enlarge image', closeImage: 'Close image',
+        architecture: ['No plugins preinstalled', 'SHA-256 verified packages', 'Local processing and data', 'Official catalog updates'], planned: 'Coming soon', cloudSyncTitle: 'Cloud sync planned', cloudSyncDescription: 'A future cloud synchronization integration is planned to save plugin data and preferences and make the Suite easier to use across different devices.', finalTitle: 'Build the Suite your way.', finalDescription: 'Download the Windows base and install plugins directly from Settings.', previousImage: 'Previous image', nextImage: 'Next image', expandImage: 'Enlarge image', closeImage: 'Close image',
     },
     es: {
         eyebrow: 'Ecosistema modular para Windows', title: 'Una base. Tus herramientas.',
@@ -125,7 +125,7 @@ const copy = {
         catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Ocho herramientas. Una experiencia.', catalogDescription: 'Descubre todo de un vistazo y elige un plugin para ver sus detalles.',
         explore: 'Explorar plugins', included: 'Características', version: 'Versión 0.1.0', installNote: 'Instalado desde la propia STZ Suite',
         architectureTitle: 'Modular por elección. Local por principio.', architectureDescription: 'La base se mantiene ligera y cada herramienta vive en su propio paquete. Los archivos y preferencias permanecen en tu equipo; las dependencias y los modelos se descargan solo cuando son necesarios.',
-        architecture: ['Sin plugins preinstalados', 'Paquetes verificados con SHA-256', 'Procesamiento y datos locales', 'Actualizaciones mediante el catálogo oficial'], finalTitle: 'Crea la Suite a tu manera.', finalDescription: 'Descarga la base para Windows e instala los plugins directamente desde Configuración.', previousImage: 'Imagen anterior', nextImage: 'Imagen siguiente', expandImage: 'Ampliar imagen', closeImage: 'Cerrar imagen',
+        architecture: ['Sin plugins preinstalados', 'Paquetes verificados con SHA-256', 'Procesamiento y datos locales', 'Actualizaciones mediante el catálogo oficial'], planned: 'Próximamente', cloudSyncTitle: 'Cloud sync planificado', cloudSyncDescription: 'Está prevista una futura integración de sincronización en la nube para guardar datos y preferencias de los plugins y facilitar el uso de la Suite en distintos dispositivos.', finalTitle: 'Crea la Suite a tu manera.', finalDescription: 'Descarga la base para Windows e instala los plugins directamente desde Configuración.', previousImage: 'Imagen anterior', nextImage: 'Imagen siguiente', expandImage: 'Ampliar imagen', closeImage: 'Cerrar imagen',
     },
     fr: {
         eyebrow: 'Écosystème modulaire pour Windows', title: 'Une base. Vos outils.',
@@ -135,7 +135,7 @@ const copy = {
         catalogEyebrow: 'Catalogue officiel', catalogTitle: 'Huit outils. Une expérience.', catalogDescription: 'Découvrez tout en un coup d’œil et choisissez un plugin pour en explorer les détails.',
         explore: 'Explorer les plugins', included: 'Points forts', version: 'Version 0.1.0', installNote: 'Installé directement depuis STZ Suite',
         architectureTitle: 'Modulaire par choix. Local par principe.', architectureDescription: 'La base reste légère et chaque outil dispose de son propre paquet. Les fichiers et préférences restent sur votre ordinateur ; les dépendances et modèles ne sont téléchargés qu’en cas de besoin.',
-        architecture: ['Aucun plugin préinstallé', 'Paquets vérifiés par SHA-256', 'Traitement et données en local', 'Mises à jour via le catalogue officiel'], finalTitle: 'Composez la Suite à votre façon.', finalDescription: 'Téléchargez la base Windows et installez les plugins directement depuis les paramètres.', previousImage: 'Image précédente', nextImage: 'Image suivante', expandImage: 'Agrandir l’image', closeImage: 'Fermer l’image',
+        architecture: ['Aucun plugin préinstallé', 'Paquets vérifiés par SHA-256', 'Traitement et données en local', 'Mises à jour via le catalogue officiel'], planned: 'Bientôt', cloudSyncTitle: 'Cloud sync prévu', cloudSyncDescription: 'Une future intégration de synchronisation dans le cloud est prévue afin de sauvegarder les données et préférences des plugins et de faciliter l’utilisation de la Suite sur plusieurs appareils.', finalTitle: 'Composez la Suite à votre façon.', finalDescription: 'Téléchargez la base Windows et installez les plugins directement depuis les paramètres.', previousImage: 'Image précédente', nextImage: 'Image suivante', expandImage: 'Agrandir l’image', closeImage: 'Fermer l’image',
     },
     de: {
         eyebrow: 'Modulares Ökosystem für Windows', title: 'Eine Basis. Deine Werkzeuge.',
@@ -145,7 +145,7 @@ const copy = {
         catalogEyebrow: 'Offizieller Katalog', catalogTitle: 'Acht Werkzeuge. Eine Oberfläche.', catalogDescription: 'Sieh dir alles auf einen Blick an und wähle ein Plugin aus, um mehr zu erfahren.',
         explore: 'Plugins entdecken', included: 'Highlights', version: 'Version 0.1.0', installNote: 'Direkt über STZ Suite installiert',
         architectureTitle: 'Bewusst modular. Konsequent lokal.', architectureDescription: 'Die Basis bleibt schlank und jedes Werkzeug befindet sich in einem eigenen Paket. Dateien und Einstellungen bleiben auf deinem Computer; Abhängigkeiten und Modelle werden nur bei Bedarf heruntergeladen.',
-        architecture: ['Keine vorinstallierten Plugins', 'Mit SHA-256 geprüfte Pakete', 'Lokale Verarbeitung und Daten', 'Updates über den offiziellen Katalog'], finalTitle: 'Stelle deine Suite selbst zusammen.', finalDescription: 'Lade die Windows-Basis herunter und installiere Plugins direkt über die Einstellungen.', previousImage: 'Vorheriges Bild', nextImage: 'Nächstes Bild', expandImage: 'Bild vergrößern', closeImage: 'Bild schließen',
+        architecture: ['Keine vorinstallierten Plugins', 'Mit SHA-256 geprüfte Pakete', 'Lokale Verarbeitung und Daten', 'Updates über den offiziellen Katalog'], planned: 'Demnächst', cloudSyncTitle: 'Cloud-Synchronisierung geplant', cloudSyncDescription: 'Eine zukünftige Cloud-Synchronisierung ist geplant, um Plugin-Daten und Einstellungen zu sichern und die Nutzung der Suite auf mehreren Geräten zu erleichtern.', finalTitle: 'Stelle deine Suite selbst zusammen.', finalDescription: 'Lade die Windows-Basis herunter und installiere Plugins direkt über die Einstellungen.', previousImage: 'Vorheriges Bild', nextImage: 'Nächstes Bild', expandImage: 'Bild vergrößern', closeImage: 'Bild schließen',
     },
     it: {
         eyebrow: 'Ecosistema modulare per Windows', title: 'Una base. I tuoi strumenti.',
@@ -155,7 +155,7 @@ const copy = {
         catalogEyebrow: 'Catalogo ufficiale', catalogTitle: 'Otto strumenti. Un’unica esperienza.', catalogDescription: 'Scopri tutto a colpo d’occhio e scegli un plugin per esplorarne i dettagli.',
         explore: 'Esplora i plugin', included: 'Funzionalità principali', version: 'Versione 0.1.0', installNote: 'Installato direttamente da STZ Suite',
         architectureTitle: 'Modulare per scelta. Locale per principio.', architectureDescription: 'La base rimane leggera e ogni strumento vive nel proprio pacchetto. File e preferenze restano sul tuo computer; dipendenze e modelli vengono scaricati solo quando servono.',
-        architecture: ['Nessun plugin preinstallato', 'Pacchetti verificati con SHA-256', 'Elaborazione e dati locali', 'Aggiornamenti dal catalogo ufficiale'], finalTitle: 'Crea la Suite a modo tuo.', finalDescription: 'Scarica la base per Windows e installa i plugin direttamente dalle Impostazioni.', previousImage: 'Immagine precedente', nextImage: 'Immagine successiva', expandImage: 'Ingrandisci immagine', closeImage: 'Chiudi immagine',
+        architecture: ['Nessun plugin preinstallato', 'Pacchetti verificati con SHA-256', 'Elaborazione e dati locali', 'Aggiornamenti dal catalogo ufficiale'], planned: 'Prossimamente', cloudSyncTitle: 'Cloud sync pianificato', cloudSyncDescription: 'È prevista una futura integrazione di sincronizzazione cloud per salvare dati e preferenze dei plugin e semplificare l’uso della Suite su dispositivi diversi.', finalTitle: 'Crea la Suite a modo tuo.', finalDescription: 'Scarica la base per Windows e installa i plugin direttamente dalle Impostazioni.', previousImage: 'Immagine precedente', nextImage: 'Immagine successiva', expandImage: 'Ingrandisci immagine', closeImage: 'Chiudi immagine',
     },
 };
 
@@ -323,6 +323,13 @@ export default function SuiteProjectPage() {
                 <div className="grid gap-10 rounded-[var(--radius-card)] border p-8 [border-color:var(--border-subtle)] bg-[var(--surface-3)] md:grid-cols-2 md:p-12">
                     <div><h2 className="mb-4 text-3xl font-bold text-[var(--text-heading)]">{text.architectureTitle}</h2><p className="leading-relaxed text-[var(--text-secondary)]">{text.architectureDescription}</p></div>
                     <div className="grid gap-3 sm:grid-cols-2">{text.architecture.map((item) => <div key={item} className="rounded-xl border p-4 text-sm font-medium [border-color:var(--border-subtle)] bg-[var(--surface-primary)]">{item}</div>)}</div>
+                    <article className="flex flex-col gap-4 rounded-2xl border p-5 [border-color:var(--border-strong)] bg-[var(--surface-primary)] shadow-[var(--shadow-card)] sm:flex-row sm:items-center md:col-span-2">
+                        <span className="w-fit shrink-0 rounded-full border border-[var(--accent)]/25 bg-[var(--accent)]/10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--accent)]">{text.planned}</span>
+                        <div>
+                            <h3 className="mb-1 font-bold text-[var(--text-heading)]">{text.cloudSyncTitle}</h3>
+                            <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{text.cloudSyncDescription}</p>
+                        </div>
+                    </article>
                 </div>
             </section>
 
