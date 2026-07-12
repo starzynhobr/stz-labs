@@ -269,7 +269,7 @@ export default function SuiteProjectPage() {
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {plugins.map((plugin) => (
-                        <button key={plugin.id} type="button" onClick={() => selectPlugin(plugin.id, true)} className="group cursor-pointer overflow-hidden rounded-[var(--radius-card)] border text-left [border-color:var(--border-subtle)] bg-[var(--surface-primary)] transition-all hover:-translate-y-1 hover:[border-color:var(--border-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
+                        <button key={plugin.id} type="button" onClick={() => selectPlugin(plugin.id, true)} className="group cursor-pointer overflow-hidden rounded-[var(--radius-card)] border text-left [border-color:var(--border-subtle)] bg-[var(--surface-primary)] shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:[border-color:var(--border-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
                             <PluginImage plugin={plugin} locale={locale} className="aspect-[1.22/1] rounded-none border-0 border-b" />
                             <span className="block p-5">
                                 <span className="mb-2 flex items-center justify-between gap-3"><strong className="text-lg text-[var(--text-heading)]">{plugin.name}</strong><span className="font-mono text-[9px] uppercase tracking-wider text-[var(--accent)]">{getPluginText(plugin, locale, 'category')}</span></span>

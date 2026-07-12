@@ -14,8 +14,8 @@ const cardVariants = cva(
         variants: {
             layout: {
                 featured: "col-span-full md:grid md:grid-cols-12 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-500",
-                bento: "col-span-full md:col-span-6 lg:col-span-4 min-h-[380px] rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] hover:[border-color:var(--border-hover)] transition-all duration-500 flex flex-col",
-                list: "col-span-full flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-[calc(var(--radius-card)*0.6)] bg-[var(--surface-primary)] backdrop-blur-sm border [border-color:var(--border-subtle)] hover:[border-color:var(--border-hover)] hover:bg-[var(--surface-primary)]/80",
+                bento: "col-span-full md:col-span-6 lg:col-span-4 min-h-[380px] rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow-card)] hover:[border-color:var(--border-hover)] transition-all duration-500 flex flex-col",
+                list: "col-span-full flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-[calc(var(--radius-card)*0.6)] bg-[var(--surface-primary)] backdrop-blur-sm border [border-color:var(--border-subtle)] shadow-[var(--shadow-card)] hover:[border-color:var(--border-hover)] hover:bg-[var(--surface-primary)]/80",
             }
         },
         defaultVariants: {
