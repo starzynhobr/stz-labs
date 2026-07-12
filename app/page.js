@@ -7,10 +7,10 @@ import { projects } from '../data/projects';
 export const metadata = {
     title: 'STZ LABS',
     description:
-        'STZ LABS desenvolve ferramentas de alta performance como STZ CSV Converter, Game XML Translator e STZ Lyrics. Foco em privacidade e eficiência.',
+        'Conheça a STZ Suite e ferramentas independentes para produtividade, mídia, automação e processamento local no Windows.',
     openGraph: {
         title: 'STZ LABS - Inovação Minimalista',
-        description: 'Ecossistema de ferramentas modulares para desktop.',
+        description: 'STZ Suite: uma base leve com ferramentas modulares instaladas sob demanda.',
         type: 'website',
         images: ['https://stz-labs.vercel.app/og-image.png'],
     },
@@ -56,6 +56,7 @@ export default function Home() {
                                 downloadDisabledLabelKey={project.downloadDisabledLabelKey}
                                 style={project.style}
                                 actionButtons={project.actionButtons}
+                                coverImage={project.coverImage}
                             />
                         ))}
                     </div>

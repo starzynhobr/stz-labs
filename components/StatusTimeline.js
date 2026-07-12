@@ -54,14 +54,14 @@ export default function StatusTimeline() {
                         </div>
                     </div>
  
-                    {/* Item 3: Planned */}
-                    <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 pb-12 group opacity-60 grayscale-[0.5]">
+                    {/* Item 3: Suite release */}
+                    <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 pb-12 group">
                         <div className="md:w-1/2 md:text-right order-2 md:order-1">
                             <TranslatedText as="h4" className="text-[var(--text-primary)] text-sm font-bold mb-1" i18nKey="sections.roadmap_q3" />
                             <TranslatedText as="p" className="text-[var(--text-secondary)] text-[12px] leading-relaxed" i18nKey="sections.roadmap_q3_desc" />
                         </div>
-                        <div className="relative z-10 flex items-center justify-center w-16 h-8 rounded-lg bg-[var(--surface-2)] border border-[var(--border-subtle)] order-1 md:order-2 shrink-0">
-                            <TranslatedText as="span" className="text-[var(--text-muted)] font-mono text-[10px] font-bold tracking-tighter" i18nKey="common.status.alpha" />
+                        <div className="relative z-10 flex items-center justify-center w-16 h-8 rounded-lg bg-[var(--status-stable)]/10 border border-[var(--status-stable)]/20 order-1 md:order-2 shrink-0">
+                            <TranslatedText as="span" className="text-[var(--status-stable)] font-mono text-[10px] font-bold tracking-tighter" i18nKey="common.status.stable" />
                         </div>
                         <div className="md:w-1/2 order-3">
                             <TranslatedText as="span" className="text-[var(--text-muted)] font-mono text-[11px] uppercase tracking-wider" i18nKey="sections.roadmap_status_3" />

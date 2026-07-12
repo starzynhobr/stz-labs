@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import RepoStats from './RepoStats';
 import TranslatedText from './TranslatedText';
 import { cva } from 'class-variance-authority';
@@ -68,6 +69,7 @@ const ProjectCard = ({
     downloadLabelKey,
     style,
     actionButtons,
+    coverImage,
 }) => {
     const isFeatured = layoutType === 'featured';
     const isList = layoutType === 'list';
@@ -215,11 +217,18 @@ const ProjectCard = ({
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--accent-glow)_1px,transparent_1px)] [background-size:32px_32px] opacity-100 pointer-events-none" />
                     
                     {/* Clean Interface Block - Laboratorial Look */}
-                    <div className="w-full max-w-[340px] aspect-video flex flex-col items-center justify-center z-10 relative rounded-[calc(var(--radius-card)*0.5)] border [border-color:var(--border-subtle)] bg-[var(--surface-3)] backdrop-blur-[var(--backdrop-blur)] shadow-[var(--shadow)]">
-                        <div className="flex items-center gap-2.5 text-[var(--accent)]/50 font-mono text-[9px] tracking-[0.2em] uppercase">
-                            <span className="w-1 h-1 rounded-full bg-[var(--accent)]/40 animate-pulse" />
-                            Interface_System_Core
-                        </div>
+                    <div className="w-full max-w-[380px] aspect-[1.18/1] flex flex-col items-center justify-center z-10 relative rounded-[calc(var(--radius-card)*0.5)] border [border-color:var(--border-subtle)] bg-[var(--surface-3)] backdrop-blur-[var(--backdrop-blur)] shadow-[var(--shadow)] overflow-hidden">
+                        {coverImage ? (
+                            <>
+                                <Image src={coverImage} alt="" fill className="object-cover object-top" sizes="(max-width: 768px) 90vw, 380px" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-3)]/75 via-transparent to-transparent" />
+                            </>
+                        ) : (
+                            <div className="flex items-center gap-2.5 text-[var(--accent)]/50 font-mono text-[9px] tracking-[0.2em] uppercase">
+                                <span className="w-1 h-1 rounded-full bg-[var(--accent)]/40 animate-pulse" />
+                                Interface_System_Core
+                            </div>
+                        )}
                     </div>
                 </div>
             )}
