@@ -46,6 +46,9 @@ export default function Home() {
                                 repoName={project.repoName}
                                 detailHref={project.slug ? `/projects/${project.slug}` : null}
                                 downloadHref={project.downloadHref}
+                                releaseTagPrefix={project.releaseTagPrefix}
+                                releaseAssetPattern={project.releaseAssetPattern}
+                                releaseFallbackTag={project.releaseFallbackTag}
                                 badgeLabel={project.badgeLabel}
                                 badgeLabelKey={project.badgeLabelKey}
                                 badgeVariant={project.badgeVariant}

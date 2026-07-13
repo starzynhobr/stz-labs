@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import RepoStats from './RepoStats';
@@ -7,6 +9,7 @@ import { cn } from '../lib/utils';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 import { Tag as UITag } from './ui/Tag';
+import { useGithubRelease } from '../hooks/useGithubRelease';
 
 const cardVariants = cva(
     "group relative overflow-hidden transition-all duration-300 flex flex-col",
@@ -57,6 +60,9 @@ const ProjectCard = ({
     versionKey,
     detailHref,
     downloadHref,
+    releaseTagPrefix,
+    releaseAssetPattern,
+    releaseFallbackTag,
     badgeLabel,
     badgeLabelKey,
     badgeVariant = 'stable',
@@ -74,6 +80,20 @@ const ProjectCard = ({
     const isFeatured = layoutType === 'featured';
     const isList = layoutType === 'list';
     const mappedBadgeVariant = badgeVariantMap[badgeVariant] || 'default';
+    const dynamicRelease = useGithubRelease({
+        repoName,
+        tagPrefix: releaseTagPrefix,
+        assetPattern: releaseAssetPattern,
+        fallbackTag: releaseFallbackTag,
+        fallbackDownloadUrl: downloadHref,
+    });
+    const hasDynamicRelease = Boolean(repoName && releaseTagPrefix && releaseAssetPattern);
+    const effectiveDownloadHref = hasDynamicRelease
+        ? dynamicRelease.downloadUrl || downloadHref
+        : downloadHref;
+    const effectiveBadgeLabel = hasDynamicRelease && dynamicRelease.version
+        ? `v${dynamicRelease.version}`
+        : badgeLabel;
 
     if (isList) {
         return (
@@ -85,7 +105,9 @@ const ProjectCard = ({
                          ) : (
                             <h3 className="text-lg font-bold text-[var(--text-heading)]">{title}</h3>
                          )}
-                         {repoName ? (
+                         {hasDynamicRelease ? (
+                            <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{effectiveBadgeLabel}</Badge>
+                         ) : repoName ? (
                             <RepoStats repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
                          ) : badgeLabelKey ? (
                             <Badge variant={mappedBadgeVariant} {...badgeAttrs}>
@@ -135,7 +157,9 @@ const ProjectCard = ({
                         ) : version && <p className="text-[10px] tracking-widest text-[var(--accent)] font-mono uppercase bg-[var(--accent)]/10 px-1.5 py-0.5 rounded">{version}</p>}
                     </div>
 
-                    {repoName ? (
+                    {hasDynamicRelease ? (
+                        <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{effectiveBadgeLabel}</Badge>
+                    ) : repoName ? (
                         <RepoStats repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
                     ) : badgeLabelKey ? (
                         <Badge variant={mappedBadgeVariant} {...badgeAttrs}>
@@ -197,9 +221,9 @@ const ProjectCard = ({
                                         </Link>
                                     </Button>
                                 )}
-                                {downloadHref && (
+                                {effectiveDownloadHref && (
                                     <Button asChild variant="secondary" size={isFeatured ? "default" : "sm"} className="px-4 py-2">
-                                        <a href={downloadHref} target="_blank" rel="noreferrer">
+                                        <a href={effectiveDownloadHref} target="_blank" rel="noreferrer">
                                             {downloadLabelKey ? <TranslatedText as="span" i18nKey={downloadLabelKey} /> : downloadLabel || 'Download'}
                                         </a>
                                     </Button>
