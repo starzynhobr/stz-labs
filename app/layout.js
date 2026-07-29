@@ -23,9 +23,16 @@ export const metadata = {
     },
 };
 
+const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');var a=['neon-core','forge-grid','aurora-glass','light-mode','ember'];document.documentElement.dataset.theme=a.indexOf(t)>-1?t:'light-mode';}catch(e){}})();`;
+
 export default function RootLayout({ children }) {
     return (
-        <html lang="pt-BR" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
+        <html lang="pt-BR" data-theme="light-mode" data-scroll-behavior="smooth" suppressHydrationWarning>
+            <head>
+                {/* Aplica o tema salvo antes da primeira pintura: sem isso a página
+                    aparece no tema padrão até a hidratação e pisca. */}
+                <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+            </head>
             <body className={inter.className} suppressHydrationWarning>
                 <div className="noise" aria-hidden="true"></div>
                 <Spotlight />

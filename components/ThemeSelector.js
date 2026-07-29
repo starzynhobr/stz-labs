@@ -25,7 +25,7 @@ export default function ThemeSelector() {
     };
 
     return (
-        <div className="flex items-center gap-1 p-1 rounded-full bg-white/5 border border-white/5">
+        <div className="flex items-center gap-1 p-1 rounded-full bg-[var(--surface-3)] border [border-color:var(--border-subtle)]">
             {themeList.map((tName) => {
                 const isActive = theme === tName;
                 
@@ -37,9 +37,10 @@ export default function ThemeSelector() {
                         className={cn(
                             "w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300",
                             "text-sm font-bold",
-                            isActive 
-                                ? "bg-[var(--accent)] text-[var(--bg)] shadow-[0_0_15px_var(--accent-glow)] scale-110" 
-                                : "text-zinc-500 hover:text-zinc-300 hover:bg-white/5"
+                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]",
+                            isActive
+                                ? "bg-[var(--accent)] text-[var(--text-on-accent)] shadow-[0_0_15px_var(--accent-glow)] scale-110"
+                                : "text-[var(--text-muted)] hover:text-[var(--text-heading)] hover:bg-[var(--surface-2)]"
                         )}
                         aria-label={t(`nav.themes.${tName.replace('-', '_')}`)}
                     >

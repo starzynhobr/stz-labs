@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 /**
  * Multi-Theme Architecture for STZ LABS
@@ -15,43 +15,53 @@ const ThemeContext = createContext({
 
 export const themes = ['neon-core', 'forge-grid', 'aurora-glass', 'light-mode'];
 
+/** Tema oculto: não aparece no seletor, só é liberado pelo código Konami. */
+export const EASTER_EGG_THEME = 'ember';
+const selectableThemes = [...themes, EASTER_EGG_THEME];
+
 export function ThemeProvider({ children }) {
     const [theme, setThemeState] = useState('light-mode');
-    const [isSwitching, setIsSwitching] = useState(false);
+    const switchTimeoutRef = useRef(null);
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
         const savedTheme = window.localStorage.getItem('theme');
-        const initialTheme = themes.includes(savedTheme) ? savedTheme : 'light-mode';
+        const initialTheme = selectableThemes.includes(savedTheme) ? savedTheme : 'light-mode';
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setThemeState(initialTheme);
     }, []);
+
+    useEffect(() => () => window.clearTimeout(switchTimeoutRef.current), []);
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
         window.localStorage.setItem('theme', theme);
     }, [theme]);
 
+    /**
+     * Uma troca sempre interrompe a anterior: o clique nunca é descartado,
+     * apenas reinicia a janela de transição.
+     */
     const setTheme = (nextTheme) => {
-        if (!themes.includes(nextTheme) || nextTheme === theme || isSwitching) return;
+        if (!selectableThemes.includes(nextTheme) || nextTheme === theme) return;
 
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const root = document.documentElement;
         const prevTheme = theme;
 
+        window.clearTimeout(switchTimeoutRef.current);
+        setThemeState(nextTheme);
+
         if (prefersReducedMotion) {
             root.dataset.theme = nextTheme;
             root.removeAttribute('data-prev-theme');
             root.classList.remove('theme-switching');
-            setThemeState(nextTheme);
             return;
         }
 
-        setIsSwitching(true);
         root.dataset.prevTheme = prevTheme;
         root.dataset.theme = nextTheme;
         root.classList.add('theme-switching');
-        setThemeState(nextTheme);
 
         // Transition duration fallback from CSS --theme-dur-base
         const base = getComputedStyle(root).getPropertyValue('--theme-dur-base') || '600ms';
@@ -62,10 +72,9 @@ export function ThemeProvider({ children }) {
         };
         const timeout = Math.max(toMs(base), 0);
 
-        window.setTimeout(() => {
+        switchTimeoutRef.current = window.setTimeout(() => {
             root.removeAttribute('data-prev-theme');
             root.classList.remove('theme-switching');
-            setIsSwitching(false);
         }, timeout);
     };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import { EASTER_EGG_THEME, useTheme } from '../context/ThemeContext';
 
 const KONAMI_SEQUENCE = [
     'ArrowUp',
@@ -15,50 +16,24 @@ const KONAMI_SEQUENCE = [
     'KeyA',
 ];
 
-const ACCESS_GRANTED_MESSAGE = 'STZ LABS: ACCESS GRANTED \n\n/// EMBER PROTOCOL INITIATED';
-const SYSTEM_NORMALIZED_MESSAGE = 'STZ LABS: SYSTEM NORMALIZED.';
-
-const toMs = (value) => {
-    const parsed = Number.parseFloat(value);
-    if (Number.isNaN(parsed)) return 0;
-    return value.includes('ms') ? parsed : parsed * 1000;
-};
+const isTypingTarget = (target) => (
+    target instanceof HTMLElement
+    && (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))
+);
 
 const KonamiListener = () => {
+    const { theme, setTheme } = useTheme();
     const cursorRef = useRef(0);
-    const switchingRef = useRef(false);
-    const timeoutRef = useRef(null);
+    const previousThemeRef = useRef('light-mode');
+    const themeRef = useRef(theme);
 
-    const applyThemeSwitch = (nextTheme, prevTheme) => {
-        const root = document.documentElement;
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (prefersReducedMotion) {
-            root.dataset.theme = nextTheme;
-            root.removeAttribute('data-prev-theme');
-            root.classList.remove('theme-switching');
-            switchingRef.current = false;
-            return;
-        }
-
-        root.dataset.prevTheme = prevTheme;
-        root.dataset.theme = nextTheme;
-        root.classList.add('theme-switching');
-
-        const base = getComputedStyle(root).getPropertyValue('--theme-dur-base');
-        const duration = Math.max(toMs(base), 0);
-
-        window.clearTimeout(timeoutRef.current);
-        timeoutRef.current = window.setTimeout(() => {
-            root.removeAttribute('data-prev-theme');
-            root.classList.remove('theme-switching');
-            switchingRef.current = false;
-        }, duration);
-    };
+    useEffect(() => {
+        themeRef.current = theme;
+    }, [theme]);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (switchingRef.current) return;
+            if (isTypingTarget(event.target)) return;
 
             const expectedKey = KONAMI_SEQUENCE[cursorRef.current];
             if (event.code !== expectedKey) {
@@ -70,29 +45,19 @@ const KonamiListener = () => {
             if (cursorRef.current !== KONAMI_SEQUENCE.length) return;
 
             cursorRef.current = 0;
-            switchingRef.current = true;
 
-            const root = document.documentElement;
-            const currentTheme = root.dataset.theme || 'dark';
-
-            if (currentTheme === 'ember') {
-                const savedTheme = window.localStorage.getItem('theme');
-                const fallbackTheme = savedTheme && savedTheme !== 'ember' ? savedTheme : 'dark';
-                applyThemeSwitch(fallbackTheme, 'ember');
-                window.alert(SYSTEM_NORMALIZED_MESSAGE);
+            if (themeRef.current === EASTER_EGG_THEME) {
+                setTheme(previousThemeRef.current);
                 return;
             }
 
-            applyThemeSwitch('ember', currentTheme);
-            window.alert(ACCESS_GRANTED_MESSAGE);
+            previousThemeRef.current = themeRef.current;
+            setTheme(EASTER_EGG_THEME);
         };
 
         window.addEventListener('keydown', handleKeyDown);
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-            window.clearTimeout(timeoutRef.current);
-        };
-    }, []);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [setTheme]);
 
     return null;
 };

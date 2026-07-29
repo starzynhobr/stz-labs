@@ -122,6 +122,8 @@
     --text-secondary: rgba(255, 255, 255, 0.65);
     --text-muted: rgba(255, 255, 255, 0.45);
     --text-heading: rgba(255, 255, 255, 0.94);
+    /* O accent ciano é claro demais para texto branco por cima. */
+    --text-on-accent: #020617;
     
     --surface-1: #020617;
     --surface-2: rgba(15, 23, 42, 0.5);
@@ -173,6 +175,39 @@
     --mobile-menu-bg: rgba(241, 245, 249, 0.97);
 }
 
+/* 5. EMBER PROTOCOL - oculto, liberado apenas pelo código Konami */
+[data-theme="ember"] {
+    color-scheme: dark;
+    --accent: #FF4D1C;
+    --accent-glow: rgba(255, 77, 28, 0.28);
+    --bg: #120705;
+    --text-primary: #FFEDE6;
+    --text-secondary: #E8B4A0;
+    --text-muted: #9A6A5A;
+    --text-on-accent: #12060A;
+    --text-heading: #FFF4EE;
+
+    --surface-1: #120705;
+    --surface-2: #1E0C08;
+    --surface-3: #2A110B;
+    --surface-primary: rgba(30, 12, 8, 0.82);
+
+    --border-subtle: rgba(255, 77, 28, 0.18);
+    --border-strong: rgba(255, 77, 28, 0.3);
+    --border-active: #FF4D1C;
+    --border-hover: rgba(255, 77, 28, 0.45);
+
+    --radius-card: 10px;
+    --backdrop-blur: 10px;
+    --glow-opacity: 0.5;
+    --noise-opacity: 0.07;
+    --shadow: 0 4px 24px rgba(255, 77, 28, 0.12);
+    --shadow-card: 0 14px 40px rgba(120, 20, 0, 0.45), inset 0 1px 0 rgba(255, 180, 140, 0.06);
+    --status-alpha: #FF4D1C;
+    --star-color: #FFA53C;
+    --mobile-menu-bg: rgba(18, 7, 5, 0.97);
+}
+
 @layer base {
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -210,7 +245,9 @@
     transition: opacity var(--theme-dur-base) var(--theme-ease-base);
 }
 
-/* Theme Switching Animation */
+/* Theme Switching Animation
+   Sem pointer-events: none — bloquear a página durante a transição fazia o
+   seletor engolir cliques por 600ms. */
 .theme-switching {
-    pointer-events: none;
+    will-change: background-color, color;
 }
