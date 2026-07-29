@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
+        <html lang="pt-BR" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
             <body className={inter.className} suppressHydrationWarning>
                 <div className="noise" aria-hidden="true"></div>
                 <Spotlight />

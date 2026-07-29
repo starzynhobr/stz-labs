@@ -7,6 +7,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 import { useGithubRelease } from '../hooks/useGithubRelease';
+import { usePluginVersions } from '../hooks/usePluginVersions';
 
 const RELEASES_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases';
 const FALLBACK_TAG = 'stz-suite-base-v0.1.1';
@@ -16,46 +17,54 @@ const RELEASE_ASSET_PATTERN = '^STZ-Suite-Base-.*-Setup\\.exe$';
 
 const plugins = [
     {
-        id: 'fetchora', name: 'Fetchora', category: { pt: 'Mídia', en: 'Media' }, image: '/images/projects/stz-suite/plugins/fetchora/home.png', images: ['/images/projects/stz-suite/plugins/fetchora/detail.png', '/images/projects/stz-suite/plugins/fetchora/home.png'],
+        id: 'fetchora', version: '0.1.0', name: 'Fetchora', category: { pt: 'Mídia', en: 'Media' }, image: '/images/projects/stz-suite/plugins/fetchora/home.png', images: ['/images/projects/stz-suite/plugins/fetchora/detail.png', '/images/projects/stz-suite/plugins/fetchora/home.png'],
         description: { pt: 'Baixe mídia da web e converta arquivos locais de áudio e vídeo com filas, pastas e presets.', en: 'Download media from the web and convert local audio and video files with queues, folders, and presets.' },
         features: { pt: ['Download por URL com yt-dlp', 'Conversão local e em lote', 'FFmpeg e Deno integrados'], en: ['URL downloads with yt-dlp', 'Local and batch conversion', 'Bundled FFmpeg and Deno'] },
     },
     {
-        id: 'lumio', name: 'Lumio', category: { pt: 'Leitura', en: 'Reading' }, image: '/images/projects/stz-suite/plugins/lumio/home.png', images: ['/images/projects/stz-suite/plugins/lumio/detail-1.png', '/images/projects/stz-suite/plugins/lumio/detail-2.png', '/images/projects/stz-suite/plugins/lumio/detail-3.png', '/images/projects/stz-suite/plugins/lumio/home.png'],
+        id: 'lumio', version: '0.2.0', name: 'Lumio', category: { pt: 'Leitura', en: 'Reading' }, image: '/images/projects/stz-suite/plugins/lumio/home.png', images: ['/images/projects/stz-suite/plugins/lumio/detail-1.png', '/images/projects/stz-suite/plugins/lumio/detail-2.png', '/images/projects/stz-suite/plugins/lumio/detail-3.png', '/images/projects/stz-suite/plugins/lumio/home.png'],
         description: { pt: 'Organize e leia sua biblioteca local de PDF, EPUB, CBZ e CBR com progresso salvo.', en: 'Organize and read your local PDF, EPUB, CBZ, and CBR library with saved progress.' },
         features: { pt: ['PDF, EPUB, CBZ e CBR', 'Biblioteca e recentes', 'Progresso e preferências'], en: ['PDF, EPUB, CBZ, and CBR', 'Library and recents', 'Progress and preferences'] },
     },
     {
-        id: 'reperto', name: 'Reperto', category: { pt: 'Catálogo', en: 'Catalog' }, image: '/images/projects/stz-suite/plugins/reperto/home.png', images: ['/images/projects/stz-suite/plugins/reperto/detail-2.png', '/images/projects/stz-suite/plugins/reperto/detail-1.png', '/images/projects/stz-suite/plugins/reperto/home.png'],
+        id: 'reperto', version: '0.1.1', name: 'Reperto', category: { pt: 'Catálogo', en: 'Catalog' }, image: '/images/projects/stz-suite/plugins/reperto/home.png', images: ['/images/projects/stz-suite/plugins/reperto/detail-2.png', '/images/projects/stz-suite/plugins/reperto/detail-1.png', '/images/projects/stz-suite/plugins/reperto/home.png'],
         description: { pt: 'Acompanhe livros e outras mídias que você planeja consumir, está consumindo ou já concluiu.', en: 'Track books and other media you plan to consume, are consuming, or have completed.' },
         features: { pt: ['Status, notas e avaliações', 'Capas armazenadas localmente', 'Busca online de livros'], en: ['Statuses, notes, and ratings', 'Locally stored covers', 'Online book search'] },
     },
     {
-        id: 'tempoza', name: 'Tempoza', category: { pt: 'Foco', en: 'Focus' }, image: '/images/projects/stz-suite/plugins/tempoza/home.png', images: ['/images/projects/stz-suite/plugins/tempoza/detail-1.png', '/images/projects/stz-suite/plugins/tempoza/detail-2.png', '/images/projects/stz-suite/plugins/tempoza/home.png'],
+        id: 'tempoza', version: '1.2.0', name: 'Tempoza', category: { pt: 'Foco', en: 'Focus' }, image: '/images/projects/stz-suite/plugins/tempoza/home.png', images: ['/images/projects/stz-suite/plugins/tempoza/detail-1.png', '/images/projects/stz-suite/plugins/tempoza/detail-2.png', '/images/projects/stz-suite/plugins/tempoza/home.png'],
         description: { pt: 'Timer de foco e pausa com presets, áudio ambiente, alarmes e preferências persistentes.', en: 'Focus and break timer with presets, background audio, alarms, and persistent preferences.' },
         features: { pt: ['Ciclos de foco e pausa', 'Áudio ambiente e alarmes', 'Presets persistentes'], en: ['Focus and break cycles', 'Background audio and alarms', 'Persistent presets'] },
     },
     {
-        id: 'orbhia', name: 'Orbhia', category: { pt: 'Finanças', en: 'Finance' }, image: '/images/projects/stz-suite/plugins/orbhia/home.png', images: ['/images/projects/stz-suite/plugins/orbhia/detail-2.png', '/images/projects/stz-suite/plugins/orbhia/detail-1.png', '/images/projects/stz-suite/plugins/orbhia/detail-3.png', '/images/projects/stz-suite/plugins/orbhia/home.png'],
+        id: 'ordelya', version: '0.1.0', name: 'Ordelya', category: { pt: 'Produtividade', en: 'Productivity' }, image: '/images/projects/stz-suite/plugins/ordelya/home.png', images: ['/images/projects/stz-suite/plugins/ordelya/detail-1.png', '/images/projects/stz-suite/plugins/ordelya/detail-2.png', '/images/projects/stz-suite/plugins/ordelya/home.png'],
+        description: { pt: 'Planeje tarefas do dia com projetos, etapas, rotinas e lembretes.', en: 'Plan your day with tasks, projects, steps, routines, and reminders.' },
+        features: { pt: ['Hoje, próximos e concluídos', 'Projetos, etapas e tags', 'Rotinas e lembretes'], en: ['Today, upcoming, and completed', 'Projects, steps, and tags', 'Routines and reminders'] },
+    },
+    {
+        id: 'orbhia', version: '0.2.0', name: 'Orbhia', category: { pt: 'Finanças', en: 'Finance' }, image: '/images/projects/stz-suite/plugins/orbhia/home.png', images: ['/images/projects/stz-suite/plugins/orbhia/detail-2.png', '/images/projects/stz-suite/plugins/orbhia/detail-1.png', '/images/projects/stz-suite/plugins/orbhia/detail-3.png', '/images/projects/stz-suite/plugins/orbhia/home.png'],
         description: { pt: 'Organize metas financeiras, compras, parcelas e assinaturas em um só lugar.', en: 'Organize financial goals, purchases, installments, and subscriptions in one place.' },
         features: { pt: ['Metas e compras', 'Parcelas e assinaturas', 'Sincronização opcional'], en: ['Goals and purchases', 'Installments and subscriptions', 'Optional synchronization'] },
     },
     {
-        id: 'glotiva', name: 'Glotiva', category: { pt: 'Tradução', en: 'Translation' }, image: '/images/projects/stz-suite/plugins/glotiva/home.png', images: ['/images/projects/stz-suite/plugins/glotiva/home.png'],
+        id: 'glotiva', version: '0.1.0', name: 'Glotiva', category: { pt: 'Tradução', en: 'Translation' }, image: '/images/projects/stz-suite/plugins/glotiva/home.png', images: ['/images/projects/stz-suite/plugins/glotiva/home.png'],
         description: { pt: 'Traduza textos localmente, instalando apenas os modelos dos idiomas que utiliza.', en: 'Translate text locally, installing only the language models you need.' },
         features: { pt: ['Tradução totalmente local', 'Modelos sob demanda', 'Pares configuráveis'], en: ['Fully local translation', 'On-demand models', 'Configurable language pairs'] },
     },
     {
-        id: 'cursorium', name: 'Cursorium', category: { pt: 'Automação', en: 'Automation' }, image: '/images/projects/stz-suite/plugins/cursorium/home.png', images: ['/images/projects/stz-suite/plugins/cursorium/detail.png', '/images/projects/stz-suite/plugins/cursorium/home.png'],
+        id: 'cursorium', version: '0.1.0', name: 'Cursorium', category: { pt: 'Automação', en: 'Automation' }, image: '/images/projects/stz-suite/plugins/cursorium/home.png', images: ['/images/projects/stz-suite/plugins/cursorium/detail.png', '/images/projects/stz-suite/plugins/cursorium/home.png'],
         description: { pt: 'Grave movimentos e cliques do mouse e reproduza automações com atalhos e repetição.', en: 'Record mouse movement and clicks, then replay automations with shortcuts and repetition.' },
         features: { pt: ['Gravação e reprodução', 'Atalhos globais', 'Histórico e repetição'], en: ['Record and replay', 'Global shortcuts', 'History and repetition'] },
     },
     {
-        id: 'tunerium', name: 'Tunerium', category: { pt: 'Sistema', en: 'System' }, image: '/images/projects/stz-suite/plugins/tunerium/home.png', images: ['/images/projects/stz-suite/plugins/tunerium/detail.png', '/images/projects/stz-suite/plugins/tunerium/home.png'],
+        id: 'tunerium', version: '0.1.0', name: 'Tunerium', category: { pt: 'Sistema', en: 'System' }, image: '/images/projects/stz-suite/plugins/tunerium/home.png', images: ['/images/projects/stz-suite/plugins/tunerium/detail.png', '/images/projects/stz-suite/plugins/tunerium/home.png'],
         description: { pt: 'Diagnostique a conexão e acesse ajustes controlados de manutenção do Windows.', en: 'Diagnose your connection and access controlled Windows maintenance adjustments.' },
         features: { pt: ['Ping e traceroute', 'Histórico de diagnósticos', 'Ajustes de registro'], en: ['Ping and traceroute', 'Diagnostic history', 'Registry adjustments'] },
     },
 ];
+
+const HERO_PLUGIN_IDS = ['fetchora', 'tempoza', 'lumio', 'ordelya'];
+const heroPlugins = HERO_PLUGIN_IDS.map((id) => plugins.find((plugin) => plugin.id === id));
 
 const pluginLocales = {
     es: {
@@ -63,6 +72,7 @@ const pluginLocales = {
         lumio: { category: 'Lectura', description: 'Organiza y lee tu biblioteca local de PDF, EPUB, CBZ y CBR con el progreso guardado.', features: ['PDF, EPUB, CBZ y CBR', 'Biblioteca y recientes', 'Progreso y preferencias'] },
         reperto: { category: 'Catálogo', description: 'Lleva un registro de los libros y otros contenidos que planeas consumir, estás consumiendo o ya terminaste.', features: ['Estados, notas y valoraciones', 'Portadas almacenadas localmente', 'Búsqueda de libros en línea'] },
         tempoza: { category: 'Concentración', description: 'Temporizador de concentración y descanso con presets, audio ambiental, alarmas y preferencias persistentes.', features: ['Ciclos de concentración y descanso', 'Audio ambiental y alarmas', 'Presets persistentes'] },
+        ordelya: { category: 'Productividad', description: 'Planifica tus tareas del día con proyectos, pasos, rutinas y recordatorios.', features: ['Hoy, próximos y completados', 'Proyectos, pasos y etiquetas', 'Rutinas y recordatorios'] },
         orbhia: { category: 'Finanzas', description: 'Organiza objetivos financieros, compras, cuotas y suscripciones en un solo lugar.', features: ['Objetivos y compras', 'Cuotas y suscripciones', 'Sincronización opcional'] },
         glotiva: { category: 'Traducción', description: 'Traduce textos localmente e instala únicamente los modelos de idioma que necesitas.', features: ['Traducción completamente local', 'Modelos bajo demanda', 'Pares de idiomas configurables'] },
         cursorium: { category: 'Automatización', description: 'Graba movimientos y clics del ratón y reproduce automatizaciones con atajos y repeticiones.', features: ['Grabación y reproducción', 'Atajos globales', 'Historial y repeticiones'] },
@@ -73,6 +83,7 @@ const pluginLocales = {
         lumio: { category: 'Lecture', description: 'Organisez et lisez votre bibliothèque locale de PDF, EPUB, CBZ et CBR avec progression enregistrée.', features: ['PDF, EPUB, CBZ et CBR', 'Bibliothèque et éléments récents', 'Progression et préférences'] },
         reperto: { category: 'Catalogue', description: 'Suivez les livres et autres médias que vous prévoyez de consulter, que vous consultez ou que vous avez terminés.', features: ['Statuts, notes et évaluations', 'Couvertures stockées localement', 'Recherche de livres en ligne'] },
         tempoza: { category: 'Concentration', description: 'Minuteur de concentration et de pause avec préréglages, ambiance sonore, alarmes et préférences persistantes.', features: ['Cycles de concentration et de pause', 'Ambiance sonore et alarmes', 'Préréglages persistants'] },
+        ordelya: { category: 'Productivité', description: 'Planifiez vos tâches quotidiennes avec des projets, des étapes, des routines et des rappels.', features: ['Aujourd’hui, à venir et terminées', 'Projets, étapes et étiquettes', 'Routines et rappels'] },
         orbhia: { category: 'Finances', description: 'Organisez vos objectifs financiers, achats, paiements échelonnés et abonnements au même endroit.', features: ['Objectifs et achats', 'Paiements et abonnements', 'Synchronisation facultative'] },
         glotiva: { category: 'Traduction', description: 'Traduisez vos textes localement en installant uniquement les modèles linguistiques nécessaires.', features: ['Traduction entièrement locale', 'Modèles à la demande', 'Paires de langues configurables'] },
         cursorium: { category: 'Automatisation', description: 'Enregistrez les mouvements et clics de la souris, puis rejouez les automatisations avec des raccourcis et des répétitions.', features: ['Enregistrement et lecture', 'Raccourcis globaux', 'Historique et répétitions'] },
@@ -83,6 +94,7 @@ const pluginLocales = {
         lumio: { category: 'Lesen', description: 'Organisiere und lies deine lokale PDF-, EPUB-, CBZ- und CBR-Bibliothek mit gespeichertem Fortschritt.', features: ['PDF, EPUB, CBZ und CBR', 'Bibliothek und zuletzt geöffnet', 'Fortschritt und Einstellungen'] },
         reperto: { category: 'Katalog', description: 'Verfolge Bücher und andere Medien, die du noch nutzen möchtest, gerade nutzt oder bereits abgeschlossen hast.', features: ['Status, Notizen und Bewertungen', 'Lokal gespeicherte Cover', 'Online-Buchsuche'] },
         tempoza: { category: 'Fokus', description: 'Fokus- und Pausentimer mit Voreinstellungen, Hintergrundklängen, Alarmen und dauerhaften Einstellungen.', features: ['Fokus- und Pausenzyklen', 'Hintergrundklänge und Alarme', 'Dauerhafte Voreinstellungen'] },
+        ordelya: { category: 'Produktivität', description: 'Plane deine täglichen Aufgaben mit Projekten, Schritten, Routinen und Erinnerungen.', features: ['Heute, demnächst und erledigt', 'Projekte, Schritte und Tags', 'Routinen und Erinnerungen'] },
         orbhia: { category: 'Finanzen', description: 'Organisiere finanzielle Ziele, Einkäufe, Ratenzahlungen und Abonnements an einem Ort.', features: ['Ziele und Einkäufe', 'Raten und Abonnements', 'Optionale Synchronisierung'] },
         glotiva: { category: 'Übersetzung', description: 'Übersetze Texte lokal und installiere nur die Sprachmodelle, die du wirklich benötigst.', features: ['Vollständig lokale Übersetzung', 'Modelle bei Bedarf', 'Konfigurierbare Sprachpaare'] },
         cursorium: { category: 'Automatisierung', description: 'Zeichne Mausbewegungen und Klicks auf und spiele Automatisierungen mit Tastenkürzeln und Wiederholungen ab.', features: ['Aufzeichnen und Wiedergeben', 'Globale Tastenkürzel', 'Verlauf und Wiederholungen'] },
@@ -93,6 +105,7 @@ const pluginLocales = {
         lumio: { category: 'Lettura', description: 'Organizza e leggi la tua libreria locale di PDF, EPUB, CBZ e CBR con avanzamento salvato.', features: ['PDF, EPUB, CBZ e CBR', 'Libreria e file recenti', 'Avanzamento e preferenze'] },
         reperto: { category: 'Catalogo', description: 'Tieni traccia dei libri e degli altri media che vuoi consultare, stai consultando o hai già completato.', features: ['Stati, note e valutazioni', 'Copertine archiviate localmente', 'Ricerca online di libri'] },
         tempoza: { category: 'Concentrazione', description: 'Timer per concentrazione e pausa con preset, audio di sottofondo, allarmi e preferenze persistenti.', features: ['Cicli di concentrazione e pausa', 'Audio di sottofondo e allarmi', 'Preset persistenti'] },
+        ordelya: { category: 'Produttività', description: 'Pianifica le attività della giornata con progetti, passaggi, routine e promemoria.', features: ['Oggi, in arrivo e completate', 'Progetti, passaggi e tag', 'Routine e promemoria'] },
         orbhia: { category: 'Finanze', description: 'Organizza obiettivi finanziari, acquisti, rate e abbonamenti in un unico posto.', features: ['Obiettivi e acquisti', 'Rate e abbonamenti', 'Sincronizzazione facoltativa'] },
         glotiva: { category: 'Traduzione', description: 'Traduci testi localmente installando solo i modelli linguistici di cui hai bisogno.', features: ['Traduzione completamente locale', 'Modelli su richiesta', 'Coppie linguistiche configurabili'] },
         cursorium: { category: 'Automazione', description: 'Registra movimenti e clic del mouse e riproduci le automazioni con scorciatoie e ripetizioni.', features: ['Registrazione e riproduzione', 'Scorciatoie globali', 'Cronologia e ripetizioni'] },
@@ -106,7 +119,7 @@ const copy = {
         description: 'A STZ Suite reúne utilitários independentes em uma única experiência. Instale somente os plugins que precisa e mantenha tudo organizado, atualizado e sob seu controle.',
         download: 'Baixar STZ Suite', releases: 'Ver todos os releases', flowTitle: 'Comece com uma base leve',
         flow: [['01', 'Instale a base', 'A Suite começa como um shell limpo, sem plugins desnecessários.'], ['02', 'Escolha os plugins', 'Abra Configurações → Plugins e monte sua própria coleção.'], ['03', 'Atualize com segurança', 'O catálogo oficial entrega versões verificadas diretamente pelo GitHub.']],
-        catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Oito ferramentas. Uma experiência.', catalogDescription: 'Veja tudo de uma vez e escolha um plugin para explorar os detalhes.',
+        catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Nove ferramentas. Uma experiência.', catalogDescription: 'Veja tudo de uma vez e escolha um plugin para explorar os detalhes.',
         explore: 'Explorar plugins', included: 'Destaques', version: 'Versão 0.1.0', installNote: 'Instalado pela própria STZ Suite',
         architectureTitle: 'Modular por escolha. Local por princípio.', architectureDescription: 'A base permanece leve e cada ferramenta vive em seu próprio pacote. Arquivos e preferências ficam na sua máquina; dependências e modelos são baixados somente quando necessários.',
         architecture: ['Base sem plugins pré-instalados', 'Pacotes verificados por SHA-256', 'Processamento e dados locais', 'Atualizações pelo catálogo oficial'], planned: 'Em breve', cloudSyncTitle: 'Cloud sync planejado', cloudSyncDescription: 'Uma futura integração de sincronização em nuvem está nos planos para salvar dados e preferências dos plugins e facilitar o uso da Suite em diferentes dispositivos.', finalTitle: 'Monte a Suite do seu jeito.', finalDescription: 'Baixe a base para Windows e instale os plugins diretamente pela tela de configurações.', previousImage: 'Imagem anterior', nextImage: 'Próxima imagem', expandImage: 'Ampliar imagem', closeImage: 'Fechar imagem',
@@ -116,7 +129,7 @@ const copy = {
         description: 'STZ Suite brings independent utilities into one experience. Install only the plugins you need and keep everything organized, updated, and under your control.',
         download: 'Download STZ Suite', releases: 'View all releases', flowTitle: 'Start with a lightweight base',
         flow: [['01', 'Install the base', 'The Suite starts as a clean shell without unnecessary plugins.'], ['02', 'Choose your plugins', 'Open Settings → Plugins and build your own collection.'], ['03', 'Update safely', 'The official catalog delivers verified versions directly from GitHub.']],
-        catalogEyebrow: 'Official catalog', catalogTitle: 'Eight tools. One experience.', catalogDescription: 'See everything at a glance and choose a plugin to explore the details.',
+        catalogEyebrow: 'Official catalog', catalogTitle: 'Nine tools. One experience.', catalogDescription: 'See everything at a glance and choose a plugin to explore the details.',
         explore: 'Explore plugins', included: 'Highlights', version: 'Version 0.1.0', installNote: 'Installed from inside STZ Suite',
         architectureTitle: 'Modular by choice. Local by principle.', architectureDescription: 'The base stays lightweight and each tool lives in its own package. Files and preferences remain on your computer; dependencies and models are downloaded only when needed.',
         architecture: ['No plugins preinstalled', 'SHA-256 verified packages', 'Local processing and data', 'Official catalog updates'], planned: 'Coming soon', cloudSyncTitle: 'Cloud sync planned', cloudSyncDescription: 'A future cloud synchronization integration is planned to save plugin data and preferences and make the Suite easier to use across different devices.', finalTitle: 'Build the Suite your way.', finalDescription: 'Download the Windows base and install plugins directly from Settings.', previousImage: 'Previous image', nextImage: 'Next image', expandImage: 'Enlarge image', closeImage: 'Close image',
@@ -126,7 +139,7 @@ const copy = {
         description: 'STZ Suite reúne utilidades independientes en una sola experiencia. Instala únicamente los plugins que necesitas y mantén todo organizado, actualizado y bajo tu control.',
         download: 'Descargar STZ Suite', releases: 'Ver todos los lanzamientos', flowTitle: 'Empieza con una base ligera',
         flow: [['01', 'Instala la base', 'La Suite empieza como una estructura limpia, sin plugins innecesarios.'], ['02', 'Elige tus plugins', 'Abre Configuración → Plugins y crea tu propia colección.'], ['03', 'Actualiza con seguridad', 'El catálogo oficial distribuye versiones verificadas directamente desde GitHub.']],
-        catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Ocho herramientas. Una experiencia.', catalogDescription: 'Descubre todo de un vistazo y elige un plugin para ver sus detalles.',
+        catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Nueve herramientas. Una experiencia.', catalogDescription: 'Descubre todo de un vistazo y elige un plugin para ver sus detalles.',
         explore: 'Explorar plugins', included: 'Características', version: 'Versión 0.1.0', installNote: 'Instalado desde la propia STZ Suite',
         architectureTitle: 'Modular por elección. Local por principio.', architectureDescription: 'La base se mantiene ligera y cada herramienta vive en su propio paquete. Los archivos y preferencias permanecen en tu equipo; las dependencias y los modelos se descargan solo cuando son necesarios.',
         architecture: ['Sin plugins preinstalados', 'Paquetes verificados con SHA-256', 'Procesamiento y datos locales', 'Actualizaciones mediante el catálogo oficial'], planned: 'Próximamente', cloudSyncTitle: 'Cloud sync planificado', cloudSyncDescription: 'Está prevista una futura integración de sincronización en la nube para guardar datos y preferencias de los plugins y facilitar el uso de la Suite en distintos dispositivos.', finalTitle: 'Crea la Suite a tu manera.', finalDescription: 'Descarga la base para Windows e instala los plugins directamente desde Configuración.', previousImage: 'Imagen anterior', nextImage: 'Imagen siguiente', expandImage: 'Ampliar imagen', closeImage: 'Cerrar imagen',
@@ -136,7 +149,7 @@ const copy = {
         description: 'STZ Suite rassemble des utilitaires indépendants dans une expérience unique. Installez uniquement les plugins nécessaires et gardez le tout organisé, à jour et sous votre contrôle.',
         download: 'Télécharger STZ Suite', releases: 'Voir toutes les versions', flowTitle: 'Commencez avec une base légère',
         flow: [['01', 'Installez la base', 'La Suite démarre comme une structure épurée, sans plugins superflus.'], ['02', 'Choisissez vos plugins', 'Ouvrez Paramètres → Plugins et composez votre propre collection.'], ['03', 'Mettez à jour en toute sécurité', 'Le catalogue officiel fournit des versions vérifiées directement depuis GitHub.']],
-        catalogEyebrow: 'Catalogue officiel', catalogTitle: 'Huit outils. Une expérience.', catalogDescription: 'Découvrez tout en un coup d’œil et choisissez un plugin pour en explorer les détails.',
+        catalogEyebrow: 'Catalogue officiel', catalogTitle: 'Neuf outils. Une expérience.', catalogDescription: 'Découvrez tout en un coup d’œil et choisissez un plugin pour en explorer les détails.',
         explore: 'Explorer les plugins', included: 'Points forts', version: 'Version 0.1.0', installNote: 'Installé directement depuis STZ Suite',
         architectureTitle: 'Modulaire par choix. Local par principe.', architectureDescription: 'La base reste légère et chaque outil dispose de son propre paquet. Les fichiers et préférences restent sur votre ordinateur ; les dépendances et modèles ne sont téléchargés qu’en cas de besoin.',
         architecture: ['Aucun plugin préinstallé', 'Paquets vérifiés par SHA-256', 'Traitement et données en local', 'Mises à jour via le catalogue officiel'], planned: 'Bientôt', cloudSyncTitle: 'Cloud sync prévu', cloudSyncDescription: 'Une future intégration de synchronisation dans le cloud est prévue afin de sauvegarder les données et préférences des plugins et de faciliter l’utilisation de la Suite sur plusieurs appareils.', finalTitle: 'Composez la Suite à votre façon.', finalDescription: 'Téléchargez la base Windows et installez les plugins directement depuis les paramètres.', previousImage: 'Image précédente', nextImage: 'Image suivante', expandImage: 'Agrandir l’image', closeImage: 'Fermer l’image',
@@ -146,7 +159,7 @@ const copy = {
         description: 'STZ Suite vereint unabhängige Programme in einer zentralen Oberfläche. Installiere nur die Plugins, die du benötigst, und behalte alles organisiert, aktuell und unter deiner Kontrolle.',
         download: 'STZ Suite herunterladen', releases: 'Alle Versionen anzeigen', flowTitle: 'Starte mit einer schlanken Basis',
         flow: [['01', 'Basis installieren', 'Die Suite startet als saubere Oberfläche ohne unnötige Plugins.'], ['02', 'Plugins auswählen', 'Öffne Einstellungen → Plugins und stelle deine eigene Sammlung zusammen.'], ['03', 'Sicher aktualisieren', 'Der offizielle Katalog liefert geprüfte Versionen direkt über GitHub.']],
-        catalogEyebrow: 'Offizieller Katalog', catalogTitle: 'Acht Werkzeuge. Eine Oberfläche.', catalogDescription: 'Sieh dir alles auf einen Blick an und wähle ein Plugin aus, um mehr zu erfahren.',
+        catalogEyebrow: 'Offizieller Katalog', catalogTitle: 'Neun Werkzeuge. Eine Oberfläche.', catalogDescription: 'Sieh dir alles auf einen Blick an und wähle ein Plugin aus, um mehr zu erfahren.',
         explore: 'Plugins entdecken', included: 'Highlights', version: 'Version 0.1.0', installNote: 'Direkt über STZ Suite installiert',
         architectureTitle: 'Bewusst modular. Konsequent lokal.', architectureDescription: 'Die Basis bleibt schlank und jedes Werkzeug befindet sich in einem eigenen Paket. Dateien und Einstellungen bleiben auf deinem Computer; Abhängigkeiten und Modelle werden nur bei Bedarf heruntergeladen.',
         architecture: ['Keine vorinstallierten Plugins', 'Mit SHA-256 geprüfte Pakete', 'Lokale Verarbeitung und Daten', 'Updates über den offiziellen Katalog'], planned: 'Demnächst', cloudSyncTitle: 'Cloud-Synchronisierung geplant', cloudSyncDescription: 'Eine zukünftige Cloud-Synchronisierung ist geplant, um Plugin-Daten und Einstellungen zu sichern und die Nutzung der Suite auf mehreren Geräten zu erleichtern.', finalTitle: 'Stelle deine Suite selbst zusammen.', finalDescription: 'Lade die Windows-Basis herunter und installiere Plugins direkt über die Einstellungen.', previousImage: 'Vorheriges Bild', nextImage: 'Nächstes Bild', expandImage: 'Bild vergrößern', closeImage: 'Bild schließen',
@@ -156,17 +169,17 @@ const copy = {
         description: 'STZ Suite riunisce utility indipendenti in un’unica esperienza. Installa solo i plugin che ti servono e mantieni tutto organizzato, aggiornato e sotto il tuo controllo.',
         download: 'Scarica STZ Suite', releases: 'Vedi tutte le versioni', flowTitle: 'Inizia con una base leggera',
         flow: [['01', 'Installa la base', 'La Suite parte come una struttura pulita, senza plugin superflui.'], ['02', 'Scegli i plugin', 'Apri Impostazioni → Plugin e crea la tua raccolta personale.'], ['03', 'Aggiorna in sicurezza', 'Il catalogo ufficiale distribuisce versioni verificate direttamente da GitHub.']],
-        catalogEyebrow: 'Catalogo ufficiale', catalogTitle: 'Otto strumenti. Un’unica esperienza.', catalogDescription: 'Scopri tutto a colpo d’occhio e scegli un plugin per esplorarne i dettagli.',
+        catalogEyebrow: 'Catalogo ufficiale', catalogTitle: 'Nove strumenti. Un’unica esperienza.', catalogDescription: 'Scopri tutto a colpo d’occhio e scegli un plugin per esplorarne i dettagli.',
         explore: 'Esplora i plugin', included: 'Funzionalità principali', version: 'Versione 0.1.0', installNote: 'Installato direttamente da STZ Suite',
         architectureTitle: 'Modulare per scelta. Locale per principio.', architectureDescription: 'La base rimane leggera e ogni strumento vive nel proprio pacchetto. File e preferenze restano sul tuo computer; dipendenze e modelli vengono scaricati solo quando servono.',
         architecture: ['Nessun plugin preinstallato', 'Pacchetti verificati con SHA-256', 'Elaborazione e dati locali', 'Aggiornamenti dal catalogo ufficiale'], planned: 'Prossimamente', cloudSyncTitle: 'Cloud sync pianificato', cloudSyncDescription: 'È prevista una futura integrazione di sincronizzazione cloud per salvare dati e preferenze dei plugin e semplificare l’uso della Suite su dispositivi diversi.', finalTitle: 'Crea la Suite a modo tuo.', finalDescription: 'Scarica la base per Windows e installa i plugin direttamente dalle Impostazioni.', previousImage: 'Immagine precedente', nextImage: 'Immagine successiva', expandImage: 'Ingrandisci immagine', closeImage: 'Chiudi immagine',
     },
 };
 
-function PluginImage({ plugin, locale, className = '' }) {
+function PluginImage({ plugin, locale, className = '', priority = false }) {
     return (
         <div className={`relative overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-3)] ${className}`}>
-            <Image src={plugin.image} alt={`${plugin.name} — ${getPluginText(plugin, locale, 'category')}`} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+            <Image src={plugin.image} alt={`${plugin.name} — ${getPluginText(plugin, locale, 'category')}`} fill priority={priority} className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
         </div>
     );
 }
@@ -192,9 +205,11 @@ export default function SuiteProjectPage() {
         fallbackTag: FALLBACK_TAG,
         fallbackDownloadUrl: FALLBACK_INSTALLER_URL,
     });
+    const pluginVersions = usePluginVersions('stz-suite-releases');
     const suiteVersion = suiteRelease.version || '0.1.1';
     const installerUrl = suiteRelease.downloadUrl || FALLBACK_INSTALLER_URL;
-    const localizedVersion = text.version.replace(/\d+\.\d+\.\d+/, suiteVersion);
+    const activePluginVersion = pluginVersions[activePlugin.id]?.version || activePlugin.version;
+    const localizedVersion = text.version.replace(/\d+\.\d+\.\d+/, activePluginVersion);
 
     const changeImage = useCallback((direction) => {
         setGalleryIndex((current) => (current + direction + activePlugin.images.length) % activePlugin.images.length);
@@ -249,12 +264,12 @@ export default function SuiteProjectPage() {
                 </div>
                 <div className="relative grid h-[430px] grid-cols-2 gap-3 lg:col-span-6">
                     <div className="grid gap-3 pt-10">
-                        <PluginImage plugin={plugins[0]} locale={locale} />
-                        <PluginImage plugin={plugins[3]} locale={locale} />
+                        <PluginImage plugin={heroPlugins[0]} locale={locale} priority />
+                        <PluginImage plugin={heroPlugins[1]} locale={locale} priority />
                     </div>
                     <div className="grid gap-3 pb-10">
-                        <PluginImage plugin={plugins[1]} locale={locale} />
-                        <PluginImage plugin={plugins[4]} locale={locale} />
+                        <PluginImage plugin={heroPlugins[2]} locale={locale} priority />
+                        <PluginImage plugin={heroPlugins[3]} locale={locale} priority />
                     </div>
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent" />
                 </div>
