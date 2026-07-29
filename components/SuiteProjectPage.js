@@ -63,6 +63,17 @@ const plugins = [
     },
 ];
 
+const PLUGIN_PARAM = 'plugin';
+
+/** Mantém ?plugin=<id> na URL sem recarregar nem empilhar histórico. */
+const syncPluginParam = (id) => {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get(PLUGIN_PARAM) === id) return;
+
+    url.searchParams.set(PLUGIN_PARAM, id);
+    window.history.replaceState(null, '', url);
+};
+
 const HERO_PLUGIN_IDS = ['fetchora', 'tempoza', 'lumio', 'ordelya'];
 const heroPlugins = HERO_PLUGIN_IDS.map((id) => plugins.find((plugin) => plugin.id === id));
 
@@ -218,8 +229,26 @@ export default function SuiteProjectPage() {
     const selectPlugin = (id, shouldScroll = false) => {
         setActiveId(id);
         setGalleryIndex(0);
+        syncPluginParam(id);
         if (shouldScroll) document.getElementById('suite-explorer')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
+
+    /**
+     * Abre o plugin indicado em ?plugin=<id> para que cada um tenha um link
+     * próprio. O parâmetro é lido do window para não exigir um limite de
+     * Suspense em torno desta página estática.
+     */
+    useEffect(() => {
+        const requested = new URLSearchParams(window.location.search).get(PLUGIN_PARAM);
+        if (!requested) return;
+
+        const target = plugins.find((plugin) => plugin.id === requested.toLowerCase());
+        if (!target) return;
+
+        setActiveId(target.id);
+        setGalleryIndex(0);
+        document.getElementById('suite-explorer')?.scrollIntoView({ block: 'start' });
+    }, []);
 
     useEffect(() => {
         if (!lightboxOpen) return undefined;
