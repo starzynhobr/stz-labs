@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+    metadataBase: new URL('https://stzlabs.com'),
     title: 'STZ LABS',
     description:
         'STZ LABS desenvolve ferramentas de alta performance como STZ CSV Converter, Game XML Translator e STZ Lyrics.',

@@ -29,13 +29,13 @@ export async function generateMetadata({ params }) {
         openGraph: {
             title,
             description: ogDescription || description,
-            images: ['https://stz-labs.vercel.app/public/og-image.png'],
+            images: ['/og-image.png'],
         },
         twitter: {
             card: 'summary_large_image',
             title,
             description: ogDescription || description,
-            images: ['https://stz-labs.vercel.app/public/og-image.png'],
+            images: ['/og-image.png'],
         },
     };
 }

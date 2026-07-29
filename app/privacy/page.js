@@ -8,11 +8,11 @@ export const metadata = {
         title: 'Privacidade | STZ LABS',
         description: 'Política de privacidade e transparência sobre o uso de dados.',
         type: 'website',
-        images: ['https://stz-labs.vercel.app/public/og-image.png'],
+        images: ['/og-image.png'],
     },
     twitter: {
         card: 'summary_large_image',
-        images: ['https://stz-labs.vercel.app/public/og-image.png'],
+        images: ['/og-image.png'],
     },
 };
 

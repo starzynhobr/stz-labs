@@ -12,11 +12,11 @@ export const metadata = {
         title: 'STZ LABS - Inovação Minimalista',
         description: 'STZ Suite: uma base leve com ferramentas modulares instaladas sob demanda.',
         type: 'website',
-        images: ['https://stz-labs.vercel.app/og-image.png'],
+        images: ['/og-image.png'],
     },
     twitter: {
         card: 'summary_large_image',
-        images: ['https://stz-labs.vercel.app/og-image.png'],
+        images: ['/og-image.png'],
     },
 };
 

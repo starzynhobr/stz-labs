@@ -7,11 +7,11 @@ export const metadata = {
         title: 'Termos | STZ LABS',
         description: 'Termos de uso e condições gerais dos produtos e serviços STZ LABS.',
         type: 'website',
-        images: ['https://stz-labs.vercel.app/public/og-image.png'],
+        images: ['/og-image.png'],
     },
     twitter: {
         card: 'summary_large_image',
-        images: ['https://stz-labs.vercel.app/public/og-image.png'],
+        images: ['/og-image.png'],
     },
 };
 
