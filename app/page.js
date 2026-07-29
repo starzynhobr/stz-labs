@@ -4,6 +4,7 @@ import Philosophy from '../components/Philosophy';
 import StatusTimeline from '../components/StatusTimeline';
 import { projects } from '../data/projects';
 import { JsonLd, buildSiteLd } from '../lib/structuredData';
+import { resolveProjectReleases } from '../lib/releases';
 
 export const metadata = {
     title: 'STZ LABS',
@@ -25,9 +26,12 @@ export const viewport = {
     themeColor: '#0A0C10',
 };
 
-export default function Home() {
+export const revalidate = 3600;
+
+export default async function Home() {
     // Ordenar os projetos de acordo com a prioridade selecionada manualmente
     const sortedProjects = [...projects].sort((a, b) => (a.priority || 99) - (b.priority || 99));
+    const releases = await resolveProjectReleases(sortedProjects);
 
     return (
         <main className="min-h-screen bg-transparent pt-24 pb-24 relative selection:bg-purple-500/30 text-white overflow-hidden">
@@ -51,6 +55,7 @@ export default function Home() {
                                 releaseTagPrefix={project.releaseTagPrefix}
                                 releaseAssetPattern={project.releaseAssetPattern}
                                 releaseFallbackTag={project.releaseFallbackTag}
+                                initialRelease={releases[project.slug] || null}
                                 badgeLabel={project.badgeLabel}
                                 badgeLabelKey={project.badgeLabelKey}
                                 badgeVariant={project.badgeVariant}

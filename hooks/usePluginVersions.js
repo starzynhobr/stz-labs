@@ -38,9 +38,9 @@ const fetchPluginVersions = async (repo) => {
     return response.json();
 };
 
-export function usePluginVersions(repoName) {
+export function usePluginVersions(repoName, initialVersions = null) {
     const repo = normalizeRepo(repoName);
-    const [versions, setVersions] = useState(() => memoryCache?.value || {});
+    const [versions, setVersions] = useState(() => memoryCache?.value || initialVersions || {});
 
     useEffect(() => {
         if (!repo) return undefined;

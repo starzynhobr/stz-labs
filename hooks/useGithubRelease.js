@@ -46,20 +46,26 @@ const findRelease = async ({ repo, tagPrefix, assetPattern }) => {
     return response.json();
 };
 
+/**
+ * `initialRelease` vem resolvido do servidor, então a versão correta já chega
+ * no HTML. O par fallbackTag/fallbackDownloadUrl só entra em cena se o
+ * servidor também não tiver conseguido resolver.
+ */
 export function useGithubRelease({
     repoName,
     tagPrefix,
     assetPattern,
     fallbackTag,
     fallbackDownloadUrl,
+    initialRelease = null,
 }) {
     const repo = useMemo(() => normalizeRepo(repoName), [repoName]);
-    const fallback = useMemo(() => ({
+    const fallback = useMemo(() => initialRelease || ({
         tagName: fallbackTag,
         version: fallbackTag && tagPrefix ? getVersion(fallbackTag, tagPrefix) : null,
         downloadUrl: fallbackDownloadUrl,
         releaseUrl: null,
-    }), [fallbackDownloadUrl, fallbackTag, tagPrefix]);
+    }), [fallbackDownloadUrl, fallbackTag, initialRelease, tagPrefix]);
     const [release, setRelease] = useState(fallback);
     const enabled = Boolean(repo && tagPrefix && assetPattern);
     const cacheKey = enabled

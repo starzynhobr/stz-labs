@@ -821,11 +821,10 @@ export const projects = [
         repoName: 'stz-suite-releases',
         titleKey: 'cards.suite_title',
         descriptionKey: 'cards.suite_desc',
-        downloadHref: 'https://github.com/starzynhobr/stz-suite-releases/releases/download/stz-suite-base-v0.1.1/STZ-Suite-Base-0.1.1-Setup.exe',
+        downloadHref: 'https://github.com/starzynhobr/stz-suite-releases/releases/latest',
         releaseTagPrefix: 'stz-suite-base-v',
         releaseAssetPattern: '^STZ-Suite-Base-.*-Setup\\.exe$',
-        releaseFallbackTag: 'stz-suite-base-v0.1.1',
-        badgeLabel: 'v0.1.1',
+        badgeLabel: '...',
         badgeVariant: 'stable',
         coverImage: '/images/projects/stz-suite/plugins/fetchora/home.png',
         tags: [

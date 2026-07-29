@@ -8,6 +8,7 @@ import { Button } from '../../../components/ui/Button';
 import { Badge } from '../../../components/ui/Badge';
 import SuiteProjectPage from '../../../components/SuiteProjectPage';
 import { JsonLd, buildSoftwareApplicationLd } from '../../../lib/structuredData';
+import { findPluginVersions, findRelease } from '../../../lib/github';
 
 const getProjectBySlug = (slug) => projects.find((project) => project.slug === slug);
 
@@ -41,6 +42,8 @@ export async function generateMetadata({ params }) {
     };
 }
 
+export const revalidate = 3600;
+
 export default async function ProjectDetailPage({ params }) {
     const { slug } = await params;
     const project = getProjectBySlug(slug);
@@ -49,13 +52,22 @@ export default async function ProjectDetailPage({ params }) {
         notFound();
     }
 
-    const structuredData = buildSoftwareApplicationLd(project);
+    const release = project.releaseTagPrefix
+        ? await findRelease({
+            repoName: project.repoName,
+            tagPrefix: project.releaseTagPrefix,
+            assetPattern: project.releaseAssetPattern,
+        }).catch(() => null)
+        : null;
+    const structuredData = buildSoftwareApplicationLd(project, release);
 
     if (project.detail.customPage === 'suite') {
+        const pluginVersions = await findPluginVersions(project.repoName).catch(() => null);
+
         return (
             <>
                 <JsonLd data={structuredData} />
-                <SuiteProjectPage />
+                <SuiteProjectPage initialRelease={release} initialPluginVersions={pluginVersions} />
             </>
         );
     }

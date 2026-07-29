@@ -63,6 +63,7 @@ const ProjectCard = ({
     releaseTagPrefix,
     releaseAssetPattern,
     releaseFallbackTag,
+    initialRelease = null,
     badgeLabel,
     badgeLabelKey,
     badgeVariant = 'stable',
@@ -86,6 +87,7 @@ const ProjectCard = ({
         assetPattern: releaseAssetPattern,
         fallbackTag: releaseFallbackTag,
         fallbackDownloadUrl: downloadHref,
+        initialRelease,
     });
     const hasDynamicRelease = Boolean(repoName && releaseTagPrefix && releaseAssetPattern);
     const effectiveDownloadHref = hasDynamicRelease

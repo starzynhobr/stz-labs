@@ -10,8 +10,10 @@ import { useGithubRelease } from '../hooks/useGithubRelease';
 import { usePluginVersions } from '../hooks/usePluginVersions';
 
 const RELEASES_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases';
-const FALLBACK_TAG = 'stz-suite-base-v0.1.1';
-const FALLBACK_INSTALLER_URL = `${RELEASES_URL}/download/${FALLBACK_TAG}/STZ-Suite-Base-0.1.1-Setup.exe`;
+/* Último recurso: a página do release mais recente nunca fica desatualizada,
+   ao contrário de um link para um instalador de versão fixa. */
+const FALLBACK_TAG = null;
+const FALLBACK_INSTALLER_URL = `${RELEASES_URL}/latest`;
 const RELEASE_TAG_PREFIX = 'stz-suite-base-v';
 const RELEASE_ASSET_PATTERN = '^STZ-Suite-Base-.*-Setup\\.exe$';
 
@@ -199,7 +201,7 @@ function getPluginText(plugin, locale, field) {
     return plugin[field][locale] || pluginLocales[locale]?.[plugin.id]?.[field] || plugin[field].en;
 }
 
-export default function SuiteProjectPage() {
+export default function SuiteProjectPage({ initialRelease = null, initialPluginVersions = null }) {
     const { lang } = useLanguage();
     const locale = copy[lang] ? lang : 'en';
     const text = copy[locale];
@@ -215,9 +217,11 @@ export default function SuiteProjectPage() {
         assetPattern: RELEASE_ASSET_PATTERN,
         fallbackTag: FALLBACK_TAG,
         fallbackDownloadUrl: FALLBACK_INSTALLER_URL,
+        initialRelease,
     });
-    const pluginVersions = usePluginVersions('stz-suite-releases');
-    const suiteVersion = suiteRelease.version || '0.1.1';
+    const pluginVersions = usePluginVersions('stz-suite-releases', initialPluginVersions);
+    const suiteVersion = suiteRelease.version;
+    const suiteLabel = suiteVersion ? `STZ Suite ${suiteVersion}` : 'STZ Suite';
     const installerUrl = suiteRelease.downloadUrl || FALLBACK_INSTALLER_URL;
     const activePluginVersion = pluginVersions[activePlugin.id]?.version || activePlugin.version;
     const localizedVersion = text.version.replace(/\d+\.\d+\.\d+/, activePluginVersion);
@@ -282,7 +286,7 @@ export default function SuiteProjectPage() {
         <main className="min-h-screen bg-transparent pb-24 pt-28 text-[var(--text-primary)]">
             <section className="container mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-10 lg:grid-cols-12 lg:items-center">
                 <div className="lg:col-span-6">
-                    <Badge variant="stable" className="mb-6">STZ Suite {suiteVersion}</Badge>
+                    <Badge variant="stable" className="mb-6">{suiteLabel}</Badge>
                     <p className="mb-4 font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-[var(--accent)]">{text.eyebrow}</p>
                     <h1 className="mb-6 text-5xl font-bold tracking-[-0.05em] text-[var(--text-heading)] md:text-7xl">{text.title}</h1>
                     <p className="mb-9 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] md:text-lg">{text.description}</p>
@@ -392,7 +396,7 @@ export default function SuiteProjectPage() {
             </section>
 
             <section className="container mx-auto max-w-4xl px-6 text-center">
-                <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--accent)]">STZ Suite {suiteVersion}</p>
+                <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--accent)]">{suiteLabel}</p>
                 <h2 className="mb-4 text-4xl font-bold tracking-tight text-[var(--text-heading)] md:text-5xl">{text.finalTitle}</h2>
                 <p className="mx-auto mb-8 max-w-xl text-[var(--text-secondary)]">{text.finalDescription}</p>
                 <Button asChild variant="primary" size="default"><a href={installerUrl}>{text.download}</a></Button>
