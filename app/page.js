@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Philosophy from '../components/Philosophy';
 import StatusTimeline from '../components/StatusTimeline';
 import { projects } from '../data/projects';
+import { JsonLd, buildSiteLd } from '../lib/structuredData';
 
 export const metadata = {
     title: 'STZ LABS',
@@ -30,7 +31,8 @@ export default function Home() {
 
     return (
         <main className="min-h-screen bg-transparent pt-24 pb-24 relative selection:bg-purple-500/30 text-white overflow-hidden">
-            
+            <JsonLd data={buildSiteLd()} />
+
             <div className="container relative z-10 max-w-[1200px] mx-auto px-6">
                 <section className="mt-12 relative z-10 flex flex-col gap-16">
                     <Hero />

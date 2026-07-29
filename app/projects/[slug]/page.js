@@ -7,6 +7,7 @@ import { projects } from '../../../data/projects';
 import { Button } from '../../../components/ui/Button';
 import { Badge } from '../../../components/ui/Badge';
 import SuiteProjectPage from '../../../components/SuiteProjectPage';
+import { JsonLd, buildSoftwareApplicationLd } from '../../../lib/structuredData';
 
 const getProjectBySlug = (slug) => projects.find((project) => project.slug === slug);
 
@@ -48,8 +49,15 @@ export default async function ProjectDetailPage({ params }) {
         notFound();
     }
 
+    const structuredData = buildSoftwareApplicationLd(project);
+
     if (project.detail.customPage === 'suite') {
-        return <SuiteProjectPage />;
+        return (
+            <>
+                <JsonLd data={structuredData} />
+                <SuiteProjectPage />
+            </>
+        );
     }
 
     const { hero, gallery, showcase, features, specs } = project.detail;
@@ -58,6 +66,7 @@ export default async function ProjectDetailPage({ params }) {
 
     return (
         <main className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
+            <JsonLd data={structuredData} />
             {/* Project Hero */}
             <section className="relative w-full max-w-5xl mx-auto px-6 mb-20 text-center">
                 <div className="flex flex-wrap justify-center gap-2 mb-8">
