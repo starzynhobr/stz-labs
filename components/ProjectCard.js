@@ -74,6 +74,8 @@ const ProjectCard = ({
     detailLabelKey,
     downloadLabel,
     downloadLabelKey,
+    // O download fica na página de detalhes; na home só a Suite o exibe.
+    showDownload = false,
     style,
     actionButtons,
     coverImage,
@@ -223,7 +225,7 @@ const ProjectCard = ({
                                         </Link>
                                     </Button>
                                 )}
-                                {effectiveDownloadHref && (
+                                {showDownload && effectiveDownloadHref && (
                                     <Button asChild variant="secondary" size={isFeatured ? "default" : "sm"} className="px-4 py-2">
                                         <a href={effectiveDownloadHref} target="_blank" rel="noreferrer">
                                             {downloadLabelKey ? <TranslatedText as="span" i18nKey={downloadLabelKey} /> : downloadLabel || 'Download'}

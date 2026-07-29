@@ -73,6 +73,7 @@ export default async function ProjectDetailPage({ params }) {
     }
 
     const { hero, gallery, showcase, features, specs } = project.detail;
+    const downloadUrl = release?.downloadUrl || project.downloadHref;
     const heroGalleryItem = gallery?.find((item) => item.variant === 'hero') || gallery?.[0] || null;
     const extraGalleryItems = heroGalleryItem ? gallery.filter((item) => item.src !== heroGalleryItem.src) : [];
 
@@ -131,6 +132,29 @@ export default async function ProjectDetailPage({ params }) {
                     ) : (
                         <Button variant="primary" size="default" disabled className="px-8 opacity-50 cursor-not-allowed">
                             <TranslatedText as="span" i18nKey={hero.githubLabelKey} />
+                        </Button>
+                    )}
+
+                    {downloadUrl && (
+                        <Button asChild variant="secondary" size="default" className="px-8">
+                            <a href={downloadUrl} target="_blank" rel="noreferrer">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="mr-2.5"
+                                >
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                <TranslatedText as="span" i18nKey="cards.btn_download" />
+                            </a>
                         </Button>
                     )}
                 </div>

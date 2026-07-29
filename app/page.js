@@ -63,6 +63,7 @@ export default async function Home() {
                                 tags={project.tags}
                                 detailLabelKey={project.detailLabelKey}
                                 downloadLabelKey={project.downloadLabelKey}
+                                showDownload={project.showHomeDownload || false}
                                 downloadDisabledLabelKey={project.downloadDisabledLabelKey}
                                 style={project.style}
                                 actionButtons={project.actionButtons}
