@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 
 const ONE_HOUR = 60 * 60 * 1000;
 const OWNER = 'starzynhobr';
-const MAX_PAGES = 5;
 
 const memoryCache = new Map();
 const inflightRequests = new Map();
@@ -39,37 +38,12 @@ const getVersion = (tagName, tagPrefix) => {
 };
 
 const findRelease = async ({ repo, tagPrefix, assetPattern }) => {
-    const assetRegex = new RegExp(assetPattern, 'i');
+    const params = new URLSearchParams({ repo, tagPrefix, assetPattern });
+    const response = await fetch(`/api/github/release?${params}`);
 
-    for (let page = 1; page <= MAX_PAGES; page += 1) {
-        const response = await fetch(
-            `https://api.github.com/repos/${repo}/releases?per_page=100&page=${page}`
-        );
+    if (!response.ok) return null;
 
-        if (!response.ok) return null;
-
-        const releases = await response.json();
-        const release = releases.find((item) => (
-            !item.draft
-            && !item.prerelease
-            && item.tag_name?.startsWith(tagPrefix)
-            && item.assets?.some((asset) => assetRegex.test(asset.name))
-        ));
-
-        if (release) {
-            const asset = release.assets.find((item) => assetRegex.test(item.name));
-            return {
-                tagName: release.tag_name,
-                version: getVersion(release.tag_name, tagPrefix),
-                downloadUrl: asset.browser_download_url,
-                releaseUrl: release.html_url,
-            };
-        }
-
-        if (releases.length < 100) return null;
-    }
-
-    return null;
+    return response.json();
 };
 
 export function useGithubRelease({
