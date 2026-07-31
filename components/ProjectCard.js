@@ -248,7 +248,8 @@ const ProjectCard = ({
                     <div className="w-full max-w-[380px] aspect-[1.18/1] flex flex-col items-center justify-center z-10 relative rounded-[calc(var(--radius-card)*0.5)] border [border-color:var(--border-subtle)] bg-[var(--surface-3)] backdrop-blur-[var(--backdrop-blur)] shadow-[var(--shadow)] overflow-hidden">
                         {coverImage ? (
                             <>
-                                <Image src={coverImage} alt="" fill className="object-cover object-top" sizes="(max-width: 768px) 90vw, 380px" />
+                                {/* O card em destaque fica acima da dobra: sem priority ele vira o LCP tardio. */}
+                                <Image src={coverImage} alt="" fill priority={isFeatured} className="object-cover object-top" sizes="(max-width: 768px) 90vw, 380px" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-3)]/75 via-transparent to-transparent" />
                             </>
                         ) : (

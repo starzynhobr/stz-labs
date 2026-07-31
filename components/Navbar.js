@@ -7,6 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import ThemeSelector from './ThemeSelector';
 import { cn } from '../lib/utils';
+import { stripLocale } from '../lib/i18n';
 
 const MOUSE_HUB_KEY = 'mouse-hub';
 
@@ -18,7 +19,9 @@ const navLinks = [
 
 /** As ferramentas de mouse existem em PT e EN; os demais idiomas caem no EN. */
 const resolveHref = (href, lang) => (
-    href === MOUSE_HUB_KEY ? (lang === 'pt' ? '/pt/mouse' : '/en/mouse') : href
+    href === MOUSE_HUB_KEY
+        ? (lang === 'pt' ? '/pt/mouse' : '/en/mouse')
+        : `/${lang}${href === '/' ? '' : href}`
 );
 
 export default function Navbar() {
@@ -28,7 +31,10 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [langMenuOpen, setLangMenuOpen] = useState(false);
     const langRef = useRef(null);
-    const showBackArrow = pathname !== '/';
+    // A home agora é /{idioma}, então comparar com '/' nunca casaria e o link
+    // de volta ficava visível na própria página inicial.
+    const isHome = stripLocale(pathname) === '/';
+    const showBackArrow = !isHome;
 
     // Close language menu on click outside (desktop)
     useEffect(() => {
@@ -68,7 +74,7 @@ export default function Navbar() {
             <div className="relative grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center px-6 md:px-12 h-[60px]">
                 {/* Logo */}
                 <Link 
-                    href="/" 
+                    href={`/${lang}`} 
                     className="font-bold tracking-tight flex items-center gap-1.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-md group text-[var(--nav-link)] hover:text-[var(--nav-link-hover)]"
                 >
                     <span className="text-base tracking-tighter">STZ LABS</span>
@@ -107,7 +113,7 @@ export default function Navbar() {
                     <div className="md:hidden flex flex-col gap-2">
                         <span className="text-[10px] font-bold text-[var(--accent)] uppercase tracking-widest px-1 mb-1">Navegação</span>
                         
-                        {navLinks.filter(l => !(l.href === '/' && pathname === '/')).map(link => {
+                        {navLinks.filter(l => !(l.href === '/' && isHome)).map(link => {
                             const isMouse = link.href === MOUSE_HUB_KEY;
                             const isSupport = link.href === '/support';
                             const title = t(link.dataI18n);
@@ -197,7 +203,7 @@ export default function Navbar() {
 
                     {/* Desktop Navigation Links */}
                     <ul className="hidden md:flex md:col-start-2 md:row-start-1 items-center justify-center gap-8">
-                        {navLinks.filter(l => !(l.href === '/' && pathname === '/')).map(link => (
+                        {navLinks.filter(l => !(l.href === '/' && isHome)).map(link => (
                             <li key={link.href}>
                                 <Link
                                     href={resolveHref(link.href, lang)}

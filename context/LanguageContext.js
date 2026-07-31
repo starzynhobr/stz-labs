@@ -1,18 +1,20 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import pt from '../dictionaries/pt.json';
 import en from '../dictionaries/en.json';
 import fr from '../dictionaries/fr.json';
 import de from '../dictionaries/de.json';
 import it from '../dictionaries/it.json';
 import es from '../dictionaries/es.json';
+import { DEFAULT_LOCALE, isLocale, localeFromPathname } from '../lib/i18n';
+import { localizePath } from '../lib/localizePath';
 
 const dictionaries = { pt, en, fr, de, it, es };
-const supportedLanguages = Object.keys(dictionaries);
 
 const LanguageContext = createContext({
-    lang: 'en',
+    lang: DEFAULT_LOCALE,
     setLang: () => {},
     t: (key) => key,
 });
@@ -22,29 +24,29 @@ const getNestedValue = (obj, key) => {
     return key.split('.').reduce((acc, part) => (acc ? acc[part] : null), obj);
 };
 
+/**
+ * O idioma vem da URL, não do armazenamento: a rota é a fonte da verdade, então
+ * um link compartilhado abre no idioma certo e cada versão é indexável.
+ */
 export function LanguageProvider({ children }) {
-    const [lang, setLangState] = useState('en');
+    const pathname = usePathname();
+    const router = useRouter();
+    const lang = localeFromPathname(pathname);
 
     useEffect(() => {
-        if (typeof window === 'undefined') return;
-        const savedLang = window.localStorage.getItem('lang');
-        const browserLang = navigator.language.split('-')[0];
-        const initialLang = savedLang || (supportedLanguages.includes(browserLang) ? browserLang : 'en');
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setLangState(initialLang);
-    }, []);
-
-    useEffect(() => {
-        document.documentElement.lang = lang;
-        window.localStorage.setItem('lang', lang);
+        try {
+            window.localStorage.setItem('lang', lang);
+        } catch {
+            // A preferência só orienta o redirecionamento da raiz; perdê-la é inofensivo.
+        }
     }, [lang]);
 
     const setLang = (value) => {
-        if (!value || !supportedLanguages.includes(value)) return;
-        setLangState(value);
+        if (!isLocale(value) || value === lang) return;
+        router.push(localizePath(pathname, value));
     };
 
-    const dictionary = dictionaries[lang] || dictionaries.en;
+    const dictionary = dictionaries[lang] || dictionaries[DEFAULT_LOCALE];
     const t = (key) => getNestedValue(dictionary, key) || key;
 
     return <LanguageContext.Provider value={{ lang, setLang, t }}>{children}</LanguageContext.Provider>;
