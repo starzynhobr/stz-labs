@@ -8,11 +8,18 @@ import { useLanguage } from '../context/LanguageContext';
 import ThemeSelector from './ThemeSelector';
 import { cn } from '../lib/utils';
 
+const MOUSE_HUB_KEY = 'mouse-hub';
+
 const navLinks = [
     { href: '/', dataI18n: 'nav.products', back: true },
-    { href: '/mouse-tester', dataI18n: 'nav.mouse_tester' },
+    { href: MOUSE_HUB_KEY, dataI18n: 'nav.mouse_tester' },
     { href: '/support', dataI18n: 'nav.support' },
 ];
+
+/** As ferramentas de mouse existem em PT e EN; os demais idiomas caem no EN. */
+const resolveHref = (href, lang) => (
+    href === MOUSE_HUB_KEY ? (lang === 'pt' ? '/pt/mouse' : '/en/mouse') : href
+);
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -101,7 +108,7 @@ export default function Navbar() {
                         <span className="text-[10px] font-bold text-[var(--accent)] uppercase tracking-widest px-1 mb-1">Navegação</span>
                         
                         {navLinks.filter(l => !(l.href === '/' && pathname === '/')).map(link => {
-                            const isMouse = link.href === '/mouse-tester';
+                            const isMouse = link.href === MOUSE_HUB_KEY;
                             const isSupport = link.href === '/support';
                             const title = t(link.dataI18n);
                             const desc = isMouse ? 'Teste cliques, scroll e botões do mouse.' : 
@@ -111,7 +118,7 @@ export default function Navbar() {
                             return (
                                 <Link
                                     key={link.href}
-                                    href={link.href}
+                                    href={resolveHref(link.href, lang)}
                                     onClick={handleNavClick}
                                     className="group flex items-center justify-between p-3.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--surface-2)] hover:bg-[var(--surface)] hover:border-[var(--accent)]/40 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                                 >
@@ -193,7 +200,7 @@ export default function Navbar() {
                         {navLinks.filter(l => !(l.href === '/' && pathname === '/')).map(link => (
                             <li key={link.href}>
                                 <Link
-                                    href={link.href}
+                                    href={resolveHref(link.href, lang)}
                                     className="inline-flex items-center gap-1.5 text-[13px] font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] text-[var(--nav-link)] hover:text-[var(--accent)]"
                                     data-i18n={link.dataI18n}
                                 >

@@ -1,10 +1,9 @@
-import MouseTester from '../../components/MouseTester';
+import { permanentRedirect } from 'next/navigation';
 
-export const metadata = {
-    title: 'STZ Mouse Tester | STZ LABS',
-    description: 'Área única para testar cliques do mouse e detectar double clicks extremamente rápidos.',
-};
-
-export default function MouseTesterPage() {
-    return <MouseTester />;
+/**
+ * A ferramenta virou um cluster com uma rota por teste. O redirecionamento
+ * permanente preserva os links antigos e transfere o histórico da URL.
+ */
+export default function LegacyMouseTesterPage() {
+    permanentRedirect('/pt/mouse/teste-de-clique');
 }
