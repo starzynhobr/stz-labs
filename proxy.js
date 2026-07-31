@@ -17,7 +17,7 @@ const pickLocale = (header) => {
     return accepted.find((item) => isLocale(item.tag))?.tag || DEFAULT_LOCALE;
 };
 
-export function middleware(request) {
+export function proxy(request) {
     const { pathname } = request.nextUrl;
 
     const exact = LEGACY_EXACT[pathname];

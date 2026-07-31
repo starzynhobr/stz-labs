@@ -40,8 +40,14 @@ export default async function RootLayout({ children, params }) {
     return (
         <html lang={HTML_LANG[locale]} data-theme="light-mode" data-scroll-behavior="smooth" suppressHydrationWarning>
             <head>
-                {/* Aplica o tema salvo antes da primeira pintura: sem isso a página
-                    aparece no tema padrão até a hidratação e pisca. */}
+                {/* Aplica o tema salvo antes da primeira pintura, senão a página
+                    aparece no tema padrão até a hidratação e pisca.
+
+                    Em desenvolvimento o React registra "Encountered a script tag
+                    while rendering React component" ao trocar de idioma, porque a
+                    navegação recria o layout raiz no cliente. É aviso só de dev: em
+                    produção não aparece, e o script já cumpriu seu papel no HTML
+                    inicial — reexecutá-lo na navegação seria inócuo de qualquer forma. */}
                 <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
             </head>
             <body className={inter.className} suppressHydrationWarning>
