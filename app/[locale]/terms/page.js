@@ -1,19 +1,18 @@
-import TranslatedText from '../../components/TranslatedText';
+import TranslatedText from '../../../components/TranslatedText';
+import { buildPageMetadata } from '../../../lib/pageMetadata';
+import { localeParams } from '../../../lib/i18n';
 
-export const metadata = {
-    title: 'Termos | STZ LABS',
-    description: 'Termos de uso, condições de compra e regras gerais de uso dos produtos STZ LABS.',
-    openGraph: {
-        title: 'Termos | STZ LABS',
-        description: 'Termos de uso e condições gerais dos produtos e serviços STZ LABS.',
-        type: 'website',
-        images: ['/og-image.png'],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        images: ['/og-image.png'],
-    },
-};
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+    return localeParams();
+}
+
+export async function generateMetadata({ params }) {
+    const { locale } = await params;
+    return buildPageMetadata('terms', locale, '/terms');
+}
+
 
 const sections = [
     'intro',

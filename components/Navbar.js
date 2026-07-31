@@ -18,7 +18,9 @@ const navLinks = [
 
 /** As ferramentas de mouse existem em PT e EN; os demais idiomas caem no EN. */
 const resolveHref = (href, lang) => (
-    href === MOUSE_HUB_KEY ? (lang === 'pt' ? '/pt/mouse' : '/en/mouse') : href
+    href === MOUSE_HUB_KEY
+        ? (lang === 'pt' ? '/pt/mouse' : '/en/mouse')
+        : `/${lang}${href === '/' ? '' : href}`
 );
 
 export default function Navbar() {
@@ -68,7 +70,7 @@ export default function Navbar() {
             <div className="relative grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center px-6 md:px-12 h-[60px]">
                 {/* Logo */}
                 <Link 
-                    href="/" 
+                    href={`/${lang}`} 
                     className="font-bold tracking-tight flex items-center gap-1.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-md group text-[var(--nav-link)] hover:text-[var(--nav-link-hover)]"
                 >
                     <span className="text-base tracking-tighter">STZ LABS</span>

@@ -1,26 +1,25 @@
-import ProjectCard from '../components/ProjectCard';
-import Hero from '../components/Hero';
-import Philosophy from '../components/Philosophy';
-import StatusTimeline from '../components/StatusTimeline';
-import { projects } from '../data/projects';
-import { JsonLd, buildSiteLd } from '../lib/structuredData';
-import { resolveProjectReleases } from '../lib/releases';
+import ProjectCard from '../../components/ProjectCard';
+import Hero from '../../components/Hero';
+import Philosophy from '../../components/Philosophy';
+import StatusTimeline from '../../components/StatusTimeline';
+import { projects } from '../../data/projects';
+import { JsonLd, buildSiteLd } from '../../lib/structuredData';
+import { resolveProjectReleases } from '../../lib/releases';
+import { buildPageMetadata } from '../../lib/pageMetadata';
+import { isLocale, localeParams } from '../../lib/i18n';
+import { notFound } from 'next/navigation';
 
-export const metadata = {
-    title: 'STZ LABS',
-    description:
-        'Conheça a STZ Suite e ferramentas independentes para produtividade, mídia, automação e processamento local no Windows.',
-    openGraph: {
-        title: 'STZ LABS - Inovação Minimalista',
-        description: 'STZ Suite: uma base leve com ferramentas modulares instaladas sob demanda.',
-        type: 'website',
-        images: ['/og-image.png'],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        images: ['/og-image.png'],
-    },
-};
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+    return localeParams();
+}
+
+export async function generateMetadata({ params }) {
+    const { locale } = await params;
+    return buildPageMetadata('home', locale);
+}
+
 
 export const viewport = {
     themeColor: '#0A0C10',
@@ -28,7 +27,10 @@ export const viewport = {
 
 export const revalidate = 3600;
 
-export default async function Home() {
+export default async function Home({ params }) {
+    const { locale } = await params;
+    if (!isLocale(locale)) notFound();
+
     // Ordenar os projetos de acordo com a prioridade selecionada manualmente
     const sortedProjects = [...projects].sort((a, b) => (a.priority || 99) - (b.priority || 99));
     const releases = await resolveProjectReleases(sortedProjects);
@@ -50,7 +52,7 @@ export default async function Home() {
                                 descriptionKey={project.descriptionKey}
                                 versionKey={project.versionKey}
                                 repoName={project.repoName}
-                                detailHref={project.slug ? `/projects/${project.slug}` : null}
+                                detailHref={project.slug ? `/${locale}/projects/${project.slug}` : null}
                                 downloadHref={project.downloadHref}
                                 releaseTagPrefix={project.releaseTagPrefix}
                                 releaseAssetPattern={project.releaseAssetPattern}

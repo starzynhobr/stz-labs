@@ -1,15 +1,24 @@
 import Link from 'next/link';
-import SupportOptionsModal from '../../components/SupportOptionsModal';
-import TranslatedText from '../../components/TranslatedText';
-import { projects } from '../../data/projects';
-import { Button } from '../../components/ui/Button';
-import { Badge } from '../../components/ui/Badge';
+import LocaleLink from '../../../components/LocaleLink';
+import SupportOptionsModal from '../../../components/SupportOptionsModal';
+import TranslatedText from '../../../components/TranslatedText';
+import { projects } from '../../../data/projects';
+import { Button } from '../../../components/ui/Button';
+import { Badge } from '../../../components/ui/Badge';
+import { buildPageMetadata } from '../../../lib/pageMetadata';
+import { localeParams } from '../../../lib/i18n';
 
-export const metadata = {
-    title: 'Support / Tips | STZ LABS',
-    description:
-        'Voluntary tips for STZ LABS software maintenance. No crowdfunding, no goals, no rewards, and no future promises.',
-};
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+    return localeParams();
+}
+
+export async function generateMetadata({ params }) {
+    const { locale } = await params;
+    return buildPageMetadata('support', locale, '/support');
+}
+
 
 const supportProjects = projects.filter(
     (project) => project.slug && project.titleKey && project.descriptionKey
@@ -66,13 +75,13 @@ export default function SupportPage() {
                                 </a>
                             </p>
                             <div className="flex gap-4 text-xs font-bold uppercase tracking-widest pt-2">
-                                <Link href="/terms" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
+                                <LocaleLink href="/terms" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
                                     <TranslatedText as="span" i18nKey="footer.terms" />
-                                </Link>
+                                </LocaleLink>
                                 <span className="text-[var(--border-subtle)]">|</span>
-                                <Link href="/privacy" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
+                                <LocaleLink href="/privacy" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
                                     <TranslatedText as="span" i18nKey="footer.privacy" />
-                                </Link>
+                                </LocaleLink>
                             </div>
                         </div>
                     </article>

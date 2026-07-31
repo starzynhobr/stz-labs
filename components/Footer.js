@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import LocaleLink from './LocaleLink';
 import TranslatedText from './TranslatedText';
  
 export default function Footer() {
@@ -50,23 +50,23 @@ export default function Footer() {
  
                         <div className="space-y-4">
                             <TranslatedText as="h5" className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-[0.2em] mb-4" i18nKey="footer.legal" />
-                            <Link href="/privacy" className="block text-[11px] font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-wider">
+                            <LocaleLink href="/privacy" className="block text-[11px] font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-wider">
                                 <TranslatedText as="span" i18nKey="footer.privacy" />
-                            </Link>
-                            <Link href="/terms" className="block text-[11px] font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-wider">
+                            </LocaleLink>
+                            <LocaleLink href="/terms" className="block text-[11px] font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-wider">
                                 <TranslatedText as="span" i18nKey="footer.terms" />
-                            </Link>
+                            </LocaleLink>
                         </div>
  
                         <div className="space-y-4 col-span-2 md:col-span-1">
                             <h5 className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-[0.2em] mb-4">Support</h5>
-                            <Link 
+                            <LocaleLink
                                 href="/support" 
                                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[var(--accent)]/5 border border-[var(--accent)]/10 text-[10px] font-bold text-[var(--accent)] hover:bg-[var(--accent)]/10 hover:border-[var(--accent)]/20 transition-all uppercase tracking-widest shadow-[0_0_15px_var(--accent-glow)]"
                             >
                                 <TranslatedText as="span" i18nKey="footer.support" />
                                 <span>→</span>
-                            </Link>
+                            </LocaleLink>
                         </div>
                     </div>
                 </div>

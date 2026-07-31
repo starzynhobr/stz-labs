@@ -1,20 +1,19 @@
-import TranslatedHtml from '../../components/TranslatedHtml';
-import TranslatedText from '../../components/TranslatedText';
+import TranslatedHtml from '../../../components/TranslatedHtml';
+import TranslatedText from '../../../components/TranslatedText';
+import { buildPageMetadata } from '../../../lib/pageMetadata';
+import { localeParams } from '../../../lib/i18n';
 
-export const metadata = {
-    title: 'Privacidade | STZ LABS',
-    description: 'Política de privacidade e transparência sobre o uso de dados nos softwares STZ LABS.',
-    openGraph: {
-        title: 'Privacidade | STZ LABS',
-        description: 'Política de privacidade e transparência sobre o uso de dados.',
-        type: 'website',
-        images: ['/og-image.png'],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        images: ['/og-image.png'],
-    },
-};
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+    return localeParams();
+}
+
+export async function generateMetadata({ params }) {
+    const { locale } = await params;
+    return buildPageMetadata('privacy', locale, '/privacy');
+}
+
 
 export default function PrivacyPage() {
     return (

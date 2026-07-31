@@ -1,54 +1,41 @@
 import { notFound } from 'next/navigation';
-import ProjectGalleryDetails from '../../../components/ProjectGalleryDetails';
-import ProjectFeatureShowcase from '../../../components/ProjectFeatureShowcase';
-import RepoStats from '../../../components/RepoStats';
-import TranslatedText from '../../../components/TranslatedText';
-import { projects } from '../../../data/projects';
-import { Button } from '../../../components/ui/Button';
-import { Badge } from '../../../components/ui/Badge';
-import SuiteProjectPage from '../../../components/SuiteProjectPage';
-import { JsonLd, buildSoftwareApplicationLd } from '../../../lib/structuredData';
-import { findPluginVersions, findRelease } from '../../../lib/github';
+import ProjectGalleryDetails from '../../../../components/ProjectGalleryDetails';
+import ProjectFeatureShowcase from '../../../../components/ProjectFeatureShowcase';
+import RepoStats from '../../../../components/RepoStats';
+import TranslatedText from '../../../../components/TranslatedText';
+import { projects } from '../../../../data/projects';
+import { Button } from '../../../../components/ui/Button';
+import { Badge } from '../../../../components/ui/Badge';
+import SuiteProjectPage from '../../../../components/SuiteProjectPage';
+import { JsonLd, buildSoftwareApplicationLd } from '../../../../lib/structuredData';
+import { findPluginVersions, findRelease } from '../../../../lib/github';
+import { buildProjectMetadata } from '../../../../lib/pageMetadata';
+import { LOCALES, isLocale } from '../../../../lib/i18n';
 
 const getProjectBySlug = (slug) => projects.find((project) => project.slug === slug);
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-    return projects
-        .filter((project) => project.slug)
-        .map((project) => ({ slug: project.slug }));
+    return LOCALES.flatMap((locale) => (
+        projects
+            .filter((project) => project.slug)
+            .map((project) => ({ locale, slug: project.slug }))
+    ));
 }
 
 export async function generateMetadata({ params }) {
-    const { slug } = await params;
-    const project = getProjectBySlug(slug);
-    if (!project?.detail) return {};
-
-    const { title, description, ogDescription } = project.detail.meta;
-
-    return {
-        title,
-        description,
-        openGraph: {
-            title,
-            description: ogDescription || description,
-            images: ['/og-image.png'],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description: ogDescription || description,
-            images: ['/og-image.png'],
-        },
-    };
+    const { locale, slug } = await params;
+    return buildProjectMetadata(slug, locale);
 }
 
 export const revalidate = 3600;
 
 export default async function ProjectDetailPage({ params }) {
-    const { slug } = await params;
+    const { locale, slug } = await params;
     const project = getProjectBySlug(slug);
 
-    if (!project?.detail) {
+    if (!isLocale(locale) || !project?.detail) {
         notFound();
     }
 
@@ -59,7 +46,7 @@ export default async function ProjectDetailPage({ params }) {
             assetPattern: project.releaseAssetPattern,
         }).catch(() => null)
         : null;
-    const structuredData = buildSoftwareApplicationLd(project, release);
+    const structuredData = buildSoftwareApplicationLd(project, release, locale);
 
     if (project.detail.customPage === 'suite') {
         const pluginVersions = await findPluginVersions(project.repoName).catch(() => null);

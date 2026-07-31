@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import LocaleLink from './LocaleLink';
 import { useLanguage } from '../context/LanguageContext';
 import TranslatedText from './TranslatedText';
 
@@ -88,12 +88,12 @@ export default function Hero() {
                 
                 <div className="flex flex-wrap gap-4 items-center justify-center">
                     <div className="flex flex-col items-center">
-                        <Link href="/support" 
+                        <LocaleLink href="/support" 
                               className="text-sm font-semibold text-[var(--accent)] hover:opacity-80 transition-all inline-flex items-center gap-2"
                               aria-label={t('sections.projects_support_aria')}>
                             <TranslatedText as="span" i18nKey="sections.projects_support_cta" />
                             <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-                        </Link>
+                        </LocaleLink>
                         <TranslatedText
                             as="span"
                             className="text-[10px] text-[var(--text-muted)] uppercase tracking-widest mt-1.5"

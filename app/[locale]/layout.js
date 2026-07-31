@@ -1,12 +1,14 @@
-import './globals.css';
+import '../globals.css';
 import { Inter } from 'next/font/google';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Spotlight from '../components/Spotlight';
-import KonamiListener from '../components/KonamiListener';
-import Providers from './providers';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import Spotlight from '../../components/Spotlight';
+import KonamiListener from '../../components/KonamiListener';
+import Providers from '../providers';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { notFound } from 'next/navigation';
+import { HTML_LANG, isLocale, localeParams } from '../../lib/i18n';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -27,9 +29,16 @@ export const metadata = {
 
 const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');var a=['neon-core','forge-grid','aurora-glass','light-mode','ember'];document.documentElement.dataset.theme=a.indexOf(t)>-1?t:'light-mode';}catch(e){}})();`;
 
-export default function RootLayout({ children }) {
+export function generateStaticParams() {
+    return localeParams();
+}
+
+export default async function RootLayout({ children, params }) {
+    const { locale } = await params;
+    if (!isLocale(locale)) notFound();
+
     return (
-        <html lang="pt-BR" data-theme="light-mode" data-scroll-behavior="smooth" suppressHydrationWarning>
+        <html lang={HTML_LANG[locale]} data-theme="light-mode" data-scroll-behavior="smooth" suppressHydrationWarning>
             <head>
                 {/* Aplica o tema salvo antes da primeira pintura: sem isso a página
                     aparece no tema padrão até a hidratação e pisca. */}
