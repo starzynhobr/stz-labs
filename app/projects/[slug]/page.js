@@ -52,7 +52,7 @@ export default async function ProjectDetailPage({ params }) {
         notFound();
     }
 
-    const release = project.releaseTagPrefix
+    const release = project.releaseAssetPattern
         ? await findRelease({
             repoName: project.repoName,
             tagPrefix: project.releaseTagPrefix,

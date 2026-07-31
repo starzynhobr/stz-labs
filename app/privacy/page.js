@@ -65,6 +65,14 @@ export default function PrivacyPage() {
                     </ul>
                 </article>
 
+                {/* Analytics Card */}
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                    <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
+                        <TranslatedText as="span" i18nKey="privacy.analytics_title" />
+                    </h3>
+                    <TranslatedText as="p" className="text-[var(--text-secondary)] leading-relaxed text-[15px]" i18nKey="privacy.analytics_desc" />
+                </article>
+
                 {/* Contact Card */}
                 <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] border-l-4 [border-left-color:var(--accent)]">
                     <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">

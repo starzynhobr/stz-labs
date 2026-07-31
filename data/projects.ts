@@ -124,6 +124,7 @@ export const projects = [
         titleKey: 'lyrics.title',
         descriptionKey: 'cards.lyrics_desc',
         downloadHref: 'https://github.com/starzynhobr/stzlyrics/releases/latest',
+        releaseAssetPattern: '\\.rmskin$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
@@ -229,6 +230,7 @@ export const projects = [
         titleKey: 'lyrics_overlay.title',
         descriptionKey: 'cards.lyrics_overlay_desc',
         downloadHref: 'https://github.com/starzynhobr/stzlyrics-python/releases/latest',
+        releaseAssetPattern: '\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
@@ -335,6 +337,7 @@ export const projects = [
         titleKey: 'taskpulse.title',
         descriptionKey: 'cards.taskpulse_desc',
         downloadHref: 'https://github.com/starzynhobr/stz-taskpulse/releases/latest',
+        releaseAssetPattern: '\\.rmskin$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
@@ -424,6 +427,7 @@ export const projects = [
         titleKey: 'csv_converter.title',
         descriptionKey: 'cards.csv_desc',
         downloadHref: 'https://github.com/starzynhobr/stz-csv-converter/releases/latest',
+        releaseAssetPattern: '\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
@@ -614,6 +618,7 @@ export const projects = [
         titleKey: 'pdf_suite.title',
         descriptionKey: 'cards.pdf_suite_desc',
         downloadHref: 'https://github.com/starzynhobr/stz-pdf-suite/releases/latest',
+        releaseAssetPattern: '\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
@@ -744,6 +749,7 @@ export const projects = [
         titleKey: 'mouse_click.title',
         descriptionKey: 'cards.mouse_click_desc',
         downloadHref: 'https://github.com/starzynhobr/mouse-click/releases/latest',
+        releaseAssetPattern: '\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {

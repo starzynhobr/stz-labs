@@ -91,7 +91,7 @@ const ProjectCard = ({
         fallbackDownloadUrl: downloadHref,
         initialRelease,
     });
-    const hasDynamicRelease = Boolean(repoName && releaseTagPrefix && releaseAssetPattern);
+    const hasDynamicRelease = Boolean(repoName && releaseAssetPattern);
     const effectiveDownloadHref = hasDynamicRelease
         ? dynamicRelease.downloadUrl || downloadHref
         : downloadHref;
