@@ -249,6 +249,9 @@ export default function SuiteProjectPage({ initialRelease = null, initialPluginV
         const target = plugins.find((plugin) => plugin.id === requested.toLowerCase());
         if (!target) return;
 
+        // O parâmetro só existe no cliente; ler no render causaria divergência
+        // de hidratação com o HTML estático.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setActiveId(target.id);
         setGalleryIndex(0);
         document.getElementById('suite-explorer')?.scrollIntoView({ block: 'start' });
