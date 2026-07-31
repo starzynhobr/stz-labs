@@ -17,10 +17,9 @@ const navLinks = [
     { href: '/support', dataI18n: 'nav.support' },
 ];
 
-/** As ferramentas de mouse existem em PT e EN; os demais idiomas caem no EN. */
 const resolveHref = (href, lang) => (
     href === MOUSE_HUB_KEY
-        ? (lang === 'pt' ? '/pt/mouse' : '/en/mouse')
+        ? `/${lang}/mouse`
         : `/${lang}${href === '/' ? '' : href}`
 );
 

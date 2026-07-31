@@ -1,5 +1,11 @@
+import { es, fr, de, it } from './strings.extra';
+
 /** Textos dos widgets. A cópia de SEO fica em content/mouse; aqui só rótulos de interface. */
 export const widgetStrings = {
+    es,
+    fr,
+    de,
+    it,
     pt: {
         buttons: { left: 'Esquerdo', middle: 'Meio', right: 'Direito' },
         total: 'Total',
@@ -61,7 +67,8 @@ export const widgetStrings = {
         samples: 'Amostras',
         avgInterval: 'Intervalo médio',
         pollingReady: 'Mova o mouse',
-        pollingReadyDesc: 'Movimento contínuo por alguns segundos dá a melhor leitura.',
+        pollingReadyDesc: 'Faça movimentos amplos e contínuos por alguns segundos.',
+        pollingUnsupported: 'A leitura ficou em torno de 60 Hz, que é o teto de entrega de eventos deste navegador — não a taxa do seu mouse. Nenhum mouse reporta a 60 Hz: a mais baixa em uso é 125. Firefox e derivados limitam a entrega a cerca de 60 vezes por segundo e não expõem as amostras intermediárias, independentemente do monitor. Para medir a taxa real, abra esta página no Chrome, Edge ou Opera.',
         pollingMeasuring: 'Medindo...',
         pollingMeasuringDesc: '{samples} amostras coletadas. Continue movendo.',
         pollingDone: 'Aproximadamente {hz} Hz',
@@ -125,7 +132,8 @@ export const widgetStrings = {
         samples: 'Samples',
         avgInterval: 'Average interval',
         pollingReady: 'Move the mouse',
-        pollingReadyDesc: 'Continuous movement for a few seconds gives the best reading.',
+        pollingReadyDesc: 'Make wide, continuous movements for a few seconds.',
+        pollingUnsupported: 'The reading settled around 60 Hz, which is this browser’s event delivery ceiling — not your mouse rate. No mouse reports at 60 Hz: the lowest in use is 125. Firefox and its forks cap delivery at roughly 60 times per second and do not expose the samples in between, whatever monitor you use. To measure the real rate, open this page in Chrome, Edge or Opera.',
         pollingMeasuring: 'Measuring...',
         pollingMeasuringDesc: '{samples} samples collected. Keep moving.',
         pollingDone: 'Approximately {hz} Hz',

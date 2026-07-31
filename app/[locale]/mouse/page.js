@@ -7,6 +7,7 @@ import {
     toolPath,
 } from '../../../lib/mouseTools';
 import { getMouseContent } from '../../../content/mouse';
+import { OG_LOCALE } from '../../../lib/i18n';
 import { JsonLd } from '../../../lib/structuredData';
 import { buildHubLd } from '../../../lib/mouseStructuredData';
 
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }) {
             title: hub.title,
             description: hub.description,
             type: 'website',
-            locale: locale === 'pt' ? 'pt_BR' : 'en_US',
+            locale: OG_LOCALE[locale],
         },
     };
 }

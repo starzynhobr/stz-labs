@@ -37,10 +37,7 @@ export default function sitemap() {
     // Cada rota de ferramenta declara suas irmãs em outros idiomas, para o
     // Google tratá-las como traduções em vez de páginas concorrentes.
     const languagesFor = (pathBuilder) => Object.fromEntries(
-        MOUSE_LOCALES.map((locale) => [
-            locale === 'pt' ? 'pt-BR' : 'en',
-            `${baseUrl}${pathBuilder(locale)}`,
-        ])
+        MOUSE_LOCALES.map((locale) => [HTML_LANG[locale], `${baseUrl}${pathBuilder(locale)}`])
     );
 
     const mouseRoutes = MOUSE_LOCALES.flatMap((locale) => [

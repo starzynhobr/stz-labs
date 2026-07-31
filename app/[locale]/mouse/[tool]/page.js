@@ -9,6 +9,7 @@ import {
     toolPath,
 } from '../../../../lib/mouseTools';
 import { getMouseContent } from '../../../../content/mouse';
+import { OG_LOCALE } from '../../../../lib/i18n';
 import { JsonLd } from '../../../../lib/structuredData';
 import { buildFaqLd, buildToolAppLd } from '../../../../lib/mouseStructuredData';
 import { projects } from '../../../../data/projects';
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }) {
             title: content.title,
             description: content.description,
             type: 'website',
-            locale: locale === 'pt' ? 'pt_BR' : 'en_US',
+            locale: OG_LOCALE[locale],
         },
         twitter: { card: 'summary_large_image' },
     };
@@ -120,7 +121,7 @@ export default async function MouseToolPage({ params }) {
                     ))}
                     {product && (
                         <Link
-                            href={`/projects/${product.slug}`}
+                            href={`/${locale}/projects/${product.slug}`}
                             className="px-4 py-2 rounded-lg bg-[var(--accent)]/[0.08] border [border-color:var(--accent)] text-sm font-semibold text-[var(--accent)] hover:bg-[var(--accent)]/[0.14] transition-colors"
                         >
                             {ui.productHeading}: {product.detail?.meta?.title?.replace(/\s*\|\s*STZ LABS\s*$/, '') || product.slug}
