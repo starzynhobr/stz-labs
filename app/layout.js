@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Spotlight from '../components/Spotlight';
 import KonamiListener from '../components/KonamiListener';
 import Providers from './providers';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
                         <KonamiListener />
                     </Providers>
                 </div>
+                <Analytics />
             </body>
         </html>
     );
