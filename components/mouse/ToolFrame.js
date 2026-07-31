@@ -37,10 +37,12 @@ export function TestSurface({
     highlight = false,
     children,
     ariaLabel,
+    surfaceRef,
     ...handlers
 }) {
     return (
         <div
+            ref={surfaceRef}
             {...handlers}
             tabIndex={0}
             role="application"

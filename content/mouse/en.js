@@ -213,13 +213,13 @@ export const tools = {
             },
             {
                 heading: 'How to change it, and why readings diverge',
-                body: 'The rate is set in vendor software — Razer Synapse, Logitech G HUB, Corsair iCUE, SteelSeries GG — usually under a performance section. Some mice offer a physical button or key combination to switch without software.\n\nIf the value measured here sits well below what you configured, consider browser limits before blaming the mouse. Browsers coalesce movement events per rendered frame, so a 60 Hz monitor tends to cap the reading. Move continuously and in wide strokes to reduce the effect. A reading consistently near half the configured value usually does indicate a real problem: the cable, a wireless receiver placed too far away, or USB 3.0 interference, a classic source of noise for 2.4 GHz receivers.',
+                body: 'The rate is set in vendor software — Razer Synapse, Logitech G HUB, Corsair iCUE, SteelSeries GG — usually under a performance section. Some mice offer a physical button or key combination to switch without software.\n\nIf the value measured here sits well below what you configured, the cable, the distance to a wireless receiver, or USB 3.0 interference are the usual suspects — 3.0 ports are a classic source of noise for 2.4 GHz receivers. Before concluding anything, repeat the measurement with wide, continuous strokes: a small sample skews the result.\n\nIt helps to know how the measurement works. Browsers do not deliver one event per mouse report: they group the reports and deliver them in batches, so counting events would always land near 60 per second, whatever mouse you own. This test uses `getCoalescedEvents`, which returns the raw samples inside each batch — that is how 500 or 1000 Hz becomes visible. It works on Chromium based browsers: Chrome, Edge and Opera. Firefox and its forks implement the method but do not expose the samples in between, and delivery stays pinned around 60 Hz — including on 144 Hz monitors, because the limit belongs to the browser rather than the screen. When it detects that pattern, the test says so rather than presenting the browser ceiling as if it were the mouse rate.',
             },
         ],
         faq: [
             {
                 q: 'Why does the reading not match my configured 1000 Hz?',
-                a: 'The browser delivers movement events coalesced per frame, so the reading is a floor rather than a ceiling. Values near your monitor refresh rate are normal. The test is better for comparing settings than for certifying an exact number.',
+                a: 'Short or intermittent movement drags the average down, so keep moving in wide strokes for a few seconds. If the number stays low, check the cable, how far the wireless receiver sits, and whether it is plugged into a USB 3.0 port. And check which browser you are in: on Firefox and its forks the reading stays around 60 Hz whatever the monitor, and the test flags it when that happens.',
             },
             {
                 q: 'Is 1000 Hz worth using?',
