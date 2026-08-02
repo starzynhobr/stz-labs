@@ -8,6 +8,8 @@ import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 import { useGithubRelease } from '../hooks/useGithubRelease';
 import { usePluginVersions } from '../hooks/usePluginVersions';
+import Link from 'next/link';
+import { downloadPath } from '../lib/downloadPath';
 
 const RELEASES_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases';
 /* Último recurso: a página do release mais recente nunca fica desatualizada,
@@ -222,7 +224,8 @@ export default function SuiteProjectPage({ initialRelease = null, initialPluginV
     const pluginVersions = usePluginVersions('stz-suite-releases', initialPluginVersions);
     const suiteVersion = suiteRelease.version;
     const suiteLabel = suiteVersion ? `STZ Suite ${suiteVersion}` : 'STZ Suite';
-    const installerUrl = suiteRelease.downloadUrl || FALLBACK_INSTALLER_URL;
+    // O download passa pela página de agradecimento, como nos demais projetos.
+    const downloadHref = downloadPath(lang, 'stz-suite');
     const activePluginVersion = pluginVersions[activePlugin.id]?.version || activePlugin.version;
     const localizedVersion = text.version.replace(/\d+\.\d+\.\d+/, activePluginVersion);
 
@@ -294,7 +297,7 @@ export default function SuiteProjectPage({ initialRelease = null, initialPluginV
                     <h1 className="mb-6 text-5xl font-bold tracking-[-0.05em] text-[var(--text-heading)] md:text-7xl">{text.title}</h1>
                     <p className="mb-9 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] md:text-lg">{text.description}</p>
                     <div className="flex flex-wrap gap-3">
-                        <Button asChild variant="primary" size="default"><a href={installerUrl}>{text.download}</a></Button>
+                        <Button asChild variant="primary" size="default"><Link href={downloadHref}>{text.download}</Link></Button>
                         <Button asChild variant="secondary" size="default"><a href={RELEASES_URL} target="_blank" rel="noreferrer">{text.releases}</a></Button>
                     </div>
                 </div>
@@ -402,7 +405,7 @@ export default function SuiteProjectPage({ initialRelease = null, initialPluginV
                 <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--accent)]">{suiteLabel}</p>
                 <h2 className="mb-4 text-4xl font-bold tracking-tight text-[var(--text-heading)] md:text-5xl">{text.finalTitle}</h2>
                 <p className="mx-auto mb-8 max-w-xl text-[var(--text-secondary)]">{text.finalDescription}</p>
-                <Button asChild variant="primary" size="default"><a href={installerUrl}>{text.download}</a></Button>
+                <Button asChild variant="primary" size="default"><Link href={downloadHref}>{text.download}</Link></Button>
             </section>
 
             {lightboxOpen && typeof document !== 'undefined' ? createPortal(

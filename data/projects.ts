@@ -830,7 +830,6 @@ export const projects = [
         titleKey: 'cards.suite_title',
         descriptionKey: 'cards.suite_desc',
         downloadHref: 'https://github.com/starzynhobr/stz-suite-releases/releases/latest',
-        showHomeDownload: true,
         releaseTagPrefix: 'stz-suite-base-v',
         releaseAssetPattern: '^STZ-Suite-Base-.*-Setup\\.exe$',
         badgeLabel: '...',

@@ -64,8 +64,6 @@ export default async function Home({ params }) {
                                 badgeAttrs={project.badgeAttrs}
                                 tags={project.tags}
                                 detailLabelKey={project.detailLabelKey}
-                                downloadLabelKey={project.downloadLabelKey}
-                                showDownload={project.showHomeDownload || false}
                                 downloadDisabledLabelKey={project.downloadDisabledLabelKey}
                                 style={project.style}
                                 actionButtons={project.actionButtons}

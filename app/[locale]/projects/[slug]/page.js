@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProjectGalleryDetails from '../../../../components/ProjectGalleryDetails';
 import ProjectFeatureShowcase from '../../../../components/ProjectFeatureShowcase';
@@ -11,6 +12,7 @@ import { JsonLd, buildSoftwareApplicationLd } from '../../../../lib/structuredDa
 import { findPluginVersions, findRelease } from '../../../../lib/github';
 import { buildProjectMetadata } from '../../../../lib/pageMetadata';
 import { LOCALES, isLocale } from '../../../../lib/i18n';
+import { downloadPath } from '../../../../lib/downloadPath';
 
 const getProjectBySlug = (slug) => projects.find((project) => project.slug === slug);
 
@@ -60,7 +62,9 @@ export default async function ProjectDetailPage({ params }) {
     }
 
     const { hero, gallery, showcase, features, specs } = project.detail;
+    // Passa pela página de agradecimento, que entrega o arquivo e só então pede apoio.
     const downloadUrl = release?.downloadUrl || project.downloadHref;
+    const downloadHref = downloadUrl ? downloadPath(locale, project.slug) : null;
     const heroGalleryItem = gallery?.find((item) => item.variant === 'hero') || gallery?.[0] || null;
     const extraGalleryItems = heroGalleryItem ? gallery.filter((item) => item.src !== heroGalleryItem.src) : [];
 
@@ -122,9 +126,9 @@ export default async function ProjectDetailPage({ params }) {
                         </Button>
                     )}
 
-                    {downloadUrl && (
+                    {downloadHref && (
                         <Button asChild variant="secondary" size="default" className="px-8">
-                            <a href={downloadUrl} target="_blank" rel="noreferrer">
+                            <Link href={downloadHref}>
                                 <svg
                                     width="20"
                                     height="20"
@@ -141,7 +145,7 @@ export default async function ProjectDetailPage({ params }) {
                                     <line x1="12" y1="15" x2="12" y2="3" />
                                 </svg>
                                 <TranslatedText as="span" i18nKey="cards.btn_download" />
-                            </a>
+                            </Link>
                         </Button>
                     )}
                 </div>

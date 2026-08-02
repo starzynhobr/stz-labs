@@ -72,10 +72,8 @@ const ProjectCard = ({
     repoName,
     detailLabel,
     detailLabelKey,
-    downloadLabel,
-    downloadLabelKey,
-    // O download fica na página de detalhes; na home só a Suite o exibe.
-    showDownload = false,
+    // O download vive na página do projeto: quem chega na home ainda não sabe
+    // o que estaria baixando.
     style,
     actionButtons,
     coverImage,
@@ -92,9 +90,6 @@ const ProjectCard = ({
         initialRelease,
     });
     const hasDynamicRelease = Boolean(repoName && releaseAssetPattern);
-    const effectiveDownloadHref = hasDynamicRelease
-        ? dynamicRelease.downloadUrl || downloadHref
-        : downloadHref;
     const effectiveBadgeLabel = hasDynamicRelease && dynamicRelease.version
         ? `v${dynamicRelease.version}`
         : badgeLabel;
@@ -223,13 +218,6 @@ const ProjectCard = ({
                                         <Link href={detailHref}>
                                             {detailLabelKey ? <TranslatedText as="span" i18nKey={detailLabelKey} /> : detailLabel || 'Detalhes'}
                                         </Link>
-                                    </Button>
-                                )}
-                                {showDownload && effectiveDownloadHref && (
-                                    <Button asChild variant="secondary" size={isFeatured ? "default" : "sm"} className="px-4 py-2">
-                                        <a href={effectiveDownloadHref} target="_blank" rel="noreferrer">
-                                            {downloadLabelKey ? <TranslatedText as="span" i18nKey={downloadLabelKey} /> : downloadLabel || 'Download'}
-                                        </a>
                                     </Button>
                                 )}
                             </>
