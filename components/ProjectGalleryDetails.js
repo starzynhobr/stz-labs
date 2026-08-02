@@ -5,12 +5,17 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { cn } from '../lib/utils';
 
+/**
+ * `fit: 'contain'` para capturas em retrato: numa caixa larga o corte do
+ * object-cover esconderia a maior parte da janela, inclusive o cabeçalho.
+ */
 const GalleryImage = ({ item, isHero = false, onClick }) => (
     <button
         type="button"
         className={cn(
             "group relative overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] hover:[border-color:var(--border-hover)] transition-all duration-500 shadow-lg",
-            isHero ? "aspect-video md:aspect-[21/9] w-full" : "aspect-video w-full"
+            isHero ? "aspect-video md:aspect-[21/9] w-full" : "aspect-video w-full",
+            item.fit === 'contain' && "bg-[var(--surface-3)]"
         )}
         onClick={() => onClick(item)}
         aria-label={item.alt}
@@ -27,12 +32,15 @@ const GalleryImage = ({ item, isHero = false, onClick }) => (
             </div>
         </div>
 
-        <Image 
-            src={item.src} 
-            alt={item.alt} 
-            fill 
-            className="object-cover transition-transform duration-700 group-hover:scale-110" 
-            sizes={isHero ? "(max-width: 1024px) 100vw, 1024px" : "(max-width: 768px) 100vw, 33vw"} 
+        <Image
+            src={item.src}
+            alt={item.alt}
+            fill
+            className={cn(
+                "transition-transform duration-700 group-hover:scale-110",
+                item.fit === 'contain' ? "object-contain p-4 md:p-6" : "object-cover"
+            )}
+            sizes={isHero ? "(max-width: 1024px) 100vw, 1024px" : "(max-width: 768px) 100vw, 33vw"}
         />
     </button>
 );

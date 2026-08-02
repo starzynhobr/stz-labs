@@ -780,9 +780,10 @@ export const projects = [
             },
             gallery: [
                 {
-                    src: '/images/projects/mouse-click/cover/cover.png',
+                    src: '/images/projects/stz-clicker/cover/cover.png',
                     alt: 'STZ Clicker cover preview',
                     variant: 'hero',
+                    fit: 'contain',
                 },
             ],
             features: [
