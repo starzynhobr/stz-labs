@@ -267,34 +267,34 @@ export const projectMeta = {
         },
     },
 
-    'mouse-click': {
+    'stz-clicker': {
         pt: {
-            title: 'Auto Clicker Grátis para Windows — AutoClicker Pro | STZ Labs',
+            title: 'Auto Clicker Grátis para Windows — STZ Clicker | STZ Labs',
             description: 'Auto-clicker leve para Windows com modo hold-to-click, CPS ajustável e hook preciso de teclado e mouse, sem instalação complicada.',
             ogDescription: 'Auto-clicker leve para Windows com modo hold-to-click, CPS ajustável e hook preciso.',
         },
         en: {
-            title: 'Free Auto Clicker for Windows — AutoClicker Pro | STZ Labs',
+            title: 'Free Auto Clicker for Windows — STZ Clicker | STZ Labs',
             description: 'A lightweight Windows auto-clicker with hold-to-click mode, adjustable CPS and precise keyboard and mouse hooks, with no complicated setup.',
             ogDescription: 'A lightweight Windows auto-clicker with hold-to-click, adjustable CPS and precise hooks.',
         },
         es: {
-            title: 'Auto Clicker Gratis para Windows — AutoClicker Pro | STZ Labs',
+            title: 'Auto Clicker Gratis para Windows — STZ Clicker | STZ Labs',
             description: 'Auto-clicker ligero para Windows con modo hold-to-click, CPS ajustable y hook preciso de teclado y ratón, sin instalación complicada.',
             ogDescription: 'Auto-clicker ligero para Windows con hold-to-click, CPS ajustable y hook preciso.',
         },
         fr: {
-            title: 'Auto Clicker Gratuit pour Windows — AutoClicker Pro | STZ Labs',
+            title: 'Auto Clicker Gratuit pour Windows — STZ Clicker | STZ Labs',
             description: 'Auto-clicker léger pour Windows avec mode hold-to-click, CPS réglable et hooks précis clavier et souris, sans installation compliquée.',
             ogDescription: 'Auto-clicker léger pour Windows avec hold-to-click, CPS réglable et hooks précis.',
         },
         de: {
-            title: 'Kostenloser Auto Clicker für Windows — AutoClicker Pro | STZ Labs',
+            title: 'Kostenloser Auto Clicker für Windows — STZ Clicker | STZ Labs',
             description: 'Schlanker Auto-Clicker für Windows mit Hold-to-Click-Modus, einstellbarer CPS und präzisen Tastatur- und Maus-Hooks, ohne komplizierte Einrichtung.',
             ogDescription: 'Schlanker Windows-Auto-Clicker mit Hold-to-Click, einstellbarer CPS und Hooks.',
         },
         it: {
-            title: 'Auto Clicker Gratuito per Windows — AutoClicker Pro | STZ Labs',
+            title: 'Auto Clicker Gratuito per Windows — STZ Clicker | STZ Labs',
             description: 'Auto-clicker leggero per Windows con modalità hold-to-click, CPS regolabile e hook precisi di tastiera e mouse, senza installazioni complicate.',
             ogDescription: 'Auto-clicker leggero per Windows con hold-to-click, CPS regolabile e hook precisi.',
         },

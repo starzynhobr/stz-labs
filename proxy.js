@@ -5,6 +5,10 @@ import { DEFAULT_LOCALE, isLocale } from './lib/i18n';
 const LEGACY_PREFIXES = ['/privacy', '/terms', '/support', '/projects'];
 const LEGACY_EXACT = { '/mouse-tester': '/pt/mouse/teste-de-clique' };
 
+/** Projetos renomeados: o endereço antigo continua indexado e precisa apontar para o novo. */
+const PROJECT_SLUG_ALIASES = { 'mouse-click': 'stz-clicker' };
+const PROJECT_PATH = /^(?:\/([a-z]{2}))?\/projects\/([^/]+)\/?$/;
+
 const pickLocale = (header) => {
     const accepted = (header || '')
         .split(',')
@@ -19,6 +23,20 @@ const pickLocale = (header) => {
 
 export function proxy(request) {
     const { pathname } = request.nextUrl;
+
+    const projectMatch = PROJECT_PATH.exec(pathname);
+    if (projectMatch) {
+        const [, maybeLocale, slug] = projectMatch;
+        const alias = PROJECT_SLUG_ALIASES[slug];
+
+        if (alias) {
+            const locale = isLocale(maybeLocale) ? maybeLocale : DEFAULT_LOCALE;
+            return NextResponse.redirect(
+                new URL(`/${locale}/projects/${alias}`, request.url),
+                308
+            );
+        }
+    }
 
     const exact = LEGACY_EXACT[pathname];
     if (exact) {

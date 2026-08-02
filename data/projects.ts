@@ -741,19 +741,20 @@ export const projects = [
         },
     },
     {
-        slug: 'mouse-click',
+        slug: 'stz-clicker',
         layoutType: 'list',
         priority: 7,
         maturity: 'stable',
-        repoName: 'mouse-click',
+        repoName: 'stz-clicker',
         titleKey: 'mouse_click.title',
         descriptionKey: 'cards.mouse_click_desc',
-        downloadHref: 'https://github.com/starzynhobr/mouse-click/releases/latest',
-        releaseAssetPattern: '\\.exe$',
+        downloadHref: 'https://github.com/starzynhobr/stz-clicker/releases/latest',
+        // O release traz portable e instalador; o botão de download entrega o instalador.
+        releaseAssetPattern: 'Setup.*\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
-            'data-gh-repo': 'starzynhobr/mouse-click',
+            'data-gh-repo': 'starzynhobr/stz-clicker',
         },
         tags: [
             { labelKey: 'common.tags.windows' },
@@ -764,7 +765,7 @@ export const projects = [
         downloadLabelKey: 'cards.btn_download',
         detail: {
             meta: {
-                title: 'AutoClicker Pro | STZ LABS',
+                title: 'STZ Clicker | STZ LABS',
                 description:
                     'Auto-clicker leve e moderno para Windows com modo hold-to-click e controle de CPS.',
                 ogDescription:
@@ -774,13 +775,13 @@ export const projects = [
                 tags: ['Python 3.12', 'CustomTkinter', 'Low-level Hook'],
                 titleKey: 'mouse_click.title',
                 descriptionKey: 'mouse_click.description',
-                githubUrl: 'https://github.com/starzynhobr/mouse-click',
+                githubUrl: 'https://github.com/starzynhobr/stz-clicker',
                 githubLabelKey: 'mouse_click.btn_github',
             },
             gallery: [
                 {
                     src: '/images/projects/mouse-click/cover/cover.png',
-                    alt: 'AutoClicker Pro cover preview',
+                    alt: 'STZ Clicker cover preview',
                     variant: 'hero',
                 },
             ],
