@@ -183,32 +183,28 @@
     "law_desc": "Questi Termini sono interpretati secondo la legge applicabile al gestore del sito e alle transazioni effettuate, fatti salvi i diritti inderogabili dei consumatori previsti dalla legge."
   },
   "support": {
-    "title": "Support / Tips",
-    "subtitle": "I tips sono contributi volontari per supportare la manutenzione di software esistente. Non si tratta di una campagna di crowdfunding. Nessun obiettivo, nessuna ricompensa e nessuna promessa futura. Il software è già disponibile e viene consegnato digitalmente tramite link ufficiali (GitHub Releases).",
-    "scope_title": "Ambito del supporto",
-    "no_crowdfunding": "Nessun crowdfunding",
-    "no_goals": "Nessun obiettivo",
-    "no_rewards": "Nessuna ricompensa",
-    "no_future_promises": "Nessuna promessa futura",
-    "delivery": "Consegna: download digitale immediato tramite link ufficiali (GitHub Releases).",
-    "contact": "Contatto",
-    "how_to_support": "Come supportare",
-    "payment_flow": "Scegli una modalità di supporto volontario per la manutenzione del software già disponibile.",
-    "open_modal_cta": "Supporta STZ Labs",
-    "modal_title": "Supporta STZ Labs",
-    "modal_subtitle": "Scegli un'opzione di supporto volontario. Nessun crowdfunding, ricompensa o promessa futura.",
-    "modal_close_aria": "Chiudi finestra di supporto",
+    "title": "Sostieni STZ Labs",
+    "subtitle": "Se uno degli strumenti ti ha semplificato il lavoro o fatto risparmiare tempo, puoi sostenere lo sviluppo di STZ Labs.",
+    "contact": "Contatti",
+    "how_to_support": "Sostieni il progetto",
+    "payment_flow": "Contribuisci con l’importo che preferisci, come ringraziamento e sostegno al progetto. È un contributo una tantum, senza abbonamento né addebiti ricorrenti.",
+    "open_modal_cta": "Sostieni STZ Labs",
+    "modal_title": "Sostieni STZ Labs",
+    "modal_subtitle": "Scegli la forma che preferisci. Qualsiasi importo aiuta.",
+    "modal_close_aria": "Chiudi la finestra di sostegno",
     "kofi_title": "Ko-fi",
-    "kofi_text": "Un'opzione rapida e diretta per supportare il lavoro dietro STZ Labs.",
+    "kofi_text": "Carta internazionale e PayPal, importo libero.",
     "kofi_button": "Apri Ko-fi",
     "mercado_pago_title": "Mercado Pago",
-    "mercado_pago_text": "Scegli un importo fisso o usa l'opzione a importo libero.",
+    "mercado_pago_text": "Pix e carta, importi fissi o liberi.",
     "amount_5": "R$ 5",
     "amount_10": "R$ 10",
     "amount_free": "Importo libero",
-    "software_available_now": "Software disponibile ora",
-    "current_products": "Prodotti attuali e download ufficiali.",
-    "releases_downloads": "Releases / download"
+    "software_available_now": "Gli strumenti",
+    "current_products": "Tutto ciò che il sostegno aiuta a mantenere.",
+    "releases_downloads": "Releases",
+    "impact_title": "Il tuo sostegno fa la differenza",
+    "impact_text": "STZ Labs è un progetto indipendente. Se uno strumento ti è stato utile, il tuo contributo è un modo diretto per sostenere il mio lavoro e incoraggiare la continuità del progetto."
   },
   "ai_chat_optimizer": {
     "title": "STZ Ai Chat Optimizer",
@@ -516,5 +512,15 @@
       "reorder_title": "Riordino e rinomina con regole",
       "reorder_desc": "Reorder legge cartelle di input e output, ordina per nome con natural sort o lettura inversa, poi applica prefisso, padding numerico e regole per mantenere o sostituire gli originali."
     }
+  },
+  "thanks": {
+    "title": "Grazie per il download",
+    "starting": "Il download è partito. Se non parte da solo, usa il link qui sotto.",
+    "manual": "Scarica manualmente",
+    "support_title": "Ti è servito?",
+    "support_text": "Lo strumento è gratuito e resta tale. Se ha risolto il tuo problema, un contributo aiuta a portare avanti il lavoro.",
+    "support_cta": "Sostieni STZ Labs",
+    "explore": "Vedi gli altri strumenti",
+    "details": "Dettagli del progetto"
   }
 }

@@ -86,28 +86,28 @@ export const pageMeta = {
 
     support: {
         pt: {
-            title: 'Apoie o Projeto — Contribuição Voluntária | STZ Labs',
-            description: 'Contribuições voluntárias para a manutenção dos softwares da STZ Labs. Sem financiamento coletivo, sem metas, sem recompensas e sem promessas futuras.',
+            title: 'Apoiar o Projeto — Contribuição Voluntária e Única | STZ Labs',
+            description: 'Se alguma ferramenta da STZ Labs facilitou seu trabalho, você pode contribuir com qualquer valor. Contribuição única, sem assinatura nem cobrança recorrente.',
         },
         en: {
-            title: 'Support the Project — Voluntary Contributions | STZ Labs',
-            description: 'Voluntary contributions toward maintaining STZ Labs software. No crowdfunding, no goals, no rewards, and no promises about future features.',
+            title: 'Support the Project — A One-Off Voluntary Contribution | STZ Labs',
+            description: 'If an STZ Labs tool made your work easier, you can contribute any amount. A one-off contribution, with no subscription and no recurring charge involved.',
         },
         es: {
-            title: 'Apoya el Proyecto — Contribución Voluntaria | STZ Labs',
-            description: 'Contribuciones voluntarias para el mantenimiento del software de STZ Labs. Sin financiación colectiva, sin metas, sin recompensas ni promesas futuras.',
+            title: 'Apoyar el Proyecto — Contribución Voluntaria y Única | STZ Labs',
+            description: 'Si alguna herramienta de STZ Labs te facilitó el trabajo, puedes aportar el importe que quieras. Contribución única, sin suscripción ni cobro recurrente.',
         },
         fr: {
-            title: 'Soutenir le Projet — Contribution Volontaire | STZ Labs',
-            description: 'Contributions volontaires pour la maintenance des logiciels STZ Labs. Pas de financement participatif, pas d\'objectifs, pas de récompenses ni promesses.',
+            title: 'Soutenir le Projet — Contribution Volontaire et Unique | STZ Labs',
+            description: 'Si un outil STZ Labs vous a facilité le travail, vous pouvez contribuer du montant de votre choix. Contribution unique, sans abonnement ni prélèvement.',
         },
         de: {
-            title: 'Projekt Unterstützen — Freiwillige Beiträge | STZ Labs',
-            description: 'Freiwillige Beiträge zur Pflege der STZ Labs Software. Kein Crowdfunding, keine Ziele, keine Belohnungen und keine Versprechen für die Zukunft.',
+            title: 'Projekt Unterstützen — Einmaliger Freiwilliger Beitrag | STZ Labs',
+            description: 'Wenn ein STZ Labs Werkzeug dir die Arbeit erleichtert hat, kannst du einen beliebigen Betrag beitragen. Einmalig, ohne Abo und ohne wiederkehrende Zahlung.',
         },
         it: {
-            title: 'Sostieni il Progetto — Contributo Volontario | STZ Labs',
-            description: 'Contributi volontari per la manutenzione del software STZ Labs. Nessun crowdfunding, nessun obiettivo, nessuna ricompensa e nessuna promessa futura.',
+            title: 'Sostenere il Progetto — Contributo Volontario e Unico | STZ Labs',
+            description: 'Se uno strumento STZ Labs ti ha semplificato il lavoro, puoi contribuire con l’importo che vuoi. Contributo una tantum, senza abbonamento né addebiti fissi.',
         },
     },
 };

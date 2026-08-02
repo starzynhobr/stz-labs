@@ -181,32 +181,28 @@
     "law_desc": "These Terms are interpreted under the laws applicable to the site operator and the transactions carried out, without prejudice to mandatory consumer rights provided by law."
   },
   "support": {
-    "title": "Support / Tips",
-    "subtitle": "Tips are voluntary contributions to support maintenance of existing software. This is not a crowdfunding campaign. No goals, no rewards, and no future promises. Software is available now and delivered digitally via official download links (GitHub Releases).",
-    "scope_title": "Support scope",
-    "no_crowdfunding": "No crowdfunding",
-    "no_goals": "No goals",
-    "no_rewards": "No rewards",
-    "no_future_promises": "No future promises",
-    "delivery": "Delivery: immediate digital download via official links (GitHub Releases).",
+    "title": "Support STZ Labs",
+    "subtitle": "If one of the tools made your work easier or saved you time, you can support the development of STZ Labs.",
     "contact": "Contact",
-    "how_to_support": "How to support",
-    "payment_flow": "Choose a voluntary support method for maintaining the software already available.",
+    "how_to_support": "Support the project",
+    "payment_flow": "Contribute any amount as a way of saying thanks and backing the project. It is a one-off contribution, with no subscription or recurring charge.",
     "open_modal_cta": "Support STZ Labs",
     "modal_title": "Support STZ Labs",
-    "modal_subtitle": "Choose a voluntary support option. No crowdfunding, rewards, or future promises.",
-    "modal_close_aria": "Close support modal",
+    "modal_subtitle": "Pick whichever option suits you. Any amount helps.",
+    "modal_close_aria": "Close support dialog",
     "kofi_title": "Ko-fi",
-    "kofi_text": "A quick and direct option to support the work behind STZ Labs.",
+    "kofi_text": "International card and PayPal, any amount.",
     "kofi_button": "Open Ko-fi",
     "mercado_pago_title": "Mercado Pago",
-    "mercado_pago_text": "Choose a fixed amount or use the free amount option.",
+    "mercado_pago_text": "Pix and card, preset or custom amounts.",
     "amount_5": "R$ 5",
     "amount_10": "R$ 10",
     "amount_free": "Custom amount",
-    "software_available_now": "Software available now",
-    "current_products": "Current products and official downloads.",
-    "releases_downloads": "Releases / downloads"
+    "software_available_now": "The tools",
+    "current_products": "Everything your support helps maintain.",
+    "releases_downloads": "Releases",
+    "impact_title": "Your support makes a difference",
+    "impact_text": "STZ Labs is an independent project. If a tool was useful to you, your contribution is a direct way to support my work and encourage the project to keep going."
   },
   "ai_chat_optimizer": {
     "title": "STZ Ai Chat Optimizer",
@@ -514,5 +510,15 @@
       "reorder_title": "Reorder and rename by rules",
       "reorder_desc": "Reorder reads input and output folders, sorts by name with natural sort or reverse reading, then applies prefixes, digit padding, and rules for keeping or replacing original files."
     }
+  },
+  "thanks": {
+    "title": "Thanks for downloading",
+    "starting": "Your download has started. If it does not begin on its own, use the link below.",
+    "manual": "Download manually",
+    "support_title": "Did this help?",
+    "support_text": "The tool is free and stays that way. If it solved your problem, a contribution helps keep the work going.",
+    "support_cta": "Support STZ Labs",
+    "explore": "Browse the other tools",
+    "details": "Project details"
   }
 }
