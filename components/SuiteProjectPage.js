@@ -6,18 +6,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
-import { useGithubRelease } from '../hooks/useGithubRelease';
-import { usePluginVersions } from '../hooks/usePluginVersions';
 import Link from 'next/link';
 import { downloadPath } from '../lib/downloadPath';
 
 const RELEASES_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases';
-/* Último recurso: a página do release mais recente nunca fica desatualizada,
-   ao contrário de um link para um instalador de versão fixa. */
-const FALLBACK_TAG = null;
-const FALLBACK_INSTALLER_URL = `${RELEASES_URL}/latest`;
-const RELEASE_TAG_PREFIX = 'stz-suite-base-v';
-const RELEASE_ASSET_PATTERN = '^STZ-Suite-Base-.*-Setup\\.exe$';
 
 const plugins = [
     {
@@ -213,20 +205,11 @@ export default function SuiteProjectPage({ initialRelease = null, initialPluginV
     const tabRefs = useRef([]);
     const activePlugin = plugins.find((plugin) => plugin.id === activeId) || plugins[0];
     const hasMultipleImages = activePlugin.images.length > 1;
-    const suiteRelease = useGithubRelease({
-        repoName: 'stz-suite-releases',
-        tagPrefix: RELEASE_TAG_PREFIX,
-        assetPattern: RELEASE_ASSET_PATTERN,
-        fallbackTag: FALLBACK_TAG,
-        fallbackDownloadUrl: FALLBACK_INSTALLER_URL,
-        initialRelease,
-    });
-    const pluginVersions = usePluginVersions('stz-suite-releases', initialPluginVersions);
-    const suiteVersion = suiteRelease.version;
+    const suiteVersion = initialRelease?.version || null;
     const suiteLabel = suiteVersion ? `STZ Suite ${suiteVersion}` : 'STZ Suite';
     // O download passa pela página de agradecimento, como nos demais projetos.
     const downloadHref = downloadPath(lang, 'stz-suite');
-    const activePluginVersion = pluginVersions[activePlugin.id]?.version || activePlugin.version;
+    const activePluginVersion = initialPluginVersions?.[activePlugin.id]?.version || activePlugin.version;
     const localizedVersion = text.version.replace(/\d+\.\d+\.\d+/, activePluginVersion);
 
     const changeImage = useCallback((direction) => {

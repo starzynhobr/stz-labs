@@ -9,7 +9,6 @@ import { cn } from '../lib/utils';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 import { Tag as UITag } from './ui/Tag';
-import { useGithubRelease } from '../hooks/useGithubRelease';
 
 const cardVariants = cva(
     "group relative overflow-hidden transition-all duration-300 flex flex-col",
@@ -59,10 +58,7 @@ const ProjectCard = ({
     version,
     versionKey,
     detailHref,
-    downloadHref,
-    releaseTagPrefix,
     releaseAssetPattern,
-    releaseFallbackTag,
     initialRelease = null,
     badgeLabel,
     badgeLabelKey,
@@ -81,17 +77,10 @@ const ProjectCard = ({
     const isFeatured = layoutType === 'featured';
     const isList = layoutType === 'list';
     const mappedBadgeVariant = badgeVariantMap[badgeVariant] || 'default';
-    const dynamicRelease = useGithubRelease({
-        repoName,
-        tagPrefix: releaseTagPrefix,
-        assetPattern: releaseAssetPattern,
-        fallbackTag: releaseFallbackTag,
-        fallbackDownloadUrl: downloadHref,
-        initialRelease,
-    });
+    // A versão vem resolvida do servidor; não há busca no cliente.
     const hasDynamicRelease = Boolean(repoName && releaseAssetPattern);
-    const effectiveBadgeLabel = hasDynamicRelease && dynamicRelease.version
-        ? `v${dynamicRelease.version}`
+    const effectiveBadgeLabel = initialRelease?.version
+        ? `v${initialRelease.version}`
         : badgeLabel;
 
     if (isList) {
