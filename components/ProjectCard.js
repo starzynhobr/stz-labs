@@ -60,6 +60,7 @@ const ProjectCard = ({
     detailHref,
     releaseAssetPattern,
     initialRelease = null,
+    repoStats = null,
     badgeLabel,
     badgeLabelKey,
     badgeVariant = 'stable',
@@ -96,7 +97,7 @@ const ProjectCard = ({
                          {hasDynamicRelease ? (
                             <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{effectiveBadgeLabel}</Badge>
                          ) : repoName ? (
-                            <RepoStats repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
+                            <RepoStats stats={repoStats} repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
                          ) : badgeLabelKey ? (
                             <Badge variant={mappedBadgeVariant} {...badgeAttrs}>
                                 <TranslatedText as="span" i18nKey={badgeLabelKey} />
@@ -148,7 +149,7 @@ const ProjectCard = ({
                     {hasDynamicRelease ? (
                         <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{effectiveBadgeLabel}</Badge>
                     ) : repoName ? (
-                        <RepoStats repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
+                        <RepoStats stats={repoStats} repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
                     ) : badgeLabelKey ? (
                         <Badge variant={mappedBadgeVariant} {...badgeAttrs}>
                             <TranslatedText as="span" i18nKey={badgeLabelKey} />
@@ -178,7 +179,7 @@ const ProjectCard = ({
                                 />
                             );
                         })}
-                        {repoName && <RepoStats repoName={repoName} variant="stars" />}
+                        {repoName && <RepoStats stats={repoStats} repoName={repoName} variant="stars" />}
                     </div>
 
                     <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3">

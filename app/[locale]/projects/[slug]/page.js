@@ -9,7 +9,7 @@ import { Button } from '../../../../components/ui/Button';
 import { Badge } from '../../../../components/ui/Badge';
 import SuiteProjectPage from '../../../../components/SuiteProjectPage';
 import { JsonLd, buildSoftwareApplicationLd } from '../../../../lib/structuredData';
-import { findPluginVersions, findRelease } from '../../../../lib/github';
+import { findPluginVersions, findRelease, findRepoStats } from '../../../../lib/github';
 import { buildProjectMetadata } from '../../../../lib/pageMetadata';
 import { LOCALES, isLocale } from '../../../../lib/i18n';
 import { downloadPath } from '../../../../lib/downloadPath';
@@ -47,6 +47,9 @@ export default async function ProjectDetailPage({ params }) {
             tagPrefix: project.releaseTagPrefix,
             assetPattern: project.releaseAssetPattern,
         }).catch(() => null)
+        : null;
+    const repoStats = project.repoName
+        ? await findRepoStats(project.repoName).catch(() => null)
         : null;
     const structuredData = buildSoftwareApplicationLd(project, release, locale);
 
@@ -209,7 +212,7 @@ export default async function ProjectDetailPage({ params }) {
                                 <TranslatedText as="span" className="text-xs font-mono uppercase tracking-widest text-[var(--text-muted)]" i18nKey={spec.labelKey} />
                                 <div className="text-sm font-bold text-[var(--text-primary)]">
                                     {spec.repoName ? (
-                                        <RepoStats repoName={spec.repoName} variant="release-inline" />
+                                        <RepoStats stats={repoStats} repoName={spec.repoName} variant="release-inline" />
                                     ) : (
                                         <span>{spec.value}</span>
                                     )}

@@ -1,129 +1,23 @@
-"use client";
-
-import { useEffect, useMemo, useState } from 'react';
 import { Tag } from './ui/Tag';
 import { Badge } from './ui/Badge';
 
-const ONE_HOUR = 60 * 60 * 1000;
-const OWNER = 'starzynhobr';
-
-const normalizeRepo = (repoName) => (repoName.includes('/') ? repoName : `${OWNER}/${repoName}`);
-
-const readCache = (key) => {
-    try {
-        const raw = window.localStorage.getItem(key);
-        if (!raw) return null;
-        return JSON.parse(raw);
-    } catch {
-        return null;
-    }
-};
-
-const writeCache = (key, value) => {
-    try {
-        window.localStorage.setItem(
-            key,
-            JSON.stringify({
-                value,
-                timestamp: Date.now(),
-            })
-        );
-    } catch {
-        // Ignorar falhas de quota/privacidade silenciosamente.
-    }
-};
-
-const memoryCache = new Map();
-const inflightRequests = new Map();
-
+/**
+ * Apresenta estrelas e a tag do último release. Os dados chegam prontos do
+ * servidor — o componente não busca nada, então não há chamada externa a
+ * partir do navegador nem consumo do limite da API do GitHub por visitante.
+ */
 const RepoStats = ({
-    repoName,
-    variant = 'both',
-    badgeVariant = 'stable',
+    stats = null,
+    variant = 'stars',
+    badgeVariant,
     badgeAttrs = {},
+    repoName,
 }) => {
-    const [stats, setStats] = useState({ stars: null, releaseTag: null });
-
-    const repo = useMemo(() => (repoName ? normalizeRepo(repoName) : null), [repoName]);
-    const cacheKey = repo ? `repo-stats:${repo}` : null;
-
-    useEffect(() => {
-        if (!repo || !cacheKey) return;
-
-        const memoryEntry = memoryCache.get(repo);
-        const cached = memoryEntry || readCache(cacheKey);
-        if (cached?.value) {
-            setStats({
-                stars: cached.value.stars ?? null,
-                releaseTag: cached.value.releaseTag ?? null,
-            });
-        }
-
-        const isFresh = cached?.timestamp && Date.now() - cached.timestamp < ONE_HOUR;
-        if (isFresh) return;
-
-        let cancelled = false;
-
-        const load = async () => {
-            if (inflightRequests.has(repo)) {
-                return inflightRequests.get(repo);
-            }
-
-            const request = (async () => {
-                try {
-                    const [repoResponse, releaseResponse] = await Promise.all([
-                        fetch(`https://api.github.com/repos/${repo}`),
-                        fetch(`https://api.github.com/repos/${repo}/releases/latest`),
-                    ]);
-
-                    let stars = null;
-                    let releaseTag = null;
-
-                    if (repoResponse.ok) {
-                        const repoData = await repoResponse.json();
-                        stars = Number.isFinite(repoData.stargazers_count)
-                            ? repoData.stargazers_count
-                            : null;
-                    }
-
-                    if (releaseResponse.ok) {
-                        const releaseData = await releaseResponse.json();
-                        releaseTag = releaseData.tag_name || releaseData.name || null;
-                    }
-
-                    if (stars === null && releaseTag === null) return null;
-
-                    const nextStats = { stars, releaseTag };
-                    const nextCache = { value: nextStats, timestamp: Date.now() };
-                    memoryCache.set(repo, nextCache);
-                    writeCache(cacheKey, nextStats);
-                    return nextStats;
-                } catch {
-                    return null;
-                } finally {
-                    inflightRequests.delete(repo);
-                }
-            })();
-
-            inflightRequests.set(repo, request);
-            const nextStats = await request;
-            if (nextStats && !cancelled) {
-                setStats(nextStats);
-            }
-        };
-
-        load();
-
-        return () => {
-            cancelled = true;
-        };
-    }, [repo, cacheKey]);
-
-    const starLabel = Number.isFinite(stats.stars)
+    const starLabel = Number.isFinite(stats?.stars)
         ? stats.stars.toLocaleString('pt-BR')
         : '—';
-    const releaseLabel = stats.releaseTag || '—';
-    const starStyle = Number.isFinite(stats.stars) ? undefined : { opacity: 0.6 };
+    const releaseLabel = stats?.releaseTag || '—';
+    const hasStars = Number.isFinite(stats?.stars);
 
     if (variant === 'version') {
         return <p className="card-version">{releaseLabel}</p>;
@@ -145,8 +39,8 @@ const RepoStats = ({
         return (
             <Tag
                 variant="stars"
-                data-gh-stars={repo || undefined}
-                className={starStyle ? "opacity-60" : ""}
+                data-gh-stars={repoName || undefined}
+                className={hasStars ? '' : 'opacity-60'}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

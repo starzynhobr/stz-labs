@@ -4,7 +4,7 @@ import Philosophy from '../../components/Philosophy';
 import StatusTimeline from '../../components/StatusTimeline';
 import { projects } from '../../data/projects';
 import { JsonLd, buildSiteLd } from '../../lib/structuredData';
-import { resolveProjectReleases } from '../../lib/releases';
+import { resolveProjectReleases, resolveProjectStats } from '../../lib/releases';
 import { buildPageMetadata } from '../../lib/pageMetadata';
 import { isLocale, localeParams } from '../../lib/i18n';
 import { notFound } from 'next/navigation';
@@ -33,7 +33,10 @@ export default async function Home({ params }) {
 
     // Ordenar os projetos de acordo com a prioridade selecionada manualmente
     const sortedProjects = [...projects].sort((a, b) => (a.priority || 99) - (b.priority || 99));
-    const releases = await resolveProjectReleases(sortedProjects);
+    const [releases, stats] = await Promise.all([
+        resolveProjectReleases(sortedProjects),
+        resolveProjectStats(sortedProjects),
+    ]);
 
     return (
         <main className="min-h-screen bg-transparent pt-24 pb-24 relative selection:bg-purple-500/30 text-white overflow-hidden">
@@ -58,6 +61,7 @@ export default async function Home({ params }) {
                                 releaseAssetPattern={project.releaseAssetPattern}
                                 releaseFallbackTag={project.releaseFallbackTag}
                                 initialRelease={releases[project.slug] || null}
+                                repoStats={project.repoName ? stats[project.repoName] || null : null}
                                 badgeLabel={project.badgeLabel}
                                 badgeLabelKey={project.badgeLabelKey}
                                 badgeVariant={project.badgeVariant}
