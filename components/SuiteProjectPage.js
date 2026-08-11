@@ -10,6 +10,9 @@ import Link from 'next/link';
 import { downloadPath } from '../lib/downloadPath';
 
 const RELEASES_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases';
+const BASE_VERIFICATION_VERSION = '0.4.1';
+const BASE_CHECKSUM_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases/download/stz-suite-base-v0.4.1/STZ-Suite-Base-0.4.1-Setup.sha256.txt';
+const BASE_VIRUSTOTAL_URL = 'https://www.virustotal.com/gui/file/cee317a554b393df93740e66952fa9dea00b58d49e3a917f3360b216298f5105/detection';
 
 const plugins = [
     {
@@ -124,7 +127,7 @@ const copy = {
     pt: {
         eyebrow: 'Ecossistema modular para Windows', title: 'Uma base. Suas ferramentas.',
         description: 'A STZ Suite reúne utilitários independentes em uma única experiência. Instale somente os plugins que precisa e mantenha tudo organizado, atualizado e sob seu controle.',
-        download: 'Baixar STZ Suite', releases: 'Ver todos os releases', flowTitle: 'Comece com uma base leve',
+        download: 'Baixar STZ Suite', releases: 'Ver todos os releases', verification: 'Verificação:', flowTitle: 'Comece com uma base leve',
         flow: [['01', 'Instale a base', 'A Suite começa como um shell limpo, sem plugins desnecessários.'], ['02', 'Escolha os plugins', 'Abra Configurações → Plugins e monte sua própria coleção.'], ['03', 'Atualize com segurança', 'O catálogo oficial entrega versões verificadas diretamente pelo GitHub.']],
         catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Nove ferramentas. Uma experiência.', catalogDescription: 'Veja tudo de uma vez e escolha um plugin para explorar os detalhes.',
         explore: 'Explorar plugins', included: 'Destaques', version: 'Versão 0.1.0', installNote: 'Instalado pela própria STZ Suite',
@@ -134,7 +137,7 @@ const copy = {
     en: {
         eyebrow: 'Modular ecosystem for Windows', title: 'One base. Your tools.',
         description: 'STZ Suite brings independent utilities into one experience. Install only the plugins you need and keep everything organized, updated, and under your control.',
-        download: 'Download STZ Suite', releases: 'View all releases', flowTitle: 'Start with a lightweight base',
+        download: 'Download STZ Suite', releases: 'View all releases', verification: 'Verification:', flowTitle: 'Start with a lightweight base',
         flow: [['01', 'Install the base', 'The Suite starts as a clean shell without unnecessary plugins.'], ['02', 'Choose your plugins', 'Open Settings → Plugins and build your own collection.'], ['03', 'Update safely', 'The official catalog delivers verified versions directly from GitHub.']],
         catalogEyebrow: 'Official catalog', catalogTitle: 'Nine tools. One experience.', catalogDescription: 'See everything at a glance and choose a plugin to explore the details.',
         explore: 'Explore plugins', included: 'Highlights', version: 'Version 0.1.0', installNote: 'Installed from inside STZ Suite',
@@ -144,7 +147,7 @@ const copy = {
     es: {
         eyebrow: 'Ecosistema modular para Windows', title: 'Una base. Tus herramientas.',
         description: 'STZ Suite reúne utilidades independientes en una sola experiencia. Instala únicamente los plugins que necesitas y mantén todo organizado, actualizado y bajo tu control.',
-        download: 'Descargar STZ Suite', releases: 'Ver todos los lanzamientos', flowTitle: 'Empieza con una base ligera',
+        download: 'Descargar STZ Suite', releases: 'Ver todos los lanzamientos', verification: 'Verificación:', flowTitle: 'Empieza con una base ligera',
         flow: [['01', 'Instala la base', 'La Suite empieza como una estructura limpia, sin plugins innecesarios.'], ['02', 'Elige tus plugins', 'Abre Configuración → Plugins y crea tu propia colección.'], ['03', 'Actualiza con seguridad', 'El catálogo oficial distribuye versiones verificadas directamente desde GitHub.']],
         catalogEyebrow: 'Catálogo oficial', catalogTitle: 'Nueve herramientas. Una experiencia.', catalogDescription: 'Descubre todo de un vistazo y elige un plugin para ver sus detalles.',
         explore: 'Explorar plugins', included: 'Características', version: 'Versión 0.1.0', installNote: 'Instalado desde la propia STZ Suite',
@@ -154,7 +157,7 @@ const copy = {
     fr: {
         eyebrow: 'Écosystème modulaire pour Windows', title: 'Une base. Vos outils.',
         description: 'STZ Suite rassemble des utilitaires indépendants dans une expérience unique. Installez uniquement les plugins nécessaires et gardez le tout organisé, à jour et sous votre contrôle.',
-        download: 'Télécharger STZ Suite', releases: 'Voir toutes les versions', flowTitle: 'Commencez avec une base légère',
+        download: 'Télécharger STZ Suite', releases: 'Voir toutes les versions', verification: 'Vérification :', flowTitle: 'Commencez avec une base légère',
         flow: [['01', 'Installez la base', 'La Suite démarre comme une structure épurée, sans plugins superflus.'], ['02', 'Choisissez vos plugins', 'Ouvrez Paramètres → Plugins et composez votre propre collection.'], ['03', 'Mettez à jour en toute sécurité', 'Le catalogue officiel fournit des versions vérifiées directement depuis GitHub.']],
         catalogEyebrow: 'Catalogue officiel', catalogTitle: 'Neuf outils. Une expérience.', catalogDescription: 'Découvrez tout en un coup d’œil et choisissez un plugin pour en explorer les détails.',
         explore: 'Explorer les plugins', included: 'Points forts', version: 'Version 0.1.0', installNote: 'Installé directement depuis STZ Suite',
@@ -164,7 +167,7 @@ const copy = {
     de: {
         eyebrow: 'Modulares Ökosystem für Windows', title: 'Eine Basis. Deine Werkzeuge.',
         description: 'STZ Suite vereint unabhängige Programme in einer zentralen Oberfläche. Installiere nur die Plugins, die du benötigst, und behalte alles organisiert, aktuell und unter deiner Kontrolle.',
-        download: 'STZ Suite herunterladen', releases: 'Alle Versionen anzeigen', flowTitle: 'Starte mit einer schlanken Basis',
+        download: 'STZ Suite herunterladen', releases: 'Alle Versionen anzeigen', verification: 'Überprüfung:', flowTitle: 'Starte mit einer schlanken Basis',
         flow: [['01', 'Basis installieren', 'Die Suite startet als saubere Oberfläche ohne unnötige Plugins.'], ['02', 'Plugins auswählen', 'Öffne Einstellungen → Plugins und stelle deine eigene Sammlung zusammen.'], ['03', 'Sicher aktualisieren', 'Der offizielle Katalog liefert geprüfte Versionen direkt über GitHub.']],
         catalogEyebrow: 'Offizieller Katalog', catalogTitle: 'Neun Werkzeuge. Eine Oberfläche.', catalogDescription: 'Sieh dir alles auf einen Blick an und wähle ein Plugin aus, um mehr zu erfahren.',
         explore: 'Plugins entdecken', included: 'Highlights', version: 'Version 0.1.0', installNote: 'Direkt über STZ Suite installiert',
@@ -174,7 +177,7 @@ const copy = {
     it: {
         eyebrow: 'Ecosistema modulare per Windows', title: 'Una base. I tuoi strumenti.',
         description: 'STZ Suite riunisce utility indipendenti in un’unica esperienza. Installa solo i plugin che ti servono e mantieni tutto organizzato, aggiornato e sotto il tuo controllo.',
-        download: 'Scarica STZ Suite', releases: 'Vedi tutte le versioni', flowTitle: 'Inizia con una base leggera',
+        download: 'Scarica STZ Suite', releases: 'Vedi tutte le versioni', verification: 'Verifica:', flowTitle: 'Inizia con una base leggera',
         flow: [['01', 'Installa la base', 'La Suite parte come una struttura pulita, senza plugin superflui.'], ['02', 'Scegli i plugin', 'Apri Impostazioni → Plugin e crea la tua raccolta personale.'], ['03', 'Aggiorna in sicurezza', 'Il catalogo ufficiale distribuisce versioni verificate direttamente da GitHub.']],
         catalogEyebrow: 'Catalogo ufficiale', catalogTitle: 'Nove strumenti. Un’unica esperienza.', catalogDescription: 'Scopri tutto a colpo d’occhio e scegli un plugin per esplorarne i dettagli.',
         explore: 'Esplora i plugin', included: 'Funzionalità principali', version: 'Versione 0.1.0', installNote: 'Installato direttamente da STZ Suite',
@@ -207,6 +210,8 @@ export default function SuiteProjectPage({ initialRelease = null, initialPluginV
     const hasMultipleImages = activePlugin.images.length > 1;
     const suiteVersion = initialRelease?.version || null;
     const suiteLabel = suiteVersion ? `STZ Suite ${suiteVersion}` : 'STZ Suite';
+    const downloadLabel = suiteVersion ? `${text.download} ${suiteVersion} · Windows · ~55 MB` : text.download;
+    const hasBaseVerification = suiteVersion === BASE_VERIFICATION_VERSION;
     // O download passa pela página de agradecimento, como nos demais projetos.
     const downloadHref = downloadPath(lang, 'stz-suite');
     const activePluginVersion = initialPluginVersions?.[activePlugin.id]?.version || activePlugin.version;
@@ -280,9 +285,17 @@ export default function SuiteProjectPage({ initialRelease = null, initialPluginV
                     <h1 className="mb-6 text-5xl font-bold tracking-[-0.05em] text-[var(--text-heading)] md:text-7xl">{text.title}</h1>
                     <p className="mb-9 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] md:text-lg">{text.description}</p>
                     <div className="flex flex-wrap gap-3">
-                        <Button asChild variant="primary" size="default"><Link href={downloadHref}>{text.download}</Link></Button>
+                        <Button asChild variant="primary" size="default"><Link href={downloadHref}>{downloadLabel}</Link></Button>
                         <Button asChild variant="secondary" size="default"><a href={RELEASES_URL} target="_blank" rel="noreferrer">{text.releases}</a></Button>
                     </div>
+                    {hasBaseVerification ? (
+                        <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--text-muted)]">
+                            <span>{text.verification}</span>
+                            <a href={BASE_CHECKSUM_URL} target="_blank" rel="noreferrer" className="font-semibold text-[var(--accent)] underline decoration-[var(--border-strong)] underline-offset-4 transition hover:opacity-80">SHA-256</a>
+                            <span aria-hidden="true">·</span>
+                            <a href={BASE_VIRUSTOTAL_URL} target="_blank" rel="noreferrer" className="font-semibold text-[var(--accent)] underline decoration-[var(--border-strong)] underline-offset-4 transition hover:opacity-80">VirusTotal</a>
+                        </p>
+                    ) : null}
                 </div>
                 <div className="relative grid h-[430px] grid-cols-2 gap-3 lg:col-span-6">
                     <div className="grid gap-3 pt-10">
