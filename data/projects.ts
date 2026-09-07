@@ -4,14 +4,16 @@ export const projects = [
         layoutType: 'bento',
         priority: 2,
         maturity: 'maintenance',
-        repoName: 'Game-XML-Translator',
+        repoName: 'STZ-XML-Translator',
         titleKey: 'game_xml.title',
         descriptionKey: 'cards.xml_desc',
-        downloadHref: 'https://github.com/starzynhobr/Game-XML-Translator/releases/latest',
+        downloadHref: 'https://github.com/starzynhobr/STZ-XML-Translator/releases/latest',
+        // O release traz portable e instalador; o botão de download entrega o instalador.
+        releaseAssetPattern: 'STZXMLTranslator-Setup-.*\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
-            'data-gh-repo': 'starzynhobr/Game-XML-Translator',
+            'data-gh-repo': 'starzynhobr/STZ-XML-Translator',
         },
         tags: [
             { labelKey: 'common.tags.windows' },
@@ -31,7 +33,7 @@ export const projects = [
                 tags: ['Python 3.11', 'CustomTkinter', 'Gemini · DeepL · Azure · Llama'],
                 titleKey: 'game_xml.title',
                 descriptionKey: 'game_xml.description',
-                githubUrl: 'https://github.com/starzynhobr/Game-XML-Translator',
+                githubUrl: 'https://github.com/starzynhobr/STZ-XML-Translator',
                 githubLabelKey: 'game_xml.btn_github',
             },
             showcase: [
@@ -106,7 +108,7 @@ export const projects = [
                 },
             ],
             specs: [
-                { labelKey: 'game_xml.specs.version', repoName: 'Game-XML-Translator' },
+                { labelKey: 'game_xml.specs.version', repoName: 'STZ-XML-Translator' },
                 { labelKey: 'game_xml.specs.platform', value: 'Windows 10/11' },
                 { labelKey: 'game_xml.specs.language', value: 'Python 3.11' },
                 { labelKey: 'game_xml.specs.compilation', value: 'Nuitka Standalone' },
