@@ -78,6 +78,11 @@
   },
   "cards": {
     "suite_desc": "Une base Windows légère avec des outils multimédia, de productivité et d'automatisation installés à la demande.",
+    "suite_kicker": "Projet phare",
+    "suite_plugins": "{count} plugins",
+    "suite_overview": "Aperçu",
+    "slide_prev": "Précédent",
+    "slide_next": "Suivant",
     "xml_desc": "Traduisez des XML de jeux avec plusieurs fournisseurs d'IA (Gemini, DeepL, Azure, Llama), glossaire intelligent et tag presets pour accélérer la localisation.",
     "lyrics_desc": "Skin minimalista pour Rainmeter. Affiche les paroles de la chanson en cours sur une ligne au-dessus de la barre des tâches. Always on Top.",
     "lyrics_overlay_desc": "Overlay Windows installable (sans Rainmeter) avec paroles synchronisées via GSMTC + LRCLIB, contrôles tray, presets et cache local.",

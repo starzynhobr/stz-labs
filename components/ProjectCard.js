@@ -146,21 +146,25 @@ const ProjectCard = ({
                         ) : version && <p className="text-[10px] tracking-widest text-[var(--accent)] font-mono uppercase bg-[var(--accent)]/10 px-1.5 py-0.5 rounded">{version}</p>}
                     </div>
 
-                    {hasDynamicRelease ? (
-                        <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{effectiveBadgeLabel}</Badge>
-                    ) : repoName ? (
-                        <RepoStats stats={repoStats} repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
-                    ) : badgeLabelKey ? (
-                        <Badge variant={mappedBadgeVariant} {...badgeAttrs}>
-                            <TranslatedText as="span" i18nKey={badgeLabelKey} />
-                        </Badge>
-                    ) : badgeLabel && (
-                        <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{badgeLabel}</Badge>
-                    )}
+                    <div className="flex shrink-0 flex-col items-end gap-2">
+                        {hasDynamicRelease ? (
+                            <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{effectiveBadgeLabel}</Badge>
+                        ) : repoName ? (
+                            <RepoStats stats={repoStats} repoName={repoName} variant="badge" badgeVariant={mappedBadgeVariant} badgeAttrs={badgeAttrs} />
+                        ) : badgeLabelKey ? (
+                            <Badge variant={mappedBadgeVariant} {...badgeAttrs}>
+                                <TranslatedText as="span" i18nKey={badgeLabelKey} />
+                            </Badge>
+                        ) : badgeLabel && (
+                            <Badge variant={mappedBadgeVariant} {...badgeAttrs}>{badgeLabel}</Badge>
+                        )}
+                        {/* Estrelas ao lado da versão: na linha das tags elas quebravam sozinhas. */}
+                        {repoName && <RepoStats stats={repoStats} repoName={repoName} variant="stars" />}
+                    </div>
                 </div>
 
                 {descriptionKey ? (
-                    <TranslatedText as="p" className={cn("text-[var(--text-secondary)] leading-relaxed", isFeatured ? "text-lg/relaxed max-w-lg mb-8" : "text-sm md:text-[15px] mb-6")} i18nKey={descriptionKey} />
+                    <TranslatedText as="p" className={cn("text-[var(--text-secondary)] leading-relaxed", isFeatured ? "text-lg/relaxed max-w-lg mb-8" : "text-sm md:text-[15px] mb-6 line-clamp-4")} i18nKey={descriptionKey} />
                 ) : (
                     <p className={cn("text-[var(--text-secondary)] leading-relaxed", isFeatured ? "text-lg/relaxed max-w-lg mb-8" : "text-sm md:text-[15px] mb-6")}>{description}</p>
                 )}
@@ -179,7 +183,6 @@ const ProjectCard = ({
                                 />
                             );
                         })}
-                        {repoName && <RepoStats stats={repoStats} repoName={repoName} variant="stars" />}
                     </div>
 
                     <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3">

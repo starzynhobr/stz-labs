@@ -1,4 +1,5 @@
 import ProjectCard from '../../components/ProjectCard';
+import SuiteShowcaseCard from '../../components/SuiteShowcaseCard';
 import Hero from '../../components/Hero';
 import GymSpotlight from '../../components/gym/GymSpotlight';
 import Philosophy from '../../components/Philosophy';
@@ -51,7 +52,14 @@ export default async function Home({ params }) {
                     <Hero />
 
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
-                        {sortedProjects.map((project) => (
+                        {sortedProjects.map((project) => project.slug === 'stz-suite' ? (
+                            <SuiteShowcaseCard
+                                key={project.slug}
+                                tags={project.tags}
+                                initialRelease={releases[project.slug] || null}
+                                repoStats={stats[project.repoName] || null}
+                            />
+                        ) : (
                             <ProjectCard
                                 key={project.slug || project.titleKey}
                                 layoutType={project.layoutType}

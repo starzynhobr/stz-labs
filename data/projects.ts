@@ -526,7 +526,8 @@ export const projects = [
         titleKey: 'ai_chat_optimizer.title',
         descriptionKey: 'cards.ai_chat_optimizer_desc',
         downloadHref: null,
-        badgeLabelKey: 'common.badges.stable',
+        // Versão publicada na Chrome Web Store e no Firefox Add-ons.
+        badgeLabel: 'v1.0.0',
         badgeVariant: 'stable',
         tags: [
             { labelKey: 'common.tags.javascript' },

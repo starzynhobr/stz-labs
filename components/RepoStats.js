@@ -36,6 +36,9 @@ const RepoStats = ({
     }
 
     if (variant === 'stars') {
+        // Zero estrelas soa como reprovação; melhor não mostrar nada.
+        if (stats?.stars === 0) return null;
+
         return (
             <Tag
                 variant="stars"

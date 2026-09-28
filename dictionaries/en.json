@@ -78,6 +78,11 @@
   },
   "cards": {
     "suite_desc": "A lightweight Windows base with media, productivity, and automation tools installed on demand.",
+    "suite_kicker": "Flagship project",
+    "suite_plugins": "{count} plugins",
+    "suite_overview": "Overview",
+    "slide_prev": "Previous",
+    "slide_next": "Next",
     "xml_desc": "Translate game XML files with multiple AI providers (Gemini, DeepL, Azure, Llama), smart glossary, and tag presets to accelerate localization workflows.",
     "lyrics_desc": "Minimalist Rainmeter skin. Displays playing song lyrics in a single line over the taskbar. Always on Top.",
     "lyrics_overlay_desc": "Installable Windows overlay (no Rainmeter) with synced lyrics via GSMTC + LRCLIB, tray controls, presets, and local cache.",
