@@ -1,5 +1,8 @@
 import GymIcon from './GymIcons';
 import GymActivitiesScreen from './GymActivitiesScreen';
+import GymAvatar from './GymAvatar';
+import GymProfileScreen from './GymProfileScreen';
+import GymStoreScreen from './GymStoreScreen';
 import { GYM_LIMITS } from '../../data/stzGym';
 
 const CARD = 'rounded-2xl border border-white/10 bg-white/[0.04]';
@@ -52,9 +55,7 @@ function HomeScreen({ state, copy, onAction, interactive }) {
     return (
         <div className="flex flex-col gap-3 px-3.5 pb-4 pt-10">
             <header className="flex items-center gap-2.5">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full border-2 border-white/60 bg-[#1b2440] text-lg font-semibold">
-                    {copy.user[0]}
-                </span>
+                <GymAvatar letter={copy.user[0]} borderId={state.border} />
                 <div className="min-w-0 flex-1">
                     <p className="text-sm font-bold leading-tight">{copy.user}</p>
                     <p className="text-[9px] text-[var(--g-primary)]">{copy.level}</p>
@@ -68,9 +69,15 @@ function HomeScreen({ state, copy, onAction, interactive }) {
                 <span className="flex items-center gap-0.5 text-[11px] font-bold tabular-nums">
                     <GymIcon name="drop" className="size-3.5 text-[var(--g-primary)]" />{streak}d
                 </span>
-                <span className="grid size-7 place-items-center rounded-full border border-[var(--g-primary)] text-[var(--g-primary)]">
+                <button
+                    type="button"
+                    aria-label={copy.store}
+                    title={copy.store}
+                    onClick={() => onAction('openStore')}
+                    className="grid size-7 place-items-center rounded-full border border-[var(--g-primary)] text-[var(--g-primary)] transition-transform hover:scale-110 active:scale-95"
+                >
                     <GymIcon name="store" className="size-3.5" />
-                </span>
+                </button>
             </header>
 
             <p className="mt-1 text-center text-xs font-semibold">{copy.todayPlans}</p>
@@ -131,18 +138,6 @@ function HomeScreen({ state, copy, onAction, interactive }) {
     );
 }
 
-function SoonScreen({ copy }) {
-    return (
-        <div className="flex h-full flex-col items-center justify-center gap-2 px-8 text-center">
-            <span className="grid size-12 place-items-center rounded-full border border-[var(--g-primary)]/60 text-[var(--g-primary)]">
-                <GymIcon name="fitness" className="size-6" />
-            </span>
-            <p className="text-sm font-bold">{copy.soonTitle}</p>
-            <p className="text-[11px] text-white/60">{copy.soonText}</p>
-        </div>
-    );
-}
-
 const TABS = [
     { id: 'home', icon: 'home' },
     { id: 'activities', icon: 'fitness' },
@@ -150,23 +145,28 @@ const TABS = [
 ];
 
 /** Tela do app. Sem `interactive`, vira uma vitrine estática (usada na home). */
-export default function GymPhone({ state, theme, copy, label, tab = 'home', onTab, onAction, onToast, toast, interactive = false, className }) {
+export default function GymPhone({ state, theme, copy, locale, label, tab = 'home', onTab, onAction, onToast, toast, interactive = false, className }) {
+    const inStore = tab === 'store';
+
     return (
         <PhoneFrame theme={theme} label={label} className={className}>
-            <div className="absolute inset-0 overflow-y-auto pb-14 [scrollbar-width:none]" inert={!interactive}>
+            <div className={`absolute inset-0 overflow-y-auto [scrollbar-width:none] ${inStore ? '' : 'pb-14'}`} inert={!interactive}>
                 {tab === 'home' && <HomeScreen state={state} copy={copy} onAction={onAction} interactive={interactive} />}
                 {tab === 'activities' && <GymActivitiesScreen copy={copy} onToast={onToast} />}
-                {tab === 'profile' && <SoonScreen copy={copy} />}
+                {tab === 'profile' && <GymProfileScreen state={state} copy={copy} onToast={onToast} />}
+                {inStore && (
+                    <GymStoreScreen state={state} theme={theme} copy={copy} locale={locale} onAction={onAction} onBack={() => onTab('home')} />
+                )}
             </div>
 
             <div
                 aria-live="polite"
-                className={`pointer-events-none absolute inset-x-0 bottom-14 z-10 bg-[var(--g-primary)] px-4 py-2 text-[11px] font-semibold text-black transition-all duration-300 ${toast ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}
+                className={`pointer-events-none absolute inset-x-0 ${inStore ? 'bottom-0 pb-5' : 'bottom-14'} z-10 bg-[var(--g-primary)] px-4 py-2 text-[11px] font-semibold text-black transition-all duration-300 ${toast ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}
             >
                 {toast}
             </div>
 
-            <nav className="absolute inset-x-0 bottom-0 z-10 flex h-14 border-t border-white/5 bg-[#060910]" inert={!interactive}>
+            <nav className={`absolute inset-x-0 bottom-0 z-10 h-14 border-t border-white/5 bg-[#060910] ${inStore ? 'hidden' : 'flex'}`} inert={!interactive}>
                 {TABS.map((item) => {
                     const active = item.id === tab;
                     return (

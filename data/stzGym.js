@@ -6,24 +6,51 @@
 export const GYM_SLUG = 'stz-gym';
 
 export const GYM_THEMES = [
-    { id: 'neon_blue', name: 'Neon Blue', primary: '#00D9FF', secondary: '#2787FF' },
-    { id: 'peach', name: 'Peach', primary: '#FF6B6B', secondary: '#FFE66D' },
-    { id: 'neon_green', name: 'Neon Green', primary: '#39FF14', secondary: '#00FF7F' },
-    { id: 'dark_red', name: 'Dark Red', primary: '#DC143C', secondary: '#FF1744' },
-    { id: 'purple', name: 'Purple', primary: '#C04BDB', secondary: '#E040FB' },
-    { id: 'pink_velvet', name: 'Pink Velvet', primary: '#FF4FA3', secondary: '#FFC1D9' },
-    { id: 'yellow', name: 'Yellow', primary: '#FFEB3B', secondary: '#FFC107' },
-    { id: 'glass_aurora', name: 'Glass Aurora', primary: '#5CE0F3', secondary: '#8B6CFF' },
+    { id: 'neon_blue', name: 'Neon Blue', primary: '#00D9FF', secondary: '#2787FF', unlock: { type: 'free' } },
+    { id: 'peach', name: 'Peach', primary: '#FF6B6B', secondary: '#FFE66D', unlock: { type: 'achievement', key: 'healthyRoutine' } },
+    { id: 'neon_green', name: 'Neon Green', primary: '#39FF14', secondary: '#00FF7F', unlock: { type: 'achievement', key: 'sevenDayStreak' } },
+    { id: 'dark_red', name: 'Dark Red', primary: '#DC143C', secondary: '#FF1744', unlock: { type: 'rank', key: 'SSS' } },
+    { id: 'purple', name: 'Purple', primary: '#C04BDB', secondary: '#E040FB', unlock: { type: 'achievement', key: 'firstFiveKm' } },
+    { id: 'pink_velvet', name: 'Pink Velvet', primary: '#FF4FA3', secondary: '#FFC1D9', unlock: { type: 'coins', price: 1200 } },
+    { id: 'capuccino', name: 'Capuccino', primary: '#C49A6C', secondary: '#D6B48C', unlock: { type: 'coins', price: 2000 } },
+    { id: 'yellow', name: 'Yellow', primary: '#FFEB3B', secondary: '#FFC107', unlock: { type: 'achievement', key: 'completeTenMissions' } },
+    { id: 'frost_white', name: 'Frost White', primary: '#29B6F6', secondary: '#B0BEC5', unlock: { type: 'coins', price: 800 } },
+    { id: 'orange_premium', name: 'Orange Premium', primary: '#FF6D00', secondary: '#FFB74D', unlock: { type: 'gems', price: 60 } },
+    { id: 'glass_aurora', name: 'Glass Aurora', primary: '#5CE0F3', secondary: '#8B6CFF', unlock: { type: 'gems', price: 90 } },
 ];
+
+/** Bordas de avatar da loja (preços do app). `ring` é o gradiente desenhado em volta do avatar. */
+export const GYM_BORDERS = [
+    { id: 'border_bronze', name: { pt: 'Borda Bronze', en: 'Bronze Border' }, price: 50, ring: '#CD7F32, #8C5523, #CD7F32' },
+    { id: 'border_silver', name: { pt: 'Borda Prata', en: 'Silver Border' }, price: 100, ring: '#E5E4E2, #8E8E8E, #E5E4E2' },
+    { id: 'border_gold', name: { pt: 'Borda Dourada', en: 'Gold Border' }, price: 200, ring: '#FFD700, #B8860B, #FFD700' },
+    { id: 'border_aura_solar', name: { pt: 'Aura Solar', en: 'Solar Aura' }, price: 320, ring: '#FFB300, #FF5722, #FFEB3B, #FFB300' },
+    { id: 'border_aneis_oceanicos', name: { pt: 'Anéis Oceânicos', en: 'Ocean Rings' }, price: 380, ring: '#00BCD4, #1565C0, #4DD0E1, #00BCD4' },
+    { id: 'border_onda_cosmica', name: { pt: 'Onda Cósmica', en: 'Cosmic Wave' }, price: 460, ring: '#7C4DFF, #00E5FF, #E040FB, #7C4DFF' },
+    { id: 'border_vortice_magenta', name: { pt: 'Vórtice Magenta', en: 'Magenta Vortex' }, price: 520, ring: '#FF4081, #7B1FA2, #FF80AB, #FF4081' },
+    { id: 'border_asas_flamejantes', name: { pt: 'Asas Flamejantes', en: 'Flaming Wings' }, price: 900, ring: '#FF1744, #FF9100, #FFEA00, #FF1744' },
+];
+
+export const GYM_POWERUPS = [
+    { id: 'streak_shield', icon: 'shield', price: 150, name: { pt: 'Shield de Streak', en: 'Streak Shield' }, text: { pt: 'Protege seu streak por 1 dia perdido', en: 'Protects your streak for 1 missed day' } },
+    { id: 'xp_boost', icon: 'bolt', price: 100, name: { pt: 'Boost de XP', en: 'XP Boost' }, text: { pt: 'Dobra o XP ganho no próximo treino', en: 'Doubles XP earned on your next workout' } },
+];
+
+/** Nome localizado de item da loja; o app existe em PT e EN. */
+export const gymItemText = (value, locale) => value[locale === 'pt' ? 'pt' : 'en'];
 
 /** Estado inicial da demo — nada é salvo, "Reiniciar" volta para cá. */
 export const GYM_DEMO_START = {
     coins: 150,
+    gems: 0,
     streak: 0,
     xp: 72,
     water: 0,
     meals: 0,
     missions: 0,
+    border: null,
+    ownedBorders: [],
+    powerups: [],
 };
 
 export const GYM_LIMITS = { water: 2000, waterStep: 250, meals: 3, missions: 3, missionReward: 10 };
@@ -105,7 +132,13 @@ const appCopy = {
         avgPace: 'Pace médio', runDays: 'Dias corridos', records: 'Recordes pessoais',
         recentSessions: 'Sessões recentes', sampleData: 'Dados de exemplo', connect: 'Conectar',
         share: 'Compartilhar plano', importPlan: 'Importar plano', listPlans: 'Todos os planos',
-        soonTitle: 'Chegando na prévia', soonText: 'Esta tela entra nas próximas atualizações da demo.',
+        store: 'Loja', back: 'Voltar',storeTabs: { borders: 'Bordas de Avatar', powerups: 'Power-ups', themes: 'Temas' },
+        equipped: 'Equipado', equip: 'Equipar', active: 'Ativo',
+        unlocks: { healthyRoutine: 'Hábitos Saudáveis', sevenDayStreak: '7 dias de sequência', firstFiveKm: 'PR 5K', completeTenMissions: '10 Missões', rank: 'Requer Rank' },
+        notEnoughCoins: 'Moedas insuficientes — complete missões no Início', bought: 'Comprado:', activated: 'Ativado:',
+        tryingTheme: 'Prévia do tema — desbloqueie no app',
+        profileMenu: { rank: 'Rank', dashboard: 'Dashboard', editProfile: 'Editar Perfil', editPlan: 'Editar Plano', nutrition: 'Nutrição', achievements: 'Conquistas', skills: 'Árvore de Skills' },
+        google: 'Google', connectAccount: 'Conectar', levelFull: 'Lv 1 • Iniciante',
     },
     en: {
         user: 'Alex', level: 'Lv. 1 • Beginner', todayPlans: "Today's Plans",
@@ -125,7 +158,13 @@ const appCopy = {
         avgPace: 'Average pace', runDays: 'Run days', records: 'Personal records',
         recentSessions: 'Recent sessions', sampleData: 'Sample data', connect: 'Connect',
         share: 'Share plan', importPlan: 'Import plan', listPlans: 'All plans',
-        soonTitle: 'Coming to the preview', soonText: 'This screen arrives in upcoming demo updates.',
+        store: 'Store', back: 'Back',storeTabs: { borders: 'Avatar Borders', powerups: 'Power-ups', themes: 'Themes' },
+        equipped: 'Equipped', equip: 'Equip', active: 'Active',
+        unlocks: { healthyRoutine: 'Healthy Habits', sevenDayStreak: '7-day streak', firstFiveKm: '5K PR', completeTenMissions: '10 Missions', rank: 'Requires Rank' },
+        notEnoughCoins: 'Not enough coins — complete missions on Home', bought: 'Purchased:', activated: 'Activated:',
+        tryingTheme: 'Theme preview — unlock it in the app',
+        profileMenu: { rank: 'Rank', dashboard: 'Dashboard', editProfile: 'Edit Profile', editPlan: 'Edit Plan', nutrition: 'Nutrition', achievements: 'Achievements', skills: 'Skill Tree' },
+        google: 'Google', connectAccount: 'Connect', levelFull: 'Lv 1 • Beginner',
     },
 };
 
@@ -138,7 +177,7 @@ const pageCopy = {
         title: 'STZ Gym',
         tagline: 'Treino, hidratação, nutrição e corrida num app que transforma constância em progresso — com níveis, missões e temas para desbloquear.',
         cta: 'Ver prévia interativa', spotlightNote: 'Teste a prévia direto no navegador.',
-        tryIt: 'Toque nos cards do celular: registre água, refeições e missões.',
+        tryIt: 'Registre água e missões, ganhe moedas e gaste na loja do app.',
         themes: 'Temas do app', reset: 'Reiniciar demo',
         features: [
             { title: 'Treino do dia', text: 'Seu plano semanal organizado, com o treino de hoje a um toque.' },
@@ -161,7 +200,7 @@ const pageCopy = {
         title: 'STZ Gym',
         tagline: 'Workouts, hydration, nutrition and running in one app that turns consistency into progress — with levels, missions and unlockable themes.',
         cta: 'Try the interactive preview', spotlightNote: 'Try the preview right in your browser.',
-        tryIt: 'Tap the cards on the phone: log water, meals and missions.',
+        tryIt: 'Log water and missions, earn coins and spend them in the app store.',
         themes: 'App themes', reset: 'Reset demo',
         features: [
             { title: "Today's workout", text: "Your weekly plan, organized, with today's session one tap away." },
@@ -184,7 +223,7 @@ const pageCopy = {
         title: 'STZ Gym',
         tagline: 'Entrenamiento, hidratación, nutrición y carrera en una app que convierte la constancia en progreso, con niveles, misiones y temas desbloqueables.',
         cta: 'Ver vista previa interactiva', spotlightNote: 'Pruébala directamente en el navegador.',
-        tryIt: 'Toca las tarjetas del teléfono: registra agua, comidas y misiones.',
+        tryIt: 'Registra agua y misiones, gana monedas y gástalas en la tienda.',
         themes: 'Temas de la app', reset: 'Reiniciar demo',
         features: [
             { title: 'Entrenamiento del día', text: 'Tu plan semanal organizado, con el entrenamiento de hoy a un toque.' },
@@ -207,7 +246,7 @@ const pageCopy = {
         title: 'STZ Gym',
         tagline: 'Entraînement, hydratation, nutrition et course dans une app qui transforme la régularité en progrès, avec niveaux, missions et thèmes à débloquer.',
         cta: 'Voir l’aperçu interactif', spotlightNote: 'Essayez l’aperçu directement dans le navigateur.',
-        tryIt: 'Touchez les cartes du téléphone : eau, repas et missions.',
+        tryIt: 'Notez eau et missions, gagnez des pièces et dépensez-les en boutique.',
         themes: 'Thèmes de l’app', reset: 'Réinitialiser la démo',
         features: [
             { title: 'Séance du jour', text: 'Votre plan hebdomadaire organisé, la séance du jour à portée de doigt.' },
@@ -230,7 +269,7 @@ const pageCopy = {
         title: 'STZ Gym',
         tagline: 'Training, Trinken, Ernährung und Laufen in einer App, die Beständigkeit in Fortschritt verwandelt – mit Levels, Missionen und freischaltbaren Themes.',
         cta: 'Interaktive Vorschau ansehen', spotlightNote: 'Probiere die Vorschau direkt im Browser.',
-        tryIt: 'Tippe auf die Karten im Handy: Wasser, Mahlzeiten und Missionen.',
+        tryIt: 'Trage Wasser und Missionen ein, sammle Münzen und gib sie im Shop aus.',
         themes: 'App-Themes', reset: 'Demo zurücksetzen',
         features: [
             { title: 'Training des Tages', text: 'Dein Wochenplan, übersichtlich, das heutige Training nur einen Tipp entfernt.' },
@@ -253,7 +292,7 @@ const pageCopy = {
         title: 'STZ Gym',
         tagline: 'Allenamento, idratazione, nutrizione e corsa in un’app che trasforma la costanza in progresso, con livelli, missioni e temi da sbloccare.',
         cta: 'Prova l’anteprima interattiva', spotlightNote: 'Provala direttamente nel browser.',
-        tryIt: 'Tocca le schede del telefono: acqua, pasti e missioni.',
+        tryIt: 'Registra acqua e missioni, guadagna monete e spendile nel negozio.',
         themes: 'Temi dell’app', reset: 'Reimposta demo',
         features: [
             { title: 'Allenamento del giorno', text: 'Il tuo piano settimanale organizzato, con l’allenamento di oggi a un tocco.' },

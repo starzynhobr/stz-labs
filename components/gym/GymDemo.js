@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import GymPhone from './GymPhone';
-import { GYM_DEMO_START, GYM_LIMITS, GYM_THEMES, getGymAppCopy } from '../../data/stzGym';
+import { GYM_BORDERS, GYM_DEMO_START, GYM_LIMITS, GYM_POWERUPS, GYM_THEMES, getGymAppCopy, gymItemText } from '../../data/stzGym';
 
 const TOAST_MS = 2200;
 
@@ -47,10 +47,52 @@ export default function GymDemo({ locale, text }) {
         toastTimer.current = setTimeout(() => setToast(null), TOAST_MS);
     };
 
-    const handleAction = (action) => {
-        const [next, message] = applyAction(state, action, copy);
-        setState(next);
-        showToast(message);
+    /** Compra com as moedas da demo; devolve o novo estado ou null se não der. */
+    const spend = (price) => {
+        if (state.coins < price) {
+            showToast(copy.notEnoughCoins);
+            return null;
+        }
+        return { ...state, coins: state.coins - price };
+    };
+
+    const handleAction = (action, id) => {
+        switch (action) {
+            case 'openStore':
+                setTab('store');
+                return;
+            case 'theme': {
+                const picked = GYM_THEMES.find((item) => item.id === id);
+                setTheme(picked);
+                if (picked.unlock.type !== 'free') showToast(copy.tryingTheme);
+                return;
+            }
+            case 'border': {
+                const border = GYM_BORDERS.find((item) => item.id === id);
+                if (state.ownedBorders.includes(id)) {
+                    setState({ ...state, border: id });
+                    return;
+                }
+                const next = spend(border.price);
+                if (!next) return;
+                setState({ ...next, border: id, ownedBorders: [...state.ownedBorders, id] });
+                showToast(`${copy.bought} ${gymItemText(border.name, locale)}`);
+                return;
+            }
+            case 'powerup': {
+                const item = GYM_POWERUPS.find((powerup) => powerup.id === id);
+                const next = spend(item.price);
+                if (!next) return;
+                setState({ ...next, powerups: [...state.powerups, id] });
+                showToast(`${copy.activated} ${gymItemText(item.name, locale)}`);
+                return;
+            }
+            default: {
+                const [next, message] = applyAction(state, action, copy);
+                setState(next);
+                showToast(message);
+            }
+        }
     };
 
     const reset = () => {
@@ -73,6 +115,7 @@ export default function GymDemo({ locale, text }) {
                     state={state}
                     theme={theme}
                     copy={copy}
+                    locale={locale}
                     label={text.phoneLabel}
                     tab={tab}
                     onTab={setTab}
