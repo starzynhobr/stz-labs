@@ -99,7 +99,8 @@
     "suite_title": "STZ Suite",
     "version_latest": "Ultima versione via GitHub",
     "version_dev": "In sviluppo",
-    "pdf_suite_desc": "Suite desktop per unire, riordinare, convertire ed elaborare in batch PDF e immagini con una moderna interfaccia QML."
+    "pdf_suite_desc": "Suite desktop per unire, riordinare, convertire ed elaborare in batch PDF e immagini con una moderna interfaccia QML.",
+    "downloader_desc": "Download manager per Windows basato su aria2: più connessioni per file, limiti di velocità ed estensione per Chrome e Firefox."
   },
   "benefits": {
     "efficiency_title": "Focus & Efficienza",
@@ -527,5 +528,46 @@
     "support_cta": "Sostieni STZ Labs",
     "explore": "Vedi gli altri strumenti",
     "details": "Dettagli del progetto"
+  },
+  "downloader": {
+    "title": "STZ Downloader",
+    "description": "Un download manager in stile IDM per Windows, con interfaccia Qt/QML e motore aria2. L'estensione del browser intercetta i download e li invia direttamente all'app, con cookie e intestazioni per i link autenticati.",
+    "btn_github": "Vedi su GitHub",
+    "features": {
+      "connections_title": "Connessioni Multiple",
+      "connections_desc": "Divide ogni file in segmenti scaricati in parallelo da aria2, sfruttando tutta la banda disponibile.",
+      "extension_title": "Estensione del Browser",
+      "extension_desc": "Estensione per Chrome e Firefox che intercetta i download e aggiunge \"Scarica con STZ Downloader\" al menu contestuale.",
+      "auth_title": "Download Autenticati",
+      "auth_desc": "Inoltra cookie e intestazioni della sessione, così i link di cloud, forum e portali privati si scaricano senza errori di accesso.",
+      "speed_title": "Limiti di Velocità",
+      "speed_desc": "Limite globale salvato nelle impostazioni e limite per singolo download, modificabili in qualsiasi momento.",
+      "tray_title": "Tray e Avvio",
+      "tray_desc": "Resta nell'area di notifica, si avvia con Windows e mantiene una sola istanza.",
+      "local_title": "100% Locale",
+      "local_desc": "Nessuna telemetria: l'estensione parla solo con l'app sul tuo PC tramite Native Messaging e loopback autenticato."
+    },
+    "specs": {
+      "version": "Versione Attuale",
+      "platform": "Piattaforma",
+      "language": "Linguaggio",
+      "engine": "Motore",
+      "browsers": "Browser",
+      "license": "Licenza"
+    },
+    "showcase": {
+      "queue_kicker": "Panoramica",
+      "queue_title": "Coda dei Download",
+      "queue_desc": "Segui avanzamento, velocità e tempo rimanente di ogni download in un'interfaccia scura e pulita.",
+      "settings_kicker": "Impostazioni",
+      "settings_title": "Controllo Totale",
+      "settings_desc": "Cartella predefinita, connessioni per file, limite di velocità, lingua e avvio con Windows in un unico pannello.",
+      "confirm_kicker": "Cattura",
+      "confirm_title": "Conferma Rapida",
+      "confirm_desc": "Quando un download viene intercettato, l'app mostra nome, dimensione e destinazione per confermare o modificare prima di iniziare.",
+      "popup_kicker": "Estensione",
+      "popup_title": "Integrazione con il Browser",
+      "popup_desc": "Il popup dell'estensione mostra se l'app è connessa e attiva o disattiva la cattura automatica con un clic."
+    }
   }
 }

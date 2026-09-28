@@ -97,7 +97,8 @@
     "suite_title": "STZ Suite",
     "version_latest": "Neueste Version über GitHub",
     "version_dev": "In Entwicklung",
-    "pdf_suite_desc": "Desktop-Suite zum Zusammenführen, Neuordnen, Konvertieren und Stapelverarbeiten von PDFs und Bildern mit moderner QML-Oberfläche."
+    "pdf_suite_desc": "Desktop-Suite zum Zusammenführen, Neuordnen, Konvertieren und Stapelverarbeiten von PDFs und Bildern mit moderner QML-Oberfläche.",
+    "downloader_desc": "Download-Manager für Windows mit aria2: mehrere Verbindungen pro Datei, Geschwindigkeitslimits und eine Erweiterung für Chrome und Firefox."
   },
   "benefits": {
     "efficiency_title": "Fokus & Effizienz",
@@ -525,5 +526,46 @@
     "support_cta": "STZ Labs unterstützen",
     "explore": "Weitere Werkzeuge ansehen",
     "details": "Projektdetails"
+  },
+  "downloader": {
+    "title": "STZ Downloader",
+    "description": "Ein Download-Manager im IDM-Stil für Windows mit Qt/QML-Oberfläche und aria2-Engine. Die Browser-Erweiterung fängt Downloads ab und übergibt sie direkt an die App, samt Cookies und Headern für authentifizierte Links.",
+    "btn_github": "Auf GitHub ansehen",
+    "features": {
+      "connections_title": "Mehrere Verbindungen",
+      "connections_desc": "Teilt jede Datei in Segmente, die aria2 parallel lädt, und nutzt so die volle Bandbreite.",
+      "extension_title": "Browser-Erweiterung",
+      "extension_desc": "Erweiterung für Chrome und Firefox, die Downloads abfängt und „Mit STZ Downloader herunterladen“ zum Kontextmenü hinzufügt.",
+      "auth_title": "Authentifizierte Downloads",
+      "auth_desc": "Leitet Sitzungs-Cookies und Header weiter, damit Links von Cloud-Speichern, Foren und privaten Portalen ohne Login-Fehler laden.",
+      "speed_title": "Geschwindigkeitslimits",
+      "speed_desc": "Globales Limit in den Einstellungen plus Limit pro Download, jederzeit anpassbar.",
+      "tray_title": "Tray und Autostart",
+      "tray_desc": "Läuft im Infobereich, startet mit Windows und hält nur eine Instanz aktiv.",
+      "local_title": "100 % Lokal",
+      "local_desc": "Keine Telemetrie: Die Erweiterung spricht nur per Native Messaging und authentifiziertem Loopback mit der App auf deinem PC."
+    },
+    "specs": {
+      "version": "Aktuelle Version",
+      "platform": "Plattform",
+      "language": "Sprache",
+      "engine": "Engine",
+      "browsers": "Browser",
+      "license": "Lizenz"
+    },
+    "showcase": {
+      "queue_kicker": "Überblick",
+      "queue_title": "Download-Warteschlange",
+      "queue_desc": "Fortschritt, Geschwindigkeit und Restzeit jedes Downloads in einer klaren, dunklen Oberfläche.",
+      "settings_kicker": "Einstellungen",
+      "settings_title": "Volle Kontrolle",
+      "settings_desc": "Standardordner, Verbindungen pro Datei, Geschwindigkeitslimit, Sprache und Autostart in einem Panel.",
+      "confirm_kicker": "Erfassung",
+      "confirm_title": "Schnelle Bestätigung",
+      "confirm_desc": "Beim Abfangen zeigt die App Name, Größe und Ziel an, damit du vor dem Start bestätigen oder anpassen kannst.",
+      "popup_kicker": "Erweiterung",
+      "popup_title": "Browser-Integration",
+      "popup_desc": "Das Popup der Erweiterung zeigt, ob die App verbunden ist, und schaltet die automatische Erfassung mit einem Klick um."
+    }
   }
 }

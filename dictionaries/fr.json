@@ -97,7 +97,8 @@
     "suite_title": "STZ Suite",
     "version_latest": "Dernière version via GitHub",
     "version_dev": "En développement",
-    "pdf_suite_desc": "Suite desktop pour fusionner, réorganiser, convertir et traiter en lot des PDF et images avec une interface QML moderne."
+    "pdf_suite_desc": "Suite desktop pour fusionner, réorganiser, convertir et traiter en lot des PDF et images avec une interface QML moderne.",
+    "downloader_desc": "Gestionnaire de téléchargements pour Windows basé sur aria2 : plusieurs connexions par fichier, limite de vitesse et extension Chrome et Firefox."
   },
   "benefits": {
     "efficiency_title": "Focus & Efficacité",
@@ -523,5 +524,46 @@
     "support_cta": "Soutenir STZ Labs",
     "explore": "Voir les autres outils",
     "details": "Détails du projet"
+  },
+  "downloader": {
+    "title": "STZ Downloader",
+    "description": "Un gestionnaire de téléchargements pour Windows façon IDM, avec une interface Qt/QML et le moteur aria2. L'extension de navigateur intercepte les téléchargements et les envoie directement à l'application, avec cookies et en-têtes pour les liens authentifiés.",
+    "btn_github": "Voir sur GitHub",
+    "features": {
+      "connections_title": "Connexions Multiples",
+      "connections_desc": "Découpe chaque fichier en segments téléchargés en parallèle par aria2 pour exploiter toute la bande passante.",
+      "extension_title": "Extension de Navigateur",
+      "extension_desc": "Extension Chrome et Firefox qui intercepte les téléchargements et ajoute « Télécharger avec STZ Downloader » au menu contextuel.",
+      "auth_title": "Téléchargements Authentifiés",
+      "auth_desc": "Transmet les cookies et en-têtes de session : les liens de clouds, forums et portails privés se téléchargent sans erreur de connexion.",
+      "speed_title": "Limite de Vitesse",
+      "speed_desc": "Plafond global enregistré dans les paramètres et limite par téléchargement, modifiables à tout moment.",
+      "tray_title": "Zone de Notification et Démarrage",
+      "tray_desc": "Reste dans la zone de notification, démarre avec Windows et garde une seule instance active.",
+      "local_title": "100 % Local",
+      "local_desc": "Aucune télémétrie : l'extension ne parle qu'à l'application sur votre PC via Native Messaging et loopback authentifié."
+    },
+    "specs": {
+      "version": "Version Actuelle",
+      "platform": "Plateforme",
+      "language": "Langage",
+      "engine": "Moteur",
+      "browsers": "Navigateurs",
+      "license": "Licence"
+    },
+    "showcase": {
+      "queue_kicker": "Aperçu",
+      "queue_title": "File de Téléchargements",
+      "queue_desc": "Suivez la progression, la vitesse et le temps restant de chaque téléchargement dans une interface sombre et épurée.",
+      "settings_kicker": "Paramètres",
+      "settings_title": "Contrôle Total",
+      "settings_desc": "Dossier par défaut, connexions par fichier, limite de vitesse, langue et démarrage avec Windows dans un seul panneau.",
+      "confirm_kicker": "Capture",
+      "confirm_title": "Confirmation Rapide",
+      "confirm_desc": "Quand un téléchargement est intercepté, l'application affiche nom, taille et destination pour confirmer ou ajuster avant de démarrer.",
+      "popup_kicker": "Extension",
+      "popup_title": "Intégration au Navigateur",
+      "popup_desc": "La popup de l'extension indique si l'application est connectée et active ou désactive la capture automatique en un clic."
+    }
   }
 }

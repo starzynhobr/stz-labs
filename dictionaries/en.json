@@ -97,7 +97,8 @@
     "suite_title": "STZ Suite",
     "version_latest": "Latest version via GitHub",
     "version_dev": "In development",
-    "pdf_suite_desc": "Desktop suite for merging, reordering, converting, and batch-processing PDFs and images with a modern QML interface."
+    "pdf_suite_desc": "Desktop suite for merging, reordering, converting, and batch-processing PDFs and images with a modern QML interface.",
+    "downloader_desc": "Windows download manager powered by aria2: multiple connections per file, speed limits and a Chrome and Firefox extension."
   },
   "benefits": {
     "efficiency_title": "Focus & Efficiency",
@@ -525,5 +526,46 @@
     "support_cta": "Support STZ Labs",
     "explore": "Browse the other tools",
     "details": "Project details"
+  },
+  "downloader": {
+    "title": "STZ Downloader",
+    "description": "An IDM-style download manager for Windows with a Qt/QML interface and the aria2 engine. The browser extension catches downloads and sends them straight to the app, with cookies and headers for authenticated links.",
+    "btn_github": "View on GitHub",
+    "features": {
+      "connections_title": "Multiple Connections",
+      "connections_desc": "Splits each file into parts downloaded in parallel by aria2, using all available bandwidth.",
+      "extension_title": "Browser Extension",
+      "extension_desc": "Chrome and Firefox extension that intercepts downloads and adds \"Download with STZ Downloader\" to the context menu.",
+      "auth_title": "Authenticated Downloads",
+      "auth_desc": "Forwards session cookies and headers, so links from cloud drives, forums and private portals download without login errors.",
+      "speed_title": "Speed Limits",
+      "speed_desc": "A global cap saved in settings plus a per-download limit, adjustable at any time.",
+      "tray_title": "Tray and Startup",
+      "tray_desc": "Lives in the system tray, starts with Windows and keeps a single instance running.",
+      "local_title": "100% Local",
+      "local_desc": "No telemetry: the extension only talks to the app on your PC via Native Messaging and authenticated loopback."
+    },
+    "specs": {
+      "version": "Current Version",
+      "platform": "Platform",
+      "language": "Language",
+      "engine": "Engine",
+      "browsers": "Browsers",
+      "license": "License"
+    },
+    "showcase": {
+      "queue_kicker": "Overview",
+      "queue_title": "Download Queue",
+      "queue_desc": "Track progress, speed and time remaining for every download in a clean dark interface.",
+      "settings_kicker": "Settings",
+      "settings_title": "Full Control",
+      "settings_desc": "Default folder, connections per file, speed limit, language and start with Windows in a single panel.",
+      "confirm_kicker": "Capture",
+      "confirm_title": "Quick Confirmation",
+      "confirm_desc": "When a download is caught, the app shows its name, size and destination so you can confirm or adjust before it starts.",
+      "popup_kicker": "Extension",
+      "popup_title": "Browser Integration",
+      "popup_desc": "The extension popup shows whether the app is connected and turns automatic capture on or off with one click."
+    }
   }
 }

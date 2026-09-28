@@ -1,5 +1,111 @@
 export const projects = [
     {
+        slug: 'stz-downloader',
+        layoutType: 'bento',
+        priority: 2,
+        maturity: 'stable',
+        repoName: 'stz-downloader',
+        titleKey: 'downloader.title',
+        descriptionKey: 'cards.downloader_desc',
+        downloadHref: 'https://github.com/starzynhobr/stz-downloader/releases/latest',
+        releaseAssetPattern: '-setup\\.exe$',
+        badgeLabel: '...',
+        badgeVariant: 'stable',
+        badgeAttrs: {
+            'data-gh-repo': 'starzynhobr/stz-downloader',
+        },
+        tags: [
+            { labelKey: 'common.tags.windows' },
+            { labelKey: 'common.tags.browser_extension' },
+            { labelKey: 'common.tags.qt_qml' },
+        ],
+        detailLabelKey: 'cards.btn_details',
+        downloadLabelKey: 'cards.btn_download',
+        detail: {
+            meta: {
+                title: 'STZ Downloader | STZ LABS',
+                description:
+                    'Gerenciador de downloads para Windows com aria2, várias conexões por arquivo e extensão para Chrome e Firefox.',
+                ogDescription: 'Downloads acelerados com aria2 e captura direto do navegador.',
+            },
+            hero: {
+                tags: ['Python 3.12', 'PySide6 / QML', 'aria2'],
+                titleKey: 'downloader.title',
+                descriptionKey: 'downloader.description',
+                githubUrl: 'https://github.com/starzynhobr/stz-downloader',
+                githubLabelKey: 'downloader.btn_github',
+            },
+            showcase: [
+                {
+                    image: '/images/projects/stz-downloader/screenshot_1_main.png',
+                    alt: 'STZ Downloader queue',
+                    kickerKey: 'downloader.showcase.queue_kicker',
+                    titleKey: 'downloader.showcase.queue_title',
+                    descriptionKey: 'downloader.showcase.queue_desc',
+                    align: 'image-left',
+                },
+                {
+                    image: '/images/projects/stz-downloader/screenshot_2_settings.png',
+                    alt: 'STZ Downloader settings',
+                    kickerKey: 'downloader.showcase.settings_kicker',
+                    titleKey: 'downloader.showcase.settings_title',
+                    descriptionKey: 'downloader.showcase.settings_desc',
+                    align: 'image-right',
+                },
+                {
+                    image: '/images/projects/stz-downloader/screenshot_3_confirm.png',
+                    alt: 'STZ Downloader confirm',
+                    kickerKey: 'downloader.showcase.confirm_kicker',
+                    titleKey: 'downloader.showcase.confirm_title',
+                    descriptionKey: 'downloader.showcase.confirm_desc',
+                    align: 'image-left',
+                },
+                {
+                    image: '/images/projects/stz-downloader/screenshot_4_popup.png',
+                    alt: 'STZ Downloader popup',
+                    kickerKey: 'downloader.showcase.popup_kicker',
+                    titleKey: 'downloader.showcase.popup_title',
+                    descriptionKey: 'downloader.showcase.popup_desc',
+                    align: 'image-right',
+                },
+            ],
+            features: [
+                {
+                    titleKey: 'downloader.features.connections_title',
+                    descriptionKey: 'downloader.features.connections_desc',
+                },
+                {
+                    titleKey: 'downloader.features.extension_title',
+                    descriptionKey: 'downloader.features.extension_desc',
+                },
+                {
+                    titleKey: 'downloader.features.auth_title',
+                    descriptionKey: 'downloader.features.auth_desc',
+                },
+                {
+                    titleKey: 'downloader.features.speed_title',
+                    descriptionKey: 'downloader.features.speed_desc',
+                },
+                {
+                    titleKey: 'downloader.features.tray_title',
+                    descriptionKey: 'downloader.features.tray_desc',
+                },
+                {
+                    titleKey: 'downloader.features.local_title',
+                    descriptionKey: 'downloader.features.local_desc',
+                },
+            ],
+            specs: [
+                { labelKey: 'downloader.specs.version', repoName: 'stz-downloader' },
+                { labelKey: 'downloader.specs.platform', value: 'Windows 10/11' },
+                { labelKey: 'downloader.specs.language', value: 'Python 3.12' },
+                { labelKey: 'downloader.specs.engine', value: 'aria2' },
+                { labelKey: 'downloader.specs.browsers', value: 'Chrome · Firefox' },
+                { labelKey: 'downloader.specs.license', value: 'MIT License' },
+            ],
+        },
+    },
+    {
         slug: 'stz-xml-translator',
         layoutType: 'bento',
         priority: 2,

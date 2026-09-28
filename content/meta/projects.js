@@ -1,5 +1,5 @@
 /**
- * Metadados das páginas de projeto — 9 projetos × 6 idiomas.
+ * Metadados das páginas de projeto — 10 projetos × 6 idiomas.
  * Título começa pelo termo de busca; o nome do produto e a marca vêm depois.
  */
 export const projectMeta = {
@@ -99,6 +99,39 @@ export const projectMeta = {
             title: 'Traduttore XML per Giochi con IA — STZ XML Translator | STZ Labs',
             description: 'Traduci file XML di giochi sul desktop con Gemini, DeepL, Azure o Llama, glossario intelligente e tag preset che preservano la struttura del file.',
             ogDescription: 'Traduci XML di giochi con IA, glossario e più provider — tutto sul desktop.',
+        },
+    },
+
+    'stz-downloader': {
+        pt: {
+            title: 'Gerenciador de Downloads para Windows com aria2 — STZ Downloader | STZ Labs',
+            description: 'Gerenciador de downloads estilo IDM para Windows: várias conexões por arquivo com aria2, limite de velocidade e extensão para Chrome e Firefox que captura downloads.',
+            ogDescription: 'Downloads acelerados com aria2 e captura direto do navegador.',
+        },
+        en: {
+            title: 'Download Manager for Windows with aria2 — STZ Downloader | STZ Labs',
+            description: 'An IDM-style download manager for Windows: multiple connections per file with aria2, speed limits and a Chrome and Firefox extension that catches downloads.',
+            ogDescription: 'Accelerated downloads with aria2, caught straight from your browser.',
+        },
+        es: {
+            title: 'Gestor de Descargas para Windows con aria2 — STZ Downloader | STZ Labs',
+            description: 'Gestor de descargas estilo IDM para Windows: varias conexiones por archivo con aria2, límite de velocidad y extensión para Chrome y Firefox que captura descargas.',
+            ogDescription: 'Descargas aceleradas con aria2, capturadas desde el navegador.',
+        },
+        fr: {
+            title: 'Gestionnaire de Téléchargements pour Windows avec aria2 — STZ Downloader | STZ Labs',
+            description: 'Gestionnaire de téléchargements façon IDM pour Windows : plusieurs connexions par fichier avec aria2, limite de vitesse et extension Chrome et Firefox qui intercepte les téléchargements.',
+            ogDescription: 'Téléchargements accélérés avec aria2, interceptés depuis le navigateur.',
+        },
+        de: {
+            title: 'Download-Manager für Windows mit aria2 — STZ Downloader | STZ Labs',
+            description: 'Download-Manager im IDM-Stil für Windows: mehrere Verbindungen pro Datei mit aria2, Geschwindigkeitslimits und eine Chrome- und Firefox-Erweiterung, die Downloads abfängt.',
+            ogDescription: 'Beschleunigte Downloads mit aria2, direkt aus dem Browser.',
+        },
+        it: {
+            title: 'Download Manager per Windows con aria2 — STZ Downloader | STZ Labs',
+            description: 'Download manager in stile IDM per Windows: più connessioni per file con aria2, limiti di velocità ed estensione per Chrome e Firefox che intercetta i download.',
+            ogDescription: 'Download accelerati con aria2, catturati direttamente dal browser.',
         },
     },
 
