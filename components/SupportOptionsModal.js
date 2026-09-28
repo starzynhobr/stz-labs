@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import TranslatedText from './TranslatedText';
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from './ui/Button';
+import SupportOptions from './SupportOptions';
 
 export default function SupportOptionsModal({ kofiUrl, mercadoPagoLinks }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ export default function SupportOptionsModal({ kofiUrl, mercadoPagoLinks }) {
                 className="w-full relative group overflow-hidden py-6 cursor-pointer"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
-                <TranslatedText as="span" className="relative font-bold text-base tracking-widest uppercase" i18nKey="support.open_modal_cta" />
+                <TranslatedText as="span" className="relative font-bold text-base" i18nKey="support.open_modal_cta" />
             </Button>
 
             {isOpen && typeof document !== 'undefined'
@@ -75,52 +76,7 @@ export default function SupportOptionsModal({ kofiUrl, mercadoPagoLinks }) {
                             />
                         </div>
 
-                        <div className="space-y-8">
-                            {/* Ko-fi Option */}
-                            <div className="p-6 rounded-2xl bg-[var(--surface-primary)] border [border-color:var(--border-subtle)]">
-                                <div className="mb-6">
-                                    <TranslatedText as="h4" className="text-sm font-bold text-[var(--accent)] uppercase tracking-widest mb-2" i18nKey="support.kofi_title" />
-                                    <TranslatedText
-                                        as="p"
-                                        className="text-[13px] text-[var(--text-secondary)] leading-relaxed"
-                                        i18nKey="support.kofi_text"
-                                    />
-                                </div>
-                                <Button asChild variant="primary" className="w-full">
-                                    <a href={kofiUrl} target="_blank" rel="noopener noreferrer">
-                                        <TranslatedText as="span" i18nKey="support.kofi_button" />
-                                    </a>
-                                </Button>
-                            </div>
-
-                            <div className="relative flex items-center py-2">
-                                <div className="flex-grow border-t [border-color:var(--border-subtle)]"></div>
-                                <span className="flex-shrink mx-4 text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-[0.2em]">ou</span>
-                                <div className="flex-grow border-t [border-color:var(--border-subtle)]"></div>
-                            </div>
-
-                            {/* Mercado Pago Options */}
-                            <div>
-                                <div className="mb-6 text-center">
-                                    <TranslatedText as="h4" className="text-sm font-bold text-[var(--text-heading)] uppercase tracking-widest mb-2" i18nKey="support.mercado_pago_title" />
-                                    <TranslatedText
-                                        as="p"
-                                        className="text-[13px] text-[var(--text-secondary)] leading-relaxed"
-                                        i18nKey="support.mercado_pago_text"
-                                    />
-                                </div>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                    {mercadoPagoLinks.map((option) => (
-                                        <Button key={option.href} asChild variant="secondary" size="sm">
-                                            <a href={option.href} target="_blank" rel="noopener noreferrer">
-                                                <TranslatedText as="span" i18nKey={option.labelKey} />
-                                            </a>
-                                        </Button>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                        <SupportOptions kofiUrl={kofiUrl} mercadoPagoLinks={mercadoPagoLinks} />
                     </div>
                 </div>,
                 document.body

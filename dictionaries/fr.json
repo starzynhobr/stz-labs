@@ -186,7 +186,9 @@
     "contact": "Contact",
     "how_to_support": "Soutenir le projet",
     "payment_flow": "Contribuez du montant que vous voulez, en guise de remerciement et de soutien au projet. C’est une contribution unique, sans abonnement ni prélèvement récurrent.",
-    "open_modal_cta": "Soutenir STZ Labs",
+    "open_modal_cta": "Choisir comment soutenir",
+    "or": "ou",
+    "impact_line": "Chaque contribution garde les outils gratuits, sans publicité et à jour.",
     "modal_title": "Soutenir STZ Labs",
     "modal_subtitle": "Choisissez la formule qui vous convient. Tout montant aide.",
     "modal_close_aria": "Fermer la fenêtre de soutien",
@@ -200,9 +202,7 @@
     "amount_free": "Montant libre",
     "software_available_now": "Les outils",
     "current_products": "Tout ce que votre soutien aide à maintenir.",
-    "releases_downloads": "Releases",
-    "impact_title": "Votre soutien fait la différence",
-    "impact_text": "STZ Labs est un projet indépendant. Si un outil vous a été utile, votre contribution est un moyen direct de soutenir mon travail et d’encourager la suite du projet."
+    "releases_downloads": "Releases"
   },
   "ai_chat_optimizer": {
     "title": "STZ Ai Chat Optimizer",

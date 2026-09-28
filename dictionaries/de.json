@@ -186,7 +186,9 @@
     "contact": "Kontakt",
     "how_to_support": "Das Projekt unterstützen",
     "payment_flow": "Trage einen beliebigen Betrag bei, als Dankeschön und Rückhalt für das Projekt. Es ist ein einmaliger Beitrag, ohne Abo und ohne wiederkehrende Zahlung.",
-    "open_modal_cta": "STZ Labs unterstützen",
+    "open_modal_cta": "Unterstützung auswählen",
+    "or": "oder",
+    "impact_line": "Jeder Beitrag hält die Tools kostenlos, werbefrei und aktuell.",
     "modal_title": "STZ Labs unterstützen",
     "modal_subtitle": "Wähle den Weg, der dir passt. Jeder Betrag hilft.",
     "modal_close_aria": "Unterstützungsfenster schließen",
@@ -200,9 +202,7 @@
     "amount_free": "Freier Betrag",
     "software_available_now": "Die Werkzeuge",
     "current_products": "Alles, was deine Unterstützung am Leben hält.",
-    "releases_downloads": "Releases",
-    "impact_title": "Deine Unterstützung macht einen Unterschied",
-    "impact_text": "STZ Labs ist ein unabhängiges Projekt. Wenn dir ein Werkzeug geholfen hat, ist dein Beitrag ein direkter Weg, meine Arbeit zu unterstützen und das Projekt am Laufen zu halten."
+    "releases_downloads": "Releases"
   },
   "ai_chat_optimizer": {
     "title": "STZ Ai Chat Optimizer",

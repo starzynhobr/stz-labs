@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import LocaleLink from '../../../components/LocaleLink';
-import SupportOptionsModal from '../../../components/SupportOptionsModal';
+import SupportOptions from '../../../components/SupportOptions';
 import TranslatedText from '../../../components/TranslatedText';
 import { projects } from '../../../data/projects';
 import { Button } from '../../../components/ui/Button';
@@ -57,21 +57,14 @@ export default async function SupportPage({ params }) {
                         className="text-[15px] text-[var(--text-secondary)] leading-relaxed mb-8 max-w-md mx-auto"
                         i18nKey="support.payment_flow"
                     />
-                    <SupportOptionsModal kofiUrl={KOFI_URL} mercadoPagoLinks={MERCADO_PAGO_LINKS} />
-                </div>
-
-                <div className="mt-6 p-6 rounded-[var(--radius-card)] bg-[var(--surface-3)] border [border-color:var(--border-subtle)] border-l-4 [border-left-color:var(--accent)]">
-                    <TranslatedText
-                        as="h3"
-                        className="text-sm font-bold text-[var(--text-heading)] mb-2"
-                        i18nKey="support.impact_title"
-                    />
+                    <SupportOptions kofiUrl={KOFI_URL} mercadoPagoLinks={MERCADO_PAGO_LINKS} />
                     <TranslatedText
                         as="p"
-                        className="text-sm text-[var(--text-secondary)] leading-relaxed"
-                        i18nKey="support.impact_text"
+                        className="mt-8 text-xs text-[var(--text-muted)]"
+                        i18nKey="support.impact_line"
                     />
                 </div>
+
 
                 <p className="mt-6 text-sm text-[var(--text-muted)] text-center">
                     <TranslatedText as="span" i18nKey="support.contact" />:{' '}
