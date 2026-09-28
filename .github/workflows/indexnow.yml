@@ -1,0 +1,20 @@
+# Depois de cada deploy de produção bem-sucedido na Vercel, avisa o IndexNow
+# (Bing e parceiros) sobre as URLs do sitemap. O Google não usa IndexNow.
+name: IndexNow
+
+on:
+  deployment_status:
+
+jobs:
+  submit:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/indexnow.mjs
