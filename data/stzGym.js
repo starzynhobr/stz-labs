@@ -109,6 +109,9 @@ export const GYM_RUN_SAMPLE = {
     ],
 };
 
+/** Tamanho aceito para sugestões; o mínimo barra "oi" e "teste". */
+export const GYM_SUGGESTION_LENGTH = { min: 10, max: 500 };
+
 /** Opções da enquete; a API aceita só estes ids. */
 export const GYM_POLL_OPTIONS = ['training', 'running', 'nutrition', 'gamification'];
 
@@ -189,7 +192,7 @@ const pageCopy = {
         like: 'Quero esse app', liked: 'Valeu!',
         pollTitle: 'O que mais te interessa?',
         poll: { training: 'Treinos', running: 'Corrida', nutrition: 'Nutrição', gamification: 'Gamificação' },
-        suggestion: 'Tem uma ideia ou sugestão?', suggestionPlaceholder: 'Escreva aqui (opcional, anônimo)',
+        suggestion: 'Tem uma ideia ou sugestão?', suggestionPlaceholder: 'Escreva aqui (opcional, anônimo)', suggestionMin: 'mínimo de {min} caracteres',
         send: 'Enviar', sent: 'Recebido, obrigado!',
         errorLimit: 'Muitos envios. Tente mais tarde.', errorGeneric: 'Não foi possível enviar agora.',
         offline: 'Feedback indisponível no momento.',
@@ -212,7 +215,7 @@ const pageCopy = {
         like: 'I want this app', liked: 'Thanks!',
         pollTitle: 'What interests you most?',
         poll: { training: 'Workouts', running: 'Running', nutrition: 'Nutrition', gamification: 'Gamification' },
-        suggestion: 'Got an idea or suggestion?', suggestionPlaceholder: 'Write here (optional, anonymous)',
+        suggestion: 'Got an idea or suggestion?', suggestionPlaceholder: 'Write here (optional, anonymous)', suggestionMin: 'at least {min} characters',
         send: 'Send', sent: 'Received, thank you!',
         errorLimit: 'Too many submissions. Try again later.', errorGeneric: "Couldn't send right now.",
         offline: 'Feedback is unavailable right now.',
@@ -235,7 +238,7 @@ const pageCopy = {
         like: 'Quiero esta app', liked: '¡Gracias!',
         pollTitle: '¿Qué te interesa más?',
         poll: { training: 'Entrenamientos', running: 'Carrera', nutrition: 'Nutrición', gamification: 'Gamificación' },
-        suggestion: '¿Tienes una idea o sugerencia?', suggestionPlaceholder: 'Escribe aquí (opcional, anónimo)',
+        suggestion: '¿Tienes una idea o sugerencia?', suggestionPlaceholder: 'Escribe aquí (opcional, anónimo)', suggestionMin: 'mínimo {min} caracteres',
         send: 'Enviar', sent: '¡Recibido, gracias!',
         errorLimit: 'Demasiados envíos. Inténtalo más tarde.', errorGeneric: 'No se pudo enviar ahora.',
         offline: 'Comentarios no disponibles por ahora.',
@@ -258,7 +261,7 @@ const pageCopy = {
         like: 'Je veux cette app', liked: 'Merci !',
         pollTitle: 'Qu’est-ce qui vous intéresse le plus ?',
         poll: { training: 'Entraînements', running: 'Course', nutrition: 'Nutrition', gamification: 'Gamification' },
-        suggestion: 'Une idée ou une suggestion ?', suggestionPlaceholder: 'Écrivez ici (facultatif, anonyme)',
+        suggestion: 'Une idée ou une suggestion ?', suggestionPlaceholder: 'Écrivez ici (facultatif, anonyme)', suggestionMin: 'au moins {min} caractères',
         send: 'Envoyer', sent: 'Reçu, merci !',
         errorLimit: 'Trop d’envois. Réessayez plus tard.', errorGeneric: 'Envoi impossible pour le moment.',
         offline: 'Retours indisponibles pour le moment.',
@@ -281,7 +284,7 @@ const pageCopy = {
         like: 'Ich will diese App', liked: 'Danke!',
         pollTitle: 'Was interessiert dich am meisten?',
         poll: { training: 'Training', running: 'Laufen', nutrition: 'Ernährung', gamification: 'Gamification' },
-        suggestion: 'Eine Idee oder ein Vorschlag?', suggestionPlaceholder: 'Hier schreiben (optional, anonym)',
+        suggestion: 'Eine Idee oder ein Vorschlag?', suggestionPlaceholder: 'Hier schreiben (optional, anonym)', suggestionMin: 'mindestens {min} Zeichen',
         send: 'Senden', sent: 'Erhalten, danke!',
         errorLimit: 'Zu viele Einsendungen. Später erneut versuchen.', errorGeneric: 'Senden gerade nicht möglich.',
         offline: 'Feedback derzeit nicht verfügbar.',
@@ -304,7 +307,7 @@ const pageCopy = {
         like: 'Voglio questa app', liked: 'Grazie!',
         pollTitle: 'Cosa ti interessa di più?',
         poll: { training: 'Allenamenti', running: 'Corsa', nutrition: 'Nutrizione', gamification: 'Gamification' },
-        suggestion: 'Hai un’idea o un suggerimento?', suggestionPlaceholder: 'Scrivi qui (facoltativo, anonimo)',
+        suggestion: 'Hai un’idea o un suggerimento?', suggestionPlaceholder: 'Scrivi qui (facoltativo, anonimo)', suggestionMin: 'almeno {min} caratteri',
         send: 'Invia', sent: 'Ricevuto, grazie!',
         errorLimit: 'Troppi invii. Riprova più tardi.', errorGeneric: 'Impossibile inviare ora.',
         offline: 'Feedback non disponibile al momento.',

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { GYM_POLL_OPTIONS } from '../../data/stzGym';
+import { GYM_POLL_OPTIONS, GYM_SUGGESTION_LENGTH } from '../../data/stzGym';
 
 const ENDPOINT = '/api/gym-feedback';
 const STORAGE_KEY = 'stz-gym-feedback';
@@ -36,7 +36,7 @@ async function send(payload) {
 
 const CARD = 'rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-6 backdrop-blur-[var(--backdrop-blur)]';
 
-export default function GymFeedback({ text }) {
+export default function GymFeedback({ text, locale }) {
     const [counts, setCounts] = useState(null);
     const [available, setAvailable] = useState(true);
     const [local, setLocal] = useState({});
@@ -78,7 +78,7 @@ export default function GymFeedback({ text }) {
     const vote = (option) => submit('vote', { type: 'vote', option }, () => remember({ voted: option }));
     const sendSuggestion = (event) => {
         event.preventDefault();
-        submit('suggestion', { type: 'suggestion', text: suggestion }, () => {
+        submit('suggestion', { type: 'suggestion', text: suggestion, locale }, () => {
             setSuggestion('');
             setMessage({ kind: 'suggestion', text: text.sent, ok: true });
         });
@@ -88,6 +88,7 @@ export default function GymFeedback({ text }) {
         return <p className="text-center text-sm text-[var(--text-muted)]">{text.offline}</p>;
     }
 
+    const suggestionLength = suggestion.trim().length;
     const totalVotes = counts ? Object.values(counts.votes).reduce((sum, value) => sum + value, 0) : 0;
     const showMessage = (kind) => message?.kind === kind && (
         <p role="status" className={`mt-3 text-xs ${message.ok ? 'text-emerald-400' : 'text-red-400'}`}>{message.text}</p>
@@ -157,19 +158,25 @@ export default function GymFeedback({ text }) {
                         id="gym-suggestion"
                         value={suggestion}
                         onChange={(event) => setSuggestion(event.target.value)}
-                        maxLength={500}
+                        maxLength={GYM_SUGGESTION_LENGTH.max}
                         rows={2}
                         placeholder={text.suggestionPlaceholder}
                         className="min-h-[3rem] flex-1 resize-y rounded-lg border [border-color:var(--border-subtle)] bg-black/10 px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none"
                     />
                     <button
                         type="submit"
-                        disabled={suggestion.trim().length < 3 || busy === 'suggestion'}
+                        disabled={suggestionLength < GYM_SUGGESTION_LENGTH.min || busy === 'suggestion'}
                         className="rounded-lg bg-[var(--accent)] px-6 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-40 sm:self-end"
                     >
                         {text.send}
                     </button>
                 </div>
+                {suggestionLength > 0 && (
+                    <p className={`mt-2 text-xs tabular-nums ${suggestionLength < GYM_SUGGESTION_LENGTH.min ? 'text-amber-500' : 'text-[var(--text-muted)]'}`}>
+                        {suggestionLength}/{GYM_SUGGESTION_LENGTH.max}
+                        {suggestionLength < GYM_SUGGESTION_LENGTH.min && ` · ${text.suggestionMin.replace('{min}', GYM_SUGGESTION_LENGTH.min)}`}
+                    </p>
+                )}
                 {showMessage('suggestion')}
             </form>
         </div>

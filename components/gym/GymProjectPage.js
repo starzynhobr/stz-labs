@@ -47,7 +47,7 @@ export default function GymProjectPage() {
                     <h2 className="text-2xl font-bold tracking-tight text-[var(--text-heading)] md:text-3xl">{text.feedbackTitle}</h2>
                     <p className="mt-2 text-sm text-[var(--text-secondary)]">{text.feedbackText}</p>
                 </div>
-                <GymFeedback text={text} />
+                <GymFeedback text={text} locale={lang} />
             </section>
         </main>
     );

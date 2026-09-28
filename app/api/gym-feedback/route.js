@@ -1,7 +1,9 @@
 import { createHash } from 'node:crypto';
 import { NextResponse } from 'next/server';
 import { isRedisConfigured, redisPipeline } from '../../../lib/redis';
-import { GYM_POLL_OPTIONS } from '../../../data/stzGym';
+import { notifyTelegram } from '../../../lib/telegram';
+import { isLocale } from '../../../lib/i18n';
+import { GYM_POLL_OPTIONS, GYM_SUGGESTION_LENGTH } from '../../../data/stzGym';
 
 export const dynamic = 'force-dynamic';
 
@@ -14,8 +16,7 @@ const KEYS = {
 /** Envios por IP a cada hora, por tipo. */
 const RATE_LIMITS = { like: 3, vote: 3, suggestion: 3 };
 const RATE_WINDOW_SECONDS = 3600;
-const SUGGESTION_MIN = 3;
-const SUGGESTION_MAX = 500;
+const { min: SUGGESTION_MIN, max: SUGGESTION_MAX } = GYM_SUGGESTION_LENGTH;
 const SUGGESTIONS_KEPT = 1000;
 
 const json = (body, status = 200) => NextResponse.json(body, {
@@ -82,7 +83,7 @@ export async function POST(request) {
         return json({ error: 'invalid' }, 400);
     }
 
-    const { type, option, text, website } = body || {};
+    const { type, option, text, website, locale } = body || {};
 
     // Honeypot: campo invisível que só robôs preenchem. Finge sucesso.
     if (website) return json({ ok: true });
@@ -108,6 +109,11 @@ export async function POST(request) {
                 ['LPUSH', KEYS.suggestions, entry],
                 ['LTRIM', KEYS.suggestions, 0, SUGGESTIONS_KEPT - 1],
             ]);
+            await notifyTelegram({
+                title: '💡 Nova sugestão — STZ Gym',
+                body: suggestion,
+                footer: isLocale(locale) ? locale.toUpperCase() : null,
+            });
         }
 
         return json({ ok: true, ...(type === 'suggestion' ? {} : await readCounts()) });
