@@ -36,6 +36,39 @@ export const projectMeta = {
         },
     },
 
+    'stz-gym': {
+        pt: {
+            title: 'App de Academia com Treinos, Metas e Gamificação — STZ Gym | STZ Labs',
+            description: 'Prévia interativa do STZ Gym: treino do dia, hidratação, refeições, missões, níveis e temas desbloqueáveis. Em breve para Android.',
+            ogDescription: 'Teste a prévia interativa do app de academia da STZ Labs.',
+        },
+        en: {
+            title: 'Gym App with Workouts, Goals and Gamification — STZ Gym | STZ Labs',
+            description: "Interactive preview of STZ Gym: today's workout, hydration, meals, missions, levels and unlockable themes. Coming soon to Android.",
+            ogDescription: "Try the interactive preview of STZ Labs' gym app.",
+        },
+        es: {
+            title: 'App de Gimnasio con Entrenamientos, Metas y Gamificación — STZ Gym | STZ Labs',
+            description: 'Vista previa interactiva de STZ Gym: entrenamiento del día, hidratación, comidas, misiones, niveles y temas desbloqueables. Próximamente en Android.',
+            ogDescription: 'Prueba la vista previa interactiva de la app de gimnasio de STZ Labs.',
+        },
+        fr: {
+            title: 'App de Musculation avec Séances, Objectifs et Gamification — STZ Gym | STZ Labs',
+            description: 'Aperçu interactif de STZ Gym : séance du jour, hydratation, repas, missions, niveaux et thèmes à débloquer. Bientôt sur Android.',
+            ogDescription: "Essayez l'aperçu interactif de l'app de musculation de STZ Labs.",
+        },
+        de: {
+            title: 'Fitness-App mit Training, Zielen und Gamification — STZ Gym | STZ Labs',
+            description: 'Interaktive Vorschau von STZ Gym: Training des Tages, Trinken, Mahlzeiten, Missionen, Levels und freischaltbare Themes. Demnächst für Android.',
+            ogDescription: 'Probiere die interaktive Vorschau der Fitness-App von STZ Labs.',
+        },
+        it: {
+            title: 'App per la Palestra con Allenamenti, Obiettivi e Gamification — STZ Gym | STZ Labs',
+            description: 'Anteprima interattiva di STZ Gym: allenamento del giorno, idratazione, pasti, missioni, livelli e temi sbloccabili. Presto su Android.',
+            ogDescription: "Prova l'anteprima interattiva dell'app per la palestra di STZ Labs.",
+        },
+    },
+
     'stz-xml-translator': {
         pt: {
             title: 'Tradutor de XML de Jogos com IA — STZ XML Translator | STZ Labs',

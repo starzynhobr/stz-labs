@@ -66,41 +66,34 @@ export default function Hero() {
     const dotColor = isPaused ? 'bg-purple-500' : isDeleting ? 'bg-red-500' : 'bg-green-500';
 
     return (
-        <section className="relative w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-strong)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] transition-all duration-500">
-            {/* Ambient Atmosphere Glows */}
-            <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[var(--accent-glow)] rounded-full blur-[120px] -z-10 pointer-events-none animate-pulse duration-[4000ms] opacity-[var(--glow-opacity)]" />
-            <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] bg-[var(--accent-glow)] rounded-full blur-[100px] -z-10 pointer-events-none opacity-[var(--glow-opacity)]" />
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)]/20 to-transparent" />
-
-            <div className="relative z-10 flex flex-col items-center px-8 py-10 md:px-12 md:py-16 max-w-4xl mx-auto text-center">
+        <section className="relative flex flex-col gap-6 border-b [border-color:var(--border-subtle)] pb-8 md:flex-row md:items-end md:justify-between">
+            <div>
                 {/* Linha de Status Viva (Typing Effect) */}
-                <div className="flex items-center gap-3 mb-10 h-6">
+                <div className="mb-4 flex h-6 items-center gap-3">
                     <span className={`w-1 h-1 rounded-full ${dotColor} opacity-70 transition-colors duration-500`} aria-hidden="true" />
                     <span className="font-mono text-[11px] tracking-[0.2em] text-[var(--accent)]/60 uppercase">
                         {PHRASES[index].substring(0, subIndex)}
                         <span className="inline-block w-[1px] h-3 ml-0.5 bg-[var(--accent)]/40 animate-pulse" />
                     </span>
                 </div>
-                
-                <TranslatedText as="h1" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[var(--text-primary)] mb-6 leading-tight" i18nKey="sections.projects_title" />
-                
-                <TranslatedText as="p" className="text-base md:text-lg text-[var(--text-secondary)] mb-12 leading-relaxed max-w-2xl mx-auto" i18nKey="sections.projects_subtitle" />
-                
-                <div className="flex flex-wrap gap-4 items-center justify-center">
-                    <div className="flex flex-col items-center">
-                        <LocaleLink href="/support" 
-                              className="text-sm font-semibold text-[var(--accent)] hover:opacity-80 transition-all inline-flex items-center gap-2"
-                              aria-label={t('sections.projects_support_aria')}>
-                            <TranslatedText as="span" i18nKey="sections.projects_support_cta" />
-                            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-                        </LocaleLink>
-                        <TranslatedText
-                            as="span"
-                            className="text-[10px] text-[var(--text-muted)] uppercase tracking-widest mt-1.5"
-                            i18nKey="sections.projects_support_note"
-                        />
-                    </div>
-                </div>
+
+                <TranslatedText as="h1" className="text-3xl md:text-4xl font-bold tracking-tighter text-[var(--text-primary)] mb-2 leading-tight" i18nKey="sections.projects_title" />
+
+                <TranslatedText as="p" className="text-base text-[var(--text-secondary)] leading-relaxed" i18nKey="sections.projects_subtitle" />
+            </div>
+
+            <div className="flex flex-col items-start md:items-end">
+                <LocaleLink href="/support"
+                      className="group text-sm font-semibold text-[var(--accent)] hover:opacity-80 transition-all inline-flex items-center gap-2"
+                      aria-label={t('sections.projects_support_aria')}>
+                    <TranslatedText as="span" i18nKey="sections.projects_support_cta" />
+                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                </LocaleLink>
+                <TranslatedText
+                    as="span"
+                    className="text-[10px] text-[var(--text-muted)] uppercase tracking-widest mt-1.5"
+                    i18nKey="sections.projects_support_note"
+                />
             </div>
         </section>
     );

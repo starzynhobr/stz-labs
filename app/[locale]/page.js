@@ -1,5 +1,6 @@
 import ProjectCard from '../../components/ProjectCard';
 import Hero from '../../components/Hero';
+import GymSpotlight from '../../components/gym/GymSpotlight';
 import Philosophy from '../../components/Philosophy';
 import StatusTimeline from '../../components/StatusTimeline';
 import { projects } from '../../data/projects';
@@ -44,8 +45,11 @@ export default async function Home({ params }) {
 
             <div className="container relative z-10 max-w-[1200px] mx-auto px-6">
                 <section className="mt-12 relative z-10 flex flex-col gap-16">
+                    <GymSpotlight />
+
+                    <div className="flex flex-col gap-8">
                     <Hero />
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
                         {sortedProjects.map((project) => (
                             <ProjectCard
@@ -74,6 +78,7 @@ export default async function Home({ params }) {
                                 coverImage={project.coverImage}
                             />
                         ))}
+                    </div>
                     </div>
                 </section>
 

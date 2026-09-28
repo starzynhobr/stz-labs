@@ -6,6 +6,7 @@ export const baseUrl = 'https://stzlabs.com';
 
 const staticRoutes = [
     { path: '', priority: 1, changeFrequency: 'weekly' },
+    { path: '/projects/stz-gym', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/support', priority: 0.5, changeFrequency: 'yearly' },
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' },
