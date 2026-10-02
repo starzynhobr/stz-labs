@@ -51,8 +51,6 @@
     }
   },
   "sections": {
-    "game_tools_title": "Spiele-Werkzeuge",
-    "game_tools_subtitle": "Hilfsprogramme für die Spiele, die du spielst und anpasst.",
     "projects_title": "/// Projekte",
     "projects_subtitle": "Tools mit Fokus auf Produktivität und Nutzen.",
     "roadmap_title": "/// Status",
@@ -568,74 +566,6 @@
       "popup_kicker": "Erweiterung",
       "popup_title": "Browser-Integration",
       "popup_desc": "Das Popup der Erweiterung zeigt, ob die App verbunden ist, und schaltet die automatische Erfassung mit einem Klick um."
-    }
-  },
-  "gf_farmer": {
-    "title": "GF Farmer",
-    "card_description": "Organisiere Grand-Fantasia-Konten, Charaktere, tägliches Farming und Ergebnisse an einem Ort.",
-    "description": "Verwalte Konten und Charaktere, verfolge tägliches Farming und Turm-Aktivitäten und prüfe Verlauf und finanzielle Ergebnisse. Lokale Daten werden getrennt von der Installation gespeichert.",
-    "release_link": "Release auf GitHub ansehen",
-    "showcase": {
-      "today_kicker": "Tägliche Routine",
-      "today_title": "Dein Farming heute",
-      "today_description": "Erfasse den täglichen Fortschritt jedes Charakters und abgeschlossene Aktivitäten.",
-      "characters_kicker": "Organisation",
-      "characters_title": "Konten und Charaktere",
-      "characters_description": "Organisiere deine Konten und Charaktere und plane ihre Routinen.",
-      "reports_kicker": "Ergebnisse",
-      "reports_title": "Verlauf und Berichte",
-      "reports_description": "Prüfe Farming-Aufzeichnungen und verfolge finanzielle Ergebnisse im Zeitverlauf."
-    },
-    "features": {
-      "accounts_title": "Konten und Charaktere",
-      "accounts_description": "Organisiere die Übersicht über mehrere Charaktere und Konten.",
-      "routine_title": "Tägliches Farming und Turm",
-      "routine_description": "Verfolge deine Farming-Routine und Turm-Aufzeichnungen.",
-      "history_title": "Aktivitätsverlauf",
-      "history_description": "Prüfe frühere Sitzungen und abgeschlossene Aktivitäten.",
-      "finance_title": "Finanzielle Ergebnisse",
-      "finance_description": "Verfolge erfasste Ergebnisse und bewerte deine Routine.",
-      "local_title": "Lokale Daten",
-      "local_description": "Aufzeichnungen liegen in einer SQLite-Datenbank getrennt von der Installation.",
-      "manual_title": "Manuelle Erfassung",
-      "manual_description": "Ein Werkzeug für Aufzeichnungen und Ergebnisse; es übernimmt kein Farming für dich."
-    },
-    "specs": {
-      "version": "Version",
-      "platform": "Plattform",
-      "game": "Spiel",
-      "storage": "Speicherung"
-    }
-  },
-  "gf_ui_editor": {
-    "title": "GF UI Editor",
-    "card_description": "Bearbeite XML-Oberflächen von Grand Fantasia Violet visuell mit Canvas, Eigenschaften und DDS-Atlas.",
-    "description": "Öffne eine XML-Datei des Spiels, wähle Elemente im Canvas oder Baum und passe Positionen, Größen und Texturausschnitte an. Prüfe Änderungen vor dem Speichern und behalte eine Sicherung des Originals. Das Spiel und seine Dateien sind nicht enthalten.",
-    "github_link": "Auf GitHub ansehen",
-    "showcase": {
-      "editor_kicker": "Oberflächen bearbeiten",
-      "editor_title": "Canvas und Eigenschaften",
-      "editor_description": "Wähle, verschiebe und skaliere Elemente mit Vorschau und numerischen Einstellungen.",
-      "atlas_kicker": "Texturen erkunden",
-      "atlas_title": "DDS-Atlas",
-      "atlas_description": "Betrachte die gesamte Textur und passe den Ausschnitt für jedes Element an.",
-      "start_kicker": "Projekt beginnen",
-      "start_title": "Spieldateien öffnen",
-      "start_description": "Öffne eine XML-Datei deiner Grand-Fantasia-Violet-Installation, um die Oberfläche und Texturen zu laden."
-    },
-    "features": {
-      "visual_title": "Visuelle Bearbeitung",
-      "visual_description": "Verschiebe und skaliere Elemente mit Mehrfachauswahl und Rückgängig/Wiederholen.",
-      "backup_title": "Speichern mit Sicherung",
-      "backup_description": "Prüfe den Diff vor dem Speichern; Big5 und ursprüngliche Formatierung bleiben erhalten.",
-      "languages_title": "App-Sprachen",
-      "languages_description": "Oberfläche auf Portugiesisch, Englisch, Spanisch und Französisch verfügbar."
-    },
-    "specs": {
-      "version": "Version",
-      "platform": "Plattform",
-      "compatibility": "Kompatibilität",
-      "languages": "Sprachen"
     }
   }
 }

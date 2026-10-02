@@ -1,5 +1,5 @@
-import ProjectGrid from '../../components/ProjectGrid';
-import GameProjects from '../../components/GameProjects';
+import ProjectCard from '../../components/ProjectCard';
+import SuiteShowcaseCard from '../../components/SuiteShowcaseCard';
 import Hero from '../../components/Hero';
 import GymSpotlight from '../../components/gym/GymSpotlight';
 import Philosophy from '../../components/Philosophy';
@@ -51,9 +51,43 @@ export default async function Home({ params }) {
                     <div className="flex flex-col gap-8">
                     <Hero />
 
-                    <ProjectGrid projectList={sortedProjects.filter((project) => !project.gameId)} locale={locale} releases={releases} stats={stats} />
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
+                        {sortedProjects.map((project) => project.slug === 'stz-suite' ? (
+                            <SuiteShowcaseCard
+                                key={project.slug}
+                                tags={project.tags}
+                                initialRelease={releases[project.slug] || null}
+                                repoStats={stats[project.repoName] || null}
+                            />
+                        ) : (
+                            <ProjectCard
+                                key={project.slug || project.titleKey}
+                                layoutType={project.layoutType}
+                                titleKey={project.titleKey}
+                                descriptionKey={project.descriptionKey}
+                                versionKey={project.versionKey}
+                                repoName={project.repoName}
+                                detailHref={project.slug ? `/${locale}/projects/${project.slug}` : null}
+                                downloadHref={project.downloadHref}
+                                releaseTagPrefix={project.releaseTagPrefix}
+                                releaseAssetPattern={project.releaseAssetPattern}
+                                releaseFallbackTag={project.releaseFallbackTag}
+                                initialRelease={releases[project.slug] || null}
+                                repoStats={project.repoName ? stats[project.repoName] || null : null}
+                                badgeLabel={project.badgeLabel}
+                                badgeLabelKey={project.badgeLabelKey}
+                                badgeVariant={project.badgeVariant}
+                                badgeAttrs={project.badgeAttrs}
+                                tags={project.tags}
+                                detailLabelKey={project.detailLabelKey}
+                                downloadDisabledLabelKey={project.downloadDisabledLabelKey}
+                                style={project.style}
+                                actionButtons={project.actionButtons}
+                                coverImage={project.coverImage}
+                            />
+                        ))}
                     </div>
-                    <GameProjects projectList={sortedProjects.filter((project) => project.gameId)} locale={locale} releases={releases} stats={stats} />
+                    </div>
                 </section>
 
                 {/* Legacy Components that will be refactored eventually - wrapped nicely */}

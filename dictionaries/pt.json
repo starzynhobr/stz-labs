@@ -50,8 +50,6 @@
     }
   },
   "sections": {
-    "game_tools_title": "Ferramentas para jogos",
-    "game_tools_subtitle": "Utilitários dedicados aos jogos que você joga e personaliza.",
     "projects_title": "/// Projetos",
     "projects_subtitle": "Ferramentas focadas em produtividade e utilidade.",
     "roadmap_title": "/// Status",
@@ -565,74 +563,6 @@
       "popup_kicker": "Extensão",
       "popup_title": "Integração com o Navegador",
       "popup_desc": "O popup da extensão mostra se o app está conectado e liga ou desliga a captura automática com um clique."
-    }
-  },
-  "gf_farmer": {
-    "title": "GF Farmer",
-    "card_description": "Organize contas, personagens, farm diário e resultados de Grand Fantasia em um só lugar.",
-    "description": "Controle suas contas e personagens, acompanhe o farm diário e a Torre e consulte o histórico e os resultados financeiros. Dados locais, separados da instalação do aplicativo.",
-    "release_link": "Ver release no GitHub",
-    "showcase": {
-      "today_kicker": "Rotina diária",
-      "today_title": "Seu farm de hoje",
-      "today_description": "Registre o progresso do dia por personagem e acompanhe as atividades concluídas.",
-      "characters_kicker": "Organização",
-      "characters_title": "Contas e personagens",
-      "characters_description": "Mantenha suas contas e personagens organizados para planejar a rotina de cada um.",
-      "reports_kicker": "Resultados",
-      "reports_title": "Histórico e relatórios",
-      "reports_description": "Consulte os registros de farm e acompanhe os resultados financeiros ao longo do tempo."
-    },
-    "features": {
-      "accounts_title": "Contas e personagens",
-      "accounts_description": "Organize o acompanhamento de vários personagens e contas.",
-      "routine_title": "Farm diário e Torre",
-      "routine_description": "Acompanhe sua rotina de farm e os registros da Torre.",
-      "history_title": "Histórico de atividades",
-      "history_description": "Consulte sessões anteriores e atividades concluídas.",
-      "finance_title": "Resultados financeiros",
-      "finance_description": "Acompanhe os resultados registrados para avaliar sua rotina.",
-      "local_title": "Dados locais",
-      "local_description": "Os registros ficam em um banco SQLite separado da instalação.",
-      "manual_title": "Controle manual",
-      "manual_description": "Organizador de registros e resultados; não executa o farm por você."
-    },
-    "specs": {
-      "version": "Versão",
-      "platform": "Plataforma",
-      "game": "Jogo",
-      "storage": "Armazenamento"
-    }
-  },
-  "gf_ui_editor": {
-    "title": "GF UI Editor",
-    "card_description": "Edite visualmente as interfaces XML do Grand Fantasia Violet, com canvas, propriedades e atlas DDS.",
-    "description": "Abra um XML do jogo, selecione elementos no canvas ou na árvore e ajuste posições, tamanhos e recortes de textura. Ao salvar, confira as alterações e mantenha um backup do original. O jogo e seus arquivos não estão incluídos.",
-    "github_link": "Ver no GitHub",
-    "showcase": {
-      "editor_kicker": "Editar interfaces",
-      "editor_title": "Canvas e propriedades",
-      "editor_description": "Selecione, mova e redimensione elementos com prévia visual e ajustes numéricos.",
-      "atlas_kicker": "Explorar texturas",
-      "atlas_title": "Atlas DDS",
-      "atlas_description": "Visualize a textura completa e ajuste o recorte usado por cada elemento.",
-      "start_kicker": "Começar um projeto",
-      "start_title": "Abra os arquivos do jogo",
-      "start_description": "Abra um XML da sua instalação do Grand Fantasia Violet para carregar a interface e suas texturas."
-    },
-    "features": {
-      "visual_title": "Edição visual",
-      "visual_description": "Mova e redimensione elementos, com seleção múltipla e desfazer/refazer.",
-      "backup_title": "Salvamento com backup",
-      "backup_description": "Confira o diff antes de salvar; preserve Big5 e a formatação original.",
-      "languages_title": "Idiomas do aplicativo",
-      "languages_description": "Interface disponível em português, inglês, espanhol e francês."
-    },
-    "specs": {
-      "version": "Versão",
-      "platform": "Plataforma",
-      "compatibility": "Compatibilidade",
-      "languages": "Idiomas"
     }
   }
 }
