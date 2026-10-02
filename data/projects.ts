@@ -8,7 +8,7 @@ export const projects = [
         titleKey: 'downloader.title',
         descriptionKey: 'cards.downloader_desc',
         downloadHref: 'https://github.com/starzynhobr/stz-downloader/releases/latest',
-        releaseAssetPattern: '-setup\\.exe$',
+        releaseAssetPattern: '-desktop-setup\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
@@ -17,11 +17,12 @@ export const projects = [
         tags: [
             { labelKey: 'common.tags.windows' },
             { labelKey: 'common.tags.browser_extension' },
-            { labelKey: 'common.tags.qt_qml' },
+            { labelKey: 'common.tags.tools' },
         ],
         detailLabelKey: 'cards.btn_details',
         downloadLabelKey: 'cards.btn_download',
         detail: {
+            customPage: 'downloader',
             meta: {
                 title: 'STZ Downloader | STZ LABS',
                 description:
@@ -29,7 +30,7 @@ export const projects = [
                 ogDescription: 'Downloads acelerados com aria2 e captura direto do navegador.',
             },
             hero: {
-                tags: ['Python 3.12', 'PySide6 / QML', 'aria2'],
+                tags: ['Tauri', 'React', 'aria2'],
                 titleKey: 'downloader.title',
                 descriptionKey: 'downloader.description',
                 githubUrl: 'https://github.com/starzynhobr/stz-downloader',

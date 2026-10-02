@@ -8,6 +8,7 @@ import { projects } from '../../../../data/projects';
 import { Button } from '../../../../components/ui/Button';
 import { Badge } from '../../../../components/ui/Badge';
 import SuiteProjectPage from '../../../../components/SuiteProjectPage';
+import DownloaderProjectPage from '../../../../components/DownloaderProjectPage';
 import { JsonLd, buildSoftwareApplicationLd } from '../../../../lib/structuredData';
 import { findPluginVersions, findRelease, findRepoStats } from '../../../../lib/github';
 import { buildProjectMetadata } from '../../../../lib/pageMetadata';
@@ -60,6 +61,15 @@ export default async function ProjectDetailPage({ params }) {
             <>
                 <JsonLd data={structuredData} />
                 <SuiteProjectPage initialRelease={release} initialPluginVersions={pluginVersions} />
+            </>
+        );
+    }
+
+    if (project.detail.customPage === 'downloader') {
+        return (
+            <>
+                <JsonLd data={structuredData} />
+                <DownloaderProjectPage initialRelease={release} />
             </>
         );
     }
