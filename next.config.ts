@@ -4,10 +4,15 @@ import type { NextConfig } from "next";
  * O Next injeta scripts e estilos inline (hidratação, tema antes da primeira
  * pintura), então `unsafe-inline` é necessário aqui. A política ainda fecha as
  * origens externas: nada carrega de fora do próprio domínio.
+ *
+ * `unsafe-eval` entra só em desenvolvimento: o React usa eval() para reconstruir
+ * call stacks no modo dev e nunca em produção.
  */
+const isDev = process.env.NODE_ENV !== 'production';
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",

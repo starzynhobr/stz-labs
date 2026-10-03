@@ -51,6 +51,8 @@
     }
   },
   "sections": {
+    "game_tools_title": "Game tools",
+    "game_tools_subtitle": "Utilities dedicated to the games you play and customize.",
     "projects_title": "/// Projects",
     "projects_subtitle": "Tools focused on productivity and utility.",
     "roadmap_title": "/// Status",
@@ -566,6 +568,74 @@
       "popup_kicker": "Extension",
       "popup_title": "Browser Integration",
       "popup_desc": "The extension popup shows whether the app is connected and turns automatic capture on or off with one click."
+    }
+  },
+  "gf_farmer": {
+    "title": "GF Farmer",
+    "card_description": "Organize Grand Fantasia accounts, characters, daily farming and results in one place.",
+    "description": "Manage accounts and characters, track daily farming and Tower activities, and review history and financial results. Local data stored separately from the application installation.",
+    "release_link": "View release on GitHub",
+    "showcase": {
+      "today_kicker": "Daily routine",
+      "today_title": "Today’s farming",
+      "today_description": "Record daily progress for each character and track completed activities.",
+      "characters_kicker": "Organization",
+      "characters_title": "Accounts and characters",
+      "characters_description": "Keep accounts and characters organized to plan each character’s routine.",
+      "reports_kicker": "Results",
+      "reports_title": "History and reports",
+      "reports_description": "Review farming records and follow financial results over time."
+    },
+    "features": {
+      "accounts_title": "Accounts and characters",
+      "accounts_description": "Organize tracking across multiple characters and accounts.",
+      "routine_title": "Daily farming and Tower",
+      "routine_description": "Track your farming routine and Tower records.",
+      "history_title": "Activity history",
+      "history_description": "Review previous sessions and completed activities.",
+      "finance_title": "Financial results",
+      "finance_description": "Track recorded results to evaluate your routine.",
+      "local_title": "Local data",
+      "local_description": "Records are stored in a SQLite database separate from the installation.",
+      "manual_title": "Manual tracking",
+      "manual_description": "A record and results organizer; it does not perform farming for you."
+    },
+    "specs": {
+      "version": "Version",
+      "platform": "Platform",
+      "game": "Game",
+      "storage": "Storage"
+    }
+  },
+  "gf_ui_editor": {
+    "title": "GF UI Editor",
+    "card_description": "Visually edit Grand Fantasia Violet XML interfaces with a canvas, properties and DDS atlas.",
+    "description": "Open a game XML file, select elements on the canvas or in the tree, and adjust positions, sizes and texture regions. Review changes before saving and keep a backup of the original. The game and its files are not included.",
+    "github_link": "View on GitHub",
+    "showcase": {
+      "editor_kicker": "Edit interfaces",
+      "editor_title": "Canvas and properties",
+      "editor_description": "Select, move and resize elements with a visual preview and numeric controls.",
+      "atlas_kicker": "Explore textures",
+      "atlas_title": "DDS atlas",
+      "atlas_description": "View the entire texture and adjust the region used by each element.",
+      "start_kicker": "Start a project",
+      "start_title": "Open game files",
+      "start_description": "Open an XML from your Grand Fantasia Violet installation to load the interface and its textures."
+    },
+    "features": {
+      "visual_title": "Visual editing",
+      "visual_description": "Move and resize elements with multiple selection and undo/redo.",
+      "backup_title": "Save with a backup",
+      "backup_description": "Review the diff before saving; preserve Big5 and original formatting.",
+      "languages_title": "App languages",
+      "languages_description": "Interface available in Portuguese, English, Spanish and French."
+    },
+    "specs": {
+      "version": "Version",
+      "platform": "Platform",
+      "compatibility": "Compatibility",
+      "languages": "Languages"
     }
   }
 }

@@ -51,6 +51,8 @@
     }
   },
   "sections": {
+    "game_tools_title": "Outils pour les jeux",
+    "game_tools_subtitle": "Des utilitaires dédiés aux jeux auxquels vous jouez et que vous personnalisez.",
     "projects_title": "/// Projets",
     "projects_subtitle": "Outils axés sur la productivité et l'utilité.",
     "roadmap_title": "/// Statut",
@@ -564,6 +566,74 @@
       "popup_kicker": "Extension",
       "popup_title": "Intégration au Navigateur",
       "popup_desc": "La popup de l'extension indique si l'application est connectée et active ou désactive la capture automatique en un clic."
+    }
+  },
+  "gf_farmer": {
+    "title": "GF Farmer",
+    "card_description": "Organisez vos comptes, personnages, farming quotidien et résultats de Grand Fantasia au même endroit.",
+    "description": "Gérez vos comptes et personnages, suivez le farming quotidien et la Tour, puis consultez l’historique et les résultats financiers. Les données locales sont séparées de l’installation.",
+    "release_link": "Voir la version sur GitHub",
+    "showcase": {
+      "today_kicker": "Routine quotidienne",
+      "today_title": "Votre farming du jour",
+      "today_description": "Enregistrez la progression quotidienne de chaque personnage et les activités terminées.",
+      "characters_kicker": "Organisation",
+      "characters_title": "Comptes et personnages",
+      "characters_description": "Organisez vos comptes et personnages pour planifier la routine de chacun.",
+      "reports_kicker": "Résultats",
+      "reports_title": "Historique et rapports",
+      "reports_description": "Consultez les sessions de farming et suivez les résultats financiers dans le temps."
+    },
+    "features": {
+      "accounts_title": "Comptes et personnages",
+      "accounts_description": "Organisez le suivi de plusieurs personnages et comptes.",
+      "routine_title": "Farming quotidien et Tour",
+      "routine_description": "Suivez votre routine de farming et les activités de la Tour.",
+      "history_title": "Historique des activités",
+      "history_description": "Consultez les sessions précédentes et les activités terminées.",
+      "finance_title": "Résultats financiers",
+      "finance_description": "Suivez les résultats enregistrés pour évaluer votre routine.",
+      "local_title": "Données locales",
+      "local_description": "Les données sont stockées dans une base SQLite séparée de l’installation.",
+      "manual_title": "Suivi manuel",
+      "manual_description": "Un outil de suivi des activités et des résultats ; il ne joue pas à votre place."
+    },
+    "specs": {
+      "version": "Version",
+      "platform": "Plateforme",
+      "game": "Jeu",
+      "storage": "Stockage"
+    }
+  },
+  "gf_ui_editor": {
+    "title": "GF UI Editor",
+    "card_description": "Modifiez visuellement les interfaces XML de Grand Fantasia Violet avec canvas, propriétés et atlas DDS.",
+    "description": "Ouvrez un XML du jeu, sélectionnez les éléments sur le canvas ou dans l’arbre et ajustez positions, dimensions et régions de texture. Vérifiez les modifications avant de sauvegarder et conservez une copie de l’original. Le jeu et ses fichiers ne sont pas inclus.",
+    "github_link": "Voir sur GitHub",
+    "showcase": {
+      "editor_kicker": "Modifier les interfaces",
+      "editor_title": "Canvas et propriétés",
+      "editor_description": "Sélectionnez, déplacez et redimensionnez les éléments avec aperçu visuel et réglages numériques.",
+      "atlas_kicker": "Explorer les textures",
+      "atlas_title": "Atlas DDS",
+      "atlas_description": "Affichez la texture complète et ajustez la région utilisée par chaque élément.",
+      "start_kicker": "Commencer un projet",
+      "start_title": "Ouvrez les fichiers du jeu",
+      "start_description": "Ouvrez un XML de votre installation de Grand Fantasia Violet pour charger l’interface et ses textures."
+    },
+    "features": {
+      "visual_title": "Édition visuelle",
+      "visual_description": "Déplacez et redimensionnez les éléments avec sélection multiple et annuler/rétablir.",
+      "backup_title": "Sauvegarde avec copie",
+      "backup_description": "Vérifiez le diff avant de sauvegarder ; conservez Big5 et le format original.",
+      "languages_title": "Langues de l’application",
+      "languages_description": "Interface disponible en portugais, anglais, espagnol et français."
+    },
+    "specs": {
+      "version": "Version",
+      "platform": "Plateforme",
+      "compatibility": "Compatibilité",
+      "languages": "Langues"
     }
   }
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import TranslatedText from './TranslatedText';
+import ZoomableImage from './ZoomableImage';
 import { cn } from '../lib/utils';
 
 function StackedImages({ images }) {
@@ -57,16 +58,15 @@ export default function ProjectFeatureShowcase({ items = [] }) {
                                         <StackedImages images={item.stackImages} />
                                     </div>
                                 ) : (
-                                <div className="group relative aspect-[1.49/1] overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] shadow-[var(--shadow)]">
-                                    <div className="absolute inset-0 z-10 bg-gradient-to-tr from-[var(--accent)]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    <Image
-                                        src={item.image}
-                                        alt={item.alt}
-                                        fill
-                                        className="object-contain p-2 transition-transform duration-700 group-hover:scale-[1.015]"
-                                        sizes="(max-width: 1024px) 100vw, 58vw"
-                                    />
-                                </div>
+                                <ZoomableImage
+                                    src={item.image}
+                                    alt={item.alt}
+                                    className="group relative aspect-[1.49/1] overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] shadow-[var(--shadow)]"
+                                    imageClassName="object-contain p-2 transition-transform duration-700 group-hover:scale-[1.015]"
+                                    sizes="(max-width: 1024px) 100vw, 58vw"
+                                >
+                                    <span className="absolute inset-0 z-10 bg-gradient-to-tr from-[var(--accent)]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                                </ZoomableImage>
                                 )}
                             </div>
 
