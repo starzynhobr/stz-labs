@@ -505,7 +505,9 @@
       "demo_desc": "Veja uma demonstração curta da mesclagem. A animação só carrega quando você escolhe reproduzir.",
       "play": "Reproduzir demonstração",
       "stop": "Parar demonstração",
-      "release": "Notas da versão"
+      "release": "Notas da versão",
+      "settings": "Preferências ao alcance",
+      "settings_desc": "A engrenagem ao lado do nome abre idioma, tema e feedback em um painel flutuante. O envio é opcional: nenhum PDF, imagem ou caminho local acompanha a mensagem."
     }
   },
   "thanks": {

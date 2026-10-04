@@ -508,7 +508,9 @@
       "demo_desc": "Sehen Sie eine kurze Demo der Zusammenführung. Die Animation lädt erst beim Starten der Wiedergabe.",
       "play": "Demo abspielen",
       "stop": "Demo stoppen",
-      "release": "Versionshinweise"
+      "release": "Versionshinweise",
+      "settings": "Einstellungen griffbereit",
+      "settings_desc": "Das Zahnrad neben dem App-Namen öffnet Sprache, Design und Feedback in einem schwebenden Panel. Der Versand ist optional: PDFs, Bilder und lokale Pfade werden nicht mitgesendet."
     }
   },
   "thanks": {

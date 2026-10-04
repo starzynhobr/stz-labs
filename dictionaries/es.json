@@ -510,7 +510,9 @@
       "demo_desc": "Mira una breve demostración de la unión. La animación solo se carga cuando decides reproducirla.",
       "play": "Reproducir demostración",
       "stop": "Detener demostración",
-      "release": "Notas de la versión"
+      "release": "Notas de la versión",
+      "settings": "Preferencias a mano",
+      "settings_desc": "El engranaje junto al nombre abre idioma, tema y comentarios en un panel flotante. El envío es opcional: no incluye PDF, imágenes ni rutas locales."
     }
   },
   "thanks": {

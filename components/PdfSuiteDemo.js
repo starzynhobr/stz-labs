@@ -13,7 +13,7 @@ export default function PdfSuiteDemo() {
         <div className="space-y-4">
             <div className="relative aspect-[72/55] overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)]">
                 <Image
-                    src={playing ? '/images/projects/stz-pdf-suite/v030/07-demo-unir-pdfs.gif' : '/images/projects/stz-pdf-suite/v030/01-unir-pdfs.png'}
+                    src={playing ? '/images/projects/stz-pdf-suite/v040/07-demo-unir-pdfs.gif' : '/images/projects/stz-pdf-suite/v040/01-unir-pdfs.png'}
                     alt={t('pdf_suite.showcase.merge_title')}
                     fill
                     unoptimized={playing}

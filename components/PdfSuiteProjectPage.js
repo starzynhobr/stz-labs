@@ -6,7 +6,7 @@ import ZoomableImage from './ZoomableImage';
 import PdfSuiteDemo from './PdfSuiteDemo';
 import { downloadPath } from '../lib/downloadPath';
 
-const IMAGES = '/images/projects/stz-pdf-suite/v030';
+const IMAGES = '/images/projects/stz-pdf-suite/v040';
 const text = (key, as = 'span', className = '') => (
     <TranslatedText as={as} i18nKey={`pdf_suite.${key}`} className={className} />
 );
@@ -17,7 +17,7 @@ function Screenshot({ file, alt, sizes = '(max-width: 768px) 100vw, 560px', prio
 }
 
 export default function PdfSuiteProjectPage({ project, release, locale }) {
-    const version = release?.tagName || 'v0.3.0';
+    const version = release?.tagName || 'v0.4.0';
     const screens = [
         ['02-pdf-para-imagens.png', 'pdf_image'],
         ['05-imagens-para-pdf.png', 'image_pdf'],
@@ -45,7 +45,7 @@ export default function PdfSuiteProjectPage({ project, release, locale }) {
                         {text('landing.install', 'p', 'mt-4 text-sm leading-relaxed text-[var(--text-muted)]')}
                     </div>
                     <div className="min-w-0">
-                        <Screenshot file="01-unir-pdfs.png" alt="STZ PDF Suite 0.3.0 — Unir PDF" sizes="(max-width: 1024px) 100vw, 640px" priority />
+                        <Screenshot file="01-unir-pdfs.png" alt="STZ PDF Suite 0.4.0 — Unir PDF" sizes="(max-width: 1024px) 100vw, 640px" priority />
                     </div>
                 </section>
 
@@ -67,7 +67,7 @@ export default function PdfSuiteProjectPage({ project, release, locale }) {
                     <div className="mt-8 grid gap-8 md:grid-cols-2">
                         {screens.map(([file, key]) => (
                             <article key={file} className="min-w-0">
-                                <Screenshot file={file} alt={`STZ PDF Suite 0.3.0 — ${file.slice(3, -4)}`} />
+                                <Screenshot file={file} alt={`STZ PDF Suite 0.4.0 — ${file.slice(3, -4)}`} />
                                 {text(`showcase.${key}_title`, 'h3', 'mt-5 text-xl font-semibold text-[var(--text-heading)]')}
                                 {text(`showcase.${key}_desc`, 'p', 'mt-2 text-sm leading-relaxed text-[var(--text-secondary)]')}
                             </article>
@@ -81,7 +81,15 @@ export default function PdfSuiteProjectPage({ project, release, locale }) {
                         {text('landing.themes_desc', 'p', 'mt-4 leading-relaxed text-[var(--text-secondary)]')}
                         {text('landing.migration', 'p', 'mt-4 text-sm leading-relaxed text-[var(--text-muted)]')}
                     </div>
-                    <Screenshot file="06-tema-claro.png" alt="STZ PDF Suite 0.3.0 — light theme" />
+                    <Screenshot file="06-tema-claro.png" alt="STZ PDF Suite 0.4.0 — light theme" />
+                </section>
+
+                <section className="grid items-center gap-8 md:grid-cols-2">
+                    <Screenshot file="08-configuracoes.png" alt="STZ PDF Suite 0.4.0 — settings and feedback" />
+                    <div>
+                        {text('landing.settings', 'h2', 'text-3xl font-bold tracking-tight text-[var(--text-heading)]')}
+                        {text('landing.settings_desc', 'p', 'mt-4 leading-relaxed text-[var(--text-secondary)]')}
+                    </div>
                 </section>
 
                 <section className="grid items-center gap-8 md:grid-cols-[1.15fr_0.85fr]">
@@ -104,7 +112,7 @@ export default function PdfSuiteProjectPage({ project, release, locale }) {
                     </dl>
                     <div className="mt-8 flex flex-wrap items-center gap-4">
                         <Button asChild><Link href={downloadPath(locale, project.slug)}>{text('landing.download')}</Link></Button>
-                        <a className="text-sm text-[var(--accent)] underline underline-offset-4" href={release?.releaseUrl || `${project.detail.hero.githubUrl}/releases/tag/v0.3.0`} target="_blank" rel="noreferrer">{text('landing.release')}</a>
+                        <a className="text-sm text-[var(--accent)] underline underline-offset-4" href={release?.releaseUrl || `${project.detail.hero.githubUrl}/releases/tag/v0.4.0`} target="_blank" rel="noreferrer">{text('landing.release')}</a>
                     </div>
                 </section>
             </div>

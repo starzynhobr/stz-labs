@@ -508,7 +508,9 @@
       "demo_desc": "Watch a short merge demonstration. The animation loads only when you choose to play it.",
       "play": "Play demonstration",
       "stop": "Stop demonstration",
-      "release": "Release notes"
+      "release": "Release notes",
+      "settings": "Preferences within reach",
+      "settings_desc": "The gear beside the app name opens language, theme and feedback in a floating panel. Sending is optional: no PDF, image or local path is included with your message."
     }
   },
   "thanks": {

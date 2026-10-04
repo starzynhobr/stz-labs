@@ -506,7 +506,9 @@
       "demo_desc": "Regardez une courte démonstration de fusion. L’animation se charge uniquement lorsque vous lancez la lecture.",
       "play": "Lire la démonstration",
       "stop": "Arrêter la démonstration",
-      "release": "Notes de version"
+      "release": "Notes de version",
+      "settings": "Préférences à portée de main",
+      "settings_desc": "La roue dentée à côté du nom ouvre la langue, le thème et les retours dans un panneau flottant. L’envoi est facultatif : aucun PDF, image ou chemin local n’accompagne le message."
     }
   },
   "thanks": {

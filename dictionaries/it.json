@@ -510,7 +510,9 @@
       "demo_desc": "Guarda una breve dimostrazione dell’unione. L’animazione si carica solo quando scegli di riprodurla.",
       "play": "Riproduci dimostrazione",
       "stop": "Ferma dimostrazione",
-      "release": "Note di rilascio"
+      "release": "Note di rilascio",
+      "settings": "Preferenze a portata di mano",
+      "settings_desc": "L’ingranaggio accanto al nome apre lingua, tema e feedback in un pannello flottante. L’invio è facoltativo: nessun PDF, immagine o percorso locale accompagna il messaggio."
     }
   },
   "thanks": {
