@@ -249,9 +249,8 @@ export const projects = [
             showcase: [
                 {
                     stackImages: [
-                        { src: '/images/projects/stz-xml-translator/showcase/theme-dark.png', alt: 'STZ XML Translator dark theme' },
-                        { src: '/images/projects/stz-xml-translator/showcase/theme-warm.png', alt: 'STZ XML Translator warm theme' },
-                        { src: '/images/projects/stz-xml-translator/showcase/theme-light.png', alt: 'STZ XML Translator light theme' },
+                        { src: '/images/projects/stz-xml-translator/v160/workspace-dark.png', alt: 'STZ XML Translator dark theme' },
+                        { src: '/images/projects/stz-xml-translator/v160/workspace-light.png', alt: 'STZ XML Translator light theme' },
                     ],
                     kickerKey: 'game_xml.showcase.themes_kicker',
                     titleKey: 'game_xml.showcase.themes_title',
@@ -259,7 +258,7 @@ export const projects = [
                     align: 'image-left',
                 },
                 {
-                    image: '/images/projects/stz-xml-translator/showcase/tagpresets.png',
+                    image: '/images/projects/stz-xml-translator/v160/xml-fields.png',
                     alt: 'STZ XML Translator tag presets workflow',
                     kickerKey: 'game_xml.showcase.tagpresets_kicker',
                     titleKey: 'game_xml.showcase.tagpresets_title',
@@ -267,7 +266,7 @@ export const projects = [
                     align: 'image-right',
                 },
                 {
-                    image: '/images/projects/stz-xml-translator/showcase/drawer-presets.png',
+                    image: '/images/projects/stz-xml-translator/v160/settings.png',
                     alt: 'STZ XML Translator settings drawer',
                     kickerKey: 'game_xml.showcase.settings_kicker',
                     titleKey: 'game_xml.showcase.settings_title',
@@ -275,7 +274,7 @@ export const projects = [
                     align: 'image-left',
                 },
                 {
-                    image: '/images/projects/stz-xml-translator/showcase/glossary.png',
+                    image: '/images/projects/stz-xml-translator/v160/glossary.png',
                     alt: 'STZ XML Translator glossary manager',
                     kickerKey: 'game_xml.showcase.glossary_kicker',
                     titleKey: 'game_xml.showcase.glossary_title',

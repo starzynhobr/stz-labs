@@ -278,7 +278,7 @@
     "showcase": {
       "themes_kicker": "Visual",
       "themes_title": "Interfaz con Múltiples Temas",
-      "themes_desc": "Cinco temas, tres oscuros y dos claros, que se cambian al instante sin reiniciar. La interfaz está disponible en inglés, portugués, español, francés y japonés.",
+      "themes_desc": "Temas claro, oscuro o según Windows, con tres colores de acento. La interfaz está disponible en inglés, portugués, español, francés y japonés.",
       "tagpresets_kicker": "Flujo de Trabajo",
       "tagpresets_title": "Tag Presets para Sesiones Rápidas",
       "tagpresets_desc": "Guarda combinaciones de Parent Tag + Target Tag con nombre y archivo vinculado. Aplica en un clic para retomar cualquier tipo de XML del juego sin reconfigurar.",

@@ -21,7 +21,7 @@ const copy = {
         download: 'Baixar para Windows', source: 'Código no GitHub', free: 'Funciona sem chave de API', license: 'GPLv3 / Comercial',
         sample: ['Lâmina de Brasa', 'Uma espada curta que guarda o calor da forja.'],
         sampleOriginal: 'original', sampleTranslated: 'traduzido', sampleNote: 'id, rarity e a ordem das tags não mudam',
-        specs: [['Versão', null], ['Sistema', 'Windows 10 e 11'], ['Interface', 'PySide6 + QML'], ['Provedores', '5'], ['Idiomas do app', '5'], ['Licença', 'GPLv3 / Comercial']],
+        specs: [['Versão', null], ['Sistema', 'Windows 10 e 11'], ['Interface', 'Tauri + React'], ['Provedores', '5'], ['Idiomas do app', '5'], ['Licença', 'GPLv3 / Comercial']],
         flowEyebrow: 'Como funciona', flowTitle: 'Três passos, do arquivo original ao traduzido',
         flow: [
             ['Carregue o XML', 'O app detecta as tags que se repetem. Você escolhe a tag pai e os campos a traduzir, ou aplica um preset salvo.'],
@@ -56,7 +56,7 @@ const copy = {
         download: 'Download for Windows', source: 'Source on GitHub', free: 'Works without an API key', license: 'GPLv3 / Commercial',
         sample: ['Lâmina de Brasa', 'Uma espada curta que guarda o calor da forja.'],
         sampleOriginal: 'original', sampleTranslated: 'translated', sampleNote: 'id, rarity and tag order do not change',
-        specs: [['Version', null], ['System', 'Windows 10 and 11'], ['Interface', 'PySide6 + QML'], ['Providers', '5'], ['App languages', '5'], ['License', 'GPLv3 / Commercial']],
+        specs: [['Version', null], ['System', 'Windows 10 and 11'], ['Interface', 'Tauri + React'], ['Providers', '5'], ['App languages', '5'], ['License', 'GPLv3 / Commercial']],
         flowEyebrow: 'How it works', flowTitle: 'Three steps from the original file to the translated one',
         flow: [
             ['Load the XML', 'The app detects repeating tags. You pick the parent tag and the fields to translate, or apply a saved preset.'],
@@ -91,7 +91,7 @@ const copy = {
         download: 'Descargar para Windows', source: 'Código en GitHub', free: 'Funciona sin clave de API', license: 'GPLv3 / Comercial',
         sample: ['Hoja de Brasa', 'Una espada corta que conserva el calor de la forja.'],
         sampleOriginal: 'original', sampleTranslated: 'traducido', sampleNote: 'id, rarity y el orden de las etiquetas no cambian',
-        specs: [['Versión', null], ['Sistema', 'Windows 10 y 11'], ['Interfaz', 'PySide6 + QML'], ['Proveedores', '5'], ['Idiomas de la app', '5'], ['Licencia', 'GPLv3 / Comercial']],
+        specs: [['Versión', null], ['Sistema', 'Windows 10 y 11'], ['Interfaz', 'Tauri + React'], ['Proveedores', '5'], ['Idiomas de la app', '5'], ['Licencia', 'GPLv3 / Comercial']],
         flowEyebrow: 'Cómo funciona', flowTitle: 'Tres pasos, del archivo original al traducido',
         flow: [
             ['Carga el XML', 'La app detecta las etiquetas que se repiten. Eliges la etiqueta padre y los campos a traducir, o aplicas un preset guardado.'],
@@ -126,7 +126,7 @@ const copy = {
         download: 'Télécharger pour Windows', source: 'Code sur GitHub', free: 'Fonctionne sans clé d’API', license: 'GPLv3 / Commerciale',
         sample: ['Lame de Braise', 'Une épée courte qui garde la chaleur de la forge.'],
         sampleOriginal: 'original', sampleTranslated: 'traduit', sampleNote: 'id, rarity et l’ordre des balises ne changent pas',
-        specs: [['Version', null], ['Système', 'Windows 10 et 11'], ['Interface', 'PySide6 + QML'], ['Fournisseurs', '5'], ['Langues de l’app', '5'], ['Licence', 'GPLv3 / Commerciale']],
+        specs: [['Version', null], ['Système', 'Windows 10 et 11'], ['Interface', 'Tauri + React'], ['Fournisseurs', '5'], ['Langues de l’app', '5'], ['Licence', 'GPLv3 / Commerciale']],
         flowEyebrow: 'Fonctionnement', flowTitle: 'Trois étapes, du fichier original au fichier traduit',
         flow: [
             ['Chargez le XML', 'L’application détecte les balises répétées. Vous choisissez la balise parente et les champs à traduire, ou appliquez un preset enregistré.'],
@@ -161,7 +161,7 @@ const copy = {
         download: 'Für Windows herunterladen', source: 'Code auf GitHub', free: 'Funktioniert ohne API-Schlüssel', license: 'GPLv3 / Kommerziell',
         sample: ['Glutklinge', 'Ein Kurzschwert, das die Wärme der Schmiede bewahrt.'],
         sampleOriginal: 'Original', sampleTranslated: 'übersetzt', sampleNote: 'id, rarity und die Reihenfolge der Tags bleiben gleich',
-        specs: [['Version', null], ['System', 'Windows 10 und 11'], ['Oberfläche', 'PySide6 + QML'], ['Anbieter', '5'], ['App-Sprachen', '5'], ['Lizenz', 'GPLv3 / Kommerziell']],
+        specs: [['Version', null], ['System', 'Windows 10 und 11'], ['Oberfläche', 'Tauri + React'], ['Anbieter', '5'], ['App-Sprachen', '5'], ['Lizenz', 'GPLv3 / Kommerziell']],
         flowEyebrow: 'So funktioniert es', flowTitle: 'Drei Schritte von der Originaldatei zur Übersetzung',
         flow: [
             ['XML laden', 'Die App erkennt wiederkehrende Tags. Du wählst das Eltern-Tag und die zu übersetzenden Felder oder wendest ein gespeichertes Preset an.'],
@@ -196,7 +196,7 @@ const copy = {
         download: 'Scarica per Windows', source: 'Codice su GitHub', free: 'Funziona senza chiave API', license: 'GPLv3 / Commerciale',
         sample: ['Lama di Brace', 'Una spada corta che conserva il calore della forgia.'],
         sampleOriginal: 'originale', sampleTranslated: 'tradotto', sampleNote: 'id, rarity e l’ordine dei tag non cambiano',
-        specs: [['Versione', null], ['Sistema', 'Windows 10 e 11'], ['Interfaccia', 'PySide6 + QML'], ['Provider', '5'], ['Lingue dell’app', '5'], ['Licenza', 'GPLv3 / Commerciale']],
+        specs: [['Versione', null], ['Sistema', 'Windows 10 e 11'], ['Interfaccia', 'Tauri + React'], ['Provider', '5'], ['Lingue dell’app', '5'], ['Licenza', 'GPLv3 / Commerciale']],
         flowEyebrow: 'Come funziona', flowTitle: 'Tre passaggi, dal file originale a quello tradotto',
         flow: [
             ['Carica l’XML', 'L’app rileva i tag che si ripetono. Scegli il tag padre e i campi da tradurre, oppure applica un preset salvato.'],
@@ -317,24 +317,6 @@ export default function XmlTranslatorProjectPage({ initialRelease = null, showca
                 </div>
             </section>
 
-            {/* Specs */}
-            <section className="container mx-auto max-w-6xl px-6 pb-24">
-                <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--border-subtle)] md:grid-cols-6">
-                    {text.specs.map(([label, value]) => (
-                        <div key={label} className="bg-[var(--surface-1)] p-5">
-                            <dt className="mb-1 font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)]">{label}</dt>
-                            <dd className="font-semibold text-[var(--text-heading)]">
-                                {value ?? (
-                                    <a href={releaseUrl} target="_blank" rel="noreferrer" className="underline decoration-[var(--border-strong)] underline-offset-4 hover:text-[var(--accent)]">
-                                        {version || '—'}
-                                    </a>
-                                )}
-                            </dd>
-                        </div>
-                    ))}
-                </dl>
-            </section>
-
             {/* Flow */}
             <section className="container mx-auto max-w-6xl px-6 pb-24">
                 <Eyebrow>{text.flowEyebrow}</Eyebrow>
@@ -408,6 +390,24 @@ export default function XmlTranslatorProjectPage({ initialRelease = null, showca
                         </article>
                     ))}
                 </div>
+            </section>
+
+            {/* Specs */}
+            <section className="container mx-auto max-w-6xl px-6 pb-24">
+                <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--border-subtle)] md:grid-cols-6">
+                    {text.specs.map(([label, value]) => (
+                        <div key={label} className="bg-[var(--surface-1)] p-5">
+                            <dt className="mb-1 font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)]">{label}</dt>
+                            <dd className="font-semibold text-[var(--text-heading)]">
+                                {value ?? (
+                                    <a href={releaseUrl} target="_blank" rel="noreferrer" className="underline decoration-[var(--border-strong)] underline-offset-4 hover:text-[var(--accent)]">
+                                        {version || '—'}
+                                    </a>
+                                )}
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
             </section>
 
             {/* Final CTA */}
