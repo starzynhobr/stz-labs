@@ -10,6 +10,7 @@ import ProjectFeedback from './ProjectFeedback';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 
+const CHROME_URL = 'https://chromewebstore.google.com/detail/stz-downloader-integratio/jhahaknbmgkbnhfnknclelilaoobmpcm';
 const REPO_URL = 'https://github.com/starzynhobr/stz-downloader';
 const RELEASES_URL = `${REPO_URL}/releases`;
 const FIREFOX_URL = 'https://addons.mozilla.org/firefox/addon/stz-downloader-integration/';
@@ -58,7 +59,6 @@ const copy = {
             ['Adicione a extensão', 'Instale pela loja do seu navegador. Ela se conecta ao app sozinha.'],
             ['Baixe normalmente', 'A partir daqui, seus downloads vão direto para o STZ Downloader.'],
         ],
-        chromeSoon: 'Chrome Web Store: em análise',
         specs: [['Versão', null], ['Sistema', 'Windows 10 e 11'], ['Motor', 'aria2'], ['Navegadores', 'Chrome · Firefox'], ['Tamanho', '~26 MB'], ['Licença', 'MIT']],
         finalTitle: 'Seus downloads merecem mais velocidade.', finalDescription: 'Grátis, de código aberto e sem anúncios.',
         expand: 'Ampliar imagem', close: 'Fechar imagem',
@@ -112,7 +112,6 @@ const copy = {
             ['Add the extension', 'Get it from your browser’s store. It connects to the app by itself.'],
             ['Download as usual', 'From now on, your downloads go straight to STZ Downloader.'],
         ],
-        chromeSoon: 'Chrome Web Store: in review',
         specs: [['Version', null], ['System', 'Windows 10 & 11'], ['Engine', 'aria2'], ['Browsers', 'Chrome · Firefox'], ['Size', '~26 MB'], ['License', 'MIT']],
         finalTitle: 'Your downloads deserve more speed.', finalDescription: 'Free, open source and ad-free.',
         expand: 'Enlarge image', close: 'Close image',
@@ -166,7 +165,6 @@ const copy = {
             ['Añade la extensión', 'Instálala desde la tienda de tu navegador. Se conecta sola a la app.'],
             ['Descarga como siempre', 'Desde ahora, tus descargas van directo a STZ Downloader.'],
         ],
-        chromeSoon: 'Chrome Web Store: en revisión',
         specs: [['Versión', null], ['Sistema', 'Windows 10 y 11'], ['Motor', 'aria2'], ['Navegadores', 'Chrome · Firefox'], ['Tamaño', '~26 MB'], ['Licencia', 'MIT']],
         finalTitle: 'Tus descargas merecen más velocidad.', finalDescription: 'Gratis, de código abierto y sin anuncios.',
         expand: 'Ampliar imagen', close: 'Cerrar imagen',
@@ -220,7 +218,6 @@ const copy = {
             ['Ajoutez l’extension', 'Installez-la depuis la boutique de votre navigateur. Elle se connecte seule à l’app.'],
             ['Téléchargez normalement', 'Désormais, vos téléchargements vont directement dans STZ Downloader.'],
         ],
-        chromeSoon: 'Chrome Web Store : en cours d’examen',
         specs: [['Version', null], ['Système', 'Windows 10 et 11'], ['Moteur', 'aria2'], ['Navigateurs', 'Chrome · Firefox'], ['Taille', '~26 Mo'], ['Licence', 'MIT']],
         finalTitle: 'Vos téléchargements méritent plus de vitesse.', finalDescription: 'Gratuit, open source et sans publicité.',
         expand: 'Agrandir l’image', close: 'Fermer l’image',
@@ -274,7 +271,6 @@ const copy = {
             ['Erweiterung hinzufügen', 'Aus dem Store deines Browsers installieren. Sie verbindet sich selbst mit der App.'],
             ['Ganz normal laden', 'Ab jetzt gehen deine Downloads direkt an STZ Downloader.'],
         ],
-        chromeSoon: 'Chrome Web Store: in Prüfung',
         specs: [['Version', null], ['System', 'Windows 10 & 11'], ['Engine', 'aria2'], ['Browser', 'Chrome · Firefox'], ['Größe', '~26 MB'], ['Lizenz', 'MIT']],
         finalTitle: 'Deine Downloads verdienen mehr Tempo.', finalDescription: 'Kostenlos, quelloffen und werbefrei.',
         expand: 'Bild vergrößern', close: 'Bild schließen',
@@ -328,7 +324,6 @@ const copy = {
             ['Aggiungi l’estensione', 'Installala dallo store del tuo browser. Si collega da sola all’app.'],
             ['Scarica come sempre', 'Da ora i tuoi download vanno direttamente a STZ Downloader.'],
         ],
-        chromeSoon: 'Chrome Web Store: in revisione',
         specs: [['Versione', null], ['Sistema', 'Windows 10 e 11'], ['Motore', 'aria2'], ['Browser', 'Chrome · Firefox'], ['Dimensione', '~26 MB'], ['Licenza', 'MIT']],
         finalTitle: 'I tuoi download meritano più velocità.', finalDescription: 'Gratis, open source e senza pubblicità.',
         expand: 'Ingrandisci immagine', close: 'Chiudi immagine',
@@ -580,7 +575,7 @@ export default function DownloaderProjectPage({ initialRelease = null }) {
                     <div className="flex flex-wrap items-center gap-3">
                         <Button asChild variant="primary" size="default"><Link href={downloadHref}>{text.download}</Link></Button>
                         <Button asChild variant="secondary" size="default"><a href={FIREFOX_URL} target="_blank" rel="noreferrer">Firefox Add-ons</a></Button>
-                        <span className="rounded-full border [border-color:var(--border-subtle)] px-4 py-2 text-xs text-[var(--text-muted)]">{text.chromeSoon}</span>
+                        <Button asChild variant="secondary" size="default"><a href={CHROME_URL} target="_blank" rel="noreferrer">Chrome Web Store</a></Button>
                     </div>
                 </div>
             </section>
