@@ -136,32 +136,32 @@ export const projectMeta = {
     'stz-xml-translator': {
         pt: {
             title: 'Tradutor de XML de Jogos com IA — STZ XML Translator | STZ Labs',
-            description: 'Traduza arquivos XML de jogos no desktop com Gemini, DeepL, Azure ou Llama, glossário inteligente e tag presets que preservam a estrutura do arquivo.',
+            description: 'Traduza arquivos XML de jogos no desktop com Gemini, DeepL, Azure ou Ollama, glossário inteligente e tag presets que preservam a estrutura do arquivo.',
             ogDescription: 'Traduza XMLs de jogos com IA, glossário e múltiplos provedores — tudo no desktop.',
         },
         en: {
             title: 'Game XML Translator with AI — STZ XML Translator | STZ Labs',
-            description: 'Translate game XML files on the desktop with Gemini, DeepL, Azure or Llama, a smart glossary and tag presets that keep the file structure intact.',
+            description: 'Translate game XML files on the desktop with Gemini, DeepL, Azure or Ollama, a smart glossary and tag presets that keep the file structure intact.',
             ogDescription: 'Translate game XML files with AI, a glossary and multiple providers — all on the desktop.',
         },
         es: {
             title: 'Traductor de XML de Juegos con IA — STZ XML Translator | STZ Labs',
-            description: 'Traduce archivos XML de juegos en el escritorio con Gemini, DeepL, Azure o Llama, glosario inteligente y tag presets que conservan la estructura.',
+            description: 'Traduce archivos XML de juegos en el escritorio con Gemini, DeepL, Azure o Ollama, glosario inteligente y tag presets que conservan la estructura.',
             ogDescription: 'Traduce XML de juegos con IA, glosario y múltiples proveedores — todo en el escritorio.',
         },
         fr: {
             title: 'Traducteur XML de Jeux avec IA — STZ XML Translator | STZ Labs',
-            description: 'Traduisez les fichiers XML de jeux sur le bureau avec Gemini, DeepL, Azure ou Llama, un glossaire intelligent et des presets qui préservent la structure.',
+            description: 'Traduisez les fichiers XML de jeux sur le bureau avec Gemini, DeepL, Azure ou Ollama, un glossaire intelligent et des presets qui préservent la structure.',
             ogDescription: 'Traduisez les XML de jeux avec l\'IA, un glossaire et plusieurs fournisseurs — sur le bureau.',
         },
         de: {
             title: 'Spiele-XML-Übersetzer mit KI — STZ XML Translator | STZ Labs',
-            description: 'Übersetze Spiele-XML-Dateien am Desktop mit Gemini, DeepL, Azure oder Llama, samt Glossar und Tag-Presets, die die Dateistruktur erhalten.',
+            description: 'Übersetze Spiele-XML-Dateien am Desktop mit Gemini, DeepL, Azure oder Ollama, samt Glossar und Tag-Presets, die die Dateistruktur erhalten.',
             ogDescription: 'Übersetze Spiele-XML mit KI, Glossar und mehreren Anbietern — direkt am Desktop.',
         },
         it: {
             title: 'Traduttore XML per Giochi con IA — STZ XML Translator | STZ Labs',
-            description: 'Traduci file XML di giochi sul desktop con Gemini, DeepL, Azure o Llama, glossario intelligente e tag preset che preservano la struttura del file.',
+            description: 'Traduci file XML di giochi sul desktop con Gemini, DeepL, Azure o Ollama, glossario intelligente e tag preset che preservano la struttura del file.',
             ogDescription: 'Traduci XML di giochi con IA, glossario e più provider — tutto sul desktop.',
         },
     },
@@ -367,32 +367,32 @@ export const projectMeta = {
     'stz-pdf-suite': {
         pt: {
             title: 'Juntar, Converter e Processar PDFs em Lote — STZ PDF Suite | STZ Labs',
-            description: 'Aplicativo desktop para fluxos em lote de PDF e imagem: mesclar, reorganizar, converter e processar arquivos com interface Qt Quick no Windows.',
+            description: 'Aplicativo desktop para fluxos em lote de PDF e imagem: mesclar, reorganizar, converter e processar arquivos com interface Tauri + React no Windows.',
             ogDescription: 'Suite desktop para mesclar, reorganizar, converter e processar PDFs e imagens.',
         },
         en: {
             title: 'Merge, Convert and Batch Process PDFs — STZ PDF Suite | STZ Labs',
-            description: 'A desktop app for batch PDF and image workflows: merge, reorder, convert and process files through a Qt Quick interface on Windows.',
+            description: 'A desktop app for batch PDF and image workflows: merge, reorder, convert and process files through a Tauri + React interface on Windows.',
             ogDescription: 'A desktop suite to merge, reorder, convert and process PDFs and images.',
         },
         es: {
             title: 'Unir, Convertir y Procesar PDFs por Lotes — STZ PDF Suite | STZ Labs',
-            description: 'Aplicación de escritorio para flujos por lotes de PDF e imagen: unir, reordenar, convertir y procesar archivos con interfaz Qt Quick en Windows.',
+            description: 'Aplicación de escritorio para flujos por lotes de PDF e imagen: unir, reordenar, convertir y procesar archivos con interfaz Tauri + React en Windows.',
             ogDescription: 'Suite de escritorio para unir, reordenar, convertir y procesar PDFs e imágenes.',
         },
         fr: {
             title: 'Fusionner, Convertir et Traiter des PDF par Lots — STZ PDF Suite | STZ Labs',
-            description: 'Application de bureau pour les traitements par lots de PDF et d\'images : fusionner, réorganiser, convertir et traiter via une interface Qt Quick.',
+            description: 'Application de bureau pour les traitements par lots de PDF et d\'images : fusionner, réorganiser, convertir et traiter via une interface Tauri + React.',
             ogDescription: 'Suite de bureau pour fusionner, réorganiser, convertir et traiter PDF et images.',
         },
         de: {
             title: 'PDFs Zusammenführen, Konvertieren und Stapelweise Verarbeiten — STZ PDF Suite | STZ Labs',
-            description: 'Desktop-App für Stapelverarbeitung von PDF und Bildern: zusammenführen, neu ordnen, konvertieren und verarbeiten über eine Qt-Quick-Oberfläche.',
+            description: 'Desktop-App für Stapelverarbeitung von PDF und Bildern: zusammenführen, neu ordnen, konvertieren und verarbeiten über eine Tauri + React-Oberfläche.',
             ogDescription: 'Desktop-Suite zum Zusammenführen, Ordnen, Konvertieren und Verarbeiten von PDFs.',
         },
         it: {
             title: 'Unire, Convertire ed Elaborare PDF in Blocco — STZ PDF Suite | STZ Labs',
-            description: 'App desktop per flussi in blocco di PDF e immagini: unire, riordinare, convertire ed elaborare file con interfaccia Qt Quick su Windows.',
+            description: 'App desktop per flussi in blocco di PDF e immagini: unire, riordinare, convertire ed elaborare file con interfaccia Tauri + React su Windows.',
             ogDescription: 'Suite desktop per unire, riordinare, convertire ed elaborare PDF e immagini.',
         },
     },

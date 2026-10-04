@@ -24,8 +24,8 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/gf-ui-editor',
                 githubLabelKey: 'gf_ui_editor.github_link',
             },
-            showcase: ['editor', 'atlas', 'start'].map((screen) => ({
-                image: '/images/projects/gf-ui-editor/' + ({ editor: 'elementos-inspector.png', atlas: 'atlas-dds.png', start: 'tela-inicial.png' }[screen]),
+            showcase: ['editor', 'preview', 'atlas', 'start'].map((screen) => ({
+                image: '/images/projects/gf-ui-editor/' + ({ editor: 'elementos-inspector.png', preview: 'preview-do-jogo.png', atlas: 'atlas-dds.png', start: 'tela-inicial.png' }[screen]),
                 alt: 'GF UI Editor',
                 kickerKey: 'gf_ui_editor.showcase.' + screen + '_kicker',
                 titleKey: 'gf_ui_editor.showcase.' + screen + '_title',
@@ -238,19 +238,14 @@ export const projects = [
         detailLabelKey: 'cards.btn_details',
         downloadLabelKey: 'cards.btn_download',
         detail: {
+            customPage: 'xml-translator',
             meta: {
                 title: 'STZ XML Translator | STZ LABS',
                 description:
                     'Ferramenta desktop para tradução de arquivos XML de jogos com suporte a múltiplos provedores de IA, glossário inteligente e tag presets.',
                 ogDescription: 'Traduza XMLs de jogos com IA, glossário e múltiplos provedores — tudo no desktop.',
             },
-            hero: {
-                tags: ['Python 3.11', 'CustomTkinter', 'Gemini · DeepL · Azure · Llama'],
-                titleKey: 'game_xml.title',
-                descriptionKey: 'game_xml.description',
-                githubUrl: 'https://github.com/starzynhobr/STZ-XML-Translator',
-                githubLabelKey: 'game_xml.btn_github',
-            },
+            // Capturas exibidas pela página própria; os demais textos ficam no componente.
             showcase: [
                 {
                     stackImages: [
@@ -264,20 +259,12 @@ export const projects = [
                     align: 'image-left',
                 },
                 {
-                    image: '/images/projects/stz-xml-translator/showcase/providers.png',
-                    alt: 'STZ XML Translator translation providers',
-                    kickerKey: 'game_xml.showcase.providers_kicker',
-                    titleKey: 'game_xml.showcase.providers_title',
-                    descriptionKey: 'game_xml.showcase.providers_desc',
-                    align: 'image-right',
-                },
-                {
                     image: '/images/projects/stz-xml-translator/showcase/tagpresets.png',
                     alt: 'STZ XML Translator tag presets workflow',
                     kickerKey: 'game_xml.showcase.tagpresets_kicker',
                     titleKey: 'game_xml.showcase.tagpresets_title',
                     descriptionKey: 'game_xml.showcase.tagpresets_desc',
-                    align: 'image-left',
+                    align: 'image-right',
                 },
                 {
                     image: '/images/projects/stz-xml-translator/showcase/drawer-presets.png',
@@ -285,7 +272,7 @@ export const projects = [
                     kickerKey: 'game_xml.showcase.settings_kicker',
                     titleKey: 'game_xml.showcase.settings_title',
                     descriptionKey: 'game_xml.showcase.settings_desc',
-                    align: 'image-right',
+                    align: 'image-left',
                 },
                 {
                     image: '/images/projects/stz-xml-translator/showcase/glossary.png',
@@ -293,42 +280,8 @@ export const projects = [
                     kickerKey: 'game_xml.showcase.glossary_kicker',
                     titleKey: 'game_xml.showcase.glossary_title',
                     descriptionKey: 'game_xml.showcase.glossary_desc',
-                    align: 'image-left',
+                    align: 'image-right',
                 },
-            ],
-            features: [
-                {
-                    titleKey: 'game_xml.features.ai_title',
-                    descriptionKey: 'game_xml.features.ai_desc',
-                },
-                {
-                    titleKey: 'game_xml.features.integrity_title',
-                    descriptionKey: 'game_xml.features.integrity_desc',
-                },
-                {
-                    titleKey: 'game_xml.features.glossary_title',
-                    descriptionKey: 'game_xml.features.glossary_desc',
-                },
-                {
-                    titleKey: 'game_xml.features.ui_title',
-                    descriptionKey: 'game_xml.features.ui_desc',
-                },
-                {
-                    titleKey: 'game_xml.features.progress_title',
-                    descriptionKey: 'game_xml.features.progress_desc',
-                },
-                {
-                    titleKey: 'game_xml.features.export_title',
-                    descriptionKey: 'game_xml.features.export_desc',
-                },
-            ],
-            specs: [
-                { labelKey: 'game_xml.specs.version', repoName: 'STZ-XML-Translator' },
-                { labelKey: 'game_xml.specs.platform', value: 'Windows 10/11' },
-                { labelKey: 'game_xml.specs.language', value: 'Python 3.11' },
-                { labelKey: 'game_xml.specs.compilation', value: 'Nuitka Standalone' },
-                { labelKey: 'game_xml.specs.license', value: 'GPL-3.0 License' },
-                { labelKey: 'game_xml.specs.requirements', value: 'API Key opcional' },
             ],
         },
     },
@@ -835,8 +788,9 @@ export const projects = [
         repoName: 'stz-pdf-suite',
         titleKey: 'pdf_suite.title',
         descriptionKey: 'cards.pdf_suite_desc',
-        downloadHref: 'https://github.com/starzynhobr/stz-pdf-suite/releases/latest',
-        releaseAssetPattern: '\\.exe$',
+        downloadHref: 'https://github.com/starzynhobr/stz-pdf-suite/releases/download/v0.3.0/STZ.PDF.Suite_0.3.0_x64-setup.exe',
+        releaseFallbackTag: 'v0.3.0',
+        releaseAssetPattern: '^STZ[ .]PDF[ .]Suite_.*_x64-setup\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
         badgeAttrs: {
@@ -850,78 +804,21 @@ export const projects = [
         detailLabelKey: 'cards.btn_details',
         downloadLabelKey: 'cards.btn_download',
         detail: {
+            customPage: 'pdf-suite',
             meta: {
                 title: 'STZ PDF Suite | STZ LABS',
                 description:
-                    'Aplicativo desktop para fluxos em lote de PDF e imagem, com interface Qt Quick/QML e instalador Windows.',
+                    'Aplicativo desktop para fluxos em lote de PDF e imagem, com interface Tauri + React e instalador Windows.',
                 ogDescription:
                     'Suite desktop para mesclar, reorganizar, converter e processar PDFs e imagens.',
             },
             hero: {
-                tags: ['Python 3.12', 'PySide6/QML', 'PyMuPDF'],
+                tags: ['Tauri 2', 'React + TypeScript', 'Python 3.12'],
                 titleKey: 'pdf_suite.title',
                 descriptionKey: 'pdf_suite.description',
                 githubUrl: 'https://github.com/starzynhobr/stz-pdf-suite',
                 githubLabelKey: 'pdf_suite.btn_github',
             },
-            showcase: [
-                {
-                    image: '/images/projects/stz-pdf-suite/showcase/merge-pdf.png',
-                    alt: 'STZ PDF Suite Merge PDF module',
-                    kickerKey: 'pdf_suite.showcase.merge_kicker',
-                    titleKey: 'pdf_suite.showcase.merge_title',
-                    descriptionKey: 'pdf_suite.showcase.merge_desc',
-                    align: 'image-left',
-                },
-                {
-                    image: '/images/projects/stz-pdf-suite/showcase/image-to-pdf.png',
-                    alt: 'STZ PDF Suite Image to PDF module',
-                    kickerKey: 'pdf_suite.showcase.image_pdf_kicker',
-                    titleKey: 'pdf_suite.showcase.image_pdf_title',
-                    descriptionKey: 'pdf_suite.showcase.image_pdf_desc',
-                    align: 'image-right',
-                },
-                {
-                    image: '/images/projects/stz-pdf-suite/showcase/pdf-to-image.png',
-                    alt: 'STZ PDF Suite PDF to Image settings drawer',
-                    kickerKey: 'pdf_suite.showcase.pdf_image_kicker',
-                    titleKey: 'pdf_suite.showcase.pdf_image_title',
-                    descriptionKey: 'pdf_suite.showcase.pdf_image_desc',
-                    align: 'image-left',
-                },
-                {
-                    image: '/images/projects/stz-pdf-suite/showcase/image-convert.png',
-                    alt: 'STZ PDF Suite Image Convert module',
-                    kickerKey: 'pdf_suite.showcase.image_convert_kicker',
-                    titleKey: 'pdf_suite.showcase.image_convert_title',
-                    descriptionKey: 'pdf_suite.showcase.image_convert_desc',
-                    align: 'image-right',
-                },
-                {
-                    image: '/images/projects/stz-pdf-suite/showcase/pdf-insert.png',
-                    alt: 'STZ PDF Suite PDF Insert module',
-                    kickerKey: 'pdf_suite.showcase.pdf_insert_kicker',
-                    titleKey: 'pdf_suite.showcase.pdf_insert_title',
-                    descriptionKey: 'pdf_suite.showcase.pdf_insert_desc',
-                    align: 'image-left',
-                },
-                {
-                    image: '/images/projects/stz-pdf-suite/showcase/post-process.png',
-                    alt: 'STZ PDF Suite Post Process settings drawer',
-                    kickerKey: 'pdf_suite.showcase.post_process_kicker',
-                    titleKey: 'pdf_suite.showcase.post_process_title',
-                    descriptionKey: 'pdf_suite.showcase.post_process_desc',
-                    align: 'image-right',
-                },
-                {
-                    image: '/images/projects/stz-pdf-suite/showcase/reorder.png',
-                    alt: 'STZ PDF Suite Reorder module',
-                    kickerKey: 'pdf_suite.showcase.reorder_kicker',
-                    titleKey: 'pdf_suite.showcase.reorder_title',
-                    descriptionKey: 'pdf_suite.showcase.reorder_desc',
-                    align: 'image-left',
-                },
-            ],
             features: [
                 {
                     titleKey: 'pdf_suite.features.merge_title',
@@ -950,11 +847,11 @@ export const projects = [
             ],
             specs: [
                 { labelKey: 'pdf_suite.specs.version', repoName: 'stz-pdf-suite' },
-                { labelKey: 'pdf_suite.specs.platform', value: 'Windows 11 recommended' },
+                { labelKey: 'pdf_suite.specs.platform', value: 'Windows 10/11 · x64 · WebView2' },
                 { labelKey: 'pdf_suite.specs.language', value: 'Python 3.12' },
-                { labelKey: 'pdf_suite.specs.interface', value: 'PySide6 + QML' },
-                { labelKey: 'pdf_suite.specs.packaging', value: 'Nuitka + Inno Setup' },
-                { labelKey: 'pdf_suite.specs.license', value: 'GPL-3.0 / Commercial' },
+                { labelKey: 'pdf_suite.specs.interface', value: 'Tauri 2 + React + TypeScript' },
+                { labelKey: 'pdf_suite.specs.packaging', value: 'PyInstaller + NSIS' },
+                { labelKey: 'pdf_suite.specs.license', value: 'GPL-3.0' },
             ],
         },
     },

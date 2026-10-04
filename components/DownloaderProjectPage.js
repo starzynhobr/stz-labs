@@ -4,7 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { DOWNLOADER_POLL_OPTIONS, DOWNLOADER_SUGGESTION_LENGTH } from '../data/stzDownloader';
 import { downloadPath } from '../lib/downloadPath';
+import ProjectFeedback from './ProjectFeedback';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 
@@ -60,6 +62,14 @@ const copy = {
         specs: [['Versão', null], ['Sistema', 'Windows 10 e 11'], ['Motor', 'aria2'], ['Navegadores', 'Chrome · Firefox'], ['Tamanho', '~26 MB'], ['Licença', 'MIT']],
         finalTitle: 'Seus downloads merecem mais velocidade.', finalDescription: 'Grátis, de código aberto e sem anúncios.',
         expand: 'Ampliar imagem', close: 'Fechar imagem',
+        feedbackTitle: 'Ajude a moldar o STZ Downloader', feedbackText: 'Sem cadastro. Um clique já ajuda.',
+        like: 'Curti o app', liked: 'Valeu!',
+        pollTitle: 'O que você quer ver primeiro?',
+        poll: { scheduler: 'Agendar downloads', torrent: 'Torrent e links magnet', categories: 'Pastas por tipo de arquivo', linux: 'Versão para Linux' },
+        suggestion: 'Achou um problema ou tem uma ideia?', suggestionPlaceholder: 'Escreva aqui (opcional, anônimo)', suggestionMin: 'mínimo de {min} caracteres',
+        send: 'Enviar', sent: 'Recebido, obrigado!',
+        errorLimit: 'Muitos envios. Tente mais tarde.', errorGeneric: 'Não foi possível enviar agora.',
+        offline: 'Feedback indisponível no momento.',
     },
     en: {
         eyebrow: 'Download manager for Windows',
@@ -106,6 +116,14 @@ const copy = {
         specs: [['Version', null], ['System', 'Windows 10 & 11'], ['Engine', 'aria2'], ['Browsers', 'Chrome · Firefox'], ['Size', '~26 MB'], ['License', 'MIT']],
         finalTitle: 'Your downloads deserve more speed.', finalDescription: 'Free, open source and ad-free.',
         expand: 'Enlarge image', close: 'Close image',
+        feedbackTitle: 'Help shape STZ Downloader', feedbackText: 'No sign-up. One click already helps.',
+        like: 'I like this app', liked: 'Thanks!',
+        pollTitle: 'What do you want to see first?',
+        poll: { scheduler: 'Scheduled downloads', torrent: 'Torrent and magnet links', categories: 'Folders by file type', linux: 'Linux version' },
+        suggestion: 'Found a problem or have an idea?', suggestionPlaceholder: 'Write here (optional, anonymous)', suggestionMin: 'at least {min} characters',
+        send: 'Send', sent: 'Received, thank you!',
+        errorLimit: 'Too many submissions. Try again later.', errorGeneric: "Couldn't send right now.",
+        offline: 'Feedback is unavailable right now.',
     },
     es: {
         eyebrow: 'Gestor de descargas para Windows',
@@ -152,6 +170,14 @@ const copy = {
         specs: [['Versión', null], ['Sistema', 'Windows 10 y 11'], ['Motor', 'aria2'], ['Navegadores', 'Chrome · Firefox'], ['Tamaño', '~26 MB'], ['Licencia', 'MIT']],
         finalTitle: 'Tus descargas merecen más velocidad.', finalDescription: 'Gratis, de código abierto y sin anuncios.',
         expand: 'Ampliar imagen', close: 'Cerrar imagen',
+        feedbackTitle: 'Ayuda a dar forma a STZ Downloader', feedbackText: 'Sin registro. Un clic ya ayuda.',
+        like: 'Me gusta la app', liked: '¡Gracias!',
+        pollTitle: '¿Qué quieres ver primero?',
+        poll: { scheduler: 'Programar descargas', torrent: 'Torrent y enlaces magnet', categories: 'Carpetas por tipo de archivo', linux: 'Versión para Linux' },
+        suggestion: '¿Encontraste un problema o tienes una idea?', suggestionPlaceholder: 'Escribe aquí (opcional, anónimo)', suggestionMin: 'mínimo {min} caracteres',
+        send: 'Enviar', sent: '¡Recibido, gracias!',
+        errorLimit: 'Demasiados envíos. Inténtalo más tarde.', errorGeneric: 'No se pudo enviar ahora.',
+        offline: 'Los comentarios no están disponibles ahora.',
     },
     fr: {
         eyebrow: 'Gestionnaire de téléchargements pour Windows',
@@ -198,6 +224,14 @@ const copy = {
         specs: [['Version', null], ['Système', 'Windows 10 et 11'], ['Moteur', 'aria2'], ['Navigateurs', 'Chrome · Firefox'], ['Taille', '~26 Mo'], ['Licence', 'MIT']],
         finalTitle: 'Vos téléchargements méritent plus de vitesse.', finalDescription: 'Gratuit, open source et sans publicité.',
         expand: 'Agrandir l’image', close: 'Fermer l’image',
+        feedbackTitle: 'Aidez à façonner STZ Downloader', feedbackText: 'Sans inscription. Un clic aide déjà.',
+        like: 'J’aime cette app', liked: 'Merci !',
+        pollTitle: 'Que voulez-vous voir en premier ?',
+        poll: { scheduler: 'Téléchargements programmés', torrent: 'Torrent et liens magnet', categories: 'Dossiers par type de fichier', linux: 'Version Linux' },
+        suggestion: 'Un problème ou une idée ?', suggestionPlaceholder: 'Écrivez ici (facultatif, anonyme)', suggestionMin: 'au moins {min} caractères',
+        send: 'Envoyer', sent: 'Bien reçu, merci !',
+        errorLimit: 'Trop d’envois. Réessayez plus tard.', errorGeneric: 'Envoi impossible pour le moment.',
+        offline: 'Les retours sont indisponibles pour le moment.',
     },
     de: {
         eyebrow: 'Download-Manager für Windows',
@@ -244,6 +278,14 @@ const copy = {
         specs: [['Version', null], ['System', 'Windows 10 & 11'], ['Engine', 'aria2'], ['Browser', 'Chrome · Firefox'], ['Größe', '~26 MB'], ['Lizenz', 'MIT']],
         finalTitle: 'Deine Downloads verdienen mehr Tempo.', finalDescription: 'Kostenlos, quelloffen und werbefrei.',
         expand: 'Bild vergrößern', close: 'Bild schließen',
+        feedbackTitle: 'Gestalte STZ Downloader mit', feedbackText: 'Ohne Anmeldung. Ein Klick hilft schon.',
+        like: 'Gefällt mir', liked: 'Danke!',
+        pollTitle: 'Was möchtest du zuerst sehen?',
+        poll: { scheduler: 'Geplante Downloads', torrent: 'Torrent und Magnet-Links', categories: 'Ordner nach Dateityp', linux: 'Linux-Version' },
+        suggestion: 'Ein Problem gefunden oder eine Idee?', suggestionPlaceholder: 'Hier schreiben (optional, anonym)', suggestionMin: 'mindestens {min} Zeichen',
+        send: 'Senden', sent: 'Angekommen, danke!',
+        errorLimit: 'Zu viele Einsendungen. Versuch es später.', errorGeneric: 'Senden gerade nicht möglich.',
+        offline: 'Feedback derzeit nicht verfügbar.',
     },
     it: {
         eyebrow: 'Download manager per Windows',
@@ -290,6 +332,14 @@ const copy = {
         specs: [['Versione', null], ['Sistema', 'Windows 10 e 11'], ['Motore', 'aria2'], ['Browser', 'Chrome · Firefox'], ['Dimensione', '~26 MB'], ['Licenza', 'MIT']],
         finalTitle: 'I tuoi download meritano più velocità.', finalDescription: 'Gratis, open source e senza pubblicità.',
         expand: 'Ingrandisci immagine', close: 'Chiudi immagine',
+        feedbackTitle: 'Aiuta a dare forma a STZ Downloader', feedbackText: 'Senza registrazione. Un clic aiuta già.',
+        like: 'Mi piace l’app', liked: 'Grazie!',
+        pollTitle: 'Cosa vuoi vedere per primo?',
+        poll: { scheduler: 'Download programmati', torrent: 'Torrent e link magnet', categories: 'Cartelle per tipo di file', linux: 'Versione Linux' },
+        suggestion: 'Hai trovato un problema o hai un’idea?', suggestionPlaceholder: 'Scrivi qui (facoltativo, anonimo)', suggestionMin: 'almeno {min} caratteri',
+        send: 'Invia', sent: 'Ricevuto, grazie!',
+        errorLimit: 'Troppi invii. Riprova più tardi.', errorGeneric: 'Impossibile inviare ora.',
+        offline: 'Feedback non disponibile al momento.',
     },
 };
 
@@ -533,6 +583,22 @@ export default function DownloaderProjectPage({ initialRelease = null }) {
                         <span className="rounded-full border [border-color:var(--border-subtle)] px-4 py-2 text-xs text-[var(--text-muted)]">{text.chromeSoon}</span>
                     </div>
                 </div>
+            </section>
+
+            {/* Feedback */}
+            <section className="container mx-auto max-w-4xl px-6 pb-24">
+                <div className="mb-8 text-center">
+                    <h2 className="text-2xl font-bold tracking-tight text-[var(--text-heading)] md:text-3xl">{text.feedbackTitle}</h2>
+                    <p className="mt-2 text-sm text-[var(--text-secondary)]">{text.feedbackText}</p>
+                </div>
+                <ProjectFeedback
+                    id="downloader"
+                    endpoint="/api/downloader-feedback"
+                    pollOptions={DOWNLOADER_POLL_OPTIONS}
+                    suggestionLength={DOWNLOADER_SUGGESTION_LENGTH}
+                    text={text}
+                    locale={lang}
+                />
             </section>
 
             {/* Specs + final CTA */}

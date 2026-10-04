@@ -37,7 +37,7 @@ const clampView = ({ scale, x, y }, rect) => {
  * Miniatura que abre a imagem em tela cheia. Dentro do lightbox: clique alterna
  * o zoom no ponto clicado, a roda do mouse ajusta o nível e arrastar move a imagem.
  */
-export default function ZoomableImage({ src, alt, className, imageClassName, sizes, children }) {
+export default function ZoomableImage({ src, alt, className, imageClassName, sizes, priority = false, children }) {
     const { lang } = useLanguage();
     const text = copy[lang] || copy.en;
     const [open, setOpen] = useState(false);
@@ -136,7 +136,7 @@ export default function ZoomableImage({ src, alt, className, imageClassName, siz
                 className={cn("block w-full cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]", className)}
             >
                 {children}
-                <Image src={src} alt={alt} fill className={imageClassName} sizes={sizes} />
+                <Image src={src} alt={alt} fill className={imageClassName} sizes={sizes} priority={priority} />
             </button>
 
             {open && typeof document !== 'undefined' ? createPortal(

@@ -99,7 +99,7 @@
     "suite_title": "STZ Suite",
     "version_latest": "Dernière version via GitHub",
     "version_dev": "En développement",
-    "pdf_suite_desc": "Suite desktop pour fusionner, réorganiser, convertir et traiter en lot des PDF et images avec une interface QML moderne.",
+    "pdf_suite_desc": "Fusionnez des documents, convertissez des fichiers et ajustez des images par lots. Sept outils dans une interface renouvelée, avec traitement local sous Windows.",
     "downloader_desc": "Gestionnaire de téléchargements pour Windows basé sur aria2 : plusieurs connexions par fichier, limite de vitesse et extension Chrome et Firefox."
   },
   "benefits": {
@@ -273,35 +273,10 @@
     "title": "STZ XML Translator",
     "description": "L'outil définitif pour les moddeurs et équipes de localisation. Traduisez des fichiers XML de jeux avec plusieurs fournisseurs d'IA, un glossaire intelligent et des Tag Presets.",
     "btn_github": "Voir sur GitHub",
-    "features": {
-      "ai_title": "Plusieurs Fournisseurs d'IA",
-      "ai_desc": "Compatible avec Gemini, Google Translate, DeepL, Microsoft Azure, Llama 3 local et Ollama — choisissez le fournisseur idéal pour chaque projet.",
-      "integrity_title": "Intégrité XML",
-      "integrity_desc": "L'algorithme d'extraction et d'injection préserve méticuleusement l'ordre des nœuds, les attributs et les commentaires. Votre jeu ne plantera pas.",
-      "glossary_title": "Glossaire Intelligent",
-      "glossary_desc": "Maintenez la cohérence des termes (noms propres, lieux, objets) à travers plusieurs fichiers avec le gestionnaire de glossaire intégré.",
-      "ui_title": "Interface Multi-Thèmes",
-      "ui_desc": "Choisissez entre thème sombre, clair et chaud. L'interface est localisée en anglais, espagnol, français et portugais.",
-      "progress_title": "Progrès en Temps Réel",
-      "progress_desc": "Suivez visuellement l'état de la traduction de chaque fichier et du projet, avec sauvegarde automatique de la progression.",
-      "export_title": "Tag Presets et Exportation",
-      "export_desc": "Sauvegardez des combinaisons Parent/Target Tag comme presets réutilisables. Exportez avec validation structurelle et sauvegarde JSON/CSV."
-    },
-    "specs": {
-      "version": "Version Actuelle",
-      "platform": "Plateforme",
-      "language": "Langage",
-      "compilation": "Compilation",
-      "license": "Licence",
-      "requirements": "Prérequis"
-    },
     "showcase": {
       "themes_kicker": "Visuel",
       "themes_title": "Interface Multi-Thèmes Adaptative",
-      "themes_desc": "Basculez entre thème sombre, chaud et clair sans redémarrer. L'interface est entièrement localisée en anglais, espagnol, français, portugais et japonais.",
-      "providers_kicker": "Intégration",
-      "providers_title": "Plusieurs Fournisseurs de Traduction",
-      "providers_desc": "Choisissez parmi Gemini, Google Translate (gratuit), DeepL, Microsoft Azure, Llama 3 local ou Ollama local — changez de fournisseur sans perdre la progression de session.",
+      "themes_desc": "Cinq thèmes, trois sombres et deux clairs, changés instantanément sans redémarrer. L’interface est disponible en anglais, portugais, espagnol, français et japonais.",
       "tagpresets_kicker": "Flux de Travail",
       "tagpresets_title": "Tag Presets pour des Sessions Rapides",
       "tagpresets_desc": "Sauvegardez des combinaisons Parent Tag + Target Tag avec un nom et un fichier lié. Appliquez en un clic pour reprendre n'importe quel type de XML de jeu.",
@@ -469,21 +444,21 @@
   },
   "pdf_suite": {
     "title": "STZ PDF Suite",
-    "description": "Application desktop Windows qui réunit les flux PDF et image dans une interface Qt Quick/QML moderne : fusion, réorganisation, conversion, insertion de pages et traitement par lots.",
+    "description": "Fusionnez des documents, convertissez des fichiers et ajustez des images par lots. Sept outils dans une interface renouvelée, avec traitement local sous Windows.",
     "btn_github": "Voir sur GitHub",
     "features": {
       "merge_title": "Fusion Visuelle de PDF",
       "merge_desc": "Combinez plusieurs PDF avec un ordre visuel par glisser-déposer avant de générer le fichier final.",
-      "reorder_title": "Réorganisation des Pages",
-      "reorder_desc": "Réorganisez les pages de PDF depuis des fichiers individuels ou des dossiers tout en gardant un flux rapide.",
+      "reorder_title": "Organiser et renommer",
+      "reorder_desc": "Triez les images et vérifiez les nouveaux noms avant de lancer le lot.",
       "convert_title": "Conversion PDF et Image",
       "convert_desc": "Convertissez des pages PDF en images, des images en PDF et des images entre formats pris en charge.",
       "insert_title": "Insertion de Pages",
       "insert_desc": "Insérez des pages dans des PDF existants sans changer d’outil pour les opérations courantes.",
       "batch_title": "Traitement par Lots",
       "batch_desc": "Lancez du post-traitement sur images et pages PDF avec progression, annulation et organisation claire.",
-      "ui_title": "Interface Fluent QML",
-      "ui_desc": "Interface Qt Quick/QML avec style FluentWinUI3 et packaging Windows standalone."
+      "ui_title": "Interface renouvelée",
+      "ui_desc": "Tauri + React, thèmes clair et sombre et neuf langues. Traitement local avec Python, sans envoyer vos documents."
     },
     "specs": {
       "version": "Version Actuelle",
@@ -496,13 +471,13 @@
     "showcase": {
       "merge_kicker": "Module 01",
       "merge_title": "Fusion depuis dossiers ou fichiers sélectionnés",
-      "merge_desc": "Le module Merge PDF accepte un dossier complet ou des fichiers sélectionnés, permet de définir le PDF de sortie, d’activer overwrite et de construire la liste par glisser-déposer avant la fusion.",
+      "merge_desc": "Ajoutez des PDF, ajustez l’ordre et choisissez la destination. Réunissez vos documents en un fichier.",
       "image_pdf_kicker": "Module 02",
-      "image_pdf_title": "Images organisées en PDF",
-      "image_pdf_desc": "Image to PDF transforme des dossiers ou sélections d’images en document PDF, avec réglages DPI, qualité JPG, dossier de sortie et option de remplacement si nécessaire.",
+      "image_pdf_title": "Des images aux documents",
+      "image_pdf_desc": "Réunissez des images en PDF, vérifiez la liste et ajustez la sortie dans le panneau de configuration.",
       "pdf_image_kicker": "Module 03",
-      "pdf_image_title": "PDF vers images avec panneau de réglages",
-      "pdf_image_desc": "PDF to Image exporte les pages vers des formats comme PNG, avec sous-dossier par PDF, préfixe de nom, padding numérique, workers parallèles, DPI et mode clair pour le traitement.",
+      "pdf_image_title": "Du PDF aux images",
+      "pdf_image_desc": "Exportez les pages avec contrôle du format, des DPI et de la qualité. Organisez la sortie par document.",
       "image_convert_kicker": "Module 04",
       "image_convert_title": "Conversion d’images avec taille et qualité",
       "image_convert_desc": "Image Convert convertit les images entre formats, conserve les noms, peut forcer les dimensions et expose largeur, hauteur, DPI, qualité, workers, overwrite et arrêt en cas d’erreur.",
@@ -510,11 +485,28 @@
       "pdf_insert_title": "Insertion de pages dans des PDF existants",
       "pdf_insert_desc": "PDF Insert part d’un PDF de base puis ajoute un autre PDF ou des images, avec dossier de sortie optionnel, contrôle overwrite et option d’arrêt à la première erreur.",
       "post_process_kicker": "Module 06",
-      "post_process_title": "Post-traitement avec aperçu avant/après",
-      "post_process_desc": "Post Process applique luminosité, contraste, couleur, gamma et sharpen avec aperçu avant/après, ainsi que des contrôles de qualité, workers, nommage et traitement parallèle.",
+      "post_process_title": "Vérifiez avant de traiter",
+      "post_process_desc": "Comparez avant et après et ajustez luminosité, contraste, couleur, gamma et netteté avant de traiter le lot.",
       "reorder_kicker": "Module 07",
-      "reorder_title": "Réorganisation et renommage par règles",
-      "reorder_desc": "Reorder lit les dossiers d’entrée et de sortie, trie par nom avec natural sort ou lecture inversée, puis applique préfixe, padding numérique et règles pour garder ou remplacer les fichiers originaux."
+      "reorder_title": "Maîtrisez les noms et l’ordre",
+      "reorder_desc": "Organisez et renommez les images avec préfixe, numérotation et aperçu des noms de sortie."
+    },
+    "landing": {
+      "title": "PDF et images. Votre flux complet.",
+      "download": "Télécharger pour Windows",
+      "local": "Local et hors ligne",
+      "install": "Le moteur est inclus dans le programme d’installation. Python n’est pas requis. L’installateur vérifie WebView2.",
+      "tools": "Sept outils. Un seul endroit.",
+      "tools_desc": "De la collecte de documents à la préparation des images : aperçus, progression et annulation pour chaque lot.",
+      "screens": "Découvrez votre prochain flux de travail",
+      "themes": "Votre espace, à votre façon.",
+      "themes_desc": "Thèmes clair et sombre et neuf langues. La même organisation pour les documents et les images.",
+      "migration": "Vous venez de la version précédente ? Les préférences Qt sont importées automatiquement, avec une sauvegarde.",
+      "demo": "De la liste au PDF final.",
+      "demo_desc": "Regardez une courte démonstration de fusion. L’animation se charge uniquement lorsque vous lancez la lecture.",
+      "play": "Lire la démonstration",
+      "stop": "Arrêter la démonstration",
+      "release": "Notes de version"
     }
   },
   "thanks": {
@@ -614,12 +606,15 @@
       "editor_kicker": "Modifier les interfaces",
       "editor_title": "Canvas et propriétés",
       "editor_description": "Sélectionnez, déplacez et redimensionnez les éléments avec aperçu visuel et réglages numériques.",
+      "preview_kicker": "Aperçu du jeu",
+      "preview_title": "Voyez l’interface par-dessus le jeu",
+      "preview_description": "Placez les éléments sur une capture du jeu, dans la résolution que vous utilisez, avant d’ouvrir le client.",
       "atlas_kicker": "Explorer les textures",
       "atlas_title": "Atlas DDS",
       "atlas_description": "Affichez la texture complète et ajustez la région utilisée par chaque élément.",
       "start_kicker": "Commencer un projet",
-      "start_title": "Ouvrez les fichiers du jeu",
-      "start_description": "Ouvrez un XML de votre installation de Grand Fantasia Violet pour charger l’interface et ses textures."
+      "start_title": "Travaillez sur une copie",
+      "start_description": "Créez un projet à partir de l’UI utilisée, d’une UI d’UICustom ou d’un autre dossier. Les fichiers du jeu ne changent que lorsque vous testez avec F5."
     },
     "features": {
       "visual_title": "Édition visuelle",

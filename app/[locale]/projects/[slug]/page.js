@@ -9,6 +9,8 @@ import { Button } from '../../../../components/ui/Button';
 import { Badge } from '../../../../components/ui/Badge';
 import SuiteProjectPage from '../../../../components/SuiteProjectPage';
 import DownloaderProjectPage from '../../../../components/DownloaderProjectPage';
+import XmlTranslatorProjectPage from '../../../../components/XmlTranslatorProjectPage';
+import PdfSuiteProjectPage from '../../../../components/PdfSuiteProjectPage';
 import { JsonLd, buildSoftwareApplicationLd } from '../../../../lib/structuredData';
 import { findPluginVersions, findRelease, findRepoStats } from '../../../../lib/github';
 import { buildProjectMetadata } from '../../../../lib/pageMetadata';
@@ -70,6 +72,24 @@ export default async function ProjectDetailPage({ params }) {
             <>
                 <JsonLd data={structuredData} />
                 <DownloaderProjectPage initialRelease={release} />
+            </>
+        );
+    }
+
+    if (project.detail.customPage === 'xml-translator') {
+        return (
+            <>
+                <JsonLd data={structuredData} />
+                <XmlTranslatorProjectPage initialRelease={release} showcase={project.detail.showcase} />
+            </>
+        );
+    }
+
+    if (project.detail.customPage === 'pdf-suite') {
+        return (
+            <>
+                <JsonLd data={structuredData} />
+                <PdfSuiteProjectPage project={project} release={release} locale={locale} />
             </>
         );
     }
