@@ -18,7 +18,7 @@ export default function GymSpotlight() {
             <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[var(--accent)]/20 to-transparent" />
 
             <div className="grid items-center gap-10 px-8 pt-10 md:grid-cols-[1fr_auto] md:gap-6 md:px-14 md:pt-12">
-                <div className="text-center md:text-left">
+                <div className="pb-6 text-center md:text-left">
                     <ComingSoonBadge label={text.badge} status={text.status} />
                     <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--text-muted)]">{text.kicker}</p>
                     <h2 className="mt-2 text-4xl font-bold tracking-tighter text-[var(--text-heading)] md:text-6xl">{text.title}</h2>

@@ -444,6 +444,9 @@ export default function DownloaderProjectPage({ initialRelease = null }) {
                         <Button asChild variant="secondary" size="default">
                             <a href={FIREFOX_URL} target="_blank" rel="noreferrer">{text.firefox}</a>
                         </Button>
+                        <Button asChild variant="secondary" size="default">
+                            <a href={CHROME_URL} target="_blank" rel="noreferrer">Chrome Web Store</a>
+                        </Button>
                     </div>
                     <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--text-muted)]">
                         <a href={checksumsUrl} target="_blank" rel="noreferrer" className="font-semibold text-[var(--accent)] underline decoration-[var(--border-strong)] underline-offset-4 hover:opacity-80">{text.verified}</a>
