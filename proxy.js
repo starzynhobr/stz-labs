@@ -38,6 +38,17 @@ export function proxy(request) {
         }
     }
 
+    // Convites do STZ Gym (stzlabs.com/gym/u/<usuario>): com o app instalado o
+    // Android abre o app direto (App Links); sem ele, a pessoa cai na página
+    // do app no idioma do navegador.
+    if (pathname === '/gym' || pathname.startsWith('/gym/')) {
+        const locale = pickLocale(request.headers.get('accept-language'));
+        return NextResponse.redirect(
+            new URL(`/${locale}/projects/stz-gym`, request.url),
+            307
+        );
+    }
+
     const exact = LEGACY_EXACT[pathname];
     if (exact) {
         return NextResponse.redirect(new URL(exact, request.url), 308);
@@ -67,5 +78,6 @@ export function proxy(request) {
 }
 
 export const config = {
-    matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+    // /gym/* à parte: um @ pode ter ponto, e a regra geral pula caminhos com ponto.
+    matcher: ['/((?!api|_next|_vercel|.*\\..*).*)', '/gym/:path*'],
 };

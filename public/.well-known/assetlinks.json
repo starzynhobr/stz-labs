@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.stzlabs.gym",
+      "sha256_cert_fingerprints": [
+        "73:10:0E:1D:D5:D7:1E:B5:16:22:11:D5:C0:42:01:B3:95:C7:53:57:9A:AD:14:9B:C5:69:A4:30:7C:97:9E:0F"
+      ]
+    }
+  }
+]
