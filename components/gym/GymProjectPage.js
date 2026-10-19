@@ -1,7 +1,9 @@
 "use client";
 
 import { useLanguage } from '../../context/LanguageContext';
+import Link from 'next/link';
 import { getGymPageCopy } from '../../data/stzGym';
+import { getGymLegal, gymLegalPath } from '../../data/stzGymLegal';
 import GymDemo from './GymDemo';
 import GymFeedback from './GymFeedback';
 import ComingSoonBadge from './ComingSoonBadge';
@@ -9,6 +11,7 @@ import ComingSoonBadge from './ComingSoonBadge';
 export default function GymProjectPage() {
     const { lang } = useLanguage();
     const text = getGymPageCopy(lang);
+    const legal = getGymLegal(lang);
 
     return (
         <main className="relative min-h-screen overflow-hidden bg-transparent pb-24 pt-32">
@@ -48,6 +51,13 @@ export default function GymProjectPage() {
                     <p className="mt-2 text-sm text-[var(--text-secondary)]">{text.feedbackText}</p>
                 </div>
                 <GymFeedback text={text} locale={lang} />
+                <nav className="mt-12 flex flex-wrap justify-center gap-6 text-sm">
+                    {['privacy', 'deleteAccount'].map((page) => (
+                        <Link key={page} className="text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]" href={gymLegalPath(lang, page)}>
+                            {legal.nav[page]}
+                        </Link>
+                    ))}
+                </nav>
             </section>
         </main>
     );

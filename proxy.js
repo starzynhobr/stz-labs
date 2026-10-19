@@ -7,6 +7,13 @@ const LEGACY_EXACT = { '/mouse-tester': '/pt/mouse/teste-de-clique' };
 
 /** Projetos renomeados: o endereço antigo continua indexado e precisa apontar para o novo. */
 const PROJECT_SLUG_ALIASES = { 'mouse-click': 'stz-clicker' };
+/** /gym/<x> curto → subpágina legal do STZ Gym. */
+const GYM_LEGAL_PAGES = {
+    '/gym/privacy': 'privacy',
+    '/gym/privacidade': 'privacy',
+    '/gym/delete-account': 'delete-account',
+    '/gym/excluir-conta': 'delete-account',
+};
 const PROJECT_PATH = /^(?:\/([a-z]{2}))?\/projects\/([^/]+)\/?$/;
 
 const pickLocale = (header) => {
@@ -43,8 +50,10 @@ export function proxy(request) {
     // do app no idioma do navegador.
     if (pathname === '/gym' || pathname.startsWith('/gym/')) {
         const locale = pickLocale(request.headers.get('accept-language'));
+        // Endereços curtos das páginas legais (Play Console, ficha da loja).
+        const page = GYM_LEGAL_PAGES[pathname.replace(/\/$/, '')];
         return NextResponse.redirect(
-            new URL(`/${locale}/projects/stz-gym`, request.url),
+            new URL(`/${locale}/projects/stz-gym${page ? `/${page}` : ''}`, request.url),
             307
         );
     }
