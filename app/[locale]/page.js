@@ -8,6 +8,7 @@ import { projects } from '../../data/projects';
 import { JsonLd, buildSiteLd } from '../../lib/structuredData';
 import { resolveProjectReleases, resolveProjectStats } from '../../lib/releases';
 import { buildPageMetadata } from '../../lib/pageMetadata';
+import { loadChangelog } from '../../lib/changelog';
 import { isLocale, localeParams } from '../../lib/i18n';
 import { notFound } from 'next/navigation';
 
@@ -29,15 +30,22 @@ export const viewport = {
 
 export const revalidate = 3600;
 
+/** Última entrega de cada projeto: várias releases seguidas de um só não tomam a home. */
+const latestPerProject = (entries, limit) => {
+    const seen = new Set();
+    return entries.filter((entry) => !seen.has(entry.project) && seen.add(entry.project)).slice(0, limit);
+};
+
 export default async function Home({ params }) {
     const { locale } = await params;
     if (!isLocale(locale)) notFound();
 
     // Ordenar os projetos de acordo com a prioridade selecionada manualmente
     const sortedProjects = [...projects].sort((a, b) => (a.priority || 99) - (b.priority || 99));
-    const [releases, stats] = await Promise.all([
+    const [releases, stats, changelog] = await Promise.all([
         resolveProjectReleases(sortedProjects),
         resolveProjectStats(sortedProjects),
+        loadChangelog().catch(() => []),
     ]);
 
     return (
@@ -59,7 +67,7 @@ export default async function Home({ params }) {
                 {/* Legacy Components that will be refactored eventually - wrapped nicely */}
                 <div className="mt-24 max-w-4xl mx-auto space-y-16">
                     <Philosophy />
-                    <StatusTimeline />
+                    <StatusTimeline entries={latestPerProject(changelog, 5)} />
                 </div>
             </div>
         </main>

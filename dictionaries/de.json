@@ -123,6 +123,7 @@
     "btn": "Discord beitreten"
   },
   "footer": {
+    "changelog": "Verlauf",
     "privacy": "Datenschutz",
     "terms": "AGB",
     "support": "Support",

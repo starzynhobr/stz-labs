@@ -122,6 +122,7 @@
     "btn": "Entrar no Discord"
   },
   "footer": {
+    "changelog": "Histórico",
     "privacy": "Privacidade",
     "terms": "Termos",
     "support": "Apoio",

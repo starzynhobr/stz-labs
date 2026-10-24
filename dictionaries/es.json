@@ -125,6 +125,7 @@
     "btn": "Unirse a Discord"
   },
   "footer": {
+    "changelog": "Historial",
     "privacy": "Privacidad",
     "terms": "Términos",
     "support": "Apoyo",

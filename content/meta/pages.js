@@ -84,6 +84,32 @@ export const pageMeta = {
         },
     },
 
+    changelog: {
+        pt: {
+            title: 'Histórico de Versões e Novidades — Ferramentas STZ | STZ Labs',
+            description: 'Tudo o que saiu do laboratório: versões de cada ferramenta da STZ Labs, com destaques das notas e links para baixar.',
+        },
+        en: {
+            title: 'Changelog and Release History — STZ Tools | STZ Labs',
+            description: 'Everything that shipped from the lab: every release of each STZ Labs tool, with highlights from the notes and download links.',
+        },
+        es: {
+            title: 'Historial de Versiones y Novedades — Herramientas STZ | STZ Labs',
+            description: 'Todo lo que salió del laboratorio: versiones de cada herramienta de STZ Labs, con lo destacado de las notas y enlaces de descarga.',
+        },
+        fr: {
+            title: 'Historique des Versions et Nouveautés — Outils STZ | STZ Labs',
+            description: 'Tout ce qui est sorti du labo : chaque version des outils STZ Labs, avec les points forts des notes et les liens de téléchargement.',
+        },
+        de: {
+            title: 'Versionsverlauf und Neuigkeiten — STZ-Tools | STZ Labs',
+            description: 'Alles, was aus dem Labor kam: jede Version der STZ-Labs-Tools mit den wichtigsten Punkten der Hinweise und Download-Links.',
+        },
+        it: {
+            title: 'Storico delle Versioni e Novità — Strumenti STZ | STZ Labs',
+            description: 'Tutto ciò che è uscito dal laboratorio: ogni versione degli strumenti STZ Labs, con i punti salienti delle note e i link per scaricare.',
+        },
+    },
     support: {
         pt: {
             title: 'Apoiar o Projeto — Contribuição Voluntária e Única | STZ Labs',

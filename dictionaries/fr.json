@@ -123,6 +123,7 @@
     "btn": "Rejoindre Discord"
   },
   "footer": {
+    "changelog": "Historique",
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "support": "Support",

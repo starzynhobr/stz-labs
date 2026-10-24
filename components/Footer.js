@@ -56,6 +56,9 @@ export default function Footer() {
                             <LocaleLink href="/terms" className="block text-[11px] font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-wider">
                                 <TranslatedText as="span" i18nKey="footer.terms" />
                             </LocaleLink>
+                            <LocaleLink href="/changelog" className="block text-[11px] font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-wider">
+                                <TranslatedText as="span" i18nKey="footer.changelog" />
+                            </LocaleLink>
                         </div>
  
                         <div className="space-y-4 col-span-2 md:col-span-1">
