@@ -76,7 +76,8 @@
     "specs_title": "Technische Daten",
     "projects_support_cta": "Unterstützen",
     "projects_support_note": "Freiwilliger Beitrag. Keine Belohnungen.",
-    "projects_support_aria": "Zur Support-Seite"
+    "projects_support_aria": "Zur Support-Seite",
+    "videos_title": "In Aktion"
   },
   "cards": {
     "suite_desc": "Eine schlanke Windows-Basis mit Medien-, Produktivitäts- und Automatisierungstools zur Installation nach Bedarf.",
@@ -619,7 +620,16 @@
       "atlas_description": "Betrachte die gesamte Textur und passe den Ausschnitt für jedes Element an.",
       "start_kicker": "Projekt beginnen",
       "start_title": "Arbeite an einer Kopie",
-      "start_description": "Erstelle ein Projekt aus der aktiven UI, aus einer UICustom-UI oder aus einem anderen Ordner. Die Spieldateien ändern sich erst, wenn du mit F5 testest."
+      "start_description": "Erstelle ein Projekt aus der aktiven UI, aus einer UICustom-UI oder aus einem anderen Ordner. Die Spieldateien ändern sich erst, wenn du mit F5 testest.",
+      "texts_kicker": "Spieltexte",
+      "texts_title": "Beschriftungen wie im Spiel",
+      "texts_description": "Die Schaltfläche Text zeigt die Texte, die das Spiel auf jedes Steuerelement schreibt, mit Schrift, Farbe und Umriss des Spiels. Beispieltexte markieren rot, wo der Text nicht passt.",
+      "texts_tab_kicker": "Texte bearbeiten",
+      "texts_tab_title": "Alle Texte durchsuchen",
+      "texts_tab_description": "Der Tab Texte durchsucht ganz data/Translate und bearbeitet ohne Notepad. Änderungen bleiben im Projekt und werden bei jedem Senden ans Spiel erneut angewendet.",
+      "layers_kicker": "Ebenen",
+      "layers_title": "Das Spiel-HUD zusammenstellen",
+      "layers_description": "Sieh BasicChar, Radar, Menu, Chat und die Leisten zusammen, dort wo das Spiel sie zeichnet, während du eines davon bearbeitest."
     },
     "features": {
       "visual_title": "Visuelle Bearbeitung",
@@ -627,13 +637,35 @@
       "backup_title": "Speichern mit Sicherung",
       "backup_description": "Prüfe den Diff vor dem Speichern; Big5 und ursprüngliche Formatierung bleiben erhalten.",
       "languages_title": "App-Sprachen",
-      "languages_description": "Oberfläche auf Portugiesisch, Englisch, Spanisch und Französisch verfügbar."
+      "languages_description": "Oberfläche auf Portugiesisch, Englisch, Spanisch und Französisch verfügbar.",
+      "texts_title": "Textbearbeitung",
+      "texts_description": "Sofortsuche in den Spieltexten, Bearbeitung im Editor und Rückkehr zum Originaltext.",
+      "layers_title": "HUD-Ebenen",
+      "layers_description": "Stelle das Standard-HUD zusammen, um ein Fenster zu bearbeiten und die anderen drumherum zu sehen.",
+      "fast_title": "Leicht und schnell",
+      "fast_description": "Öffnet große Projekte und verschiebt Dutzende Elemente ohne Hänger."
     },
     "specs": {
       "version": "Version",
       "platform": "Plattform",
       "compatibility": "Kompatibilität",
       "languages": "Sprachen"
+    },
+    "videos": {
+      "texts_title": "Einen Spieltext bearbeiten",
+      "texts_description": "Text suchen, bearbeiten, ans Spiel senden und das Ergebnis prüfen."
+    },
+    "guide": {
+      "download_title": "Download",
+      "req_windows": "Windows 10 oder 11",
+      "req_python": "Python muss nicht installiert werden",
+      "req_game": "Spiel und Spieldateien sind nicht enthalten",
+      "smartscreen_title": "Meldet Windows, dass die App nicht erkannt wird?",
+      "smartscreen_description": "Das ist SmartScreen, das bei Installern ohne digitale Signatur erscheint. Klicke auf Weitere Informationen und dann auf Trotzdem ausführen.",
+      "update_title": "So aktualisierst du",
+      "update_step1": "Öffne den Editor: Er sucht selbst nach Updates. Zum sofortigen Prüfen: Hilfe → Nach Updates suchen…",
+      "update_step2": "Im Fenster Update verfügbar die Neuerungen ansehen und auf Herunterladen und installieren klicken.",
+      "update_step3": "Installer abschließen. Deine Projekte und Einstellungen bleiben erhalten."
     }
   }
 }

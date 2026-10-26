@@ -11,7 +11,7 @@ export const projects = [
         maturity: 'beta',
         titleKey: 'gf_ui_editor.title',
         descriptionKey: 'gf_ui_editor.card_description',
-        badgeLabel: 'v0.2.4',
+        badgeLabel: 'v0.4.0',
         badgeVariant: 'beta',
         tags: [{ label: 'Grand Fantasia Violet' }, { labelKey: 'common.tags.windows' }, { labelKey: 'common.tags.tools' }],
         detailLabelKey: 'cards.btn_details',
@@ -24,17 +24,41 @@ export const projects = [
                 githubUrl: 'https://github.com/starzynhobr/gf-ui-editor',
                 githubLabelKey: 'gf_ui_editor.github_link',
             },
-            showcase: ['editor', 'preview', 'atlas', 'start'].map((screen) => ({
-                image: '/images/projects/gf-ui-editor/' + ({ editor: 'elementos-inspector.png', preview: 'preview-do-jogo.png', atlas: 'atlas-dds.png', start: 'tela-inicial.png' }[screen]),
+            showcase: ['texts', 'texts_tab', 'layers', 'editor', 'atlas', 'start'].map((screen) => ({
+                image: '/images/projects/gf-ui-editor/' + ({
+                    texts: 'textos-do-jogo.png',
+                    texts_tab: 'aba-textos.png',
+                    layers: 'camadas-hud.png',
+                    editor: 'elementos-inspector.png',
+                    atlas: 'atlas-dds.png',
+                    start: 'tela-inicial.png',
+                }[screen]),
                 alt: 'GF UI Editor',
                 kickerKey: 'gf_ui_editor.showcase.' + screen + '_kicker',
                 titleKey: 'gf_ui_editor.showcase.' + screen + '_title',
                 descriptionKey: 'gf_ui_editor.showcase.' + screen + '_description',
             })),
-            features: ['visual', 'backup', 'languages'].map((feature) => ({
+            features: ['visual', 'texts', 'layers', 'backup', 'languages', 'fast'].map((feature) => ({
                 titleKey: 'gf_ui_editor.features.' + feature + '_title',
                 descriptionKey: 'gf_ui_editor.features.' + feature + '_description',
             })),
+            videos: [
+                {
+                    src: '/videos/gf-ui-editor/editar-textos.mp4',
+                    poster: '/videos/gf-ui-editor/editar-textos.jpg',
+                    titleKey: 'gf_ui_editor.videos.texts_title',
+                    descriptionKey: 'gf_ui_editor.videos.texts_description',
+                },
+            ],
+            installGuide: {
+                downloadTitleKey: 'gf_ui_editor.guide.download_title',
+                requirementKeys: ['gf_ui_editor.guide.req_windows', 'gf_ui_editor.guide.req_python', 'gf_ui_editor.guide.req_game'],
+                smartscreenTitleKey: 'gf_ui_editor.guide.smartscreen_title',
+                smartscreenDescriptionKey: 'gf_ui_editor.guide.smartscreen_description',
+                updateTitleKey: 'gf_ui_editor.guide.update_title',
+                updateStepKeys: ['gf_ui_editor.guide.update_step1', 'gf_ui_editor.guide.update_step2', 'gf_ui_editor.guide.update_step3'],
+                updateVideo: { src: '/videos/gf-ui-editor/atualizar.mp4', poster: '/videos/gf-ui-editor/atualizar.jpg' },
+            },
             specs: [
                 { labelKey: 'gf_ui_editor.specs.version', repoName: 'gf-ui-editor' },
                 { labelKey: 'gf_ui_editor.specs.platform', value: 'Windows' },

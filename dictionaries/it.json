@@ -78,7 +78,8 @@
     "specs_title": "Specifiche Tecniche",
     "projects_support_cta": "Supporta",
     "projects_support_note": "Contributo volontario. Nessuna ricompensa.",
-    "projects_support_aria": "Vai alla pagina di supporto"
+    "projects_support_aria": "Vai alla pagina di supporto",
+    "videos_title": "Guardalo in azione"
   },
   "cards": {
     "suite_desc": "Una base Windows leggera con strumenti multimediali, di produttività e automazione installati su richiesta.",
@@ -621,7 +622,16 @@
       "atlas_description": "Visualizza la texture completa e regola la regione usata da ogni elemento.",
       "start_kicker": "Iniziare un progetto",
       "start_title": "Lavora su una copia",
-      "start_description": "Crea un progetto dalla UI in uso, da una UI di UICustom o da un’altra cartella. I file del gioco cambiano solo quando provi con F5."
+      "start_description": "Crea un progetto dalla UI in uso, da una UI di UICustom o da un’altra cartella. I file del gioco cambiano solo quando provi con F5.",
+      "texts_kicker": "Testi del gioco",
+      "texts_title": "Etichette come le mostra il gioco",
+      "texts_description": "Il pulsante Testo mostra i testi che il gioco scrive su ogni controllo, con il font, il colore e il contorno del gioco. Gli esempi segnano in rosso dove il testo non entra.",
+      "texts_tab_kicker": "Modificare i testi",
+      "texts_tab_title": "Cerca in tutti i testi",
+      "texts_tab_description": "La scheda Testi cerca in tutto data/Translate e modifica senza Blocco note. Le modifiche restano nel progetto e vengono riapplicate a ogni invio al gioco.",
+      "layers_kicker": "Livelli",
+      "layers_title": "Componi l'HUD del gioco",
+      "layers_description": "Vedi BasicChar, Radar, Menu, chat e barre insieme, dove il gioco li disegna, mentre ne modifichi uno."
     },
     "features": {
       "visual_title": "Modifica visiva",
@@ -629,13 +639,35 @@
       "backup_title": "Salvataggio con backup",
       "backup_description": "Controlla il diff prima di salvare; conserva Big5 e la formattazione originale.",
       "languages_title": "Lingue dell’app",
-      "languages_description": "Interfaccia disponibile in portoghese, inglese, spagnolo e francese."
+      "languages_description": "Interfaccia disponibile in portoghese, inglese, spagnolo e francese.",
+      "texts_title": "Modifica dei testi",
+      "texts_description": "Ricerca istantanea nei testi del gioco, modifica nell'editor e ritorno al testo originale.",
+      "layers_title": "Livelli dell'HUD",
+      "layers_description": "Componi l'HUD predefinito per modificare una finestra vedendo le altre intorno.",
+      "fast_title": "Leggero e veloce",
+      "fast_description": "Apre progetti grandi e trascina decine di elementi senza bloccarsi."
     },
     "specs": {
       "version": "Versione",
       "platform": "Piattaforma",
       "compatibility": "Compatibilità",
       "languages": "Lingue"
+    },
+    "videos": {
+      "texts_title": "Modificare un testo del gioco",
+      "texts_description": "Cercare un testo, modificarlo, inviarlo al gioco e controllare il risultato."
+    },
+    "guide": {
+      "download_title": "Scarica",
+      "req_windows": "Windows 10 o 11",
+      "req_python": "Non serve installare Python",
+      "req_game": "Il gioco e i suoi file non sono inclusi",
+      "smartscreen_title": "Windows dice che l'app non è riconosciuta?",
+      "smartscreen_description": "È SmartScreen, che compare per gli installer senza firma digitale. Clicca su Ulteriori informazioni e poi su Esegui comunque.",
+      "update_title": "Come aggiornare",
+      "update_step1": "Apri l'editor: cerca gli aggiornamenti da solo. Per controllare subito, usa Aiuto → Controlla aggiornamenti…",
+      "update_step2": "Nella finestra Aggiornamento disponibile, leggi le novità e clicca su Scarica e installa.",
+      "update_step3": "Completa l'installer. I tuoi progetti e le impostazioni restano dove erano."
     }
   }
 }

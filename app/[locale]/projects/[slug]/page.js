@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProjectGalleryDetails from '../../../../components/ProjectGalleryDetails';
 import ProjectFeatureShowcase from '../../../../components/ProjectFeatureShowcase';
+import ProjectVideos from '../../../../components/ProjectVideos';
+import ProjectInstallGuide from '../../../../components/ProjectInstallGuide';
 import RepoStats from '../../../../components/RepoStats';
 import TranslatedText from '../../../../components/TranslatedText';
 import { projects } from '../../../../data/projects';
@@ -94,7 +96,7 @@ export default async function ProjectDetailPage({ params }) {
         );
     }
 
-    const { hero, gallery, showcase, features, specs } = project.detail;
+    const { hero, gallery, showcase, features, specs, videos, installGuide } = project.detail;
     // Passa pela página de agradecimento, que entrega o arquivo e só então pede apoio.
     const downloadUrl = release?.downloadUrl || project.downloadHref;
     const downloadHref = downloadUrl ? downloadPath(locale, project.slug) : null;
@@ -195,6 +197,8 @@ export default async function ProjectDetailPage({ params }) {
 
             <ProjectFeatureShowcase items={showcase || []} />
 
+            <ProjectVideos items={videos || []} />
+
             {/* Features Section */}
             <section className="container max-w-5xl mx-auto px-6 mb-24">
                 <div className="flex items-center gap-4 mb-12">
@@ -221,6 +225,8 @@ export default async function ProjectDetailPage({ params }) {
                     ))}
                 </div>
             </section>
+
+            <ProjectInstallGuide guide={installGuide} release={release} downloadHref={downloadHref} />
 
             {/* Specifications Section */}
             <section className="container max-w-4xl mx-auto px-6">

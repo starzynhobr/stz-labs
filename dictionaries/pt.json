@@ -75,7 +75,8 @@
     "specs_title": "Especificações Técnicas",
     "projects_support_cta": "Apoiar",
     "projects_support_note": "Contribuição voluntária. Sem recompensas.",
-    "projects_support_aria": "Ir para a página de apoio"
+    "projects_support_aria": "Ir para a página de apoio",
+    "videos_title": "Veja em ação"
   },
   "cards": {
     "suite_desc": "Uma base leve para Windows com ferramentas de mídia, produtividade e automação instaladas sob demanda.",
@@ -616,7 +617,16 @@
       "atlas_description": "Visualize a textura completa e ajuste o recorte usado por cada elemento.",
       "start_kicker": "Começar um projeto",
       "start_title": "Trabalhe em uma cópia",
-      "start_description": "Crie um projeto a partir da UI em uso, de uma UI do UICustom ou de outra pasta. Os arquivos do jogo só mudam quando você testa com F5."
+      "start_description": "Crie um projeto a partir da UI em uso, de uma UI do UICustom ou de outra pasta. Os arquivos do jogo só mudam quando você testa com F5.",
+      "texts_kicker": "Textos do jogo",
+      "texts_title": "Rótulos como o jogo mostra",
+      "texts_description": "O botão Texto mostra os textos que o jogo escreve em cada controle, com a fonte, a cor e o contorno do jogo. As amostras marcam em vermelho onde o texto não cabe.",
+      "texts_tab_kicker": "Editar textos",
+      "texts_tab_title": "Busca em todos os textos",
+      "texts_tab_description": "A aba Textos busca em data/Translate inteiro e edita sem abrir o Bloco de Notas. As edições ficam no projeto e são reaplicadas a cada envio para o jogo.",
+      "layers_kicker": "Camadas",
+      "layers_title": "Monte o HUD do jogo",
+      "layers_description": "Veja BasicChar, Radar, Menu, chat e as barras juntos, na posição em que o jogo os desenha, enquanto edita um deles."
     },
     "features": {
       "visual_title": "Edição visual",
@@ -624,13 +634,35 @@
       "backup_title": "Salvamento com backup",
       "backup_description": "Confira o diff antes de salvar; preserve Big5 e a formatação original.",
       "languages_title": "Idiomas do aplicativo",
-      "languages_description": "Interface disponível em português, inglês, espanhol e francês."
+      "languages_description": "Interface disponível em português, inglês, espanhol e francês.",
+      "texts_title": "Edição de textos",
+      "texts_description": "Busca instantânea nos textos do jogo, edição no próprio editor e volta ao texto original quando quiser.",
+      "layers_title": "Camadas do HUD",
+      "layers_description": "Monte o HUD padrão para editar uma janela vendo as outras em volta.",
+      "fast_title": "Leve e rápido",
+      "fast_description": "Abre projetos grandes e arrasta dezenas de elementos sem travar."
     },
     "specs": {
       "version": "Versão",
       "platform": "Plataforma",
       "compatibility": "Compatibilidade",
       "languages": "Idiomas"
+    },
+    "videos": {
+      "texts_title": "Editando um texto do jogo",
+      "texts_description": "Buscar um texto, editar, enviar para o jogo e conferir o resultado."
+    },
+    "guide": {
+      "download_title": "Baixar",
+      "req_windows": "Windows 10 ou 11",
+      "req_python": "Não precisa instalar Python",
+      "req_game": "O jogo e seus arquivos não acompanham o aplicativo",
+      "smartscreen_title": "O Windows avisou que o app não é reconhecido?",
+      "smartscreen_description": "É o SmartScreen, que aparece para instaladores sem assinatura digital. Clique em Mais informações e depois em Executar assim mesmo.",
+      "update_title": "Como atualizar",
+      "update_step1": "Abra o editor: ele procura atualizações sozinho. Se quiser conferir na hora, use Ajuda → Verificar atualizações…",
+      "update_step2": "Na janela Atualização disponível, veja as novidades e clique em Baixar e instalar.",
+      "update_step3": "Conclua o instalador. Seus projetos e configurações continuam onde estavam."
     }
   }
 }

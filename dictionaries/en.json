@@ -76,7 +76,8 @@
     "specs_title": "Technical Specs",
     "projects_support_cta": "Support",
     "projects_support_note": "Voluntary tip. No rewards.",
-    "projects_support_aria": "Go to support page"
+    "projects_support_aria": "Go to support page",
+    "videos_title": "See it in action"
   },
   "cards": {
     "suite_desc": "A lightweight Windows base with media, productivity, and automation tools installed on demand.",
@@ -619,7 +620,16 @@
       "atlas_description": "View the entire texture and adjust the region used by each element.",
       "start_kicker": "Start a project",
       "start_title": "Work on a copy",
-      "start_description": "Create a project from the UI in use, from a UICustom UI or from another folder. Game files only change when you test with F5."
+      "start_description": "Create a project from the UI in use, from a UICustom UI or from another folder. Game files only change when you test with F5.",
+      "texts_kicker": "Game texts",
+      "texts_title": "Labels as the game shows them",
+      "texts_description": "The Text button shows the texts the game writes on each control, with the game's font, color and outline. Samples flag in red where text doesn't fit.",
+      "texts_tab_kicker": "Edit texts",
+      "texts_tab_title": "Search every text",
+      "texts_tab_description": "The Texts tab searches all of data/Translate and edits without Notepad. Edits stay in the project and are reapplied on every send to the game.",
+      "layers_kicker": "Layers",
+      "layers_title": "Build the game HUD",
+      "layers_description": "See BasicChar, Radar, Menu, chat and the bars together, where the game draws them, while you edit one of them."
     },
     "features": {
       "visual_title": "Visual editing",
@@ -627,13 +637,35 @@
       "backup_title": "Save with a backup",
       "backup_description": "Review the diff before saving; preserve Big5 and original formatting.",
       "languages_title": "App languages",
-      "languages_description": "Interface available in Portuguese, English, Spanish and French."
+      "languages_description": "Interface available in Portuguese, English, Spanish and French.",
+      "texts_title": "Text editing",
+      "texts_description": "Instant search across game texts, editing inside the editor and a way back to the original text.",
+      "layers_title": "HUD layers",
+      "layers_description": "Build the default HUD to edit one window while seeing the others around it.",
+      "fast_title": "Light and fast",
+      "fast_description": "Opens big projects and drags dozens of elements without freezing."
     },
     "specs": {
       "version": "Version",
       "platform": "Platform",
       "compatibility": "Compatibility",
       "languages": "Languages"
+    },
+    "videos": {
+      "texts_title": "Editing a game text",
+      "texts_description": "Search a text, edit it, send it to the game and check the result."
+    },
+    "guide": {
+      "download_title": "Download",
+      "req_windows": "Windows 10 or 11",
+      "req_python": "No need to install Python",
+      "req_game": "The game and its files are not included",
+      "smartscreen_title": "Did Windows say the app isn't recognized?",
+      "smartscreen_description": "That's SmartScreen, shown for installers without a digital signature. Click More info, then Run anyway.",
+      "update_title": "How to update",
+      "update_step1": "Open the editor: it checks for updates on its own. To check right away, use Help → Check for updates…",
+      "update_step2": "In the Update available window, read what's new and click Download and install.",
+      "update_step3": "Finish the installer. Your projects and settings stay where they were."
     }
   }
 }

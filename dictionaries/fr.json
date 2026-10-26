@@ -76,7 +76,8 @@
     "specs_title": "Spécifications Techniques",
     "projects_support_cta": "Soutenir",
     "projects_support_note": "Contribution volontaire. Aucune récompense.",
-    "projects_support_aria": "Aller à la page de support"
+    "projects_support_aria": "Aller à la page de support",
+    "videos_title": "En action"
   },
   "cards": {
     "suite_desc": "Une base Windows légère avec des outils multimédia, de productivité et d'automatisation installés à la demande.",
@@ -617,7 +618,16 @@
       "atlas_description": "Affichez la texture complète et ajustez la région utilisée par chaque élément.",
       "start_kicker": "Commencer un projet",
       "start_title": "Travaillez sur une copie",
-      "start_description": "Créez un projet à partir de l’UI utilisée, d’une UI d’UICustom ou d’un autre dossier. Les fichiers du jeu ne changent que lorsque vous testez avec F5."
+      "start_description": "Créez un projet à partir de l’UI utilisée, d’une UI d’UICustom ou d’un autre dossier. Les fichiers du jeu ne changent que lorsque vous testez avec F5.",
+      "texts_kicker": "Textes du jeu",
+      "texts_title": "Les libellés comme dans le jeu",
+      "texts_description": "Le bouton Texte affiche les textes que le jeu écrit sur chaque contrôle, avec la police, la couleur et le contour du jeu. Les échantillons signalent en rouge le texte qui ne rentre pas.",
+      "texts_tab_kicker": "Modifier les textes",
+      "texts_tab_title": "Recherche dans tous les textes",
+      "texts_tab_description": "L'onglet Textes cherche dans tout data/Translate et modifie sans le Bloc-notes. Les modifications restent dans le projet et sont réappliquées à chaque envoi au jeu.",
+      "layers_kicker": "Calques",
+      "layers_title": "Montez le HUD du jeu",
+      "layers_description": "Voyez BasicChar, Radar, Menu, le chat et les barres ensemble, là où le jeu les dessine, pendant que vous modifiez l'un d'eux."
     },
     "features": {
       "visual_title": "Édition visuelle",
@@ -625,13 +635,35 @@
       "backup_title": "Sauvegarde avec copie",
       "backup_description": "Vérifiez le diff avant de sauvegarder ; conservez Big5 et le format original.",
       "languages_title": "Langues de l’application",
-      "languages_description": "Interface disponible en portugais, anglais, espagnol et français."
+      "languages_description": "Interface disponible en portugais, anglais, espagnol et français.",
+      "texts_title": "Modification des textes",
+      "texts_description": "Recherche instantanée dans les textes du jeu, modification dans l'éditeur et retour au texte d'origine.",
+      "layers_title": "Calques du HUD",
+      "layers_description": "Montez le HUD par défaut pour modifier une fenêtre en voyant les autres autour.",
+      "fast_title": "Léger et rapide",
+      "fast_description": "Ouvre de gros projets et déplace des dizaines d'éléments sans bloquer."
     },
     "specs": {
       "version": "Version",
       "platform": "Plateforme",
       "compatibility": "Compatibilité",
       "languages": "Langues"
+    },
+    "videos": {
+      "texts_title": "Modifier un texte du jeu",
+      "texts_description": "Chercher un texte, le modifier, l'envoyer au jeu et vérifier le résultat."
+    },
+    "guide": {
+      "download_title": "Télécharger",
+      "req_windows": "Windows 10 ou 11",
+      "req_python": "Pas besoin d'installer Python",
+      "req_game": "Le jeu et ses fichiers ne sont pas inclus",
+      "smartscreen_title": "Windows dit que l'application n'est pas reconnue ?",
+      "smartscreen_description": "C'est SmartScreen, affiché pour les installateurs sans signature numérique. Cliquez sur Informations complémentaires, puis sur Exécuter quand même.",
+      "update_title": "Mettre à jour",
+      "update_step1": "Ouvrez l'éditeur : il cherche les mises à jour tout seul. Pour vérifier tout de suite, utilisez Aide → Rechercher des mises à jour…",
+      "update_step2": "Dans la fenêtre Mise à jour disponible, lisez les nouveautés et cliquez sur Télécharger et installer.",
+      "update_step3": "Terminez l'installateur. Vos projets et réglages restent en place."
     }
   }
 }
