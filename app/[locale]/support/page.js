@@ -46,7 +46,7 @@ export default async function SupportPage({ params }) {
 
             {/* O convite vem antes de qualquer explicação: era o que ficava enterrado. */}
             <section className="container max-w-3xl mx-auto px-6">
-                <div className="p-8 md:p-10 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] text-center">
+                <div className="p-8 md:p-10 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] text-center">
                     <TranslatedText
                         as="h2"
                         className="text-lg font-bold text-[var(--text-heading)] tracking-tight mb-3"

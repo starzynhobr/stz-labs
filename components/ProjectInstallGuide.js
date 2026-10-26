@@ -3,7 +3,7 @@ import TranslatedText from './TranslatedText';
 import { Button } from './ui/Button';
 
 const cardClass =
-    'p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]';
+    'p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]';
 
 function formatSize(bytes) {
     if (!bytes) return null;

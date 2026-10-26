@@ -44,7 +44,7 @@ export default function TermsPage() {
                 {sections.map((sectionKey) => (
                     <article
                         key={sectionKey}
-                        className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-300"
+                        className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-300"
                     >
                         <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight flex items-center gap-3">
                             <span className="w-1 h-1 rounded-full bg-[var(--accent)]/50 shrink-0" />

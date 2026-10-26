@@ -237,7 +237,7 @@ export default function Navbar() {
      
                             {/* Dropdown Menu */}
                             <div className={cn(
-                                "absolute top-full right-0 mt-2 w-16 bg-[var(--surface-3)] backdrop-blur-[var(--backdrop-blur)] border border-[var(--border-subtle)] rounded-xl shadow-[var(--shadow)] overflow-hidden z-50 origin-top-right transition-all duration-200",
+                                "absolute top-full right-0 mt-2 w-16 bg-[var(--surface-3)] backdrop-blur-md border border-[var(--border-subtle)] rounded-xl shadow-[var(--shadow)] overflow-hidden z-50 origin-top-right transition-all duration-200",
                                 langMenuOpen ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"
                             )}>
                                 {['pt', 'en', 'fr', 'de', 'it', 'es'].map((l) => (

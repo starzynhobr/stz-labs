@@ -34,7 +34,7 @@ async function send(payload) {
     return data;
 }
 
-const CARD = 'rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-6 backdrop-blur-[var(--backdrop-blur)]';
+const CARD = 'rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-6';
 
 export default function GymFeedback({ text, locale }) {
     const [counts, setCounts] = useState(null);

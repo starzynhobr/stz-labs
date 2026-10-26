@@ -23,7 +23,7 @@ export default function ProjectVideos({ items = [] }) {
                 {items.map((video) => (
                     <article
                         key={video.src}
-                        className="rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] overflow-hidden"
+                        className="rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] overflow-hidden"
                     >
                         <video
                             className="w-full aspect-video bg-black"

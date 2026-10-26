@@ -215,7 +215,7 @@ export default async function ProjectDetailPage({ params }) {
                     {features.map((feature) => (
                         <article 
                             key={feature.titleKey} 
-                            className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-300 group"
+                            className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-300 group"
                         >
                             <h3 className="text-lg font-bold text-[var(--text-heading)] mb-3 tracking-tight group-hover:text-[var(--accent)] transition-colors">
                                 <TranslatedText as="span" i18nKey={feature.titleKey} />

@@ -36,7 +36,7 @@ export default function GymProjectPage() {
                     {text.features.map((feature) => (
                         <article
                             key={feature.title}
-                            className="rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-6 backdrop-blur-[var(--backdrop-blur)] transition-colors hover:[border-color:var(--border-hover)]"
+                            className="rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-6 transition-colors hover:[border-color:var(--border-hover)]"
                         >
                             <h2 className="mb-2 font-bold tracking-tight text-[var(--text-heading)]">{feature.title}</h2>
                             <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{feature.text}</p>

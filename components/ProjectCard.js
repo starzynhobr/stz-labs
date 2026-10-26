@@ -15,9 +15,9 @@ const cardVariants = cva(
     {
         variants: {
             layout: {
-                featured: "col-span-full md:grid md:grid-cols-12 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-500",
-                bento: "col-span-full md:col-span-6 lg:col-span-4 min-h-[380px] rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow-card)] hover:[border-color:var(--border-hover)] transition-all duration-500 flex flex-col",
-                list: "col-span-full flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-[calc(var(--radius-card)*0.6)] bg-[var(--surface-primary)] backdrop-blur-sm border [border-color:var(--border-subtle)] shadow-[var(--shadow-card)] hover:[border-color:var(--border-hover)] hover:bg-[var(--surface-primary)]/80",
+                featured: "col-span-full md:grid md:grid-cols-12 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] hover:[border-color:var(--border-hover)] transition-all duration-500",
+                bento: "col-span-full md:col-span-6 lg:col-span-4 min-h-[380px] rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow-card)] hover:[border-color:var(--border-hover)] transition-all duration-500 flex flex-col",
+                list: "col-span-full flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-[calc(var(--radius-card)*0.6)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow-card)] hover:[border-color:var(--border-hover)] hover:bg-[var(--surface-primary)]/80",
             }
         },
         defaultVariants: {
@@ -226,7 +226,7 @@ const ProjectCard = ({
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--accent-glow)_1px,transparent_1px)] [background-size:32px_32px] opacity-100 pointer-events-none" />
                     
                     {/* Clean Interface Block - Laboratorial Look */}
-                    <div className="w-full max-w-[380px] aspect-[1.18/1] flex flex-col items-center justify-center z-10 relative rounded-[calc(var(--radius-card)*0.5)] border [border-color:var(--border-subtle)] bg-[var(--surface-3)] backdrop-blur-[var(--backdrop-blur)] shadow-[var(--shadow)] overflow-hidden">
+                    <div className="w-full max-w-[380px] aspect-[1.18/1] flex flex-col items-center justify-center z-10 relative rounded-[calc(var(--radius-card)*0.5)] border [border-color:var(--border-subtle)] bg-[var(--surface-3)] shadow-[var(--shadow)] overflow-hidden">
                         {coverImage ? (
                             <>
                                 {/* O card em destaque fica acima da dobra: sem priority ele vira o LCP tardio. */}

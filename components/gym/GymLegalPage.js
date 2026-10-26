@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { GYM_CONTACT_EMAIL, getGymLegal, gymLegalPath } from '../../data/stzGymLegal';
 import { GYM_SLUG } from '../../data/stzGym';
 
-const cardClass = 'rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-8 shadow-[var(--shadow)] backdrop-blur-[var(--backdrop-blur)]';
+const cardClass = 'rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-8 shadow-[var(--shadow)]';
 
 /** Splits "... {email} ..." so the address renders as a mailto link. */
 function WithEmail({ text }) {

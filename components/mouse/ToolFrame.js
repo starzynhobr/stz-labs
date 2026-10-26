@@ -6,7 +6,7 @@ import { cn } from '../../lib/utils';
 export function ToolPanel({ title, subtitle, children, className = '' }) {
     return (
         <section className={cn(
-            'p-6 md:p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)]',
+            'p-6 md:p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)]',
             'border [border-color:var(--border-subtle)] shadow-[var(--shadow)] relative overflow-hidden',
             className
         )}>

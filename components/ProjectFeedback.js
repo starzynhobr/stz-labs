@@ -30,7 +30,7 @@ async function send(endpoint, payload) {
     return data;
 }
 
-const CARD = 'rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-6 backdrop-blur-[var(--backdrop-blur)]';
+const CARD = 'rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] p-6';
 
 /**
  * Curtida, enquete e sugestão anônimas de um projeto. `id` separa o que o

@@ -13,7 +13,7 @@ export default function GymSpotlight() {
     const href = `/projects/${GYM_SLUG}`;
 
     return (
-        <section className="relative w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-strong)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)]">
+        <section className="relative isolate w-full overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-strong)] bg-[var(--surface-primary)]">
             <div className="pointer-events-none absolute -right-20 top-1/2 -z-10 size-[480px] -translate-y-1/2 rounded-full bg-[#00D9FF] opacity-20 blur-[120px]" aria-hidden="true" />
             <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[var(--accent)]/20 to-transparent" />
 

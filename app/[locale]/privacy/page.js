@@ -25,7 +25,7 @@ export default function PrivacyPage() {
 
             <section className="container max-w-3xl mx-auto px-6 space-y-6">
                 {/* Local Card */}
-                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
                     <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
                         <TranslatedText as="span" i18nKey="privacy.local_title" />
                     </h3>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
                 </article>
 
                 {/* Extension Card */}
-                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
                     <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
                         <TranslatedText as="span" i18nKey="privacy.extension_title" />
                     </h3>
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
                 </article>
 
                 {/* API Card */}
-                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
                     <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
                         <TranslatedText as="span" i18nKey="privacy.api_title" />
                     </h3>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
                 </article>
 
                 {/* Analytics Card */}
-                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)]">
                     <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
                         <TranslatedText as="span" i18nKey="privacy.analytics_title" />
                     </h3>
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
                 </article>
 
                 {/* Contact Card */}
-                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] backdrop-blur-[var(--backdrop-blur)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] border-l-4 [border-left-color:var(--accent)]">
+                <article className="p-8 rounded-[var(--radius-card)] bg-[var(--surface-primary)] border [border-color:var(--border-subtle)] shadow-[var(--shadow)] border-l-4 [border-left-color:var(--accent)]">
                     <h3 className="text-lg font-bold text-[var(--text-heading)] mb-4 tracking-tight">
                         <TranslatedText as="span" i18nKey="privacy.contact_title" />
                     </h3>

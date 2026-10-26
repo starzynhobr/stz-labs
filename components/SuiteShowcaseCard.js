@@ -46,7 +46,7 @@ export default function SuiteShowcaseCard({ tags = [], initialRelease = null, re
     return (
         <article
             aria-roledescription="carousel"
-            className="group relative col-span-full overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] shadow-[var(--shadow)] backdrop-blur-[var(--backdrop-blur)] transition-all duration-500 hover:[border-color:var(--border-hover)] md:grid md:grid-cols-12"
+            className="group relative col-span-full overflow-hidden rounded-[var(--radius-card)] border [border-color:var(--border-subtle)] bg-[var(--surface-primary)] shadow-[var(--shadow)] transition-all duration-500 hover:[border-color:var(--border-hover)] md:grid md:grid-cols-12"
         >
             <div className="pointer-events-none absolute inset-0 z-0 rounded-[var(--radius-card)] bg-gradient-to-br from-[var(--accent)]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
