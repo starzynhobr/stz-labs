@@ -2,47 +2,47 @@
 
 export const plugins = [
     {
-        id: 'fetchora', version: '0.1.0', name: 'Fetchora', category: { pt: 'Mídia', en: 'Media' }, image: '/images/projects/stz-suite/plugins/fetchora/home.png', images: ['/images/projects/stz-suite/plugins/fetchora/detail.png', '/images/projects/stz-suite/plugins/fetchora/home.png'],
+        id: 'fetchora', version: '0.3.0', name: 'Fetchora', category: { pt: 'Mídia', en: 'Media' }, image: '/images/projects/stz-suite/plugins/fetchora/home.png', images: ['/images/projects/stz-suite/plugins/fetchora/home.png'],
         description: { pt: 'Baixe mídia da web e converta arquivos locais de áudio e vídeo com filas, pastas e presets.', en: 'Download media from the web and convert local audio and video files with queues, folders, and presets.' },
         features: { pt: ['Download por URL com yt-dlp', 'Conversão local e em lote', 'FFmpeg e Deno integrados'], en: ['URL downloads with yt-dlp', 'Local and batch conversion', 'Bundled FFmpeg and Deno'] },
     },
     {
-        id: 'lumio', version: '0.2.0', name: 'Lumio', category: { pt: 'Leitura', en: 'Reading' }, image: '/images/projects/stz-suite/plugins/lumio/home.png', images: ['/images/projects/stz-suite/plugins/lumio/detail-1.png', '/images/projects/stz-suite/plugins/lumio/detail-2.png', '/images/projects/stz-suite/plugins/lumio/detail-3.png', '/images/projects/stz-suite/plugins/lumio/home.png'],
+        id: 'lumio', version: '0.4.0', name: 'Lumio', category: { pt: 'Leitura', en: 'Reading' }, image: '/images/projects/stz-suite/plugins/lumio/home.png', images: ['/images/projects/stz-suite/plugins/lumio/home.png'],
         description: { pt: 'Organize e leia sua biblioteca local de PDF, EPUB, CBZ e CBR com progresso salvo.', en: 'Organize and read your local PDF, EPUB, CBZ, and CBR library with saved progress.' },
         features: { pt: ['PDF, EPUB, CBZ e CBR', 'Biblioteca e recentes', 'Progresso e preferências'], en: ['PDF, EPUB, CBZ, and CBR', 'Library and recents', 'Progress and preferences'] },
     },
     {
-        id: 'reperto', version: '0.1.1', name: 'Reperto', category: { pt: 'Catálogo', en: 'Catalog' }, image: '/images/projects/stz-suite/plugins/reperto/home.png', images: ['/images/projects/stz-suite/plugins/reperto/detail-2.png', '/images/projects/stz-suite/plugins/reperto/detail-1.png', '/images/projects/stz-suite/plugins/reperto/home.png'],
+        id: 'reperto', version: '0.3.0', name: 'Reperto', category: { pt: 'Catálogo', en: 'Catalog' }, image: '/images/projects/stz-suite/plugins/reperto/home.png', images: ['/images/projects/stz-suite/plugins/reperto/home.png'],
         description: { pt: 'Acompanhe livros e outras mídias que você planeja consumir, está consumindo ou já concluiu.', en: 'Track books and other media you plan to consume, are consuming, or have completed.' },
         features: { pt: ['Status, notas e avaliações', 'Capas armazenadas localmente', 'Busca online de livros'], en: ['Statuses, notes, and ratings', 'Locally stored covers', 'Online book search'] },
     },
     {
-        id: 'tempoza', version: '1.2.0', name: 'Tempoza', category: { pt: 'Foco', en: 'Focus' }, image: '/images/projects/stz-suite/plugins/tempoza/home.png', images: ['/images/projects/stz-suite/plugins/tempoza/detail-1.png', '/images/projects/stz-suite/plugins/tempoza/detail-2.png', '/images/projects/stz-suite/plugins/tempoza/home.png'],
+        id: 'tempoza', version: '1.4.0', name: 'Tempoza', category: { pt: 'Foco', en: 'Focus' }, image: '/images/projects/stz-suite/plugins/tempoza/home.png', images: ['/images/projects/stz-suite/plugins/tempoza/home.png'],
         description: { pt: 'Timer de foco e pausa com presets, áudio ambiente, alarmes e preferências persistentes.', en: 'Focus and break timer with presets, background audio, alarms, and persistent preferences.' },
         features: { pt: ['Ciclos de foco e pausa', 'Áudio ambiente e alarmes', 'Presets persistentes'], en: ['Focus and break cycles', 'Background audio and alarms', 'Persistent presets'] },
     },
     {
-        id: 'ordelya', version: '0.1.0', name: 'Ordelya', category: { pt: 'Produtividade', en: 'Productivity' }, image: '/images/projects/stz-suite/plugins/ordelya/home.png', images: ['/images/projects/stz-suite/plugins/ordelya/detail-1.png', '/images/projects/stz-suite/plugins/ordelya/detail-2.png', '/images/projects/stz-suite/plugins/ordelya/home.png'],
+        id: 'ordelya', version: '0.4.0', name: 'Ordelya', category: { pt: 'Produtividade', en: 'Productivity' }, image: '/images/projects/stz-suite/plugins/ordelya/home.png', images: ['/images/projects/stz-suite/plugins/ordelya/home.png'],
         description: { pt: 'Planeje tarefas do dia com projetos, etapas, rotinas e lembretes.', en: 'Plan your day with tasks, projects, steps, routines, and reminders.' },
         features: { pt: ['Hoje, próximos e concluídos', 'Projetos, etapas e tags', 'Rotinas e lembretes'], en: ['Today, upcoming, and completed', 'Projects, steps, and tags', 'Routines and reminders'] },
     },
     {
-        id: 'orbhia', version: '0.2.0', name: 'Orbhia', category: { pt: 'Finanças', en: 'Finance' }, image: '/images/projects/stz-suite/plugins/orbhia/home.png', images: ['/images/projects/stz-suite/plugins/orbhia/detail-2.png', '/images/projects/stz-suite/plugins/orbhia/detail-1.png', '/images/projects/stz-suite/plugins/orbhia/detail-3.png', '/images/projects/stz-suite/plugins/orbhia/home.png'],
+        id: 'orbhia', version: '0.4.0', name: 'Orbhia', category: { pt: 'Finanças', en: 'Finance' }, image: '/images/projects/stz-suite/plugins/orbhia/home.png', images: ['/images/projects/stz-suite/plugins/orbhia/home.png'],
         description: { pt: 'Organize metas financeiras, compras, parcelas e assinaturas em um só lugar.', en: 'Organize financial goals, purchases, installments, and subscriptions in one place.' },
         features: { pt: ['Metas e compras', 'Parcelas e assinaturas', 'Sincronização opcional'], en: ['Goals and purchases', 'Installments and subscriptions', 'Optional synchronization'] },
     },
     {
-        id: 'glotiva', version: '0.1.0', name: 'Glotiva', category: { pt: 'Tradução', en: 'Translation' }, image: '/images/projects/stz-suite/plugins/glotiva/home.png', images: ['/images/projects/stz-suite/plugins/glotiva/home.png'],
+        id: 'glotiva', version: '0.3.0', name: 'Glotiva', category: { pt: 'Tradução', en: 'Translation' }, image: '/images/projects/stz-suite/plugins/glotiva/home.png', images: ['/images/projects/stz-suite/plugins/glotiva/home.png'],
         description: { pt: 'Traduza textos localmente, instalando apenas os modelos dos idiomas que utiliza.', en: 'Translate text locally, installing only the language models you need.' },
         features: { pt: ['Tradução totalmente local', 'Modelos sob demanda', 'Pares configuráveis'], en: ['Fully local translation', 'On-demand models', 'Configurable language pairs'] },
     },
     {
-        id: 'cursorium', version: '0.1.0', name: 'Cursorium', category: { pt: 'Automação', en: 'Automation' }, image: '/images/projects/stz-suite/plugins/cursorium/home.png', images: ['/images/projects/stz-suite/plugins/cursorium/detail.png', '/images/projects/stz-suite/plugins/cursorium/home.png'],
+        id: 'cursorium', version: '0.3.0', name: 'Cursorium', category: { pt: 'Automação', en: 'Automation' }, image: '/images/projects/stz-suite/plugins/cursorium/home.png', images: ['/images/projects/stz-suite/plugins/cursorium/home.png'],
         description: { pt: 'Grave movimentos e cliques do mouse e reproduza automações com atalhos e repetição.', en: 'Record mouse movement and clicks, then replay automations with shortcuts and repetition.' },
         features: { pt: ['Gravação e reprodução', 'Atalhos globais', 'Histórico e repetição'], en: ['Record and replay', 'Global shortcuts', 'History and repetition'] },
     },
     {
-        id: 'tunerium', version: '0.1.0', name: 'Tunerium', category: { pt: 'Sistema', en: 'System' }, image: '/images/projects/stz-suite/plugins/tunerium/home.png', images: ['/images/projects/stz-suite/plugins/tunerium/detail.png', '/images/projects/stz-suite/plugins/tunerium/home.png'],
+        id: 'tunerium', version: '0.3.0', name: 'Tunerium', category: { pt: 'Sistema', en: 'System' }, image: '/images/projects/stz-suite/plugins/tunerium/home.png', images: ['/images/projects/stz-suite/plugins/tunerium/home.png'],
         description: { pt: 'Diagnostique a conexão e acesse ajustes controlados de manutenção do Windows.', en: 'Diagnose your connection and access controlled Windows maintenance adjustments.' },
         features: { pt: ['Ping e traceroute', 'Histórico de diagnósticos', 'Ajustes de registro'], en: ['Ping and traceroute', 'Diagnostic history', 'Registry adjustments'] },
     },

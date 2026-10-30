@@ -972,7 +972,7 @@ export const projects = [
         releaseAssetPattern: '^STZ-Suite-Base-.*-Setup\\.exe$',
         badgeLabel: '...',
         badgeVariant: 'stable',
-        coverImage: '/images/projects/stz-suite/plugins/fetchora/home.png',
+        coverImage: '/images/projects/stz-suite/home.png',
         tags: [
             { labelKey: 'common.tags.windows' },
             { labelKey: 'common.tags.plugins' },
@@ -985,7 +985,7 @@ export const projects = [
             meta: {
                 title: 'STZ Suite | STZ LABS',
                 description: 'Ecossistema modular de ferramentas para Windows com plugins instalados sob demanda.',
-                ogDescription: 'Uma base leve e oito ferramentas modulares para produtividade, mídia e automação.',
+                ogDescription: 'Uma base leve e nove ferramentas modulares para produtividade, mídia e automação.',
             },
         },
     },

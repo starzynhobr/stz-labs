@@ -13,9 +13,9 @@ import { getPluginText, plugins } from '../data/suitePlugins';
 const RELEASES_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases';
 const ISSUES_URL = 'https://github.com/starzynhobr/stz-suite-releases/issues/new/choose';
 const DISCUSSIONS_URL = 'https://github.com/starzynhobr/stz-suite-releases/discussions';
-const BASE_VERIFICATION_VERSION = '0.4.1';
-const BASE_CHECKSUM_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases/download/stz-suite-base-v0.4.1/STZ-Suite-Base-0.4.1-Setup.sha256.txt';
-const BASE_VIRUSTOTAL_URL = 'https://www.virustotal.com/gui/file/cee317a554b393df93740e66952fa9dea00b58d49e3a917f3360b216298f5105/detection';
+const BASE_VERIFICATION_VERSION = '0.5.0';
+const BASE_CHECKSUM_URL = 'https://github.com/starzynhobr/stz-suite-releases/releases/download/stz-suite-base-v0.5.0/STZ-Suite-Base-0.5.0-Setup.sha256.txt';
+const BASE_VIRUSTOTAL_URL = 'https://www.virustotal.com/gui/file/c8e825d51ecba57c6ed1b45d45885ade22de1c7ce066458cc2d5b815f2d6f522/detection';
 
 const PLUGIN_PARAM = 'plugin';
 
