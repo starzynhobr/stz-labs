@@ -5,32 +5,32 @@
 export const projectMeta = {
     'gf-ui-editor': {
     "pt": {
-        "title": "Editor de Interfaces para Grand Fantasia Violet — GF UI Editor | STZ Labs",
+        "title": "Editor de Interfaces para Grand Fantasia Violet — STZ GF UI | STZ Labs",
         "description": "Edite visualmente as interfaces XML do Grand Fantasia Violet, com canvas, propriedades e atlas DDS.",
         "ogDescription": "Edite visualmente as interfaces XML do Grand Fantasia Violet, com canvas, propriedades e atlas DDS."
     },
     "en": {
-        "title": "Grand Fantasia Violet Interface Editor — GF UI Editor | STZ Labs",
+        "title": "Grand Fantasia Violet Interface Editor — STZ GF UI | STZ Labs",
         "description": "Visually edit Grand Fantasia Violet XML interfaces with a canvas, properties and DDS atlas.",
         "ogDescription": "Visually edit Grand Fantasia Violet XML interfaces with a canvas, properties and DDS atlas."
     },
     "es": {
-        "title": "Editor de Interfaces para Grand Fantasia Violet — GF UI Editor | STZ Labs",
+        "title": "Editor de Interfaces para Grand Fantasia Violet — STZ GF UI | STZ Labs",
         "description": "Edita visualmente las interfaces XML de Grand Fantasia Violet con canvas, propiedades y atlas DDS.",
         "ogDescription": "Edita visualmente las interfaces XML de Grand Fantasia Violet con canvas, propiedades y atlas DDS."
     },
     "fr": {
-        "title": "Éditeur d’Interfaces pour Grand Fantasia Violet — GF UI Editor | STZ Labs",
+        "title": "Éditeur d’Interfaces pour Grand Fantasia Violet — STZ GF UI | STZ Labs",
         "description": "Modifiez visuellement les interfaces XML de Grand Fantasia Violet avec canvas, propriétés et atlas DDS.",
         "ogDescription": "Modifiez visuellement les interfaces XML de Grand Fantasia Violet avec canvas, propriétés et atlas DDS."
     },
     "de": {
-        "title": "Oberflächeneditor für Grand Fantasia Violet — GF UI Editor | STZ Labs",
+        "title": "Oberflächeneditor für Grand Fantasia Violet — STZ GF UI | STZ Labs",
         "description": "Bearbeite XML-Oberflächen von Grand Fantasia Violet visuell mit Canvas, Eigenschaften und DDS-Atlas.",
         "ogDescription": "Bearbeite XML-Oberflächen von Grand Fantasia Violet visuell mit Canvas, Eigenschaften und DDS-Atlas."
     },
     "it": {
-        "title": "Editor di Interfacce per Grand Fantasia Violet — GF UI Editor | STZ Labs",
+        "title": "Editor di Interfacce per Grand Fantasia Violet — STZ GF UI | STZ Labs",
         "description": "Modifica visivamente le interfacce XML di Grand Fantasia Violet con canvas, proprietà e atlante DDS.",
         "ogDescription": "Modifica visivamente le interfacce XML di Grand Fantasia Violet con canvas, proprietà e atlante DDS."
     }

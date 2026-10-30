@@ -63,6 +63,14 @@ assert.equal(requests.length, 1);
 assert.equal(requests[0].url, 'https://discord.com/api/webhooks/123/test-token?wait=true');
 const [embed] = requests[0].payload.embeds;
 assert.equal(embed.title, '📦 STZ Downloader 0.2.3');
+
+// Título da release vence quando traz a versão.
+await hook({ ...published, release: { ...release, name: 'STZ Downloader 0.2.3 · Hotfix' } });
+assert.equal(requests.at(-1).payload.embeds[0].title, '📦 STZ Downloader 0.2.3 · Hotfix');
+await hook({ ...published, release: { ...release, name: 'Sem versão no nome' } });
+assert.equal(requests.at(-1).payload.embeds[0].title, '📦 STZ Downloader 0.2.3');
+assert.equal(getReleaseRepo('starzynhobr/gf-ui-editor').name, 'STZ GF UI');
+requests.length = 1;
 assert.equal(embed.url, release.html_url);
 assert.match(embed.description, /stzlabs\.com\/pt\/projects\/stz-downloader/);
 assert.doesNotMatch(embed.description, /SHA-256/);

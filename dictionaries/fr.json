@@ -602,7 +602,7 @@
     }
   },
   "gf_ui_editor": {
-    "title": "GF UI Editor",
+    "title": "STZ GF UI",
     "card_description": "Modifiez visuellement les interfaces XML de Grand Fantasia Violet avec canvas, propriétés et atlas DDS.",
     "description": "Ouvrez un XML du jeu, sélectionnez les éléments sur le canvas ou dans l’arbre et ajustez positions, dimensions et régions de texture. Vérifiez les modifications avant de sauvegarder et conservez une copie de l’original. Le jeu et ses fichiers ne sont pas inclus.",
     "github_link": "Voir sur GitHub",

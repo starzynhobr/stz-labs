@@ -11,12 +11,12 @@ export const projects = [
         maturity: 'beta',
         titleKey: 'gf_ui_editor.title',
         descriptionKey: 'gf_ui_editor.card_description',
-        badgeLabel: 'v0.4.0',
+        badgeLabel: 'v0.5.1',
         badgeVariant: 'beta',
         tags: [{ label: 'Grand Fantasia Violet' }, { labelKey: 'common.tags.windows' }, { labelKey: 'common.tags.tools' }],
         detailLabelKey: 'cards.btn_details',
         detail: {
-            meta: { title: 'GF UI Editor | STZ LABS', description: 'Editor visual de interfaces XML do Grand Fantasia Violet.' },
+            meta: { title: 'STZ GF UI | STZ LABS', description: 'Editor visual de interfaces XML do Grand Fantasia Violet.' },
             hero: {
                 tags: ['Grand Fantasia Violet', 'Windows', 'XML / DDS'],
                 titleKey: 'gf_ui_editor.title',
@@ -33,7 +33,7 @@ export const projects = [
                     atlas: 'atlas-dds.png',
                     start: 'tela-inicial.png',
                 }[screen]),
-                alt: 'GF UI Editor',
+                alt: 'STZ GF UI',
                 kickerKey: 'gf_ui_editor.showcase.' + screen + '_kicker',
                 titleKey: 'gf_ui_editor.showcase.' + screen + '_title',
                 descriptionKey: 'gf_ui_editor.showcase.' + screen + '_description',
